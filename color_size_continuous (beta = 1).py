@@ -81,8 +81,8 @@ def meaning(utt, state):
         if sem_value != 0:
             return sem_value
         # Raise an error if the modifiers are not in the two categories
-        else:
-            raise ValueError(f"Bad utterance length: len{split_words}")
+    else:
+        raise ValueError(f"Bad utterance length: len{split_words}")
 
 
 # Define costs (here it is still set to 0)
