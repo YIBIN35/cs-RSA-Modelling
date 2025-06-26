@@ -2,11 +2,19 @@
 # ColorWeight = 1, TypeWeight = 0.5
 import math
 
-# Set states
-states = ["yellow_banana", "brown_banana", "blue_banana", "other"]
+# Set states for each set
+states_by_set = {
+    "yellow_set": ["other", "yellow_banana", "other"],
+    "brown_set": ["other", "brown_banana", "other"],
+    "blue_set": ["other", "blue_banana", "other"]
+}
 
-# Set utterances
-utterances = ["banana", "yellow_banana", "brown_banana", "blue_banana", "other"]
+# Set utterances for each set
+utterances_by_set = {
+    "yellow_set": ["banana", "yellow_banana", "other"],
+    "brown_set": ["banana", "brown_banana", "other"],
+    "blue_set": ["banana", "blue_banana", "other"]
+}
 
 # Directly assign semantic values for each utterance
 # Each state (obj) has a dictionary of values for each utterance
@@ -30,9 +38,6 @@ TypeWeight = 0.5
 
 # Compute the cost function
 def cost(utterance):
-    # Not sure where the "other" should be placed, in the original code there were
-    # "othercolor" and "thing"/"item" in color and type words, so for now I included "other in both"
-    # Might cause "other" to be counted twice. This might cause some shifts in numbers
     color_words = ["yellow", "brown", "blue", "other"]
     type_words = ["banana", "other"]
     color_mention = 0
@@ -51,7 +56,7 @@ def cost(utterance):
 
 
 # Compute the literal listener function
-def literal_listener(utterance):
+def literal_listener(utterance, states):
     probabilities = {}
     total = 0
     for s in states:
@@ -71,12 +76,12 @@ def literal_listener(utterance):
 
 
 # Pragmatic Speaker function
-def pragmatic_speaker(state):
+def pragmatic_speaker(state, states, utterances):
     utterance_probs = {}
     total = 0.0
     for utt in utterances:
         # Retrieve the literal listener values for the corresponding utterance
-        literal_listener_prob = literal_listener(utt)
+        literal_listener_prob = literal_listener(utt, states)
         # Get the utterance's probability (literal listener)
         utterance_prob = literal_listener_prob.get(state)
         # Calculate the cost
@@ -92,20 +97,25 @@ def pragmatic_speaker(state):
 
 # Test the functions
 if __name__ == "__main__":
-    print("Testing literal listener function for all utterances:\n")
-    for utt in utterances:
-        print(f"Utterance: '{utt}'")
-        probs = literal_listener(utt)
-        for state, prob in probs.items():
-            print(f"  {state}: {prob:.2f}")
-        print()
+    for state_set in states_by_set:
+        print(f"\n===== Testing {state_set} =====\n")
+        states = states_by_set[state_set]
+        utterances = utterances_by_set[state_set]
 
-    print("Testing pragmatic speaker function for all states:\n")
-    for state in states:
-        print(f"State: '{state}'")
-        probs = pragmatic_speaker(state)
-        for utt, prob in probs.items():
-            print(f"  {utt}: {prob:.2f}")
-        print()
+        #     print("Testing literal listener function:\n")
+        #     for utt in utterances:
+        #         print(f"Utterance: '{utt}'")
+        #         probs = literal_listener(utt, states)
+        #         for state, prob in probs.items():
+        #             print(f"  {state}: {prob:.2f}")
+        #         print()
 
+        print("Testing pragmatic speaker function:\n")
+        for state in states:
+            probs = pragmatic_speaker(state, states, utterances)
+            if "banana" in state:
+                print(f"State: '{state}'")
+                for utt, prob in probs.items():
+                    print(f"  {utt}: {prob:.2f}")
+                print()
 
