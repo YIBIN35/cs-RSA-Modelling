@@ -4,18 +4,14 @@ import math
 
 # Set Parameters
 # Here alpha is equivalent to beta in the paper
-alpha = 1
-costWeight = 0.1
+alpha = 12
+costWeight = 6
 
 size_semvalue = 0.8
-# color_semvalue = 0.99
 state_semvalue = 0.9
 nominal_semvalue = 0.99
 nominal_typical_semvalue = 0.9
 nominal_atypical_semvalue = 0.35
-
-size_cost = 0
-color_cost = 0
 
 # Set states (of objects) and utterances
 world = {
@@ -27,40 +23,43 @@ world = {
                               {"size": "None", "state": "None" , "nominal": "other1"}, 
                               {"size": "None", "state": "None" , "nominal": "other2"}, 
                               {"size": "None", "state": "None" , "nominal": "other3"}],
-        "pair_marked":       [{"size": "big", "state": "open", "nominal": "door"}, 
-                              {"size": "small", "state": "open" , "nominal": "door"}, 
+        "singleton_unmarked":[{"size": "None", "state": "closed", "nominal": "door"}, 
+                              {"size": "None", "state": "None" , "nominal": "other1"}, 
                               {"size": "None", "state": "None" , "nominal": "other2"}, 
                               {"size": "None", "state": "None" , "nominal": "other3"}],
-        "pair_unmarked":     [{"size": "big", "state": "closed", "nominal": "door"}, 
-                              {"size": "small", "state": "closed" , "nominal": "door"}, 
-                              {"size": "None", "state": "None" , "nominal": "other2"}, 
-                              {"size": "None", "state": "None" , "nominal": "other3"}] 
+        # "pair_marked":       [{"size": "big", "state": "open", "nominal": "door"}, 
+        #                       {"size": "small", "state": "open" , "nominal": "door"}, 
+        #                       {"size": "None", "state": "None" , "nominal": "other2"}, 
+        #                       {"size": "None", "state": "None" , "nominal": "other3"}],
+        # "pair_unmarked":     [{"size": "big", "state": "closed", "nominal": "door"}, 
+        #                       {"size": "small", "state": "closed" , "nominal": "door"}, 
+        #                       {"size": "None", "state": "None" , "nominal": "other2"}, 
+        #                       {"size": "None", "state": "None" , "nominal": "other3"}] 
         }
 
 # utterances = ["big", "small", "blue", "red", "big_blue", "small_blue", "big_red"]
 utterances = [
               "door",
-              "big_door",
-              "small_door",
               "open_door",
               "closed_door",
-              "big_open_door",
-              "small_open_door",
-              "big_closed_door",
-              "small_closed_door",
+              # "big_door",
+              # "small_door",
+              # "big_open_door",
+              # "small_open_door",
+              # "big_closed_door",
+              # "small_closed_door",
               "other1", 
               "other2", 
               "other3"
               ]
 
 # Separately define color & size for further calculations
-# colors = ["red", "blue"]
 sizes = ["big", "small"]
 states = ["open", "closed"]
 nominals = ["door", "other1", "other2", "other3"]
 
 # Meaning function (Using continuous semantics instead of Boolean)
-def meaning(utt, obj):
+def meaning(utt, obj, print_value=False):
     split_words = utt.split("_")
 
     # parse utterance
@@ -77,43 +76,49 @@ def meaning(utt, obj):
             nominal_words.append(word)
         else:
             raise Exception("Something went wrong")
-    # print("utterance", size_words, state_words, nominal_words)
-    # print("object", obj)
 
     # check utterance with the world state
+    # size_value = 1
+    # state_value = state_semvalue
+    # nominal_value = nominal_semvalue
 
-    size_value = size_semvalue
-    state_value = state_semvalue
-    nominal_value = nominal_semvalue
-    for word in size_words:
-        if obj['size'] == 'None':
-            size_value = size_semvalue
-        elif word == obj["size"]:
-            size_value = size_semvalue
-        else:
-            size_value = 1 - size_semvalue
+    # for word in size_words:
+    #     if obj['size'] == 'None':
+    #         size_value = size_semvalue
+    #     elif word == obj["size"]:
+    #         size_value = size_semvalue
+    #     else:
+    #         size_value = 1 - size_semvalue
 
-    for word in state_words:
-        if obj['state'] == 'None':
-            state_value = state_semvalue
-        elif word == obj["state"]:
-            state_value = state_semvalue
-        else:
-            state_value = 1 - state_semvalue
+    # for word in state_words:
+    #     if obj['state'] == 'None':
+    #         state_value = state_semvalue
+    #     elif word == obj["state"]:
+    #         state_value = state_semvalue
+    #     else:
+    #         state_value = 1 - state_semvalue
 
     for word in nominal_words:
         if word == obj["nominal"]:
-            if len(state_words) == 0 and obj['state'] == 'open':
-                nominal_value = nominal_typical_semvalue
-            elif len(state_words) == 0 and obj['state'] != 'open':
-                nominal_value = nominal_atypical_semvalue
+            if len(state_words) == 0 and obj['state'] == 'closed':
+                state_nominal_value = nominal_typical_semvalue
+            elif len(state_words) == 0 and obj['state'] != 'closed':
+                state_nominal_value = nominal_atypical_semvalue
+            elif state_words[0] == obj["state"]: # right now assume that there is only one word in state_words
+                state_nominal_value = nominal_semvalue
+            elif state_words[0] != obj["state"]:
+                state_nominal_value = 1 - nominal_semvalue
             else:
-                nominal_value = nominal_semvalue
-        else:
-            nominal_value = 1 - nominal_semvalue
+                raise Exception("Something went wrong")
 
-    # print(size_value, state_value, nominal_value)
-    sem_value = size_value * state_value * nominal_value
+        else:
+            state_nominal_value = 1 - nominal_semvalue
+
+    if print_value == True:
+        print("utterance", size_words, state_words, nominal_words)
+        print("object", obj)
+        print(state_nominal_value)
+    sem_value =  state_nominal_value 
     if sem_value != 0:
         return sem_value
 
@@ -132,17 +137,6 @@ def literal_listener(utterance, world):
     for item in probabilities:
         probabilities[item] /= total
     return probabilities
-
-# Define costs (here it is still set to 0)
-# cost = {
-#     "big": size_cost,
-#     "small": size_cost,
-#     "blue": color_cost,
-#     "red": color_cost,
-#     "big_blue": size_cost + color_cost,
-#     "small_blue": size_cost + color_cost,
-#     "big_red": size_cost + color_cost
-# }
 
 def cost(utt):
     return len(utt.split("_"))
@@ -168,14 +162,19 @@ def pragmatic_speaker(obj, world):
     return utterance_probs
 
 
+def overspecification_rate(results):
+    # right now this is just a hack
+    result_list = list(results.values())
+    modification = sum(result_list[1:3]) / sum(result_list[:3])
+    return modification
+
+
 # Test the functions
 if __name__ == "__main__":
     # The last row in this literal listener table has "0.28, 0,23, 0.50" due to decimal rounding
     # The values should add up to 1 in real calculation
 
-    # this_world = world['pair_unmarked']
-
-    # print(meaning('big_door', world['singleton_marked'][0]))
+    print(meaning('closed_door', {"size": "None", "state": "open", "nominal": "door"}, print_value=True))
 
     # print("Literal Listener Test")
     # for u in utterances:
@@ -192,9 +191,10 @@ if __name__ == "__main__":
     #     for utterance, prob in results.items():
     #         print(f"    P({utterance} | '{obj}') = {prob:.2f}")
 
+
     for condition, this_world in world.items():
         results = pragmatic_speaker(this_world[0], this_world)
         print(f"\n{condition}, obj: '{this_world[0]}'")
-        print(f"modified rate: {sum(list(results.values())[3:9])}")
+        print(f"overspecification rate: {overspecification_rate(results)}")
         for utterance, prob in results.items():
             print(f"    P({utterance} | '{this_world[0]}') = {prob:.2f}")
