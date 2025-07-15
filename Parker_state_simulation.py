@@ -19,22 +19,22 @@ color_cost = 0
 
 # Set states (of objects) and utterances
 world = {
-        "singleton_marked":  [{"size": "None", "state": "open", "nominal": "door"}, 
-                              {"size": "None", "state": "None" , "nominal": "other1"}, 
-                              {"size": "None", "state": "None" , "nominal": "other2"}, 
+        "singleton_marked":  [{"size": "None", "state": "open", "nominal": "door"},
+                              {"size": "None", "state": "None" , "nominal": "other1"},
+                              {"size": "None", "state": "None" , "nominal": "other2"},
                               {"size": "None", "state": "None" , "nominal": "other3"}],
-        "singleton_unmarked":[{"size": "None", "state": "closed", "nominal": "door"}, 
-                              {"size": "None", "state": "None" , "nominal": "other1"}, 
-                              {"size": "None", "state": "None" , "nominal": "other2"}, 
+        "singleton_unmarked":[{"size": "None", "state": "closed", "nominal": "door"},
+                              {"size": "None", "state": "None" , "nominal": "other1"},
+                              {"size": "None", "state": "None" , "nominal": "other2"},
                               {"size": "None", "state": "None" , "nominal": "other3"}],
-        "pair_marked":       [{"size": "big", "state": "open", "nominal": "door"}, 
-                              {"size": "small", "state": "open" , "nominal": "door"}, 
-                              {"size": "None", "state": "None" , "nominal": "other2"}, 
+        "pair_marked":       [{"size": "big", "state": "open", "nominal": "door"},
+                              {"size": "small", "state": "open" , "nominal": "door"},
+                              {"size": "None", "state": "None" , "nominal": "other2"},
                               {"size": "None", "state": "None" , "nominal": "other3"}],
-        "pair_unmarked":     [{"size": "big", "state": "closed", "nominal": "door"}, 
-                              {"size": "small", "state": "closed" , "nominal": "door"}, 
-                              {"size": "None", "state": "None" , "nominal": "other2"}, 
-                              {"size": "None", "state": "None" , "nominal": "other3"}] 
+        "pair_unmarked":     [{"size": "big", "state": "closed", "nominal": "door"},
+                              {"size": "small", "state": "closed" , "nominal": "door"},
+                              {"size": "None", "state": "None" , "nominal": "other2"},
+                              {"size": "None", "state": "None" , "nominal": "other3"}]
         }
 
 # utterances = ["big", "small", "blue", "red", "big_blue", "small_blue", "big_red"]
@@ -48,8 +48,8 @@ utterances = [
               "small_open_door",
               "big_closed_door",
               "small_closed_door",
-              "other1", 
-              "other2", 
+              "other1",
+              "other2",
               "other3"
               ]
 
@@ -82,9 +82,9 @@ def meaning(utt, obj):
 
     # check utterance with the world state
 
-    size_value = size_semvalue
-    state_value = state_semvalue
-    nominal_value = nominal_semvalue
+    size_value = size_semvalue # 0.8
+    state_value = state_semvalue # 0.9
+    nominal_value = nominal_semvalue # 0.99
     for word in size_words:
         if obj['size'] == 'None':
             size_value = size_semvalue
