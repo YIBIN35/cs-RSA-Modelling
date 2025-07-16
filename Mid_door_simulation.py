@@ -12,9 +12,9 @@ size_semvalue = 0.8
 state_semvalue = 0.9
 
 # These 4 values are used for the Singleton simulation
-nominal_semvalue = 0.99
-nominal_typical_semvalue = 0.9
-nominal_atypical_semvalue = 0.35
+nominal_semvalue = 0.7
+nominal_typical_semvalue = 0.6
+nominal_atypical_semvalue = 0.3
 # wrong nominal value = 0.01
 
 # New values assigned for "mid-typical" situation
