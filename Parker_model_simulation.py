@@ -6,8 +6,7 @@ import math
 # Here alpha is equivalent to beta in the paper
 # Set beta_fixed as MAP value in Degen paper
 alpha = 12
-beta_fixed = 0.69
-# costWeight = 5
+costWeight = 6
 
 # Fixed sem values
 size_semvalue = 0.8
@@ -100,57 +99,27 @@ def meaning(utt, obj, print_value=False):
     #     else:
     #         state_value = 1 - state_semvalue
 
-    # Fixed semantic value function
-    fixed_sem_value = 0
-    for word in nominal_words:
-        # Check for nominal match
-        if word == obj["nominal"]:
-            nominal_val = nominal_semvalue
-        else:
-            nominal_val = 1 - nominal_semvalue
-
-        # Check for state match (Currently only applying Singleton values, size ignored)
-        if len(state_words) != 0:
-            if obj['state'] == state_words[0]:
-                state_val = state_semvalue
-            else:
-                state_val = 1 - state_semvalue
-        # If there are no state words, value not included
-        elif len(state_words) == 0:
-            state_val = None
-        else:
-            raise Exception("Something went wrong")
-
-        # Calculate the final fixed semantic value
-        if state_val is not None:
-            fixed_sem_value = state_val * nominal_val
-        else:
-            fixed_sem_value = nominal_val
-
-    # Empirical semantic value function
-    empirical_sem_value = 0
     for word in nominal_words:
         if word == obj["nominal"]:
             if len(state_words) == 0 and obj['state'] == 'closed':
-                empirical_sem_value = nominal_typical_semvalue
+                state_nominal_value = nominal_typical_semvalue
             elif len(state_words) == 0 and obj['state'] != 'closed':
-                empirical_sem_value = nominal_atypical_semvalue
+                state_nominal_value = nominal_atypical_semvalue
             elif state_words[0] == obj["state"]: # right now assume that there is only one word in state_words
-                empirical_sem_value = nominal_semvalue
+                state_nominal_value = nominal_semvalue
             elif state_words[0] != obj["state"]:
-                empirical_sem_value = 1 - nominal_semvalue
+                state_nominal_value = 1 - nominal_semvalue
             else:
                 raise Exception("Something went wrong")
         else:
-            empirical_sem_value = 1 - nominal_semvalue
+            state_nominal_value = 1 - nominal_semvalue
 
     if print_value == True:
         print("utterance", size_words, state_words, nominal_words)
         print("object", obj)
-        print(empirical_sem_value)
+        print(state_nominal_value)
 
-    # Add two models together
-    sem_value = (1 - beta_fixed) * empirical_sem_value + beta_fixed * fixed_sem_value
+    sem_value = state_nominal_value
     if sem_value != 0:
         return sem_value
 
@@ -170,9 +139,8 @@ def literal_listener(utterance, world):
         probabilities[item] /= total
     return probabilities
 
-# No cost for this model
-# def cost(utt):
-#     return len(utt.split("_"))
+def cost(utt):
+    return len(utt.split("_"))
 
 # Pragmatic Speaker function
 def pragmatic_speaker(obj, world):
@@ -186,7 +154,7 @@ def pragmatic_speaker(obj, world):
         # Match the utterance with the state
         utterance_prob = literal_listener_prob.get(obj_key)
         # Apply the pragmatic speaker function
-        utility = alpha * math.log(utterance_prob)
+        utility = alpha * math.log(utterance_prob) - costWeight * cost(utt)
         utterance_probs[utt] = math.exp(utility)
         total += math.exp(utility)
     # Normalize the values
