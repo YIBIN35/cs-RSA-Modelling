@@ -16,7 +16,9 @@ nominal_semvalue = 0.99
 
 # Empirical sem values
 nominal_typical_semvalue = 0.9
-nominal_atypical_semvalue = 0.65
+nominal_atypical_semvalue = 0.35
+# nominal_specified_typical_semvalue = 0.97
+# nominal_specified_typical_semvalue = 0.66
 
 # Set states (of objects) and utterances
 world = {
@@ -63,11 +65,42 @@ nominals = ["door", "other1", "other2", "other3"]
 def meaning(utt, obj, print_value=False):
     split_words = utt.split("_")
 
+    size_val = 1
+    state_val = 1
+    nominal_val = 1
+
+    # fixed compositional semantic value function
+    for word in split_words:
+        if word in sizes:
+            if word == obj['size']:
+                size_val = size_semvalue
+            elif obj['size'] == "None":
+                size_val = size_semvalue
+            else:
+                size_val = 1- size_semvalue
+        if word in states:
+            if word == obj['state']:
+                state_val = state_semvalue
+            elif obj['state'] == "None":
+                state_val = state_semvalue
+            else:
+                state_val = 1- state_semvalue
+        if word in nominals:
+            if word == obj['nominal']:
+                nominal_val = nominal_semvalue
+            elif obj['state'] == "None":
+                nominal_val = nominal_semvalue
+            else:
+                nominal_val = 1- nominal_semvalue
+
+    fixed_sem_value = size_val * state_val * nominal_val
+
+
+    # Empirical semantic value function
     # parse utterance
     size_words = []
     state_words = []
     nominal_words = []
-
     for word in split_words:
         if word in sizes:
             size_words.append(word)
@@ -78,55 +111,6 @@ def meaning(utt, obj, print_value=False):
         else:
             raise Exception("Something went wrong")
 
-    # check utterance with the world state
-    # size_value = 1
-    # state_value = state_semvalue
-    # nominal_value = nominal_semvalue
-
-    # for word in size_words:
-    #     if obj['size'] == 'None':
-    #         size_value = size_semvalue
-    #     elif word == obj["size"]:
-    #         size_value = size_semvalue
-    #     else:
-    #         size_value = 1 - size_semvalue
-
-    # for word in state_words:
-    #     if obj['state'] == 'None':
-    #         state_value = state_semvalue
-    #     elif word == obj["state"]:
-    #         state_value = state_semvalue
-    #     else:
-    #         state_value = 1 - state_semvalue
-
-    # Fixed semantic value function
-    fixed_sem_value = 0
-    for word in nominal_words:
-        # Check for nominal match
-        if word == obj["nominal"]:
-            nominal_val = nominal_semvalue
-        else:
-            nominal_val = 1 - nominal_semvalue
-
-        # Check for state match (Currently only applying Singleton values, size ignored)
-        if len(state_words) != 0:
-            if obj['state'] == state_words[0]:
-                state_val = state_semvalue
-            else:
-                state_val = 1 - state_semvalue
-        # If there are no state words, value not included
-        elif len(state_words) == 0:
-            state_val = None
-        else:
-            raise Exception("Something went wrong")
-
-        # Calculate the final fixed semantic value
-        if state_val is not None:
-            fixed_sem_value = state_val * nominal_val
-        else:
-            fixed_sem_value = nominal_val
-
-    # Empirical semantic value function
     empirical_sem_value = 0
     for word in nominal_words:
         if word == obj["nominal"]:
@@ -146,7 +130,7 @@ def meaning(utt, obj, print_value=False):
     if print_value == True:
         print("utterance", size_words, state_words, nominal_words)
         print("object", obj)
-        print(empirical_sem_value)
+        print(beta_fixed, size_val, state_val, nominal_val, 1-beta_fixed, empirical_sem_value)
 
     # Add two models together
     sem_value = (1 - beta_fixed) * empirical_sem_value + beta_fixed * fixed_sem_value
