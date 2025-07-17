@@ -41,20 +41,6 @@ world = {
                           {"size": "None", "state": "None" , "nominal": "other3"}]
 }
 
-utterances = [
-    "door",
-    "open_door",
-    "closed_door",
-    "big_door",
-    "small_door",
-    "big_open_door",
-    "small_open_door",
-    "big_closed_door",
-    "small_closed_door",
-    "other1",
-    "other2",
-    "other3"
-]
 
 # Separately define color & size for further calculations
 sizes = ["big", "small"]
@@ -154,7 +140,8 @@ def literal_listener(utterance, world):
         sem_val = meaning(utterance, obj)
         item = tuple(obj.items())
         # Map each semantic value to an item of (size, color)
-        probabilities[item] = math.exp(sem_val)
+        # probabilities[item] = math.exp(sem_val)
+        probabilities[item] = math.exp(1.34*sem_val)
         total += math.exp(sem_val)
     # Normalize the semantic values
     for item in probabilities:
@@ -169,7 +156,7 @@ def cost(utt):
     return len(utt.split("_"))
 
 # Pragmatic Speaker function
-def pragmatic_speaker(obj, world):
+def pragmatic_speaker(obj, world, utterances):
     # Transform the object from dictionary tuple for .get() function afterwards
     obj_key = tuple(obj.items())
     utterance_probs = {}
@@ -189,11 +176,11 @@ def pragmatic_speaker(obj, world):
     return utterance_probs
 
 
-def overspecification_rate(results):
-    # right now this is just a hack
-    result_list = list(results.values())
-    modification = sum(result_list[1:3]) / sum(result_list[:3])
-    return modification
+# def overspecification_rate(results):
+#     # right now this is just a hack
+#     result_list = list(results.values())
+#     modification = sum(result_list[1:3]) / sum(result_list[:3])
+#     return modification
 
 
 # Test the functions
@@ -219,9 +206,51 @@ if __name__ == "__main__":
     #         print(f"    P({utterance} | '{obj}') = {prob:.2f}")
 
 
-    for condition, this_world in world.items():
-        results = pragmatic_speaker(this_world[0], this_world)
+    # for condition, this_world in world.items():
+    #     results = pragmatic_speaker(this_world[0], this_world, utterances)
+    #     print(f"\n{condition}, obj: '{this_world[0]}'")
+    #     print(f"overspecification rate: {overspecification_rate(results)}")
+    #     for utterance, prob in results.items():
+    #         print(f"    P({utterance} | '{this_world[0]}') = {prob:.2f}")
+
+
+    for condition in ["singleton_marked", "singleton_unmarked"]:
+        this_world = world[condition]
+        utterances = [
+            "door",
+            "open_door",
+            "closed_door",
+            "other1",
+            "other2",
+            "other3"
+        ]
+        results = pragmatic_speaker(this_world[0], this_world, utterances)
+        overspecification_rate = sum(list(results.values())[1:3]) / sum(list(results.values())[:3])
         print(f"\n{condition}, obj: '{this_world[0]}'")
-        print(f"overspecification rate: {overspecification_rate(results)}")
+        print(f"overspecification rate: {overspecification_rate}")
         for utterance, prob in results.items():
             print(f"    P({utterance} | '{this_world[0]}') = {prob:.2f}")
+
+    for condition in ["pair_marked", "pair_unmarked"]:
+        this_world = world[condition]
+        utterances = [
+            "door",
+            "big_door",
+            "small_door",
+            "open_door",
+            "closed_door",
+            "big_open_door",
+            "small_open_door",
+            "big_closed_door",
+            "small_closed_door",
+            "other1",
+            "other2",
+            "other3"
+        ]
+        results = pragmatic_speaker(this_world[0], this_world, utterances)
+        overspecification_rate = sum(list(results.values())[3:9]) / sum(list(results.values())[:9])
+        print(f"\n{condition}, obj: '{this_world[0]}'")
+        print(f"overspecification rate: {overspecification_rate}")
+        for utterance, prob in results.items():
+            print(f"    P({utterance} | '{this_world[0]}') = {prob:.2f}")
+
