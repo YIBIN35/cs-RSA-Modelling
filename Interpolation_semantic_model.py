@@ -15,8 +15,8 @@ state_semvalue = 0.9
 nominal_semvalue = 0.99
 
 # Empirical sem values
-nominal_typical_semvalue = 0.9
-nominal_atypical_semvalue = 0.35
+# nominal_typical_semvalue = 0.9
+# nominal_atypical_semvalue = 0.35
 # nominal_specified_typical_semvalue = 0.97
 # nominal_specified_typical_semvalue = 0.66
 
@@ -114,16 +114,24 @@ def meaning(utt, obj, print_value=False):
     empirical_sem_value = 0
     for word in nominal_words:
         if word == obj["nominal"]:
-            if len(state_words) == 0 and obj['state'] == 'closed':
-                empirical_sem_value = nominal_typical_semvalue
-            elif len(state_words) == 0 and obj['state'] != 'closed':
-                empirical_sem_value = nominal_atypical_semvalue
-            elif state_words[0] == obj["state"]: # right now assume that there is only one word in state_words
-                empirical_sem_value = nominal_semvalue
-            elif state_words[0] != obj["state"]:
-                empirical_sem_value = 1 - nominal_semvalue
-            else:
-                raise Exception("Something went wrong")
+            # check table 7 to understand the code here. right now everything is hardcoded!!!
+            if len(state_words) == 0:
+                if obj['state'] == 'closed':
+                    empirical_sem_value = 0.98
+                else:
+                    empirical_sem_value = 0.66
+
+            elif state_words[0] == 'closed':
+                if obj["state"] == 'closed':
+                    empirical_sem_value = 0.97
+                else:
+                    empirical_sem_value = 0.30
+
+            elif state_words[0] == 'open':
+                if obj["state"] == 'closed':
+                    empirical_sem_value = 0.22
+                else:
+                    empirical_sem_value = 0.91
         else:
             empirical_sem_value = 1 - nominal_semvalue
 
