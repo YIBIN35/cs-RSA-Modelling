@@ -5,9 +5,9 @@ import math
 # Set Parameters
 # Here alpha is equivalent to beta in the paper
 # Set beta_fixed as MAP value in Degen paper
-alpha = 12
+alpha = 13.7
 beta_fixed = 0.69
-# costWeight = 5
+costWeight = 0 
 
 # Fixed sem values
 size_semvalue = 0.8
@@ -16,7 +16,7 @@ nominal_semvalue = 0.99
 
 # Empirical sem values
 nominal_typical_semvalue = 0.9
-nominal_atypical_semvalue = 0.35
+nominal_atypical_semvalue = 0.65
 
 # Set states (of objects) and utterances
 world = {
@@ -29,27 +29,26 @@ world = {
                           {"size": "None", "state": "None" , "nominal": "other2"},
                           {"size": "None", "state": "None" , "nominal": "other3"}],
 
-    # "pair_marked":       [{"size": "big", "state": "open", "nominal": "door"},
-    #                       {"size": "small", "state": "open" , "nominal": "door"},
-    #                       {"size": "None", "state": "None" , "nominal": "other2"},
-    #                       {"size": "None", "state": "None" , "nominal": "other3"}],
-    # "pair_unmarked":     [{"size": "big", "state": "closed", "nominal": "door"},
-    #                       {"size": "small", "state": "closed" , "nominal": "door"},
-    #                       {"size": "None", "state": "None" , "nominal": "other2"},
-    #                       {"size": "None", "state": "None" , "nominal": "other3"}]
+    "pair_marked":       [{"size": "big", "state": "open", "nominal": "door"},
+                          {"size": "small", "state": "open" , "nominal": "door"},
+                          {"size": "None", "state": "None" , "nominal": "other2"},
+                          {"size": "None", "state": "None" , "nominal": "other3"}],
+    "pair_unmarked":     [{"size": "big", "state": "closed", "nominal": "door"},
+                          {"size": "small", "state": "closed" , "nominal": "door"},
+                          {"size": "None", "state": "None" , "nominal": "other2"},
+                          {"size": "None", "state": "None" , "nominal": "other3"}]
 }
 
-# utterances = ["big", "small", "blue", "red", "big_blue", "small_blue", "big_red"]
 utterances = [
     "door",
     "open_door",
     "closed_door",
-    # "big_door",
-    # "small_door",
-    # "big_open_door",
-    # "small_open_door",
-    # "big_closed_door",
-    # "small_closed_door",
+    "big_door",
+    "small_door",
+    "big_open_door",
+    "small_open_door",
+    "big_closed_door",
+    "small_closed_door",
     "other1",
     "other2",
     "other3"
@@ -174,6 +173,9 @@ def literal_listener(utterance, world):
 # def cost(utt):
 #     return len(utt.split("_"))
 
+def cost(utt):
+    return len(utt.split("_"))
+
 # Pragmatic Speaker function
 def pragmatic_speaker(obj, world):
     # Transform the object from dictionary tuple for .get() function afterwards
@@ -186,7 +188,7 @@ def pragmatic_speaker(obj, world):
         # Match the utterance with the state
         utterance_prob = literal_listener_prob.get(obj_key)
         # Apply the pragmatic speaker function
-        utility = alpha * math.log(utterance_prob)
+        utility = alpha * math.log(utterance_prob) - costWeight * cost(utt)
         utterance_probs[utt] = math.exp(utility)
         total += math.exp(utility)
     # Normalize the values
