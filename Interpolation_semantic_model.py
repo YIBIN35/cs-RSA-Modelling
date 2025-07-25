@@ -7,7 +7,8 @@ import math
 # Set beta_fixed as MAP value in Degen paper
 alpha = 13.7
 beta_fixed = 0.69
-costWeight = 0 
+costWeight = 2 
+typicalityWeight = 1.34
 
 # Fixed sem values
 size_semvalue = 0.8
@@ -24,11 +25,11 @@ nominal_semvalue = 0.99
 world = {
     "singleton_marked":  [{"size": "None", "state": "open", "nominal": "door"},
                           {"size": "None", "state": "None" , "nominal": "other1"},
-                          {"size": "None", "state": "None" , "nominal": "other2"},
+                          # {"size": "None", "state": "None" , "nominal": "other2"},
                           {"size": "None", "state": "None" , "nominal": "other3"}],
     "singleton_unmarked":[{"size": "None", "state": "closed", "nominal": "door"},
                           {"size": "None", "state": "None" , "nominal": "other1"},
-                          {"size": "None", "state": "None" , "nominal": "other2"},
+                          # {"size": "None", "state": "None" , "nominal": "other2"},
                           {"size": "None", "state": "None" , "nominal": "other3"}],
 
     "pair_marked":       [{"size": "big", "state": "open", "nominal": "door"},
@@ -141,8 +142,8 @@ def literal_listener(utterance, world):
         item = tuple(obj.items())
         # Map each semantic value to an item of (size, color)
         # probabilities[item] = math.exp(sem_val)
-        probabilities[item] = math.exp(1.34*sem_val)
-        total += math.exp(sem_val)
+        probabilities[item] = math.exp(typicalityWeight*sem_val)
+        total += math.exp(typicalityWeight*sem_val)
     # Normalize the semantic values
     for item in probabilities:
         probabilities[item] /= total
