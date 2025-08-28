@@ -25,11 +25,11 @@ nominal_semvalue = 0.99
 world = {
     "singleton_marked":  [{"size": "None", "state": "open", "nominal": "door"},
                           {"size": "None", "state": "None" , "nominal": "other1"},
-                          # {"size": "None", "state": "None" , "nominal": "other2"},
+                          {"size": "None", "state": "None" , "nominal": "other2"},
                           {"size": "None", "state": "None" , "nominal": "other3"}],
     "singleton_unmarked":[{"size": "None", "state": "closed", "nominal": "door"},
                           {"size": "None", "state": "None" , "nominal": "other1"},
-                          # {"size": "None", "state": "None" , "nominal": "other2"},
+                          {"size": "None", "state": "None" , "nominal": "other2"},
                           {"size": "None", "state": "None" , "nominal": "other3"}],
 
     "pair_marked":       [{"size": "big", "state": "open", "nominal": "door"},
@@ -75,7 +75,7 @@ def meaning(utt, obj, print_value=False):
         if word in nominals:
             if word == obj['nominal']:
                 nominal_val = nominal_semvalue
-            elif obj['state'] == "None":
+            elif obj['nominal'] == "None":
                 nominal_val = nominal_semvalue
             else:
                 nominal_val = 1- nominal_semvalue
