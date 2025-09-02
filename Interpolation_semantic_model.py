@@ -68,8 +68,6 @@ def meaning(utt, obj, print_value=False):
         if word in states:
             if word == obj['state']:
                 state_val = state_semvalue
-            elif obj['state'] == "None":
-                state_val = state_semvalue
             else:
                 state_val = 1- state_semvalue
         if word in nominals:
