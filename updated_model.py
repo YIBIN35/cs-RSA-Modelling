@@ -137,7 +137,7 @@ class cs_rsa:
                     else:
                         empirical_sem_value = 0.91 # open_door -> open door
             else:
-                empirical_sem_value = 1 - self.nominal_semvalue # door -> other
+                empirical_sem_value = 1 - self.nominal_semvalue # other -> door
 
         # Add two models together
         sem_value = (1 - self.beta_fixed) * empirical_sem_value + self.beta_fixed * fixed_sem_value
@@ -186,6 +186,8 @@ class cs_rsa:
             utterance_probs[item] /= total
         return utterance_probs
 
+######################################################################
+# functions to run singleton and paired conditions, and function to get the best semantic values and other parameters
 
 def singleton_overspecification_rate(
         beta_fixed=0.69, 
@@ -193,17 +195,23 @@ def singleton_overspecification_rate(
         state_semvalue_unmarked=0.9, 
         costWeight=0
         ):
+
+    utterances = [
+        "door",
+        "open_door",
+        "closed_door",
+        "other1",
+        "other2",
+        "other3"
+    ]
+    conditions = ["singleton_marked", "singleton_unmarked"]
+    overspecified_utts = [['open_door'], ['closed_door']]
+    correct_utts = [['door','open_door'], ['door','closed_door']]
+
     overspecification_rates = []
-    for condition in ["singleton_marked", "singleton_unmarked"]:
+
+    for i, condition in enumerate(conditions):
         this_world = parker_world[condition]
-        utterances = [
-            "door",
-            "open_door",
-            "closed_door",
-            "other1",
-            "other2",
-            "other3"
-        ]
 
         model = cs_rsa(
                 this_world, 
@@ -213,9 +221,56 @@ def singleton_overspecification_rate(
                 costWeight=costWeight
                 )
         results = model.pragmatic_speaker(this_world[0], utterances)
-        print(results)
-        overspecification_rate = sum(list(results.values())[1:3]) / sum(list(results.values())[:3])
-        overspecification_rates.append(overspecification_rate)
+
+        numer = sum(results[u] for u in overspecified_utts[i])
+        denom = sum(results[u] for u in correct_utts[i])
+        overspecification_rates.append(numer / denom)
+
+    return overspecification_rates
+
+def pair_overspecification_rate(
+        beta_fixed=0.69, 
+        state_semvalue_marked=0.95, 
+        state_semvalue_unmarked=0.9, 
+        costWeight=0
+        ):
+
+    utterances = [
+        "door",
+        "open_door",
+        "closed_door",
+        "big_door",
+        "big_open_door",
+        "big_closed_door",
+        "small_door",
+        "small_open_door",
+        "small_closed_door",
+        "other2",
+        "other3"
+    ]
+    conditions = ["pair_marked", "pair_unmarked"]
+    overspecified_utts = [['big_open_door'], 
+                          ['big_closed_door']]
+    correct_utts = [['big_door','big_open_door'], 
+                    ['big_door','big_closed_door']]
+
+    overspecification_rates = []
+    for i, condition in enumerate(conditions):
+        this_world = parker_world[condition]
+
+        model = cs_rsa(
+                this_world, 
+                beta_fixed=beta_fixed, 
+                state_semvalue_marked=state_semvalue_marked, 
+                state_semvalue_unmarked=state_semvalue_unmarked, 
+                costWeight=costWeight
+                )
+        results = model.pragmatic_speaker(this_world[0], utterances)
+
+        numer = sum(results[u] for u in overspecified_utts[i])
+        denom = sum(results[u] for u in correct_utts[i])
+        overspecification_rates.append(numer / denom)
+
     return overspecification_rates
 
 def optimization(costWeight=0):
@@ -275,7 +330,18 @@ def optimization(costWeight=0):
     # print(f"  final loss              : {f_brute:.6e}")
 
 if __name__ == "__main__":
-    print(singleton_overspecification_rate())
+
+    print('singleton')
+    print("pure compositional no cost", singleton_overspecification_rate(1, 0.9, 0.9, 0))
+    print("pure non-compositional no cost", singleton_overspecification_rate(0, 0.9, 0.9, 0))
+    print("0.69 mixed no cost", singleton_overspecification_rate(0.69, 0.9, 0.9, 0))
+    print("0.69 mixed 1.5 cost", singleton_overspecification_rate(0.69, 0.9, 0.9, 1.5))
+
+    print('\npair')
+    print("pure compositional no cost", pair_overspecification_rate(1, 0.9, 0.9, 0))
+    print("pure non-compositional no cost", pair_overspecification_rate(0, 0.9, 0.9, 0))
+    print("0.69 mixed no cost", pair_overspecification_rate(0.69, 0.9, 0.9, 0))
+    print("0.69 mixed 1.5 cost", pair_overspecification_rate(0.69, 0.9, 0.9, 1.5))
 
     # cs_rsa().meaning('open_door', {"size": "None", "state": "None", "nominal": "other1"}, print_value=True)
 
