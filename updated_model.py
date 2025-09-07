@@ -64,7 +64,7 @@ class cs_rsa:
     def meaning(self, utt, obj, print_value=False):
         split_words = utt.split("_")
 
-        # if size/state/nominal_word=None: sem_val=1
+        # default values; if size/state/nominal_word == None: sem_val = 1
         size_val = 1
         state_val = 1
         nominal_val = 1
@@ -336,6 +336,7 @@ if __name__ == "__main__":
     print("pure non-compositional no cost", singleton_overspecification_rate(0, 0.9, 0.9, 0))
     print("0.69 mixed no cost", singleton_overspecification_rate(0.69, 0.9, 0.9, 0))
     print("0.69 mixed 1.5 cost", singleton_overspecification_rate(0.69, 0.9, 0.9, 1.5))
+    print("0.69 mixed 3 cost", singleton_overspecification_rate(0.69, 0.9, 0.9, 3))
 
     print('\npair')
     print("pure compositional no cost", pair_overspecification_rate(1, 0.9, 0.9, 0))
