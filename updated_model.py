@@ -46,6 +46,11 @@ class cs_rsa:
         state_semvalue_marked=0.9,
         state_semvalue_unmarked=0.9,
         noncomp_semvalue_bare_unmarked=0.66,
+        # noncomp_semvalue_bare_marked=0.66,
+        # noncomp_semvalue_modified_marked_T=0.66,
+        # noncomp_semvalue_modified_marked_F=0.66,
+        # noncomp_semvalue_modified_unmarked_T=0.66,
+        # noncomp_semvalue_modified_unmarked_F=0.66,
         nominal_semvalue=0.99,
     ):
 
