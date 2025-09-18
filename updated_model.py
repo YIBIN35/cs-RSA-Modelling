@@ -38,6 +38,7 @@ class cs_rsa:
             size_semvalue = 0.8,
             state_semvalue_marked = 0.95,
             state_semvalue_unmarked = 0.9,
+            noncomp_semvalue_bare_unmarked = 0.66,
             nominal_semvalue = 0.99
             ):
 
@@ -52,6 +53,7 @@ class cs_rsa:
         self.state_semvalue_marked = state_semvalue_marked
         self.state_semvalue_unmarked = state_semvalue_unmarked
         self.nominal_semvalue = nominal_semvalue
+        self.noncomp_semvalue_bare_unmarked=noncomp_semvalue_bare_unmarked
 
         # vocab
         self.sizes = ["big", "small"]
@@ -123,7 +125,7 @@ class cs_rsa:
                     if obj['state'] == 'closed':
                         empirical_sem_value = 0.98 # door -> closed door
                     else:
-                        empirical_sem_value = 0.66 # door -> open door
+                        empirical_sem_value = self.noncomp_semvalue_bare_unmarked # door -> open door 0.66
 
                 elif state_words[0] == 'closed':
                     if obj["state"] == 'closed':
@@ -193,7 +195,8 @@ def singleton_overspecification_rate(
         beta_fixed=0.69, 
         state_semvalue_marked=0.95, 
         state_semvalue_unmarked=0.9, 
-        costWeight=0
+        costWeight=0,
+        noncomp_semvalue_bare_unmarked=0.66,
         ):
 
     utterances = [
@@ -218,6 +221,7 @@ def singleton_overspecification_rate(
                 beta_fixed=beta_fixed, 
                 state_semvalue_marked=state_semvalue_marked, 
                 state_semvalue_unmarked=state_semvalue_unmarked, 
+                noncomp_semvalue_bare_unmarked=noncomp_semvalue_bare_unmarked,
                 costWeight=costWeight
                 )
         results = model.pragmatic_speaker(this_world[0], utterances)
