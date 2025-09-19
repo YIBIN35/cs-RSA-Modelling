@@ -114,6 +114,7 @@ class cs_rsa:
 
         # SIZE
         if size_word is not None:
+            # this condition may not matter as it won't appear.
             if obj["size"] is None:
                 size_val = self.size_semvalue  # "big" -> None | "small" -> None
             else:
@@ -132,7 +133,7 @@ class cs_rsa:
                 )  # door -> None | other -> None
             else:
                 if nominal_word == obj["nominal"]:
-                    nominal_val = self.nominal_semvalue  # "door" -> other
+                    nominal_val = self.nominal_semvalue  # "door" -> door
                 else:
                     nominal_val = (
                         1.0 - self.nominal_semvalue
@@ -240,7 +241,7 @@ class cs_rsa:
         total = 0
         for obj in self.world:
             sem_val = self.meaning(utterance, obj)
-            item = tuple(obj.items())
+            item = tuple(sorted(obj.items()))
             # probabilities[item] = math.exp(sem_val)
             probabilities[item] = math.exp(self.typicalityWeight * sem_val)
             total += math.exp(self.typicalityWeight * sem_val)
@@ -254,16 +255,14 @@ class cs_rsa:
         return len(utt.split("_"))
 
     def pragmatic_speaker(self, obj, utterances):
-        obj_key = tuple(obj.items())
+        obj_key = tuple(sorted(obj.items()))
         utterance_probs = {}
         total = 0.0
         for utt in utterances:
             literal_listener_prob = self.literal_listener(utt)
             utterance_prob = literal_listener_prob.get(obj_key)
             # Apply the pragmatic speaker function
-            utility = self.alpha * math.log(
-                utterance_prob
-            ) - self.costWeight * self.cost(utt)
+            utility = self.alpha * math.log(utterance_prob) - self.costWeight * self.cost(utt)
             utterance_probs[utt] = math.exp(utility)
             total += math.exp(utility)
 
