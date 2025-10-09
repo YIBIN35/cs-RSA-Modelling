@@ -1,0 +1,149 @@
+Item ,Marked,Unmarked
+belt ,open ,closed 
+watch ,open ,closed 
+seatbelt ,open ,closed 
+book ,open ,closed 
+milk carton ,Open ,closed 
+accordion ,open ,closed 
+toothpaste ,open ,closed 
+can opener ,open ,closed 
+can ,open ,closed 
+backpack ,open ,closed 
+water bottle ,open ,closed 
+cabinet ,open ,closed 
+dryer ,open ,closed 
+dishwasher ,open ,closed 
+binder ,open ,closed 
+stapler ,open ,closed 
+door ,open ,closed 
+chest of drawers ,open ,closed 
+file folder ,open ,closed 
+fridge ,open ,closed 
+cellphone ,open ,closed 
+juice bottle ,open ,closed 
+gate ,open ,closed 
+lock ,open ,closed 
+mailbox ,open ,closed 
+teapot ,open ,closed 
+microwave ,open ,closed 
+cd player ,open ,closed 
+pizzabox ,open ,closed 
+wallet ,open ,closed 
+suitcase ,open ,closed 
+washing machine ,open ,closed 
+tent ,open ,closed 
+scanner ,open ,closed 
+chap stick ,open ,closed 
+fan ,open ,closed 
+laptop ,open ,closed 
+marker ,open ,closed 
+piano ,open ,closed 
+scissors ,open ,closed 
+umbrella ,open ,closed 
+box ,open ,closed 
+curtains ,open ,closed 
+eye ,open ,closed 
+bag ,open ,closed 
+cooler ,open ,closed 
+take out container ,open ,closed 
+treasure chest ,open ,closed 
+shampoo ,open ,closed 
+pot ,open ,closed 
+pizza ,sliced ,unsliced 
+kiwi ,sliced ,unsliced 
+lime ,sliced ,unsliced 
+pickle ,sliced ,unsliced 
+watermelon ,sliced ,unsliced 
+salami ,sliced ,unsliced 
+pineapple ,sliced ,unsliced 
+bread ,sliced ,unsliced 
+apple ,sliced ,unsliced 
+corn ,peeled ,unpeeled 
+garlic ,peeled ,unpeeled 
+banana ,peeled ,unpeeled 
+carrot ,peeled ,unpeeled 
+orange ,peeled ,unpeeled 
+onion ,peeled ,unpeeled 
+blanket ,folded ,unfolded 
+theater seats ,folded ,unfolded 
+paper ,folded ,unfolded 
+sweater ,folded ,unfolded 
+napkin ,folded ,unfolded 
+towel ,folded ,unfolded 
+ladder ,folded ,unfolded 
+lawn chair ,folded ,unfolded 
+tie ,tied ,untied 
+shoelaces ,tied ,untied 
+rug ,rolled ,unrolled 
+bill ,rolled ,unrolled 
+sleeping bag  ,rolled ,unrolled 
+yoga mat ,rolled ,unrolled 
+straw ,bent ,straight 
+lamp ,bent ,straight 
+water pipe  ,bent ,straight 
+pipe cleaner ,bent ,straight 
+safety pin ,bent ,straight 
+nail ,bent ,straight 
+tree ,bent ,straight 
+paperclip ,bent ,straight 
+tweezers ,bent ,straight 
+licorice ,bent ,straight 
+magnet ,bent ,straight 
+dumbbell ,curved ,straight 
+train track ,curved ,straight 
+smoking pipe ,curved ,straight 
+road ,curved ,straight 
+slide ,curved ,straight 
+high heel ,curved ,straight 
+staircase ,curved ,straight 
+boot ,dirty ,clean 
+dish ,dirty ,clean 
+car ,dirty ,clean 
+sock ,dirty ,clean 
+broom ,dirty ,clean 
+duster ,dirty ,clean 
+gloves ,dirty ,clean 
+chalkboard ,dirty ,clean 
+spoon ,dirty ,clean 
+coffeepot ,dirty ,clean 
+stovetop ,dirty ,clean 
+bucket ,dirty ,clean 
+shoe ,dirty ,clean 
+cup ,dirty ,clean 
+hands ,dirty ,clean 
+soccer ball ,dirty ,clean 
+potato ,dirty ,clean 
+couch ,dirty ,clean 
+pig ,dirty ,clean 
+sponge ,wet ,dry 
+shower ,wet ,dry 
+tomato ,wet ,dry 
+window ,wet ,dry 
+cookie ,broken ,whole 
+cracker ,broken ,whole 
+chocolate bar ,broken ,whole 
+vase ,broken ,whole 
+glasses ,broken ,whole 
+egg ,broken ,whole 
+fence ,broken ,whole 
+mirror ,broken ,whole 
+tire ,broken ,whole 
+cigarette ,broken ,whole 
+pencil ,broken ,whole 
+piggy bank ,broken ,whole 
+dog bone ,broken ,whole 
+plate ,broken ,whole 
+table ,broken ,whole 
+chain ,broken ,whole 
+mustard packet ,ripped ,whole 
+envelope ,ripped ,whole 
+naan ,ripped ,whole 
+sugar packet ,ripped ,whole 
+notepad ,ripped ,whole 
+chip bag ,ripped ,whole 
+jar ,empty ,full 
+garbage can ,empty ,full 
+hamper ,empty ,full 
+egg carton ,empty ,full 
+wineglass ,empty ,full 
+shopping cart ,empty ,full 
