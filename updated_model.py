@@ -124,7 +124,6 @@ class cs_rsa:
                     size_val = (
                         1.0 - self.size_semvalue
                     )  # "small" -> big | "big" -> small
-
         # NOMINAL
         if nominal_word is not None:
             if obj["nominal"] is None:
@@ -138,7 +137,6 @@ class cs_rsa:
                     nominal_val = (
                         1.0 - self.nominal_semvalue
                     )  # "door" -> None | "other" -> None
-
         # STATE
         if state_word is not None:
             if state_word == "open":
@@ -183,10 +181,10 @@ class cs_rsa:
             noncomp_semval = 1.0 - self.nominal_semvalue
 
         elif nominal == obj["nominal"]:
-            if nominal in ['other1','other2', 'other3']:
+            if nominal in ["other1", "other2", "other3"]:
                 noncomp_semval = self.nominal_semvalue
 
-            elif state is None: # "door"
+            elif state is None:  # "door"
                 if obj["state"] == "closed":
                     noncomp_semval = 0.98  # "door" -> closed door
                 elif obj["state"] == "open":
@@ -194,25 +192,23 @@ class cs_rsa:
                         self.noncomp_semvalue_bare_unmarked
                     )  # "door" -> open door 0.66
                 else:
-                    raise Exception('something is wrong')
+                    raise Exception("something is wrong")
 
-            elif state == "closed": # 'closed_door'
+            elif state == "closed":  # 'closed_door'
                 if obj["state"] == "closed":
                     noncomp_semval = 0.97  # "closed_door" -> closed door
                 else:
                     noncomp_semval = 0.30  # "closed_door" -> open door
 
-            elif state == "open": # 'open_door'
+            elif state == "open":  # 'open_door'
                 if obj["state"] == "open":
                     noncomp_semval = 0.91  # "open_door" -> open door
                 else:
                     noncomp_semval = 0.22  # "open_door" -> closed door
         else:
-            raise Exception('something is wrong')
-
+            raise Exception("something is wrong")
         if print_value == True:
             print(f"1-beta_fixed:{1-self.beta_fixed:.2f}, emp:{noncomp_semval:.2f}")
-
         return noncomp_semval
 
     def meaning(self, utt, obj, print_value=False):
@@ -223,7 +219,9 @@ class cs_rsa:
             print("object:", obj)
 
         fixed_sem_value = self._comp_semvalue(parsed, obj, print_value=print_value)
-        empirical_sem_value = self._noncomp_semvalue(parsed, obj, print_value=print_value)
+        empirical_sem_value = self._noncomp_semvalue(
+            parsed, obj, print_value=print_value
+        )
 
         sem_value = (
             self.beta_fixed * fixed_sem_value
@@ -262,7 +260,9 @@ class cs_rsa:
             literal_listener_prob = self.literal_listener(utt)
             utterance_prob = literal_listener_prob.get(obj_key)
             # Apply the pragmatic speaker function
-            utility = self.alpha * math.log(utterance_prob) - self.costWeight * self.cost(utt)
+            utility = self.alpha * math.log(
+                utterance_prob
+            ) - self.costWeight * self.cost(utt)
             utterance_probs[utt] = math.exp(utility)
             total += math.exp(utility)
 
@@ -277,11 +277,13 @@ class cs_rsa:
 
 
 def singleton_overspecification_rate(
+    alpha=13.7,
     beta_fixed=0.69,
     state_semvalue_marked=0.95,
     state_semvalue_unmarked=0.9,
     costWeight=0,
     noncomp_semvalue_bare_unmarked=0.66,
+    typicalityWeight=1.34,
 ):
 
     utterances = ["door", "open_door", "closed_door", "other1", "other2", "other3"]
@@ -296,11 +298,13 @@ def singleton_overspecification_rate(
 
         model = cs_rsa(
             this_world,
+            alpha=alpha,
             beta_fixed=beta_fixed,
             state_semvalue_marked=state_semvalue_marked,
             state_semvalue_unmarked=state_semvalue_unmarked,
             noncomp_semvalue_bare_unmarked=noncomp_semvalue_bare_unmarked,
             costWeight=costWeight,
+            typicalityWeight=typicalityWeight,
         )
         results = model.pragmatic_speaker(this_world[0], utterances)
 
@@ -312,10 +316,13 @@ def singleton_overspecification_rate(
 
 
 def pair_overspecification_rate(
+    alpha=13.7,
     beta_fixed=0.69,
     state_semvalue_marked=0.95,
     state_semvalue_unmarked=0.9,
     costWeight=0,
+    noncomp_semvalue_bare_unmarked=0.66,
+    typicalityWeight=1.34,
 ):
 
     utterances = [
@@ -341,10 +348,13 @@ def pair_overspecification_rate(
 
         model = cs_rsa(
             this_world,
+            alpha=alpha,
             beta_fixed=beta_fixed,
             state_semvalue_marked=state_semvalue_marked,
             state_semvalue_unmarked=state_semvalue_unmarked,
+            noncomp_semvalue_bare_unmarked=noncomp_semvalue_bare_unmarked,
             costWeight=costWeight,
+            typicalityWeight=typicalityWeight,
         )
         results = model.pragmatic_speaker(this_world[0], utterances)
 
@@ -355,37 +365,42 @@ def pair_overspecification_rate(
     return overspecification_rates
 
 
-def optimization(costWeight=0):
+def optimization(noncomp_semvalue_bare_unmarked=0.9):
     target = np.array([0.24, 0.01])
 
     def objective(params):
-        b, sm, su = params
+        a, b, sm, costWeight = params
         r_marked, r_unmarked = singleton_overspecification_rate(
+            alpha = float(a),
             beta_fixed=float(b),
             state_semvalue_marked=float(sm),
-            state_semvalue_unmarked=float(su),
-            costWeight=costWeight,
+            state_semvalue_unmarked=float(sm),
+            costWeight=float(costWeight),
+            noncomp_semvalue_bare_unmarked=noncomp_semvalue_bare_unmarked,
         )
         r = np.array([r_marked, r_unmarked], float)
         L = float(np.sum((r - target) ** 2))
         return L if np.isfinite(L) else 1e9
 
-    bounds = [(0, 1), (0, 1), (0, 1)]
+    bounds = [(0, 50), (0, 1), (0, 1), (0, 10)]
 
-    res_g = dual_annealing(objective, bounds=bounds, maxiter=1000)
-    b, sm, su = res_g.x
+    res_g = dual_annealing(objective, bounds=bounds, maxiter=2000)
+    a, b, sm, costWeight = res_g.x
 
     rates = singleton_overspecification_rate(
+        alpha = a,
         beta_fixed=b,
         state_semvalue_marked=sm,
-        state_semvalue_unmarked=su,
+        state_semvalue_unmarked=sm,
         costWeight=costWeight,
+        noncomp_semvalue_bare_unmarked=noncomp_semvalue_bare_unmarked,
     )
 
     print("=== Result ===")
+    print(f"  alpha                : {a:.4f}")
     print(f"  beta_fixed           : {b:.4f}")
     print(f"  state_semvalue_marked: {sm:.4f}")
-    print(f"  state_semvalue_unmarked: {su:.4f}")
+    print(f"  cost: {costWeight:.4f}")
     print(f"  resulting rates      : [{rates[0]:.4f}, {rates[1]:.4f}]")
     print(f"  target rates         : {target.tolist()}")
     print(f"  final loss           : {res_g.fun:.6e}")
@@ -415,21 +430,88 @@ if __name__ == "__main__":
 
     print("singleton")
     print(
-        "pure compositional no cost", singleton_overspecification_rate(1, 0.9, 0.9, 0)
+        "pure compositional no cost",
+        singleton_overspecification_rate(
+            beta_fixed=1,
+            state_semvalue_marked=0.9,
+            state_semvalue_unmarked=0.9,
+            costWeight=0,
+        ),
     )
     print(
         "pure non-compositional no cost",
-        singleton_overspecification_rate(0, 0.9, 0.9, 0),
+        singleton_overspecification_rate(
+            beta_fixed=0,
+            state_semvalue_marked=0.9,
+            state_semvalue_unmarked=0.9,
+            costWeight=0,
+        ),
     )
-    print("0.69 mixed no cost", singleton_overspecification_rate(0.69, 0.9, 0.9, 0))
-    print("0.69 mixed 1.5 cost", singleton_overspecification_rate(0.69, 0.9, 0.9, 1.5))
-    print("0.69 mixed 3 cost", singleton_overspecification_rate(0.69, 0.9, 0.9, 3))
+    print(
+        "0.69 mixed no cost",
+        singleton_overspecification_rate(
+            beta_fixed=0.69,
+            state_semvalue_marked=0.9,
+            state_semvalue_unmarked=0.9,
+            costWeight=0,
+        ),
+    )
+    print(
+        "0.69 mixed 1.5 cost",
+        singleton_overspecification_rate(
+            beta_fixed=0.69,
+            state_semvalue_marked=0.9,
+            state_semvalue_unmarked=0.9,
+            costWeight=1.5,
+        ),
+    )
+    print(
+        "0.69 mixed 3 cost",
+        singleton_overspecification_rate(
+            beta_fixed=0.69,
+            state_semvalue_marked=0.9,
+            state_semvalue_unmarked=0.9,
+            costWeight=3,
+        ),
+    )
 
     print("\npair")
-    print("pure compositional no cost", pair_overspecification_rate(1, 0.9, 0.9, 0))
-    print("pure non-compositional no cost", pair_overspecification_rate(0, 0.9, 0.9, 0))
-    print("0.69 mixed no cost", pair_overspecification_rate(0.69, 0.9, 0.9, 0))
-    print("0.69 mixed 1.5 cost", pair_overspecification_rate(0.69, 0.9, 0.9, 1.5))
+    print(
+        "pure compositional no cost",
+        pair_overspecification_rate(
+            beta_fixed=1,
+            state_semvalue_marked=0.9,
+            state_semvalue_unmarked=0.9,
+            costWeight=0,
+        ),
+    )
+    print(
+        "pure non-compositional no cost",
+        pair_overspecification_rate(
+            beta_fixed=0,
+            state_semvalue_marked=0.9,
+            state_semvalue_unmarked=0.9,
+            costWeight=0,
+        ),
+    )
+    print(
+        "0.69 mixed no cost",
+        pair_overspecification_rate(
+            beta_fixed=0.69,
+            state_semvalue_marked=0.9,
+            state_semvalue_unmarked=0.9,
+            costWeight=0,
+        ),
+    )
+    print(
+        "0.69 mixed 1.5 cost",
+        pair_overspecification_rate(
+            beta_fixed=0.69,
+            state_semvalue_marked=0.9,
+            state_semvalue_unmarked=0.9,
+            costWeight=1.5,
+        ),
+    )
 
     # cs_rsa().meaning('open_door', {"size": "None", "state": "None", "nominal": "other1"}, print_value=True)
 
