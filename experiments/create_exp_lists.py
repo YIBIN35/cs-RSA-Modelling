@@ -139,6 +139,7 @@ df_naming['object'] = np.where(
     df_naming['image'].str.replace(r'\.jpe?g$', '', regex=True),
     df_naming['noun']
 )
+df_naming = df_naming[['object', 'image', 'state', 'adj']]
 df_naming_shuffled = shuffle_no_adjacent(df_naming, key='object', random_state=1)
 
 df_naming_shuffled.to_csv("state_overspec_stimuli_naming.csv", index=False)
