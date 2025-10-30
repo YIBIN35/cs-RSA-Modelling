@@ -1,8 +1,40 @@
 import pandas as pd
 import json
 import os
+import re
 import numpy as np
+import random
+import itertools
 
+def copy_target_images():
+    src_dir = "images"
+    dest_dir = "openAI_images"
+    os.makedirs(dest_dir, exist_ok=True)
+
+    for prefix in results['$images_1'].str.split('_').str[0].unique():
+        for file in glob.glob(os.path.join(src_dir, f"{prefix}_*")):
+            shutil.copy(file, dest_dir)
+
+def nouns_without_overspec():
+    df = pd.read_csv("./Modifiers_Data_v3.csv")
+
+    df.columns = ['Row Labels', 'A_singleton', 'A_pair', 'A_total', 'B_singleton', 'B_pair', 'B_total', 'grand_total', 'check']
+    df = df.drop(index=range(448,452)) # drop the grand total and so on at the end.
+    df = df.drop(index=range(0,4)) # drop the first couple of rows
+    df = df.reset_index(drop=True)
+
+    for i in range(len(df) - 1):  # avoid last row overflow
+        val = str(df.loc[i, "Row Labels"]).strip()
+        if re.fullmatch(r"\d+", val):
+            next_label = str(df.loc[i + 1, "Row Labels"])
+            noun = next_label.split("_")[0]
+            df.loc[i, "Row Labels"] = 'summary ' + noun
+
+    summary_df = df[df['Row Labels'].str.startswith('summary')].copy()
+    summary_df['noun'] = summary_df['Row Labels'].str.split(' ').str[1]
+
+    result_nouns = summary_df[summary_df['grand_total'].isna()]['noun'].tolist()
+    return summary_df
 
 def shuffle_no_adjacent(df, key="noun", random_state=33):
     remaining = df.copy()
@@ -18,6 +50,43 @@ def shuffle_no_adjacent(df, key="noun", random_state=33):
         remaining = remaining.drop(row.index)
     return pd.concat(result, ignore_index=True)
 
+def _pick_two_distractor_rows(group):
+    d = group[group['state'].isna()]
+    uvals = d['utterance'].unique()
+    ivals = d['image'].unique()
+
+    u_pairs = list(itertools.combinations(uvals, 2))
+    i_pairs = list(itertools.combinations(ivals, 2))
+
+    # 3C2 × 3C2 = 9 combos
+    combos = [((u1, i1), (u2, i2))
+              for (u1, u2) in u_pairs
+              for (i1, i2) in i_pairs]
+
+    # (u1, i1), (u2, i2) = rng.choice(combos)
+
+    # r1 = d[(d['utterance'] == u1) & (d['image'] == i1)]
+    # r2 = d[(d['utterance'] == u2) & (d['image'] == i2)]
+
+    # return pd.concat([r1, r2], ignore_index=False)
+
+    # return all row-pair DataFrames
+    result = []
+    for (u1, i1), (u2, i2) in combos:
+        r1 = d[(d['utterance'] == u1) & (d['image'] == i1)]
+        r2 = d[(d['utterance'] == u2) & (d['image'] == i2)]
+        result.append(pd.concat([r1, r2], ignore_index=False))
+    return result
+
+def pick_normed_per_noun(df, seed=None):
+    # rng = random.Random(seed)
+    out = []
+    for noun, grp in df.groupby('noun', sort=False):
+        non_distractor = grp[grp['state'].notna()]
+        distractors = _pick_two_distractor_rows(grp)
+        distractor = random.choice(distractors)
+        out.append(pd.concat([non_distractor, distractor], ignore_index=False))
+    return pd.concat(out, ignore_index=True)
 
 df1 = pd.read_csv("./parker_stimuli.csv")
 df2 = pd.read_excel("./Parker_Modifiers_Trials_May16.xlsx")
@@ -31,6 +100,8 @@ df_singleton_marked = df_exptrial[
 df_singleton_unmarked = df_exptrial[
     (df_exptrial["group"] == "single") & (df_exptrial["state"] == "b")
 ]
+
+removed_nouns = nouns_without_overspec()
 
 ######################################################################
 # create bare noun list
@@ -94,10 +165,13 @@ df_combined = df_combined[
 ].reset_index(drop=True)
 
 
+######################################################################
+# test
+
 # test shuffling correctness
-xxx = shuffle_no_adjacent(df_combined)
-for i in range(len(xxx) - 1):
-    assert xxx.iloc[i]["noun"] != xxx.iloc[i + 1]["noun"]
+test_df = shuffle_no_adjacent(df_combined)
+for i in range(len(test_df) - 1):
+    assert test_df.iloc[i]["noun"] != test_df.iloc[i + 1]["noun"]
 
 # test whether all images exist
 img_dir = "images"
@@ -106,15 +180,20 @@ missing = [f for f in df_combined["image"].unique() if f not in files]
 print(f"{len(missing)} missing files")
 assert len(missing) == 0
 
+######################################################################
+# remove nouns without overspecification and pick two distractors per noun 
+
+filtered_df = df_combined[~df_combined['noun'].isin(removed_nouns)]
+df_typicality = pick_normed_per_noun(filtered_df).sort_values('noun')
 
 ######################################################################
-# shuffling and reversing lists
+# shuffling and reversing typicality norming list
 
 for random_number in [1]:
-    df_shuffled = shuffle_no_adjacent(df_combined, random_state=random_number)
+    df_shuffled = shuffle_no_adjacent(df_typicality, random_state=random_number)
     # check whether it is a correct shuffle
     assert set(map(tuple, df_shuffled.to_numpy())) == set(
-        map(tuple, df_combined.to_numpy())
+        map(tuple, df_typicality.to_numpy())
     )
     df_shuffled_reversed = df_shuffled.iloc[::-1].reset_index(drop=True)
 
@@ -126,6 +205,26 @@ json_data = [
 
 with open("item_target.json", "w") as f:
     json.dump(json_data, f, indent=4)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ######################################################################
@@ -143,5 +242,9 @@ df_naming = df_naming[['object', 'image', 'state', 'adj']]
 df_naming_shuffled = shuffle_no_adjacent(df_naming, key='object', random_state=1)
 
 df_naming_shuffled.to_csv("state_overspec_stimuli_naming.csv", index=False)
-
 df_naming_shuffled.head(5).to_csv("test_state_overspec_stimuli_naming.csv", index=False)
+
+
+
+
+
