@@ -1,0 +1,902 @@
+noun,files,prompt,answer,adjectives,state_A_adj,state_B_adj
+apple,"['apple_sliced.jpg', 'apple_unsliced.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE apple'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a sliced apple
+2. a partially sliced apple
+3. a cut apple
+
+Image 2:
+1. a red apple
+2. a whole apple
+3. a fresh apple","['sliced', 'partially sliced', 'cut', 'red', 'whole', 'fresh']","['sliced', 'partially sliced', 'cut']","['red', 'whole', 'fresh']"
+backpack,"['backpack_open.jpg', 'backpack_closed.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE backpack'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1 (closed):
+1. a closed backpack
+2. a hard-shell backpack
+3. a sleek backpack
+
+Image 2 (open):
+1. an open backpack
+2. an unzipped backpack
+3. a compartmentalized backpack","['closed', 'hard-shell', 'sleek', 'open', 'unzipped', 'compartmentalized']","['closed', 'hard-shell', 'sleek']","['open', 'unzipped', 'compartmentalized']"
+banana,"['banana_unpeeled.jpg', 'banana_peeled.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE banana'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a peeled banana
+2. a naked banana
+3. a skinned banana
+
+Image 2:
+1. a ripe banana
+2. an unpeeled banana
+3. a yellow banana","['peeled', 'naked', 'skinned', 'ripe', 'unpeeled', 'yellow']","['peeled', 'naked', 'skinned']","['ripe', 'unpeeled', 'yellow']"
+bill,"['bill_unrolled.jpg', 'bill_rolled.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE bill'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a rolled-up bill
+2. a rolled bill
+3. a tightly rolled bill
+
+Image 2:
+1. a flat bill
+2. an unfolded bill
+3. a face-up bill","['rolled-up', 'rolled', 'tightly rolled', 'flat', 'unfolded', 'face-up']","['rolled-up', 'rolled', 'tightly rolled']","['flat', 'unfolded', 'face-up']"
+blanket,"['blanket_folded.jpg', 'blanket_unfolded.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE blanket'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a folded blanket
+2. a compact blanket
+3. a small blanket
+
+Image 2:
+1. a spread-out blanket
+2. a flat blanket
+3. an unfolded blanket","['folded', 'compact', 'small', 'spread-out', 'flat', 'unfolded']","['folded', 'compact', 'small']","['spread-out', 'flat', 'unfolded']"
+book,"['book_open.jpg', 'book_closed.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE book'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1 (closed, angled)
+1. a closed composition book
+2. a blue composition book
+3. a new composition book
+
+Image 2 (open, flat)
+1. an open composition book
+2. an open blue composition book
+3. an unused composition book","['closed composition', 'blue composition', 'new composition', 'open composition', 'open blue composition', 'unused composition']","['closed composition', 'blue composition', 'new composition']","['open composition', 'open blue composition', 'unused composition']"
+boot,"['boot_dirty.jpg', 'boot_clean.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE boot'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","1. a clean boot
+2. a yellow boot
+3. a shiny boot
+
+4. a dirty boot
+5. a muddy boot
+6. a moldy boot","['clean', 'yellow', 'shiny', 'dirty', 'muddy', 'moldy']","['clean', 'yellow', 'shiny']","['dirty', 'muddy', 'moldy']"
+bread,"['bread_unsliced.jpg', 'bread_sliced.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE bread'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a pre-sliced bread
+2. a sliced bread
+3. a partially sliced bread
+
+Image 2:
+1. an unsliced bread
+2. an uncut bread
+3. a whole bread","['pre-sliced', 'sliced', 'partially sliced', 'unsliced', 'uncut', 'whole']","['pre-sliced', 'sliced', 'partially sliced']","['unsliced', 'uncut', 'whole']"
+bucket,"['bucket_dirty.jpg', 'bucket_clean.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE bucket'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1 (left):
+1. a clean bucket
+2. an empty bucket
+3. a white bucket
+
+Image 2 (right):
+1. a dirty bucket
+2. a stained bucket
+3. a moldy bucket","['clean', 'empty', 'white', 'dirty', 'stained', 'moldy']","['clean', 'empty', 'white']","['dirty', 'stained', 'moldy']"
+cabinet,"['cabinet_closed.jpg', 'cabinet_open.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE cabinet'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a wooden cabinet
+2. a small wooden cabinet
+3. a closed wooden cabinet
+
+Image 2:
+1. an open wooden cabinet
+2. an open small cabinet
+3. an open two-door cabinet","['wooden', 'small wooden', 'closed wooden', 'open wooden', 'open small', 'open two-door']","['wooden', 'small wooden', 'closed wooden']","['open wooden', 'open small', 'open two-door']"
+can,"['can_closed.jpg', 'can_open.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE can'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a sealed can
+2. an unopened can
+3. a closed can
+
+Image 2:
+4. an open can
+5. an opened can
+6. a partially opened can","['sealed', 'unopened', 'closed', 'open', 'opened', 'partially opened']","['sealed', 'unopened', 'closed']","['open', 'opened', 'partially opened']"
+car,"['car_clean.jpg', 'car_dirty.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE car'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a blue car
+2. a clean car
+3. a sporty car
+
+Image 2:
+1. a dirty car
+2. a grimy car
+3. a salt-streaked car","['blue', 'clean', 'sporty', 'dirty', 'grimy', 'salt-streaked']","['blue', 'clean', 'sporty']","['dirty', 'grimy', 'salt-streaked']"
+carrot,"['carrot_unpeeled.jpg', 'carrot_peeled.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE carrot'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a baby carrot
+2. a peeled carrot
+3. a slender carrot
+
+Image 2:
+1. a whole carrot
+2. an unpeeled carrot
+3. a large carrot","['baby', 'peeled', 'slender', 'whole', 'unpeeled', 'large']","['baby', 'peeled', 'slender']","['whole', 'unpeeled', 'large']"
+cdplayer,"['cdplayer_closed.jpg', 'cdplayer_open.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE cdplayer'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a closed cdplayer
+2. a silver cdplayer
+3. a portable cdplayer
+
+Image 2:
+1. an open cdplayer
+2. a silver cdplayer
+3. a disc-loaded cdplayer","['closed', 'silver', 'portable', 'open', 'silver', 'disc-loaded']","['closed', 'silver', 'portable']","['open', 'silver', 'disc-loaded']"
+chain,"['chain_whole.jpg', 'chain_broken.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE chain'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1 (broken link)
+1. a broken chain
+2. a snapped chain
+3. a damaged chain
+
+Image 2 (undamaged)
+1. an intact chain
+2. a complete chain
+3. a sturdy chain","['broken', 'snapped', 'damaged', 'intact', 'complete', 'sturdy']","['broken', 'snapped', 'damaged']","['intact', 'complete', 'sturdy']"
+chapstick,"['chapstick_open.jpg', 'chapstick_closed.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE chapstick'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a capped chapstick
+2. a closed chapstick
+3. an unopened chapstick
+
+Image 2:
+1. an uncapped chapstick
+2. an open chapstick
+3. a capless chapstick","['capped', 'closed', 'unopened', 'uncapped', 'open', 'capless']","['capped', 'closed', 'unopened']","['uncapped', 'open', 'capless']"
+chestofdrawers,"['chestofdrawers_open.jpg', 'chestofdrawers_closed.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE chestofdrawers'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","1) a closed chestofdrawers
+2) a closed white chestofdrawers
+3) a closed three-drawer chestofdrawers
+
+4) an open chestofdrawers
+5) an open white chestofdrawers
+6) an open three-drawer chestofdrawers","['closed', 'closed white', 'closed three-drawer', 'open', 'open white', 'open three-drawer']","['closed', 'closed white', 'closed three-drawer']","['open', 'open white', 'open three-drawer']"
+chipbag,"['chipbag_ripped.jpg', 'chipbag_whole.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE chipbag'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1 (left)
+1. a crumpled chipbag
+2. an opened chipbag
+3. a half-empty chipbag
+
+Image 2 (right)
+1. an unopened chipbag
+2. a sealed chipbag
+3. a full chipbag","['crumpled', 'opened', 'half-empty', 'unopened', 'sealed', 'full']","['crumpled', 'opened', 'half-empty']","['unopened', 'sealed', 'full']"
+chocolatebar,"['chocolatebar_broken.jpg', 'chocolatebar_whole.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE chocolatebar'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","a broken chocolate bar
+a cracked chocolate bar
+a damaged chocolate bar
+
+a whole chocolate bar
+an intact chocolate bar
+an unbroken chocolate bar",[],[],[]
+cigarette,"['cigarette_broken.jpg', 'cigarette_whole.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE cigarette'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a broken cigarette
+2. a snapped cigarette
+3. a bent cigarette
+
+Image 2:
+1. an unlit cigarette
+2. an unused cigarette
+3. an intact cigarette","['broken', 'snapped', 'bent', 'unlit', 'unused', 'intact']","['broken', 'snapped', 'bent']","['unlit', 'unused', 'intact']"
+cookie,"['cookie_whole.jpg', 'cookie_broken.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE cookie'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1 (broken): 
+1. a broken cookie
+2. a crumbled cookie
+3. a smashed cookie
+
+Image 2 (whole): 
+1. a chocolate chip cookie
+2. a whole cookie
+3. an intact cookie","['broken', 'crumbled', 'smashed', 'chocolate chip', 'whole', 'intact']","['broken', 'crumbled', 'smashed']","['chocolate chip', 'whole', 'intact']"
+couch,"['couch_clean.jpg', 'couch_dirty.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE couch'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a beige couch
+2. a clean couch
+3. a pristine couch
+
+Image 2:
+1. a stained couch
+2. a soiled couch
+3. a dirty couch","['beige', 'clean', 'pristine', 'stained', 'soiled', 'dirty']","['beige', 'clean', 'pristine']","['stained', 'soiled', 'dirty']"
+cracker,"['cracker_broken.jpg', 'cracker_whole.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE cracker'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1 (broken):
+1. a broken cracker
+2. a cracked cracker
+3. a crumbled cracker
+
+Image 2 (whole):
+1. a whole cracker
+2. an intact cracker
+3. an unbroken cracker","['broken', 'cracked', 'crumbled', 'whole', 'intact', 'unbroken']","['broken', 'cracked', 'crumbled']","['whole', 'intact', 'unbroken']"
+cup,"['cup_dirty.jpg', 'cup_clean.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE cup'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a clean cup
+2. an unused cup
+3. a new cup
+
+Image 2:
+1. a used cup
+2. a dirty cup
+3. a stained cup","['clean', 'unused', 'new', 'used', 'dirty', 'stained']","['clean', 'unused', 'new']","['used', 'dirty', 'stained']"
+dish,"['dish_clean.jpg', 'dish_dirty.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE dish'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","First image:
+1. a clean dish
+2. an empty dish
+3. a pristine dish
+
+Second image:
+1. a dirty dish
+2. a stained dish
+3. a soiled dish","['clean', 'empty', 'pristine', 'dirty', 'stained', 'soiled']","['clean', 'empty', 'pristine']","['dirty', 'stained', 'soiled']"
+dishwasher,"['dishwasher_open.jpg', 'dishwasher_closed.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE dishwasher'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1 (closed):
+1. an old dishwasher
+2. a closed dishwasher
+3. a vintage dishwasher
+
+Image 2 (open, with dishes):
+1. an open dishwasher
+2. a loaded dishwasher
+3. a vintage dishwasher","['old', 'closed', 'vintage', 'open', 'loaded', 'vintage']","['old', 'closed', 'vintage']","['open', 'loaded', 'vintage']"
+door,"['door_closed.jpg', 'door_open.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE door'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a closed door
+2. a wooden door
+3. a paneled door
+
+Image 2:
+1. an open door
+2. a partially open door
+3. a wooden door","['closed', 'wooden', 'paneled', 'open', 'partially open', 'wooden']","['closed', 'wooden', 'paneled']","['open', 'partially open', 'wooden']"
+egg,"['egg_broken.jpg', 'egg_whole.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE egg'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a broken egg
+2. a cracked egg
+3. a spilled egg
+
+Image 2:
+1. a whole egg
+2. an unbroken egg
+3. an intact egg","['broken', 'cracked', 'spilled', 'whole', 'unbroken', 'intact']","['broken', 'cracked', 'spilled']","['whole', 'unbroken', 'intact']"
+eggcarton,"['eggcarton_empty.jpg', 'eggcarton_full.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE eggcarton'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. an empty eggcarton
+2. an open eggcarton
+3. a clean eggcarton
+
+Image 2:
+1. a full eggcarton
+2. an egg-filled eggcarton
+3. a twelve-egg eggcarton","['empty', 'open', 'clean', 'full', 'egg-filled', 'twelve-egg']","['empty', 'open', 'clean']","['full', 'egg-filled', 'twelve-egg']"
+envelope,"['envelope_ripped.jpg', 'envelope_whole.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE envelope'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. an open envelope
+2. an unsealed envelope
+3. a torn envelope
+
+Image 2:
+1. a sealed envelope
+2. a closed envelope
+3. a windowed envelope","['open', 'unsealed', 'torn', 'sealed', 'closed', 'windowed']","['open', 'unsealed', 'torn']","['sealed', 'closed', 'windowed']"
+eye,"['eye_closed.jpg', 'eye_open.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE eye'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+- a closed eye
+- a shut eye
+- a sleeping eye
+
+Image 2:
+- an open eye
+- a blue eye
+- an alert eye","['closed', 'shut', 'sleeping', 'open', 'blue', 'alert']","['closed', 'shut', 'sleeping']","['open', 'blue', 'alert']"
+fence,"['fence_whole.jpg', 'fence_broken.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE fence'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a broken fence
+2. a damaged fence
+3. a dilapidated fence
+
+Image 2:
+1. a sturdy fence
+2. an intact fence
+3. a well-maintained fence","['broken', 'damaged', 'dilapidated', 'sturdy', 'intact', 'well-maintained']","['broken', 'damaged', 'dilapidated']","['sturdy', 'intact', 'well-maintained']"
+filefolder,"['filefolder_open.jpg', 'filefolder_closed.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE filefolder'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a closed filefolder
+2. a manila filefolder
+3. a tabbed filefolder
+
+Image 2:
+1. an open filefolder
+2. a manila filefolder
+3. an unfolded filefolder","['closed', 'manila', 'tabbed', 'open', 'manila', 'unfolded']","['closed', 'manila', 'tabbed']","['open', 'manila', 'unfolded']"
+fridge,"['fridge_open.jpg', 'fridge_closed.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE fridge'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1 (closed):
+1. a closed fridge
+2. a white fridge
+3. a top-freezer fridge
+
+Image 2 (open):
+1. an open fridge
+2. an open, partially stocked fridge
+3. an open, mostly empty fridge","['closed', 'white', 'top-freezer', 'open']","['closed', 'white', 'top-freezer']",['open']
+garbagecan,"['garbagecan_full.jpg', 'garbagecan_empty.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE garbagecan'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","For the first (empty) image:
+1. an empty garbagecan
+2. a clean garbagecan
+3. an unused garbagecan
+
+For the second (full) image:
+1. an overflowing garbagecan
+2. a full garbagecan
+3. a crumpled-paper-filled garbagecan","['empty', 'clean', 'unused', 'overflowing', 'full', 'crumpled-paper-filled']","['empty', 'clean', 'unused']","['overflowing', 'full', 'crumpled-paper-filled']"
+garlic,"['garlic_peeled.jpg', 'garlic_unpeeled.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE garlic'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1 (peeled cloves)
+1. a peeled garlic clove
+2. a fresh garlic clove
+3. an individual garlic clove
+
+Image 2 (cloves with papery skin)
+1. an unpeeled garlic clove
+2. a papery garlic clove
+3. an intact garlic clove","['peeled', 'fresh', 'individual', 'unpeeled', 'papery', 'intact']","['peeled', 'fresh', 'individual']","['unpeeled', 'papery', 'intact']"
+gate,"['gate_open.jpg', 'gate_closed.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE gate'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1 (closed):
+1. a closed gate
+2. a closed wrought-iron gate
+3. an arched gate
+
+Image 2 (open):
+1. an open gate
+2. an open wrought-iron gate
+3. an open double gate","['closed', 'closed wrought-iron', 'arched', 'open', 'open wrought-iron', 'open double']","['closed', 'closed wrought-iron', 'arched']","['open', 'open wrought-iron', 'open double']"
+glasses,"['glasses_whole.jpg', 'glasses_broken.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE glasses'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a broken glasses
+2. a damaged glasses
+3. a bent glasses
+
+Image 2:
+1. a prescription glasses
+2. a new glasses
+3. an intact glasses","['broken', 'damaged', 'bent', 'prescription', 'new', 'intact']","['broken', 'damaged', 'bent']","['prescription', 'new', 'intact']"
+gloves,"['gloves_dirty.jpg', 'gloves_clean.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE gloves'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a clean gloves
+2. a new gloves
+3. a pristine gloves
+
+Image 2:
+1. a dirty gloves
+2. a stained gloves
+3. a soiled gloves","['clean', 'new', 'pristine', 'dirty', 'stained', 'soiled']","['clean', 'new', 'pristine']","['dirty', 'stained', 'soiled']"
+hamper,"['hamper_full.jpg', 'hamper_empty.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE hamper'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. an empty hamper
+2. a clean hamper
+3. a wicker hamper
+
+Image 2:
+1. a full hamper
+2. a laundry-filled hamper
+3. a clothes-filled hamper","['empty', 'clean', 'wicker', 'full', 'laundry-filled', 'clothes-filled']","['empty', 'clean', 'wicker']","['full', 'laundry-filled', 'clothes-filled']"
+hands,"['hands_clean.jpg', 'hands_dirty.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE hands'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a pair of clean hands
+2. a pair of open hands
+3. a pair of empty hands
+
+Image 2:
+1. a pair of dirty hands
+2. a pair of muddy hands
+3. a pair of stained hands","['pair of clean', 'pair of open', 'pair of empty', 'pair of dirty', 'pair of muddy', 'pair of stained']","['pair of clean', 'pair of open', 'pair of empty']","['pair of dirty', 'pair of muddy', 'pair of stained']"
+jar,"['jar_full.jpg', 'jar_empty.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE jar'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. an empty jar
+2. a glass jar
+3. a lidded jar
+
+Image 2:
+1. a full jar
+2. a granola-filled jar
+3. a lidded jar","['empty', 'glass', 'lidded', 'full', 'granola-filled', 'lidded']","['empty', 'glass', 'lidded']","['full', 'granola-filled', 'lidded']"
+juicebottle,"['juicebottle_open.jpg', 'juicebottle_closed.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE juicebottle'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. an unopened juicebottle
+2. a closed juicebottle
+3. a capped juicebottle
+
+Image 2:
+1. an open juicebottle
+2. an uncapped juicebottle
+3. a flip-top juicebottle","['unopened', 'closed', 'capped', 'open', 'uncapped', 'flip-top']","['unopened', 'closed', 'capped']","['open', 'uncapped', 'flip-top']"
+kiwi,"['kiwi_sliced.jpg', 'kiwi_unsliced.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE kiwi'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1 (sliced):
+1. a sliced kiwi
+2. a cut kiwi
+3. a partially sliced kiwi
+
+Image 2 (whole):
+1. a whole kiwi
+2. an uncut kiwi
+3. an unpeeled kiwi","['sliced', 'cut', 'partially sliced', 'whole', 'uncut', 'unpeeled']","['sliced', 'cut', 'partially sliced']","['whole', 'uncut', 'unpeeled']"
+ladder,"['ladder_folded.jpg', 'ladder_unfolded.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE ladder'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1 (folded/collapsed):
+1. a folded ladder
+2. a collapsed ladder
+3. a compact ladder
+
+Image 2 (open/A‑frame):
+1. an A-frame ladder
+2. an open ladder
+3. an unfolded ladder","['folded', 'collapsed', 'compact', 'A-frame', 'open', 'unfolded']","['folded', 'collapsed', 'compact']","['A-frame', 'open', 'unfolded']"
+laptop,"['laptop_open.jpg', 'laptop_closed.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE laptop'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a closed laptop
+2. a slim laptop
+3. a silver laptop
+
+Image 2:
+1. a partially open laptop
+2. an open laptop
+3. a tilted laptop","['closed', 'slim', 'silver', 'partially open', 'open', 'tilted']","['closed', 'slim', 'silver']","['partially open', 'open', 'tilted']"
+lawnchair,"['lawnchair_unfolded.jpg', 'lawnchair_folded.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE lawnchair'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1 (folded):
+1. a folded lawnchair
+2. a collapsed lawnchair
+3. a closed lawnchair
+
+Image 2 (open):
+1. an unfolded lawnchair
+2. an open lawnchair
+3. an upright lawnchair","['folded', 'collapsed', 'closed', 'unfolded', 'open', 'upright']","['folded', 'collapsed', 'closed']","['unfolded', 'open', 'upright']"
+lime,"['lime_unsliced.jpg', 'lime_sliced.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE lime'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a sliced lime
+2. a halved lime
+3. a cut lime
+
+Image 2:
+1. a whole lime
+2. a fresh lime
+3. an uncut lime","['sliced', 'halved', 'cut', 'whole', 'fresh', 'uncut']","['sliced', 'halved', 'cut']","['whole', 'fresh', 'uncut']"
+lock,"['lock_open.jpg', 'lock_closed.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE lock'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1 (closed):
+1. a locked lock
+2. a closed lock
+3. a latched lock
+
+Image 2 (open):
+1. an open lock
+2. an unlocked lock
+3. an unlatched lock","['locked', 'closed', 'latched', 'open', 'unlocked', 'unlatched']","['locked', 'closed', 'latched']","['open', 'unlocked', 'unlatched']"
+magnet,"['magnet_straight.jpg', 'magnet_bent.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE magnet'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1) an L-shaped magnet
+2) a bent magnet
+3) an elbow magnet
+
+Image 2:
+1) a horseshoe magnet
+2) a U-shaped magnet
+3) a curved magnet","['L-shaped', 'bent', 'elbow', 'horseshoe', 'U-shaped', 'curved']","['L-shaped', 'bent', 'elbow']","['horseshoe', 'U-shaped', 'curved']"
+marker,"['marker_closed.jpg', 'marker_open.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE marker'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1 (cap on):
+1. a capped marker
+2. a closed marker
+3. a sealed marker
+
+Image 2 (cap off):
+1. an uncapped marker
+2. an open marker
+3. an exposed marker","['capped', 'closed', 'sealed', 'uncapped', 'open', 'exposed']","['capped', 'closed', 'sealed']","['uncapped', 'open', 'exposed']"
+microwave,"['microwave_open.jpg', 'microwave_closed.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE microwave'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a closed microwave
+2. a shut microwave
+3. a stainless-steel microwave
+
+Image 2:
+1. an open microwave
+2. an ajar microwave
+3. an open stainless-steel microwave","['closed', 'shut', 'stainless-steel', 'open', 'ajar', 'open stainless-steel']","['closed', 'shut', 'stainless-steel']","['open', 'ajar', 'open stainless-steel']"
+milkcarton,"['milkcarton_closed.jpg', 'milkcarton_open.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE milkcarton'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. an unopened milkcarton
+2. a full milkcarton
+3. a sealed milkcarton
+
+Image 2:
+1. a crushed milkcarton
+2. a crumpled milkcarton
+3. an opened milkcarton","['unopened', 'full', 'sealed', 'crushed', 'crumpled', 'opened']","['unopened', 'full', 'sealed']","['crushed', 'crumpled', 'opened']"
+mirror,"['mirror_whole.jpg', 'mirror_broken.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE mirror'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+a cracked mirror
+a broken mirror
+a shattered mirror
+
+Image 2:
+a clean mirror
+a polished mirror
+an intact mirror","['cracked', 'broken', 'shattered', 'clean', 'polished', 'intact']","['cracked', 'broken', 'shattered']","['clean', 'polished', 'intact']"
+naan,"['naan_whole.jpg', 'naan_ripped.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE naan'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a half-eaten naan
+2. a bitten naan
+3. a torn naan
+
+Image 2:
+1. a whole naan
+2. a round naan
+3. a plain naan","['half-eaten', 'bitten', 'torn', 'whole', 'round', 'plain']","['half-eaten', 'bitten', 'torn']","['whole', 'round', 'plain']"
+nail,"['nail_straight.jpg', 'nail_bent.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE nail'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a bent nail
+2. a crooked nail
+3. a hooked nail
+
+Image 2:
+1. a straight nail
+2. an unbent nail
+3. an intact nail","['bent', 'crooked', 'hooked', 'straight', 'unbent', 'intact']","['bent', 'crooked', 'hooked']","['straight', 'unbent', 'intact']"
+napkin,"['napkin_unfolded.jpg', 'napkin_folded.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE napkin'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a folded napkin
+2. a triangular napkin
+3. a cloth napkin
+
+Image 2:
+1. a paper napkin
+2. an unfolded napkin
+3. a square napkin","['folded', 'triangular', 'cloth', 'paper', 'unfolded', 'square']","['folded', 'triangular', 'cloth']","['paper', 'unfolded', 'square']"
+notepad,"['notepad_ripped.jpg', 'notepad_whole.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE notepad'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a torn notepad
+2. a ripped notepad
+3. a partially torn notepad
+
+Image 2:
+1. an unused notepad
+2. a new notepad
+3. a pristine notepad","['torn', 'ripped', 'partially torn', 'unused', 'new', 'pristine']","['torn', 'ripped', 'partially torn']","['unused', 'new', 'pristine']"
+onion,"['onion_peeled.jpg', 'onion_unpeeled.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE onion'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1 (peeled/partially peeled):
+1. a partially peeled onion
+2. a half-peeled onion
+3. a peeled onion
+
+Image 2 (intact/unpeeled):
+1. an unpeeled onion
+2. a whole onion
+3. a brown onion","['partially peeled', 'half-peeled', 'peeled', 'unpeeled', 'whole', 'brown']","['partially peeled', 'half-peeled', 'peeled']","['unpeeled', 'whole', 'brown']"
+orange,"['orange_peeled.jpg', 'orange_unpeeled.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE orange'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a peeled orange
+2. a partially peeled orange
+3. a half-peeled orange
+
+Image 2:
+1. a whole orange
+2. an unpeeled orange
+3. an intact orange","['peeled', 'partially peeled', 'half-peeled', 'whole', 'unpeeled', 'intact']","['peeled', 'partially peeled', 'half-peeled']","['whole', 'unpeeled', 'intact']"
+paper,"['paper_unfolded.jpg', 'paper_folded.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE paper'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a torn paper
+2. a hole-punched paper
+3. a folded paper
+
+Image 2:
+1. a ruled paper
+2. a hole-punched paper
+3. a blank paper","['torn', 'hole-punched', 'folded', 'ruled', 'hole-punched', 'blank']","['torn', 'hole-punched', 'folded']","['ruled', 'hole-punched', 'blank']"
+paperclip,"['paperclip_bent.jpg', 'paperclip_straight.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE paperclip'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a bent paperclip
+2. a twisted paperclip
+3. a deformed paperclip
+
+Image 2:
+1. a regular paperclip
+2. a standard paperclip
+3. an intact paperclip","['bent', 'twisted', 'deformed', 'regular', 'standard', 'intact']","['bent', 'twisted', 'deformed']","['regular', 'standard', 'intact']"
+pencil,"['pencil_broken.jpg', 'pencil_whole.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE pencil'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a broken pencil
+2. a snapped pencil
+3. a split pencil
+
+Image 2:
+1. a sharpened pencil
+2. an intact pencil
+3. a whole pencil","['broken', 'snapped', 'split', 'sharpened', 'intact', 'whole']","['broken', 'snapped', 'split']","['sharpened', 'intact', 'whole']"
+pickle,"['pickle_sliced.jpg', 'pickle_unsliced.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE pickle'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1 (sliced):
+1. a sliced pickle
+2. a partially sliced pickle
+3. a cut pickle
+
+Image 2 (whole):
+1. a whole pickle
+2. a whole dill pickle
+3. an intact pickle","['sliced', 'partially sliced', 'cut', 'whole', 'whole dill', 'intact']","['sliced', 'partially sliced', 'cut']","['whole', 'whole dill', 'intact']"
+pig,"['pig_clean.jpg', 'pig_dirty.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE pig'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a young pig
+2. a pink pig
+3. a clean pig
+
+Image 2:
+1. a muddy pig
+2. a dirty pig
+3. a mud-stained pig","['young', 'pink', 'clean', 'muddy', 'dirty', 'mud-stained']","['young', 'pink', 'clean']","['muddy', 'dirty', 'mud-stained']"
+piggybank,"['piggybank_broken.jpg', 'piggybank_whole.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE piggybank'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a broken piggybank
+2. a cracked piggybank
+3. a smashed piggybank
+
+Image 2:
+1. an intact piggybank
+2. a pristine piggybank
+3. an undamaged piggybank","['broken', 'cracked', 'smashed', 'intact', 'pristine', 'undamaged']","['broken', 'cracked', 'smashed']","['intact', 'pristine', 'undamaged']"
+pineapple,"['pineapple_sliced.jpg', 'pineapple_unsliced.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE pineapple'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a sliced pineapple
+2. a halved pineapple
+3. a cut pineapple
+
+Image 2:
+1. a whole pineapple
+2. an uncut pineapple
+3. an intact pineapple","['sliced', 'halved', 'cut', 'whole', 'uncut', 'intact']","['sliced', 'halved', 'cut']","['whole', 'uncut', 'intact']"
+pizza,"['pizza_unsliced.jpg', 'pizza_sliced.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE pizza'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1 (sliced):
+1. a sliced Hawaiian pizza
+2. an eight-slice pizza
+3. a cut pizza
+
+Image 2 (whole):
+1. a whole Hawaiian pizza
+2. an unsliced Hawaiian pizza
+3. an uncut pizza","['sliced Hawaiian', 'eight-slice', 'cut', 'whole Hawaiian', 'unsliced Hawaiian', 'uncut']","['sliced Hawaiian', 'eight-slice', 'cut']","['whole Hawaiian', 'unsliced Hawaiian', 'uncut']"
+plate,"['plate_whole.jpg', 'plate_broken.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE plate'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a broken plate
+2. a shattered plate
+3. a smashed plate
+
+Image 2:
+1. a clean plate
+2. an intact plate
+3. a pristine plate","['broken', 'shattered', 'smashed', 'clean', 'intact', 'pristine']","['broken', 'shattered', 'smashed']","['clean', 'intact', 'pristine']"
+pot,"['pot_closed.jpg', 'pot_open.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE pot'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a lidded pot
+2. a covered pot
+3. a closed pot
+
+Image 2:
+1. an open pot
+2. an uncovered pot
+3. an unlidded pot","['lidded', 'covered', 'closed', 'open', 'uncovered', 'unlidded']","['lidded', 'covered', 'closed']","['open', 'uncovered', 'unlidded']"
+potato,"['potato_dirty.jpg', 'potato_clean.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE potato'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a clean potato
+2. a washed potato
+3. a smooth potato
+
+Image 2:
+1. a dirty potato
+2. an unwashed potato
+3. a muddy potato","['clean', 'washed', 'smooth', 'dirty', 'unwashed', 'muddy']","['clean', 'washed', 'smooth']","['dirty', 'unwashed', 'muddy']"
+road,"['road_straight.jpg', 'road_curved.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE road'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a winding road
+2. a wavy road
+3. an undulating road
+
+Image 2:
+1. a straight road
+2. a long road
+3. an endless road","['winding', 'wavy', 'undulating', 'straight', 'long', 'endless']","['winding', 'wavy', 'undulating']","['straight', 'long', 'endless']"
+rug,"['rug_unrolled.jpg', 'rug_rolled.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE rug'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a rolled-up rug
+2. a rolled rug
+3. a partially unrolled rug
+
+Image 2:
+1. an orange rug
+2. a flat rug
+3. an unrolled rug","['rolled-up', 'rolled', 'partially unrolled', 'orange', 'flat', 'unrolled']","['rolled-up', 'rolled', 'partially unrolled']","['orange', 'flat', 'unrolled']"
+safetypin,"['safetypin_bent.jpg', 'safetypin_straight.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE safetypin'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. an open safetypin
+2. an unfastened safetypin
+3. an unlatched safetypin
+
+Image 2:
+1. a closed safetypin
+2. a fastened safetypin
+3. a secured safetypin","['open', 'unfastened', 'unlatched', 'closed', 'fastened', 'secured']","['open', 'unfastened', 'unlatched']","['closed', 'fastened', 'secured']"
+salami,"['salami_sliced.jpg', 'salami_unsliced.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE salami'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a sliced salami
+2. a partially sliced salami
+3. a fanned salami
+
+Image 2:
+1. a whole salami
+2. an unsliced salami
+3. an intact salami","['sliced', 'partially sliced', 'fanned', 'whole', 'unsliced', 'intact']","['sliced', 'partially sliced', 'fanned']","['whole', 'unsliced', 'intact']"
+scissors,"['scissors_closed.jpg', 'scissors_open.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE scissors'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1 (closed):
+1. a closed scissors
+2. a shut scissors
+3. a folded scissors
+
+Image 2 (open):
+1. an open scissors
+2. an open-bladed scissors
+3. an opened scissors","['closed', 'shut', 'folded', 'open', 'open-bladed', 'opened']","['closed', 'shut', 'folded']","['open', 'open-bladed', 'opened']"
+seatbelt,"['seatbelt_closed.jpg', 'seatbelt_open.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE seatbelt'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1 (connected): 
+- a buckled seatbelt
+- a fastened seatbelt
+- a latched seatbelt
+
+Image 2 (disconnected): 
+- an unbuckled seatbelt
+- an unfastened seatbelt
+- an unlatched seatbelt","['buckled', 'fastened', 'latched', 'unbuckled', 'unfastened', 'unlatched']","['buckled', 'fastened', 'latched']","['unbuckled', 'unfastened', 'unlatched']"
+shoe,"['shoe_clean.jpg', 'shoe_dirty.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE shoe'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a new shoe
+2. a clean shoe
+3. an unworn shoe
+
+Image 2:
+4. a dirty shoe
+5. a worn shoe
+6. a scuffed shoe","['new', 'clean', 'unworn', 'dirty', 'worn', 'scuffed']","['new', 'clean', 'unworn']","['dirty', 'worn', 'scuffed']"
+shoelace,"['shoelace_tied.jpg', 'shoelace_untied.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE shoelace'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a coiled shoelace
+2. a bundled shoelace
+3. a tied shoelace
+
+Image 2:
+1. an untied shoelace
+2. a loose shoelace
+3. an uncoiled shoelace","['coiled', 'bundled', 'tied', 'untied', 'loose', 'uncoiled']","['coiled', 'bundled', 'tied']","['untied', 'loose', 'uncoiled']"
+shoppingcart,"['shoppingcart_empty.jpg', 'shoppingcart_full.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE shoppingcart'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. an empty shoppingcart
+2. a bare shoppingcart
+3. a clean shoppingcart
+
+Image 2:
+1. a full shoppingcart
+2. a loaded shoppingcart
+3. a packed shoppingcart","['empty', 'bare', 'clean', 'full', 'loaded', 'packed']","['empty', 'bare', 'clean']","['full', 'loaded', 'packed']"
+sleepingbag,"['sleepingbag_unrolled.jpg', 'sleepingbag_rolled.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE sleepingbag'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a rolled-up sleeping bag
+2. a compact sleeping bag
+3. a packed sleeping bag
+
+Image 2:
+1. an unzipped sleeping bag
+2. an unrolled sleeping bag
+3. an open sleeping bag",[],[],[]
+soccerball,"['soccerball_dirty.jpg', 'soccerball_clean.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE soccerball'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a new soccerball
+2. a clean soccerball
+3. a white soccerball
+
+Image 2:
+1. a dirty soccerball
+2. a worn soccerball
+3. a scuffed soccerball","['new', 'clean', 'white', 'dirty', 'worn', 'scuffed']","['new', 'clean', 'white']","['dirty', 'worn', 'scuffed']"
+spoon,"['spoon_clean.jpg', 'spoon_dirty.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE spoon'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a clean spoon
+2. a shiny spoon
+3. an unused spoon
+
+Image 2:
+1. a dirty spoon
+2. a used spoon
+3. a sauce-stained spoon","['clean', 'shiny', 'unused', 'dirty', 'used', 'sauce-stained']","['clean', 'shiny', 'unused']","['dirty', 'used', 'sauce-stained']"
+staircase,"['staircase_straight.jpg', 'staircase_curved.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE staircase'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a curved staircase
+2. a winding staircase
+3. a wooden staircase
+
+Image 2:
+1. a straight staircase
+2. a steep staircase
+3. a long staircase","['curved', 'winding', 'wooden', 'straight', 'steep', 'long']","['curved', 'winding', 'wooden']","['straight', 'steep', 'long']"
+stapler,"['stapler_closed.jpg', 'stapler_open.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE stapler'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1 (closed):
+1. a closed stapler
+2. a shut stapler
+3. a folded stapler
+
+Image 2 (open):
+1. an open stapler
+2. an opened stapler
+3. an exposed stapler","['closed', 'shut', 'folded', 'open', 'opened', 'exposed']","['closed', 'shut', 'folded']","['open', 'opened', 'exposed']"
+stovetop,"['stovetop_clean.jpg', 'stovetop_dirty.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE stovetop'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a clean stovetop
+2. a spotless stovetop
+3. a pristine stovetop
+
+Image 2:
+1. a dirty stovetop
+2. a stained stovetop
+3. a scorched stovetop","['clean', 'spotless', 'pristine', 'dirty', 'stained', 'scorched']","['clean', 'spotless', 'pristine']","['dirty', 'stained', 'scorched']"
+straw,"['straw_straight.jpg', 'straw_bent.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE straw'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a bent straw
+2. a folded straw
+3. an angled straw
+
+Image 2:
+1. a straight straw
+2. an unbent straw
+3. a straightened straw","['bent', 'folded', 'angled', 'straight', 'unbent', 'straightened']","['bent', 'folded', 'angled']","['straight', 'unbent', 'straightened']"
+sugarpacket,"['sugarpacket_whole.jpg', 'sugarpacket_ripped.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE sugarpacket'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","1) a torn sugarpacket
+2) an opened sugarpacket
+3) a ripped sugarpacket
+
+4) an unopened sugarpacket
+5) a sealed sugarpacket
+6) an intact sugarpacket","['torn', 'opened', 'ripped', 'unopened', 'sealed', 'intact']","['torn', 'opened', 'ripped']","['unopened', 'sealed', 'intact']"
+suitcase,"['suitcase_closed.jpg', 'suitcase_open.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE suitcase'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1 (closed):
+1. a closed suitcase
+2. a blue suitcase
+3. a vintage suitcase
+
+Image 2 (open):
+1. an open suitcase
+2. an empty suitcase
+3. a purple suitcase","['closed', 'blue', 'vintage', 'open', 'empty', 'purple']","['closed', 'blue', 'vintage']","['open', 'empty', 'purple']"
+sweater,"['sweater_folded.jpg', 'sweater_unfolded.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE sweater'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1 (folded):
+1. a folded sweater
+2. a folded red sweater
+3. a folded cable-knit sweater
+
+Image 2 (laid out):
+1. an unfolded sweater
+2. a laid-out sweater
+3. an unfolded cable-knit sweater","['folded', 'folded red', 'folded cable-knit', 'unfolded', 'laid-out', 'unfolded cable-knit']","['folded', 'folded red', 'folded cable-knit']","['unfolded', 'laid-out', 'unfolded cable-knit']"
+table,"['table_broken.jpg', 'table_whole.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE table'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a broken table
+2. a damaged table
+3. a split table
+
+Image 2:
+1. a wooden table
+2. a dining table
+3. an intact table","['broken', 'damaged', 'split', 'wooden', 'dining', 'intact']","['broken', 'damaged', 'split']","['wooden', 'dining', 'intact']"
+tire,"['tire_broken.jpg', 'tire_whole.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE tire'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a flat tire
+2. a deflated tire
+3. a punctured tire
+
+Image 2:
+1. an inflated tire
+2. an intact tire
+3. a functional tire","['flat', 'deflated', 'punctured', 'inflated', 'intact', 'functional']","['flat', 'deflated', 'punctured']","['inflated', 'intact', 'functional']"
+towel,"['towel_unfolded.jpg', 'towel_folded.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE towel'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a folded towel
+2. a white towel
+3. a clean towel
+
+Image 2:
+1. an unfolded towel
+2. a flat towel
+3. a spread-out towel","['folded', 'white', 'clean', 'unfolded', 'flat', 'spread-out']","['folded', 'white', 'clean']","['unfolded', 'flat', 'spread-out']"
+treasurechest,"['treasurechest_open.jpg', 'treasurechest_closed.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE treasurechest'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1 (closed):
+1. a closed treasurechest
+2. a wooden treasurechest
+3. a locked treasurechest
+
+Image 2 (open):
+1. an open treasurechest
+2. an empty treasurechest
+3. a wooden treasurechest","['closed', 'wooden', 'locked', 'open', 'empty', 'wooden']","['closed', 'wooden', 'locked']","['open', 'empty', 'wooden']"
+vase,"['vase_whole.jpg', 'vase_broken.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE vase'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a broken vase
+2. a chipped vase
+3. a cracked vase
+
+Image 2:
+1. an intact vase
+2. an undamaged vase
+3. a whole vase","['broken', 'chipped', 'cracked', 'intact', 'undamaged', 'whole']","['broken', 'chipped', 'cracked']","['intact', 'undamaged', 'whole']"
+wallet,"['wallet_closed.jpg', 'wallet_open.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE wallet'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1 (closed):
+1. a closed wallet
+2. a folded wallet
+3. a flat wallet
+
+Image 2 (open):
+1. an open wallet
+2. an unfolded wallet
+3. an open bi-fold wallet","['closed', 'folded', 'flat', 'open', 'unfolded', 'open bi-fold']","['closed', 'folded', 'flat']","['open', 'unfolded', 'open bi-fold']"
+waterbottle,"['waterbottle_closed.jpg', 'waterbottle_open.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE waterbottle'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. a capped waterbottle
+2. a closed waterbottle
+3. a lidded waterbottle
+
+Image 2:
+1. an open waterbottle
+2. an uncapped waterbottle
+3. an open-topped waterbottle","['capped', 'closed', 'lidded', 'open', 'uncapped', 'open-topped']","['capped', 'closed', 'lidded']","['open', 'uncapped', 'open-topped']"
+watermelon,"['watermelon_sliced.jpg', 'watermelon_unsliced.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE watermelon'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1 (sliced):
+1. a sliced watermelon
+2. a cut watermelon
+3. a partially sliced watermelon
+
+Image 2 (whole):
+1. a whole watermelon
+2. an uncut watermelon
+3. an intact watermelon","['sliced', 'cut', 'partially sliced', 'whole', 'uncut', 'intact']","['sliced', 'cut', 'partially sliced']","['whole', 'uncut', 'intact']"
+waterpipe,"['waterpipe_straight.jpg', 'waterpipe_bent.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE waterpipe'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1:
+1. an angled waterpipe
+2. a bent waterpipe
+3. a curved waterpipe
+
+Image 2:
+1. a straight waterpipe
+2. a horizontal waterpipe
+3. a cylindrical waterpipe","['angled', 'bent', 'curved', 'straight', 'horizontal', 'cylindrical']","['angled', 'bent', 'curved']","['straight', 'horizontal', 'cylindrical']"
+wineglass,"['wineglass_full.jpg', 'wineglass_empty.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE wineglass'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Left image (empty):
+1. an empty wineglass
+2. a clear wineglass
+3. a clean wineglass
+
+Right image (contains white wine):
+1. a full wineglass
+2. a filled wineglass
+3. a white wineglass","['empty', 'clear', 'clean', 'full', 'filled', 'white']","['empty', 'clear', 'clean']","['full', 'filled', 'white']"
+yogamat,"['yogamat_rolled.jpg', 'yogamat_unrolled.jpg']","What is the most natural way to describe the two images and their states using the format 'a/an ADJECTIVE yogamat'? Please list three full phrases (in order of naturalness) for each image, for a total of six phrases (three per image)","Image 1 (rolled):
+1. a rolled-up yogamat
+2. a rolled yogamat
+3. a blue yogamat
+
+Image 2 (flat/unrolled):
+1. an unrolled yogamat
+2. a flat yogamat
+3. a laid-out yogamat","['rolled-up', 'rolled', 'blue', 'unrolled', 'flat', 'laid-out']","['rolled-up', 'rolled', 'blue']","['unrolled', 'flat', 'laid-out']"
