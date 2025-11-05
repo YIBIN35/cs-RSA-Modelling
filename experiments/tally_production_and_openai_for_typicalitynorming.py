@@ -43,7 +43,7 @@ def copy_target_images():
             print(filename)
 
 
-def nouns_without_overspec():
+def middle_sheet_result():
     df = pd.read_csv("./Modifiers_Data_v3.csv")
 
     df.columns = [
@@ -126,7 +126,8 @@ results = results.merge(
     how="left",
 )
 
-df2 = nouns_without_overspec()
+df2 = middle_sheet_result()
+import ipdb; ipdb.set_trace()
 results = results.merge(df2[["noun", "grand_total"]], how="left", on="noun")
 results["grand_total"] = pd.to_numeric(results["grand_total"], errors="coerce").astype(
     "Int64"
