@@ -202,9 +202,3 @@ df_manual = df_manual[[
 
 df_manual.to_csv('openai_production_adj_selection.csv')
 
-
-# df2['grand_total'] = pd.to_numeric(df2['grand_total'], errors='coerce')
-
-# res_sum = results.groupby('noun')['n'].sum().reset_index()
-# merged = df2[['noun','grand_total']].merge(res_sum, on='noun', how='inner')
-# diffs = merged[merged['grand_total'] != merged['n']]

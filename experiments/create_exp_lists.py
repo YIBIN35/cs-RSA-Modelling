@@ -5,6 +5,7 @@ import re
 import numpy as np
 import random
 import itertools
+import dtale
 
 def copy_target_images():
     src_dir = "images"
@@ -74,9 +75,49 @@ def pick_normed_per_noun(df, seed=None):
         out.append(pd.concat([non_distractor, distractor], ignore_index=False))
     return pd.concat(out, ignore_index=True)
 
+def add_natural_adj_utterance(filtered_df, openai_df):
+    """
+    For each noun, map Marked→state_a and Unmarked→state_b from openai_df,
+    and use this mapping to replace adjectives in filtered_df.
+
+    Returns a copy of filtered_df with a new column 'natural_adj_utterance'.
+    """
+    # Build mapping table
+    m = openai_df[['item','noun_wt_space', 'Marked', 'Unmarked', 'state_a', 'state_b']].copy()
+    for c in ['item','noun_wt_space', 'Marked', 'Unmarked', 'state_a', 'state_b']:
+        m[c] = m[c].astype(str).str.strip().str.lower()
+    mapping = pd.concat([
+        m.set_index(['noun_wt_space', 'Marked'])['state_a'],
+        m.set_index(['noun_wt_space', 'Unmarked'])['state_b']
+    ])
+
+
+    # Map adjective using both noun and adj as keys
+    df = filtered_df.copy()
+    keys = list(zip(df['noun'], df['adj_utterance']))
+    mapped = pd.Series(keys).map(mapping)
+
+    df['natural_adj_utterance'] = np.where(mapped.notna(), mapped, df['adj_utterance'])
+
+    df = (
+        df.merge(
+            m[['item', 'noun_wt_space']],
+            left_on='noun',
+            right_on='noun_wt_space',
+            how='left'
+        )
+        .drop(columns=['noun_wt_space'])
+    )
+
+    df['natural_utterance'] = np.where(
+        df['natural_adj_utterance'].isna(),
+        df['item'],
+        df['natural_adj_utterance'].str.strip() + ' ' + df['item']
+    )
+
+    return df
 
 if __name__ == '__main__':
-
 
     df2 = pd.read_excel("./Parker_Modifiers_Trials_May16.xlsx")
 
@@ -170,11 +211,15 @@ if __name__ == '__main__':
     assert len(missing) == 0
 
     ######################################################################
-    # remove nouns without overspecification and pick two distractors per noun 
+    # remove nouns without overspecification 
+    # add openai enhanced natural modifiers
+    # pick two distractors per noun 
 
     filtered_df = df_combined[df_combined['noun'].isin(overspec_nouns)]
+    openai_df = pd.read_excel('openai_production_adj_selection_manualdone.xlsx')
+    filtered_df = add_natural_adj_utterance(filtered_df, openai_df)
+
     df_typicality = pick_normed_per_noun(filtered_df).sort_values('noun')
-    import ipdb; ipdb.set_trace()
 
     ######################################################################
     # shuffling and reversing typicality norming list
@@ -189,7 +234,7 @@ if __name__ == '__main__':
 
     # label is the name of image, item is the word.
     json_data = [
-        {"label": row["image"], "item": [row["utterance"]]}
+        {"label": row["image"], "item": [row["natural_utterance"]]}
         for _, row in df_shuffled.iterrows()
     ]
 
