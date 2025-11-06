@@ -65,21 +65,30 @@ def _pick_two_distractor_rows(group):
         result.append(pd.concat([r1, r2], ignore_index=False))
     return result
 
-def pick_normed_per_noun(df, seed=None):
-    # rng = random.Random(seed)
-    out = []
+def pick_distractors_per_noun(df):
+    # create N versions of exp list, differ in terms of distractors
+
+    per_noun_data = []
     for noun, grp in df.groupby('noun', sort=False):
         non_distractor = grp[grp['state'].notna()]
         distractors = _pick_two_distractor_rows(grp)
-        distractor = random.choice(distractors)
-        out.append(pd.concat([non_distractor, distractor], ignore_index=False))
-    return pd.concat(out, ignore_index=True)
+        per_noun_data.append((non_distractor, distractors))
+
+    num_version = len(per_noun_data[0][1])
+    all_outputs = []
+
+    for version_id in range(num_version):
+        combined_rows = []
+        for non_distractor, distractors in per_noun_data:
+            distractor = distractors[version_id]
+            combined_rows.append(pd.concat([non_distractor, distractor], ignore_index=True))
+        all_outputs.append(pd.concat(combined_rows, ignore_index=True))
+
+    return all_outputs
 
 def add_natural_adj_utterance(filtered_df, openai_df):
     """
-    For each noun, map Marked→state_a and Unmarked→state_b from openai_df,
-    and use this mapping to replace adjectives in filtered_df.
-
+    For each noun, map Marked→state_a(natural) and Unmarked→state_b(natural) from openai_df,
     Returns a copy of filtered_df with a new column 'natural_adj_utterance'.
     """
     # Build mapping table
@@ -91,14 +100,13 @@ def add_natural_adj_utterance(filtered_df, openai_df):
         m.set_index(['noun_wt_space', 'Unmarked'])['state_b']
     ])
 
-
     # Map adjective using both noun and adj as keys
     df = filtered_df.copy()
     keys = list(zip(df['noun'], df['adj_utterance']))
     mapped = pd.Series(keys).map(mapping)
-
     df['natural_adj_utterance'] = np.where(mapped.notna(), mapped, df['adj_utterance'])
 
+    # add noun WITHOUT whitespace
     df = (
         df.merge(
             m[['item', 'noun_wt_space']],
@@ -109,6 +117,7 @@ def add_natural_adj_utterance(filtered_df, openai_df):
         .drop(columns=['noun_wt_space'])
     )
 
+    # create natural utterance
     df['natural_utterance'] = np.where(
         df['natural_adj_utterance'].isna(),
         df['item'],
@@ -213,34 +222,44 @@ if __name__ == '__main__':
     ######################################################################
     # remove nouns without overspecification 
     # add openai enhanced natural modifiers
-    # pick two distractors per noun 
+    # pick two distractors per noun for each distractor version
 
     filtered_df = df_combined[df_combined['noun'].isin(overspec_nouns)]
     openai_df = pd.read_excel('openai_production_adj_selection_manualdone.xlsx')
     filtered_df = add_natural_adj_utterance(filtered_df, openai_df)
 
-    df_typicality = pick_normed_per_noun(filtered_df).sort_values('noun')
+    # right now just pick the first distractor_version
+    nine_df_typicality = pick_distractors_per_noun(filtered_df)
 
     ######################################################################
-    # shuffling and reversing typicality norming list
+    # shuffling and splitting typicality norming list
 
-    for random_number in [1]:
+    random_numbers = [33,46,7,89,6,17,4489,4,8888]
+    nine_df_typicality_shuffled = []
+
+    for df_typicality, random_number in zip(nine_df_typicality,random_numbers):
         df_shuffled = shuffle_no_adjacent(df_typicality, random_state=random_number)
-        # check whether it is a correct shuffle
-        assert set(map(tuple, df_shuffled.to_numpy())) == set(
-            map(tuple, df_typicality.to_numpy())
-        )
         df_shuffled_reversed = df_shuffled.iloc[::-1].reset_index(drop=True)
+        nine_df_typicality_shuffled.append(df_shuffled)
 
-    # label is the name of image, item is the word.
-    json_data = [
-        {"label": row["image"], "item": [row["natural_utterance"]]}
-        for _, row in df_shuffled.iterrows()
-    ]
 
-    with open("item_target.json", "w") as f:
-        json.dump(json_data, f, indent=4)
+    for version, df_typicality_shuffled in enumerate(nine_df_typicality_shuffled):
 
+        df_len = len(df_typicality_shuffled)
+        session_len = int(df_len/4)
+        assert df_len == 808
+
+        for session, row_index in enumerate([i for i in range(0, df_len, session_len)]):
+            df_session = df_typicality_shuffled.iloc[row_index:row_index+session_len]
+            json_data = [
+                {"label": row["image"], "item": [row["natural_utterance"]]}
+                for _, row in df_session.iterrows()
+            ]
+            with open(f"typicality_list/item_target_version{version}_session{session}.json", "w") as f:
+                json.dump(json_data, f, indent=4)
+
+
+    import ipdb; ipdb.set_trace()
 
 
 
