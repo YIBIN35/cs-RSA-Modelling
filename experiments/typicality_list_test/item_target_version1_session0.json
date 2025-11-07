@@ -1,0 +1,32 @@
+[
+    {
+        "label": "pickle_unsliced.jpg",
+        "item": [
+            "sliced pickle"
+        ]
+    },
+    {
+        "label": "orange_peeled.jpg",
+        "item": [
+            "peeled orange"
+        ]
+    },
+    {
+        "label": "clarinet.jpg",
+        "item": [
+            "rolled sleeping bag"
+        ]
+    },
+    {
+        "label": "cookie_whole.jpg",
+        "item": [
+            "broken cookie"
+        ]
+    },
+    {
+        "label": "couch_clean.jpg",
+        "item": [
+            "clean couch"
+        ]
+    }
+]

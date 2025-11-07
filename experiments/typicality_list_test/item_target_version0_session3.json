@@ -1,0 +1,32 @@
+[
+    {
+        "label": "blanket_folded.jpg",
+        "item": [
+            "spead-out blanket"
+        ]
+    },
+    {
+        "label": "book_open.jpg",
+        "item": [
+            "open book"
+        ]
+    },
+    {
+        "label": "staircase_curved.jpg",
+        "item": [
+            "staircase"
+        ]
+    },
+    {
+        "label": "shoppingcart_empty.jpg",
+        "item": [
+            "filled shopping cart"
+        ]
+    },
+    {
+        "label": "spoon_clean.jpg",
+        "item": [
+            "dirty spoon"
+        ]
+    }
+]

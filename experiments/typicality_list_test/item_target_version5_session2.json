@@ -1,0 +1,32 @@
+[
+    {
+        "label": "chain_broken.jpg",
+        "item": [
+            "chain"
+        ]
+    },
+    {
+        "label": "cdplayer_closed.jpg",
+        "item": [
+            "closed cd player"
+        ]
+    },
+    {
+        "label": "chain_whole.jpg",
+        "item": [
+            "chain"
+        ]
+    },
+    {
+        "label": "cdplayer_open.jpg",
+        "item": [
+            "open cd player"
+        ]
+    },
+    {
+        "label": "chain_broken.jpg",
+        "item": [
+            "intact chain"
+        ]
+    }
+]

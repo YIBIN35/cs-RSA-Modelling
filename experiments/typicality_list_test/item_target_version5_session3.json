@@ -1,0 +1,32 @@
+[
+    {
+        "label": "apple_sliced.jpg",
+        "item": [
+            "apple"
+        ]
+    },
+    {
+        "label": "backpack_open.jpg",
+        "item": [
+            "backpack"
+        ]
+    },
+    {
+        "label": "apple_unsliced.jpg",
+        "item": [
+            "apple"
+        ]
+    },
+    {
+        "label": "backpack_closed.jpg",
+        "item": [
+            "backpack"
+        ]
+    },
+    {
+        "label": "cds.jpg",
+        "item": [
+            "broken fence"
+        ]
+    }
+]

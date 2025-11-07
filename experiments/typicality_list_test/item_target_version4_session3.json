@@ -1,0 +1,32 @@
+[
+    {
+        "label": "boxcutter.jpg",
+        "item": [
+            "clean stovetop"
+        ]
+    },
+    {
+        "label": "stapler_closed.jpg",
+        "item": [
+            "open stapler"
+        ]
+    },
+    {
+        "label": "piggybank_whole.jpg",
+        "item": [
+            "intact piggy bank"
+        ]
+    },
+    {
+        "label": "glasses_whole.jpg",
+        "item": [
+            "glasses"
+        ]
+    },
+    {
+        "label": "gloves_dirty.jpg",
+        "item": [
+            "clean gloves"
+        ]
+    }
+]

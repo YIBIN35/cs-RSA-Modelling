@@ -1,0 +1,32 @@
+[
+    {
+        "label": "gate_closed.jpg",
+        "item": [
+            "gate"
+        ]
+    },
+    {
+        "label": "seatbelt_open.jpg",
+        "item": [
+            "seatbelt"
+        ]
+    },
+    {
+        "label": "banana_peeled.jpg",
+        "item": [
+            "unpeeled banana"
+        ]
+    },
+    {
+        "label": "bill_rolled.jpg",
+        "item": [
+            "flat bill"
+        ]
+    },
+    {
+        "label": "banana_unpeeled.jpg",
+        "item": [
+            "unpeeled banana"
+        ]
+    }
+]

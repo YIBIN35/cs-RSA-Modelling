@@ -1,0 +1,32 @@
+[
+    {
+        "label": "stovetop_clean.jpg",
+        "item": [
+            "dirty stovetop"
+        ]
+    },
+    {
+        "label": "tire_broken.jpg",
+        "item": [
+            "flat tire"
+        ]
+    },
+    {
+        "label": "ladle.jpg",
+        "item": [
+            "closed eye"
+        ]
+    },
+    {
+        "label": "doorhandle.jpg",
+        "item": [
+            "piggy bank"
+        ]
+    },
+    {
+        "label": "seahorse.jpg",
+        "item": [
+            "table"
+        ]
+    }
+]

@@ -258,6 +258,14 @@ if __name__ == '__main__':
             with open(f"typicality_list/item_target_version{version}_session{session}.json", "w") as f:
                 json.dump(json_data, f, indent=4)
 
+            # save a test version
+            df_session_test = df_typicality_shuffled.iloc[row_index:row_index+5]
+            json_data_test = [
+                {"label": row["image"], "item": [row["natural_utterance"]]}
+                for _, row in df_session_test.iterrows()
+            ]
+            with open(f"typicality_list_test/item_target_version{version}_session{session}.json", "w") as f:
+                json.dump(json_data_test, f, indent=4)
 
     import ipdb; ipdb.set_trace()
 

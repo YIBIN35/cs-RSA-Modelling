@@ -1,0 +1,32 @@
+[
+    {
+        "label": "garlic_unpeeled.jpg",
+        "item": [
+            "garlic"
+        ]
+    },
+    {
+        "label": "fridge_closed.jpg",
+        "item": [
+            "open fridge"
+        ]
+    },
+    {
+        "label": "garlic_peeled.jpg",
+        "item": [
+            "peeled garlic"
+        ]
+    },
+    {
+        "label": "mask.jpg",
+        "item": [
+            "closed fridge"
+        ]
+    },
+    {
+        "label": "jar_empty.jpg",
+        "item": [
+            "jar"
+        ]
+    }
+]

@@ -1,0 +1,32 @@
+[
+    {
+        "label": "gloves_clean.jpg",
+        "item": [
+            "dirty gloves"
+        ]
+    },
+    {
+        "label": "rake.jpg",
+        "item": [
+            "banana"
+        ]
+    },
+    {
+        "label": "jar_full.jpg",
+        "item": [
+            "filled jar"
+        ]
+    },
+    {
+        "label": "rubikscube.jpg",
+        "item": [
+            "sliced lime"
+        ]
+    },
+    {
+        "label": "cracker_broken.jpg",
+        "item": [
+            "broken cracker"
+        ]
+    }
+]

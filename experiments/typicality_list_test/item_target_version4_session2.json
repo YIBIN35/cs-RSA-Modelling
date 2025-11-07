@@ -1,0 +1,32 @@
+[
+    {
+        "label": "chain_broken.jpg",
+        "item": [
+            "broken chain"
+        ]
+    },
+    {
+        "label": "chapstick_closed.jpg",
+        "item": [
+            "chap stick"
+        ]
+    },
+    {
+        "label": "garbagecan_empty.jpg",
+        "item": [
+            "garbage can"
+        ]
+    },
+    {
+        "label": "chain_whole.jpg",
+        "item": [
+            "broken chain"
+        ]
+    },
+    {
+        "label": "glasses_broken.jpg",
+        "item": [
+            "glasses"
+        ]
+    }
+]

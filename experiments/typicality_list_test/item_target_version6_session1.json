@@ -1,0 +1,32 @@
+[
+    {
+        "label": "garbagecan_empty.jpg",
+        "item": [
+            "full garbage can"
+        ]
+    },
+    {
+        "label": "fridge_open.jpg",
+        "item": [
+            "open fridge"
+        ]
+    },
+    {
+        "label": "garbagecan_full.jpg",
+        "item": [
+            "full garbage can"
+        ]
+    },
+    {
+        "label": "fridge_closed.jpg",
+        "item": [
+            "open fridge"
+        ]
+    },
+    {
+        "label": "garbagecan_empty.jpg",
+        "item": [
+            "garbage can"
+        ]
+    }
+]

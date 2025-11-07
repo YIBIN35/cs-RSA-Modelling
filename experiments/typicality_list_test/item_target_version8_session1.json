@@ -1,0 +1,32 @@
+[
+    {
+        "label": "egg_whole.jpg",
+        "item": [
+            "egg"
+        ]
+    },
+    {
+        "label": "couch_dirty.jpg",
+        "item": [
+            "couch"
+        ]
+    },
+    {
+        "label": "staircase_straight.jpg",
+        "item": [
+            "straight staircase"
+        ]
+    },
+    {
+        "label": "juicebottle_closed.jpg",
+        "item": [
+            "juice bottle"
+        ]
+    },
+    {
+        "label": "couch_clean.jpg",
+        "item": [
+            "couch"
+        ]
+    }
+]

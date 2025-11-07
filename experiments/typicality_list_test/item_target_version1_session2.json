@@ -1,0 +1,32 @@
+[
+    {
+        "label": "sugarpacket_whole.jpg",
+        "item": [
+            "unopened sugar packet"
+        ]
+    },
+    {
+        "label": "toycar.jpg",
+        "item": [
+            "straight straw"
+        ]
+    },
+    {
+        "label": "sugarpacket_ripped.jpg",
+        "item": [
+            "opened sugar packet"
+        ]
+    },
+    {
+        "label": "straw_straight.jpg",
+        "item": [
+            "folded straw"
+        ]
+    },
+    {
+        "label": "suitcase_closed.jpg",
+        "item": [
+            "open suitcase"
+        ]
+    }
+]

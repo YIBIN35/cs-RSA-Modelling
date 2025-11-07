@@ -1,0 +1,32 @@
+[
+    {
+        "label": "yogamat_rolled.jpg",
+        "item": [
+            "rolled yoga mat"
+        ]
+    },
+    {
+        "label": "suit.jpg",
+        "item": [
+            "peeled onion"
+        ]
+    },
+    {
+        "label": "pencil_broken.jpg",
+        "item": [
+            "broken pencil"
+        ]
+    },
+    {
+        "label": "radio.jpg",
+        "item": [
+            "unpeeled onion"
+        ]
+    },
+    {
+        "label": "spaghetti.jpg",
+        "item": [
+            "pencil"
+        ]
+    }
+]

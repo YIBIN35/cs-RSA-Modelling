@@ -1,0 +1,32 @@
+[
+    {
+        "label": "magnet_bent.jpg",
+        "item": [
+            "bent magnet"
+        ]
+    },
+    {
+        "label": "pencil_broken.jpg",
+        "item": [
+            "broken pencil"
+        ]
+    },
+    {
+        "label": "magnet_straight.jpg",
+        "item": [
+            "bent magnet"
+        ]
+    },
+    {
+        "label": "pencil_whole.jpg",
+        "item": [
+            "sharpened pencil"
+        ]
+    },
+    {
+        "label": "paperclip_straight.jpg",
+        "item": [
+            "intact paperclip"
+        ]
+    }
+]

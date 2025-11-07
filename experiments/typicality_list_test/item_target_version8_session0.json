@@ -1,0 +1,32 @@
+[
+    {
+        "label": "straw_bent.jpg",
+        "item": [
+            "straw"
+        ]
+    },
+    {
+        "label": "microwave_closed.jpg",
+        "item": [
+            "microwave"
+        ]
+    },
+    {
+        "label": "milkcarton_closed.jpg",
+        "item": [
+            "milk carton"
+        ]
+    },
+    {
+        "label": "plate_whole.jpg",
+        "item": [
+            "clean plate"
+        ]
+    },
+    {
+        "label": "trophy.jpg",
+        "item": [
+            "sliced pizza"
+        ]
+    }
+]

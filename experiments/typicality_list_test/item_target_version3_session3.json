@@ -1,0 +1,32 @@
+[
+    {
+        "label": "backpack_open.jpg",
+        "item": [
+            "open backpack"
+        ]
+    },
+    {
+        "label": "napkin_folded.jpg",
+        "item": [
+            "napkin"
+        ]
+    },
+    {
+        "label": "pants.jpg",
+        "item": [
+            "straw"
+        ]
+    },
+    {
+        "label": "stovetop_dirty.jpg",
+        "item": [
+            "dirty stovetop"
+        ]
+    },
+    {
+        "label": "cheese.jpg",
+        "item": [
+            "open door"
+        ]
+    }
+]

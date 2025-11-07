@@ -1,0 +1,32 @@
+[
+    {
+        "label": "pickle_sliced.jpg",
+        "item": [
+            "whole pickle"
+        ]
+    },
+    {
+        "label": "cracker_broken.jpg",
+        "item": [
+            "cracker"
+        ]
+    },
+    {
+        "label": "cup_dirty.jpg",
+        "item": [
+            "cup"
+        ]
+    },
+    {
+        "label": "cracker_whole.jpg",
+        "item": [
+            "cracker"
+        ]
+    },
+    {
+        "label": "cup_clean.jpg",
+        "item": [
+            "cup"
+        ]
+    }
+]

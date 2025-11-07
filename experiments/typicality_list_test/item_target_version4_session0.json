@@ -1,0 +1,32 @@
+[
+    {
+        "label": "road_curved.jpg",
+        "item": [
+            "winding road"
+        ]
+    },
+    {
+        "label": "dish_dirty.jpg",
+        "item": [
+            "dish"
+        ]
+    },
+    {
+        "label": "dishwasher_open.jpg",
+        "item": [
+            "open dishwasher"
+        ]
+    },
+    {
+        "label": "table_broken.jpg",
+        "item": [
+            "intact table"
+        ]
+    },
+    {
+        "label": "fork.jpg",
+        "item": [
+            "yoga mat"
+        ]
+    }
+]

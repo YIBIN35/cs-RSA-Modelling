@@ -1,0 +1,32 @@
+[
+    {
+        "label": "cdplayer_closed.jpg",
+        "item": [
+            "open cd player"
+        ]
+    },
+    {
+        "label": "paper_folded.jpg",
+        "item": [
+            "nan paper"
+        ]
+    },
+    {
+        "label": "chain_whole.jpg",
+        "item": [
+            "broken chain"
+        ]
+    },
+    {
+        "label": "orange_peeled.jpg",
+        "item": [
+            "peeled orange"
+        ]
+    },
+    {
+        "label": "suitcase_closed.jpg",
+        "item": [
+            "open suitcase"
+        ]
+    }
+]

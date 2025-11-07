@@ -1,0 +1,32 @@
+[
+    {
+        "label": "pineapple_sliced.jpg",
+        "item": [
+            "whole pineapple"
+        ]
+    },
+    {
+        "label": "carrot_unpeeled.jpg",
+        "item": [
+            "carrot"
+        ]
+    },
+    {
+        "label": "cdplayer_closed.jpg",
+        "item": [
+            "cd player"
+        ]
+    },
+    {
+        "label": "carrot_peeled.jpg",
+        "item": [
+            "peeled carrot"
+        ]
+    },
+    {
+        "label": "cdplayer_open.jpg",
+        "item": [
+            "closed cd player"
+        ]
+    }
+]

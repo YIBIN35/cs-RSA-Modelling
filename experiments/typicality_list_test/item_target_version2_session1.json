@@ -1,0 +1,32 @@
+[
+    {
+        "label": "snake.jpg",
+        "item": [
+            "glasses"
+        ]
+    },
+    {
+        "label": "gloves_dirty.jpg",
+        "item": [
+            "gloves"
+        ]
+    },
+    {
+        "label": "pencil_broken.jpg",
+        "item": [
+            "pencil"
+        ]
+    },
+    {
+        "label": "gloves_dirty.jpg",
+        "item": [
+            "clean gloves"
+        ]
+    },
+    {
+        "label": "carrot_unpeeled.jpg",
+        "item": [
+            "whole carrot"
+        ]
+    }
+]

@@ -1,0 +1,32 @@
+[
+    {
+        "label": "pitchfork.jpg",
+        "item": [
+            "cigarette"
+        ]
+    },
+    {
+        "label": "lifevest.jpg",
+        "item": [
+            "cookie"
+        ]
+    },
+    {
+        "label": "cigarette_whole.jpg",
+        "item": [
+            "unlit cigarette"
+        ]
+    },
+    {
+        "label": "chocolatebar_whole.jpg",
+        "item": [
+            "chocolate bar"
+        ]
+    },
+    {
+        "label": "butterfly.jpg",
+        "item": [
+            "car"
+        ]
+    }
+]

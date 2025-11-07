@@ -1,0 +1,32 @@
+[
+    {
+        "label": "chocolatebar_broken.jpg",
+        "item": [
+            "chocolate bar"
+        ]
+    },
+    {
+        "label": "chipbag_whole.jpg",
+        "item": [
+            "opened chip bag"
+        ]
+    },
+    {
+        "label": "chocolatebar_whole.jpg",
+        "item": [
+            "chocolate bar"
+        ]
+    },
+    {
+        "label": "chipbag_ripped.jpg",
+        "item": [
+            "unopened chip bag"
+        ]
+    },
+    {
+        "label": "chocolatebar_broken.jpg",
+        "item": [
+            "whole chocolate bar"
+        ]
+    }
+]

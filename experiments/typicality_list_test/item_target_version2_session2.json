@@ -1,0 +1,32 @@
+[
+    {
+        "label": "radio.jpg",
+        "item": [
+            "peeled onion"
+        ]
+    },
+    {
+        "label": "sweater_unfolded.jpg",
+        "item": [
+            "sweater"
+        ]
+    },
+    {
+        "label": "onion_unpeeled.jpg",
+        "item": [
+            "peeled onion"
+        ]
+    },
+    {
+        "label": "orange_peeled.jpg",
+        "item": [
+            "whole orange"
+        ]
+    },
+    {
+        "label": "onion_peeled.jpg",
+        "item": [
+            "unpeeled onion"
+        ]
+    }
+]

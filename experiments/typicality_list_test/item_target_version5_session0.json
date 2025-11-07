@@ -1,0 +1,32 @@
+[
+    {
+        "label": "pineapple_unsliced.jpg",
+        "item": [
+            "pineapple"
+        ]
+    },
+    {
+        "label": "dishwasher_closed.jpg",
+        "item": [
+            "old dishwasher"
+        ]
+    },
+    {
+        "label": "door_closed.jpg",
+        "item": [
+            "closed door"
+        ]
+    },
+    {
+        "label": "dishwasher_open.jpg",
+        "item": [
+            "dishwasher"
+        ]
+    },
+    {
+        "label": "door_open.jpg",
+        "item": [
+            "door"
+        ]
+    }
+]

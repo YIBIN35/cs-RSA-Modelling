@@ -1,0 +1,32 @@
+[
+    {
+        "label": "ruler.jpg",
+        "item": [
+            "chest of drawers"
+        ]
+    },
+    {
+        "label": "bread_unsliced.jpg",
+        "item": [
+            "unsliced bread"
+        ]
+    },
+    {
+        "label": "towel_unfolded.jpg",
+        "item": [
+            "unfolded towel"
+        ]
+    },
+    {
+        "label": "pig_clean.jpg",
+        "item": [
+            "pig"
+        ]
+    },
+    {
+        "label": "piggybank_whole.jpg",
+        "item": [
+            "intact piggy bank"
+        ]
+    }
+]

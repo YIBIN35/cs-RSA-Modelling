@@ -1,0 +1,32 @@
+[
+    {
+        "label": "cdplayer_open.jpg",
+        "item": [
+            "cd player"
+        ]
+    },
+    {
+        "label": "garbagecan_full.jpg",
+        "item": [
+            "full garbage can"
+        ]
+    },
+    {
+        "label": "fridge_open.jpg",
+        "item": [
+            "open fridge"
+        ]
+    },
+    {
+        "label": "garbagecan_full.jpg",
+        "item": [
+            "garbage can"
+        ]
+    },
+    {
+        "label": "fridge_closed.jpg",
+        "item": [
+            "open fridge"
+        ]
+    }
+]

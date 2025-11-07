@@ -1,0 +1,32 @@
+[
+    {
+        "label": "fence_broken.jpg",
+        "item": [
+            "fence"
+        ]
+    },
+    {
+        "label": "eye_open.jpg",
+        "item": [
+            "closed eye"
+        ]
+    },
+    {
+        "label": "fence_broken.jpg",
+        "item": [
+            "intact fence"
+        ]
+    },
+    {
+        "label": "gloves_dirty.jpg",
+        "item": [
+            "clean gloves"
+        ]
+    },
+    {
+        "label": "coconut.jpg",
+        "item": [
+            "glasses"
+        ]
+    }
+]

@@ -1,0 +1,32 @@
+[
+    {
+        "label": "plate_whole.jpg",
+        "item": [
+            "broken plate"
+        ]
+    },
+    {
+        "label": "suitcase_open.jpg",
+        "item": [
+            "suitcase"
+        ]
+    },
+    {
+        "label": "plate_broken.jpg",
+        "item": [
+            "plate"
+        ]
+    },
+    {
+        "label": "pot_closed.jpg",
+        "item": [
+            "lidded pot"
+        ]
+    },
+    {
+        "label": "pig_clean.jpg",
+        "item": [
+            "dirty pig"
+        ]
+    }
+]

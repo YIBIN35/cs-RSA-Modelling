@@ -1,0 +1,32 @@
+[
+    {
+        "label": "boot_clean.jpg",
+        "item": [
+            "boot"
+        ]
+    },
+    {
+        "label": "bread_sliced.jpg",
+        "item": [
+            "sliced bread"
+        ]
+    },
+    {
+        "label": "boot_dirty.jpg",
+        "item": [
+            "clean boot"
+        ]
+    },
+    {
+        "label": "bread_unsliced.jpg",
+        "item": [
+            "sliced bread"
+        ]
+    },
+    {
+        "label": "boot_clean.jpg",
+        "item": [
+            "clean boot"
+        ]
+    }
+]

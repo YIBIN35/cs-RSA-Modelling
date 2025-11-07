@@ -1,0 +1,32 @@
+[
+    {
+        "label": "paper_folded.jpg",
+        "item": [
+            "nan paper"
+        ]
+    },
+    {
+        "label": "paperclip_bent.jpg",
+        "item": [
+            "intact paperclip"
+        ]
+    },
+    {
+        "label": "paper_unfolded.jpg",
+        "item": [
+            "nan paper"
+        ]
+    },
+    {
+        "label": "armytruck.jpg",
+        "item": [
+            "bent paperclip"
+        ]
+    },
+    {
+        "label": "waterfilter.jpg",
+        "item": [
+            "closed suitcase"
+        ]
+    }
+]
