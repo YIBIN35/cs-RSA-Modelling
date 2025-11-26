@@ -104,7 +104,7 @@
     {
         "label": "soccerball_dirty.jpg",
         "item": [
-            "new soccer ball"
+            "clean soccer ball"
         ]
     },
     {
@@ -650,7 +650,7 @@
     {
         "label": "magnet_bent.jpg",
         "item": [
-            "u-shaped magnet"
+            "straight magnet"
         ]
     },
     {
@@ -956,7 +956,7 @@
     {
         "label": "glasses_broken.jpg",
         "item": [
-            "new glasses"
+            "intact glasses"
         ]
     },
     {
@@ -980,7 +980,7 @@
     {
         "label": "spaghetti.jpg",
         "item": [
-            "sharpened pencil"
+            "intact pencil"
         ]
     },
     {
@@ -1004,7 +1004,7 @@
     {
         "label": "pencil_whole.jpg",
         "item": [
-            "sharpened pencil"
+            "intact pencil"
         ]
     },
     {

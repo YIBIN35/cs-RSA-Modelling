@@ -267,6 +267,20 @@ if __name__ == '__main__':
             with open(f"typicality_list_test/item_target_version{version}_session{session}.json", "w") as f:
                 json.dump(json_data_test, f, indent=4)
 
+
+    # create practice list
+    practice_df_typicality = shuffle_no_adjacent(
+            pick_distractors_per_noun(
+                df_combined[~df_combined['noun'].isin(overspec_nouns)]
+                )[0]
+            ).loc[[0, 18, 30]] # manually pick these three items
+    json_data_practice = [
+        {"label": row["image"], "item": [row["utterance"]]}
+        for _, row in practice_df_typicality.iterrows()
+    ]
+    with open(f"typicality_list/practice_items.json", "w") as f:
+        json.dump(json_data_practice, f, indent=4)
+
     import ipdb; ipdb.set_trace()
 
 

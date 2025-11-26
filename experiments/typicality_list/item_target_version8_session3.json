@@ -38,7 +38,7 @@
     {
         "label": "watercan.jpg",
         "item": [
-            "sharpened pencil"
+            "intact pencil"
         ]
     },
     {
@@ -428,7 +428,7 @@
     {
         "label": "glasses_broken.jpg",
         "item": [
-            "new glasses"
+            "intact glasses"
         ]
     },
     {
@@ -728,7 +728,7 @@
     {
         "label": "snake.jpg",
         "item": [
-            "new glasses"
+            "intact glasses"
         ]
     },
     {
@@ -944,7 +944,7 @@
     {
         "label": "mirror_broken.jpg",
         "item": [
-            "clean mirror"
+            "intact mirror"
         ]
     },
     {

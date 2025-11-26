@@ -62,7 +62,7 @@
     {
         "label": "mirror_whole.jpg",
         "item": [
-            "clean mirror"
+            "intact mirror"
         ]
     },
     {
@@ -380,13 +380,13 @@
     {
         "label": "mirror_broken.jpg",
         "item": [
-            "clean mirror"
+            "intact mirror"
         ]
     },
     {
         "label": "pinecone.jpg",
         "item": [
-            "new shoe"
+            "clean shoe"
         ]
     },
     {
@@ -626,7 +626,7 @@
     {
         "label": "magnet_straight.jpg",
         "item": [
-            "u-shaped magnet"
+            "straight magnet"
         ]
     },
     {
@@ -836,7 +836,7 @@
     {
         "label": "shoe_dirty.jpg",
         "item": [
-            "new shoe"
+            "clean shoe"
         ]
     },
     {
@@ -1004,7 +1004,7 @@
     {
         "label": "dishwasher_closed.jpg",
         "item": [
-            "old dishwasher"
+            "closed dishwasher"
         ]
     },
     {
@@ -1172,7 +1172,7 @@
     {
         "label": "paper_folded.jpg",
         "item": [
-            "nan paper"
+            "unfolded paper"
         ]
     },
     {

@@ -170,7 +170,7 @@
     {
         "label": "plate_broken.jpg",
         "item": [
-            "clean plate"
+            "intact plate"
         ]
     },
     {
@@ -614,7 +614,7 @@
     {
         "label": "shoe_clean.jpg",
         "item": [
-            "new shoe"
+            "clean shoe"
         ]
     },
     {
@@ -1094,7 +1094,7 @@
     {
         "label": "anchor.jpg",
         "item": [
-            "new soccer ball"
+            "clean soccer ball"
         ]
     },
     {

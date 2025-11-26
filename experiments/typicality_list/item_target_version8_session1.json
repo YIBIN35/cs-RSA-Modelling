@@ -98,7 +98,7 @@
     {
         "label": "magnet_bent.jpg",
         "item": [
-            "u-shaped magnet"
+            "straight magnet"
         ]
     },
     {
@@ -140,7 +140,7 @@
     {
         "label": "dishwasher_open.jpg",
         "item": [
-            "old dishwasher"
+            "closed dishwasher"
         ]
     },
     {
@@ -200,7 +200,7 @@
     {
         "label": "dishwasher_closed.jpg",
         "item": [
-            "old dishwasher"
+            "closed dishwasher"
         ]
     },
     {
@@ -878,7 +878,7 @@
     {
         "label": "soccerball_clean.jpg",
         "item": [
-            "new soccer ball"
+            "clean soccer ball"
         ]
     },
     {
@@ -1034,7 +1034,7 @@
     {
         "label": "mirror_whole.jpg",
         "item": [
-            "clean mirror"
+            "intact mirror"
         ]
     },
     {
@@ -1112,7 +1112,7 @@
     {
         "label": "pencil_whole.jpg",
         "item": [
-            "sharpened pencil"
+            "intact pencil"
         ]
     },
     {

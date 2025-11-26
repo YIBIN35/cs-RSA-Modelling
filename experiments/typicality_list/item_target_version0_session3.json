@@ -56,7 +56,7 @@
     {
         "label": "glasses_whole.jpg",
         "item": [
-            "new glasses"
+            "intact glasses"
         ]
     },
     {
@@ -104,7 +104,7 @@
     {
         "label": "shoe_clean.jpg",
         "item": [
-            "new shoe"
+            "clean shoe"
         ]
     },
     {
@@ -362,7 +362,7 @@
     {
         "label": "magnet_bent.jpg",
         "item": [
-            "u-shaped magnet"
+            "straight magnet"
         ]
     },
     {
@@ -734,7 +734,7 @@
     {
         "label": "glasses_broken.jpg",
         "item": [
-            "new glasses"
+            "intact glasses"
         ]
     },
     {
@@ -1016,7 +1016,7 @@
     {
         "label": "plate_whole.jpg",
         "item": [
-            "clean plate"
+            "intact plate"
         ]
     },
     {
@@ -1076,7 +1076,7 @@
     {
         "label": "paper_unfolded.jpg",
         "item": [
-            "nan paper"
+            "unfolded paper"
         ]
     },
     {

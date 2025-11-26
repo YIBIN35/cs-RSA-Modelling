@@ -110,7 +110,7 @@
     {
         "label": "plate_broken.jpg",
         "item": [
-            "clean plate"
+            "intact plate"
         ]
     },
     {
@@ -122,7 +122,7 @@
     {
         "label": "plate_whole.jpg",
         "item": [
-            "clean plate"
+            "intact plate"
         ]
     },
     {
@@ -860,7 +860,7 @@
     {
         "label": "soccerball_clean.jpg",
         "item": [
-            "new soccer ball"
+            "clean soccer ball"
         ]
     },
     {
@@ -950,7 +950,7 @@
     {
         "label": "computercord.jpg",
         "item": [
-            "clean plate"
+            "intact plate"
         ]
     },
     {
@@ -1130,7 +1130,7 @@
     {
         "label": "shoe_clean.jpg",
         "item": [
-            "new shoe"
+            "clean shoe"
         ]
     },
     {

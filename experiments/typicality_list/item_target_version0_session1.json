@@ -338,7 +338,7 @@
     {
         "label": "plate_broken.jpg",
         "item": [
-            "clean plate"
+            "intact plate"
         ]
     },
     {
@@ -590,7 +590,7 @@
     {
         "label": "dishwasher_open.jpg",
         "item": [
-            "old dishwasher"
+            "closed dishwasher"
         ]
     },
     {
@@ -908,7 +908,7 @@
     {
         "label": "pencil_broken.jpg",
         "item": [
-            "sharpened pencil"
+            "intact pencil"
         ]
     },
     {
@@ -1148,7 +1148,7 @@
     {
         "label": "videocamera.jpg",
         "item": [
-            "old dishwasher"
+            "closed dishwasher"
         ]
     },
     {
@@ -1196,7 +1196,7 @@
     {
         "label": "anchor.jpg",
         "item": [
-            "new soccer ball"
+            "clean soccer ball"
         ]
     },
     {

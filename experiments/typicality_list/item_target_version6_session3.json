@@ -8,7 +8,7 @@
     {
         "label": "paper_folded.jpg",
         "item": [
-            "nan paper"
+            "unfolded paper"
         ]
     },
     {
@@ -206,7 +206,7 @@
     {
         "label": "gaspump.jpg",
         "item": [
-            "u-shaped magnet"
+            "straight magnet"
         ]
     },
     {
@@ -656,7 +656,7 @@
     {
         "label": "coconut.jpg",
         "item": [
-            "new glasses"
+            "intact glasses"
         ]
     },
     {
@@ -728,7 +728,7 @@
     {
         "label": "dishwasher_open.jpg",
         "item": [
-            "old dishwasher"
+            "closed dishwasher"
         ]
     },
     {
@@ -770,7 +770,7 @@
     {
         "label": "shoe_dirty.jpg",
         "item": [
-            "new shoe"
+            "clean shoe"
         ]
     },
     {
@@ -854,7 +854,7 @@
     {
         "label": "paper_unfolded.jpg",
         "item": [
-            "nan paper"
+            "unfolded paper"
         ]
     },
     {
@@ -884,7 +884,7 @@
     {
         "label": "glasses_whole.jpg",
         "item": [
-            "new glasses"
+            "intact glasses"
         ]
     },
     {
@@ -1184,7 +1184,7 @@
     {
         "label": "dishwasher_closed.jpg",
         "item": [
-            "old dishwasher"
+            "closed dishwasher"
         ]
     },
     {

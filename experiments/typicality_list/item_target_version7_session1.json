@@ -104,7 +104,7 @@
     {
         "label": "dishwasher_closed.jpg",
         "item": [
-            "old dishwasher"
+            "closed dishwasher"
         ]
     },
     {
@@ -116,7 +116,7 @@
     {
         "label": "dishwasher_open.jpg",
         "item": [
-            "old dishwasher"
+            "closed dishwasher"
         ]
     },
     {
@@ -548,7 +548,7 @@
     {
         "label": "shoe_dirty.jpg",
         "item": [
-            "new shoe"
+            "clean shoe"
         ]
     },
     {
@@ -896,7 +896,7 @@
     {
         "label": "glasses_whole.jpg",
         "item": [
-            "new glasses"
+            "intact glasses"
         ]
     },
     {
@@ -920,7 +920,7 @@
     {
         "label": "snake.jpg",
         "item": [
-            "new glasses"
+            "intact glasses"
         ]
     },
     {
@@ -950,7 +950,7 @@
     {
         "label": "soccerball_clean.jpg",
         "item": [
-            "new soccer ball"
+            "clean soccer ball"
         ]
     },
     {
@@ -998,7 +998,7 @@
     {
         "label": "paper_folded.jpg",
         "item": [
-            "nan paper"
+            "unfolded paper"
         ]
     },
     {
@@ -1034,7 +1034,7 @@
     {
         "label": "plate_whole.jpg",
         "item": [
-            "clean plate"
+            "intact plate"
         ]
     },
     {

@@ -224,7 +224,7 @@
     {
         "label": "pencil_broken.jpg",
         "item": [
-            "sharpened pencil"
+            "intact pencil"
         ]
     },
     {
@@ -416,7 +416,7 @@
     {
         "label": "watercan.jpg",
         "item": [
-            "sharpened pencil"
+            "intact pencil"
         ]
     },
     {
@@ -482,7 +482,7 @@
     {
         "label": "kayak.jpg",
         "item": [
-            "nan paper"
+            "unfolded paper"
         ]
     },
     {
@@ -650,7 +650,7 @@
     {
         "label": "lawnmower.jpg",
         "item": [
-            "clean mirror"
+            "intact mirror"
         ]
     },
     {
@@ -746,7 +746,7 @@
     {
         "label": "pencil_whole.jpg",
         "item": [
-            "sharpened pencil"
+            "intact pencil"
         ]
     },
     {
@@ -782,7 +782,7 @@
     {
         "label": "soccerball_dirty.jpg",
         "item": [
-            "new soccer ball"
+            "clean soccer ball"
         ]
     },
     {

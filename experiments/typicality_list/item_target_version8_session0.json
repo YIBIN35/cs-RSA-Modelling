@@ -20,7 +20,7 @@
     {
         "label": "plate_whole.jpg",
         "item": [
-            "clean plate"
+            "intact plate"
         ]
     },
     {
@@ -176,7 +176,7 @@
     {
         "label": "lawnmower.jpg",
         "item": [
-            "clean mirror"
+            "intact mirror"
         ]
     },
     {
@@ -224,7 +224,7 @@
     {
         "label": "shoe_clean.jpg",
         "item": [
-            "new shoe"
+            "clean shoe"
         ]
     },
     {
@@ -248,7 +248,7 @@
     {
         "label": "shoe_dirty.jpg",
         "item": [
-            "new shoe"
+            "clean shoe"
         ]
     },
     {
@@ -422,13 +422,13 @@
     {
         "label": "glasses_whole.jpg",
         "item": [
-            "new glasses"
+            "intact glasses"
         ]
     },
     {
         "label": "pencil_broken.jpg",
         "item": [
-            "sharpened pencil"
+            "intact pencil"
         ]
     },
     {
@@ -1076,7 +1076,7 @@
     {
         "label": "soccerball_dirty.jpg",
         "item": [
-            "new soccer ball"
+            "clean soccer ball"
         ]
     },
     {

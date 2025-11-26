@@ -2,7 +2,7 @@
     {
         "label": "paper_folded.jpg",
         "item": [
-            "nan paper"
+            "unfolded paper"
         ]
     },
     {
@@ -14,7 +14,7 @@
     {
         "label": "paper_unfolded.jpg",
         "item": [
-            "nan paper"
+            "unfolded paper"
         ]
     },
     {
@@ -314,7 +314,7 @@
     {
         "label": "magnet_straight.jpg",
         "item": [
-            "u-shaped magnet"
+            "straight magnet"
         ]
     },
     {
@@ -524,7 +524,7 @@
     {
         "label": "plate_whole.jpg",
         "item": [
-            "clean plate"
+            "intact plate"
         ]
     },
     {
@@ -740,7 +740,7 @@
     {
         "label": "shoe_dirty.jpg",
         "item": [
-            "new shoe"
+            "clean shoe"
         ]
     },
     {

@@ -1,0 +1,20 @@
+[
+    {
+        "label": "corn_unpeeled.jpg",
+        "item": [
+            "corn"
+        ]
+    },
+    {
+        "label": "mailbox_closed.jpg",
+        "item": [
+            "open mailbox"
+        ]
+    },
+    {
+        "label": "bowlingpins.jpg",
+        "item": [
+            "open scanner"
+        ]
+    }
+]

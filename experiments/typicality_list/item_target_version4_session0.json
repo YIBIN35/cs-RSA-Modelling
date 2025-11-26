@@ -38,7 +38,7 @@
     {
         "label": "lawnmower.jpg",
         "item": [
-            "clean mirror"
+            "intact mirror"
         ]
     },
     {
@@ -98,7 +98,7 @@
     {
         "label": "ambulance.jpg",
         "item": [
-            "clean plate"
+            "intact plate"
         ]
     },
     {
@@ -836,7 +836,7 @@
     {
         "label": "watercan.jpg",
         "item": [
-            "sharpened pencil"
+            "intact pencil"
         ]
     },
     {
@@ -1142,7 +1142,7 @@
     {
         "label": "pencil_broken.jpg",
         "item": [
-            "sharpened pencil"
+            "intact pencil"
         ]
     },
     {

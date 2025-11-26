@@ -260,7 +260,7 @@
     {
         "label": "paper_folded.jpg",
         "item": [
-            "nan paper"
+            "unfolded paper"
         ]
     },
     {
@@ -398,7 +398,7 @@
     {
         "label": "plate_broken.jpg",
         "item": [
-            "clean plate"
+            "intact plate"
         ]
     },
     {
@@ -692,7 +692,7 @@
     {
         "label": "ambulance.jpg",
         "item": [
-            "clean plate"
+            "intact plate"
         ]
     },
     {
@@ -806,7 +806,7 @@
     {
         "label": "tray.jpg",
         "item": [
-            "u-shaped magnet"
+            "straight magnet"
         ]
     },
     {
@@ -836,7 +836,7 @@
     {
         "label": "paper_unfolded.jpg",
         "item": [
-            "nan paper"
+            "unfolded paper"
         ]
     },
     {
@@ -872,7 +872,7 @@
     {
         "label": "magnet_straight.jpg",
         "item": [
-            "u-shaped magnet"
+            "straight magnet"
         ]
     },
     {
@@ -896,7 +896,7 @@
     {
         "label": "kayak.jpg",
         "item": [
-            "nan paper"
+            "unfolded paper"
         ]
     },
     {

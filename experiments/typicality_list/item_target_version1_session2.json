@@ -68,7 +68,7 @@
     {
         "label": "soccerball_dirty.jpg",
         "item": [
-            "new soccer ball"
+            "clean soccer ball"
         ]
     },
     {
@@ -242,7 +242,7 @@
     {
         "label": "pinecone.jpg",
         "item": [
-            "new shoe"
+            "clean shoe"
         ]
     },
     {
@@ -686,7 +686,7 @@
     {
         "label": "pencil_whole.jpg",
         "item": [
-            "sharpened pencil"
+            "intact pencil"
         ]
     },
     {
@@ -914,7 +914,7 @@
     {
         "label": "pencil_broken.jpg",
         "item": [
-            "sharpened pencil"
+            "intact pencil"
         ]
     },
     {
@@ -1202,7 +1202,7 @@
     {
         "label": "videocamera.jpg",
         "item": [
-            "old dishwasher"
+            "closed dishwasher"
         ]
     },
     {

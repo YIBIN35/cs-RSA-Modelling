@@ -518,7 +518,7 @@
     {
         "label": "pencil_broken.jpg",
         "item": [
-            "sharpened pencil"
+            "intact pencil"
         ]
     },
     {
@@ -668,7 +668,7 @@
     {
         "label": "mirror_broken.jpg",
         "item": [
-            "clean mirror"
+            "intact mirror"
         ]
     },
     {
@@ -680,7 +680,7 @@
     {
         "label": "mirror_whole.jpg",
         "item": [
-            "clean mirror"
+            "intact mirror"
         ]
     },
     {
@@ -704,7 +704,7 @@
     {
         "label": "ipod.jpg",
         "item": [
-            "clean mirror"
+            "intact mirror"
         ]
     },
     {
@@ -722,7 +722,7 @@
     {
         "label": "magnet_straight.jpg",
         "item": [
-            "u-shaped magnet"
+            "straight magnet"
         ]
     },
     {
@@ -1202,7 +1202,7 @@
     {
         "label": "teeth.jpg",
         "item": [
-            "nan paper"
+            "unfolded paper"
         ]
     },
     {

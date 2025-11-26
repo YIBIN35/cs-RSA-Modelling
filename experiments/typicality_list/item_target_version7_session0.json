@@ -98,7 +98,7 @@
     {
         "label": "ambulance.jpg",
         "item": [
-            "clean plate"
+            "intact plate"
         ]
     },
     {
@@ -446,7 +446,7 @@
     {
         "label": "glasses_broken.jpg",
         "item": [
-            "new glasses"
+            "intact glasses"
         ]
     },
     {
@@ -812,7 +812,7 @@
     {
         "label": "tray.jpg",
         "item": [
-            "u-shaped magnet"
+            "straight magnet"
         ]
     },
     {
@@ -1148,7 +1148,7 @@
     {
         "label": "paper_unfolded.jpg",
         "item": [
-            "nan paper"
+            "unfolded paper"
         ]
     },
     {
