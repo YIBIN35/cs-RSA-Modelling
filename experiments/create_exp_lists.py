@@ -281,7 +281,6 @@ if __name__ == '__main__':
     with open(f"typicality_list/practice_items.json", "w") as f:
         json.dump(json_data_practice, f, indent=4)
 
-    import ipdb; ipdb.set_trace()
 
 
 
@@ -306,16 +305,20 @@ if __name__ == '__main__':
     ######################################################################
     # creating lists for naming experiments
 
-    df_naming = df_barenoun.copy()
+    df_naming = df_barenoun[df_barenoun['noun'].isin(overspec_nouns)].copy()
 
-    mask = df_naming['state'].isna() & df_naming['adj'].isna()
-    df_naming['object'] = np.where(
-        mask,
-        df_naming['image'].str.replace(r'\.jpe?g$', '', regex=True),
-        df_naming['noun']
-    )
-    df_naming = df_naming[['object', 'image', 'state', 'adj']]
-    df_naming_shuffled = shuffle_no_adjacent(df_naming, key='object', random_state=1)
+    # mask = df_naming['state'].isna() & df_naming['adj'].isna()
+    # df_naming['object'] = np.where(
+    #     mask,
+    #     df_naming['image'].str.replace(r'\.jpe?g$', '', regex=True),
+    #     df_naming['noun']
+    # )
+    # df_naming = df_naming[['object', 'image', 'state', 'adj']]
+
+    # remove distractors
+    df_naming = df_naming[~df_naming['state'].isna()]
+    df_naming = df_naming.rename(columns={'noun': 'object'})
+    df_naming_shuffled = shuffle_no_adjacent(df_naming, key='object', random_state=5)
 
     df_naming_shuffled.to_csv("state_overspec_stimuli_naming.csv", index=False)
     df_naming_shuffled.head(5).to_csv("test_state_overspec_stimuli_naming.csv", index=False)

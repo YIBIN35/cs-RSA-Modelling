@@ -1,0 +1,521 @@
+import math
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.optimize import dual_annealing, minimize, brute
+
+plt.ion()
+
+parker_world = {
+    "singleton_marked": [
+        {"size": None, "state": "open", "nominal": "door"},
+        {"size": None, "state": None, "nominal": "other1"},
+        {"size": None, "state": None, "nominal": "other2"},
+        {"size": None, "state": None, "nominal": "other3"},
+    ],
+    "singleton_unmarked": [
+        {"size": None, "state": "closed", "nominal": "door"},
+        {"size": None, "state": None, "nominal": "other1"},
+        {"size": None, "state": None, "nominal": "other2"},
+        {"size": None, "state": None, "nominal": "other3"},
+    ],
+    "pair_marked": [
+        {"size": "big", "state": "open", "nominal": "door"},
+        {"size": "small", "state": "open", "nominal": "door"},
+        {"size": None, "state": None, "nominal": "other2"},
+        {"size": None, "state": None, "nominal": "other3"},
+    ],
+    "pair_unmarked": [
+        {"size": "big", "state": "closed", "nominal": "door"},
+        {"size": "small", "state": "closed", "nominal": "door"},
+        {"size": None, "state": None, "nominal": "other2"},
+        {"size": None, "state": None, "nominal": "other3"},
+    ],
+}
+
+
+class cs_rsa:
+
+    def __init__(
+        self,
+        world=None,
+        alpha=13.7,
+        beta_fixed=0.69,
+        costWeight=0,
+        typicalityWeight=1.34,
+        size_semvalue=0.8,
+        state_semvalue_marked=0.9,
+        state_semvalue_unmarked=0.9,
+        noncomp_semvalue_bare_unmarked=0.66,
+        # noncomp_semvalue_bare_marked=0.66,
+        # noncomp_semvalue_modified_marked_T=0.66,
+        # noncomp_semvalue_modified_marked_F=0.66,
+        # noncomp_semvalue_modified_unmarked_T=0.66,
+        # noncomp_semvalue_modified_unmarked_F=0.66,
+        nominal_semvalue=0.99,
+    ):
+
+        # parameters
+        self.alpha = alpha
+        self.beta_fixed = beta_fixed
+        self.costWeight = costWeight
+        self.typicalityWeight = typicalityWeight
+
+        # semantic values
+        self.size_semvalue = size_semvalue
+        self.state_semvalue_marked = state_semvalue_marked
+        self.state_semvalue_unmarked = state_semvalue_unmarked
+        self.nominal_semvalue = nominal_semvalue
+        self.noncomp_semvalue_bare_unmarked = noncomp_semvalue_bare_unmarked
+
+        # vocab
+        self.sizes = ["big", "small"]
+        self.states = ["open", "closed"]
+        self.nominals = ["door", "other1", "other2", "other3"]
+
+        # world
+        self.world = world
+
+    def _parse_utterance(self, utt):
+        """Return a parsed dict {'size': token|None, 'state': token|None, 'nominal': token|None}."""
+        parts = utt.split("_")
+        out = {"size": None, "state": None, "nominal": None}
+
+        cat_map = {}
+        for s in self.sizes:
+            cat_map[s] = ("size", s)
+        for s in self.states:
+            cat_map[s] = ("state", s)
+        for n in self.nominals:
+            cat_map[n] = ("nominal", n)
+
+        for w in parts:
+            if w not in cat_map:
+                raise ValueError(f"Unknown token in utterance: {w}")
+            cat, val = cat_map[w]
+            if out[cat] is not None:
+                # You can choose to allow multiple-of-a-kind; here we forbid to avoid silent overwrite
+                raise ValueError(
+                    f"Utterance has multiple {cat} tokens: {out[cat]} and {val}"
+                )
+            out[cat] = val
+        return out
+
+    def _comp_semvalue(self, parsed, obj, print_value=False):
+        """Compositional/fixed semantics as a product of per-feature scores."""
+
+        size_word = parsed["size"]
+        state_word = parsed["state"]
+        nominal_word = parsed["nominal"]
+
+        # Defaults; if size/state/nominal_word == None: sem_val = 1
+        size_val = 1.0
+        state_val = 1.0
+        nominal_val = 1.0
+
+        # SIZE
+        if size_word is not None:
+            # this condition may not matter as it won't appear.
+            if obj["size"] is None:
+                size_val = self.size_semvalue  # "big" -> None | "small" -> None
+            else:
+                if size_word == obj["size"]:
+                    size_val = self.size_semvalue  # "big" -> big | "small" -> small
+                else:
+                    size_val = (
+                        1.0 - self.size_semvalue
+                    )  # "small" -> big | "big" -> small
+        # NOMINAL
+        if nominal_word is not None:
+            if obj["nominal"] is None:
+                raise Exception(
+                    "Nominal category of the object is none"
+                )  # door -> None | other -> None
+            else:
+                if nominal_word == obj["nominal"]:
+                    nominal_val = self.nominal_semvalue  # "door" -> door
+                else:
+                    nominal_val = (
+                        1.0 - self.nominal_semvalue
+                    )  # "door" -> None | "other" -> None
+        # STATE
+        if state_word is not None:
+            if state_word == "open":
+                if obj["state"] == "open":
+                    state_val = self.state_semvalue_marked  # "open" -> open
+                else:
+                    state_val = (
+                        1.0 - self.state_semvalue_marked
+                    )  # "open" -> None | "open" -> closed
+            elif state_word == "closed":
+                if obj["state"] == "closed":
+                    state_val = self.state_semvalue_unmarked  # "closed" -> closed
+                else:
+                    state_val = (
+                        1.0 - self.state_semvalue_unmarked
+                    )  # "closed" -> open | "closed" -> None
+            else:
+                raise ValueError(f"Unexpected state token: {state_word}")
+
+        if print_value == True:
+            print(
+                f"beta_fixed:{self.beta_fixed:.2f}, size:{size_val:.2f}, state:{state_val:.2f}, nominal:{nominal_val:.2f}"
+            )
+        return size_val * state_val * nominal_val
+
+    def _noncomp_semvalue(self, parsed, obj, print_value=False):
+        """
+        Empirical/non-compositional semantic value function
+        check table 7 to understand the code here. right now everything is hardcoded!!!
+        Returns a number in [0,1].
+        """
+        nominal = parsed["nominal"]
+        state = parsed["state"]
+
+        if nominal is None or obj["nominal"] is None:
+            # If utterance lacks a nominal, you need a policy. Here: rely on other parts (neutral).
+            raise Exception(
+                "Nominal category of the object is none"
+            )  # door -> None | other -> None
+
+        elif nominal != obj["nominal"]:
+            noncomp_semval = 1.0 - self.nominal_semvalue
+
+        elif nominal == obj["nominal"]:
+            if nominal in ["other1", "other2", "other3"]:
+                noncomp_semval = self.nominal_semvalue
+
+            elif state is None:  # "door"
+                if obj["state"] == "closed":
+                    noncomp_semval = 0.98  # "door" -> closed door
+                elif obj["state"] == "open":
+                    noncomp_semval = (
+                        self.noncomp_semvalue_bare_unmarked
+                    )  # "door" -> open door 0.66
+                else:
+                    raise Exception("something is wrong")
+
+            elif state == "closed":  # 'closed_door'
+                if obj["state"] == "closed":
+                    noncomp_semval = 0.97  # "closed_door" -> closed door
+                else:
+                    noncomp_semval = 0.30  # "closed_door" -> open door
+
+            elif state == "open":  # 'open_door'
+                if obj["state"] == "open":
+                    noncomp_semval = 0.91  # "open_door" -> open door
+                else:
+                    noncomp_semval = 0.22  # "open_door" -> closed door
+        else:
+            raise Exception("something is wrong")
+        if print_value == True:
+            print(f"1-beta_fixed:{1-self.beta_fixed:.2f}, emp:{noncomp_semval:.2f}")
+        return noncomp_semval
+
+    def meaning(self, utt, obj, print_value=False):
+        parsed = self._parse_utterance(utt)
+
+        if print_value == True:
+            print("utterance:", parsed)
+            print("object:", obj)
+
+        fixed_sem_value = self._comp_semvalue(parsed, obj, print_value=print_value)
+        empirical_sem_value = self._noncomp_semvalue(
+            parsed, obj, print_value=print_value
+        )
+
+        sem_value = (
+            self.beta_fixed * fixed_sem_value
+            + (1.0 - self.beta_fixed) * empirical_sem_value
+        )
+
+        if print_value == True:
+            print(f"sem_val: {sem_value:.2f}")
+            print("")
+
+        return sem_value
+
+    def literal_listener(self, utterance):
+        probabilities = {}
+        total = 0
+        for obj in self.world:
+            sem_val = self.meaning(utterance, obj)
+            item = tuple(sorted(obj.items()))
+            # probabilities[item] = math.exp(sem_val)
+            probabilities[item] = math.exp(self.typicalityWeight * sem_val)
+            total += math.exp(self.typicalityWeight * sem_val)
+
+        # Normalize the semantic values
+        for item in probabilities:
+            probabilities[item] /= total
+        return probabilities
+
+    def cost(self, utt):
+        return len(utt.split("_"))
+
+    def pragmatic_speaker(self, obj, utterances):
+        obj_key = tuple(sorted(obj.items()))
+        utterance_probs = {}
+        total = 0.0
+        for utt in utterances:
+            literal_listener_prob = self.literal_listener(utt)
+            utterance_prob = literal_listener_prob.get(obj_key)
+            # Apply the pragmatic speaker function
+            utility = self.alpha * math.log(
+                utterance_prob
+            ) - self.costWeight * self.cost(utt)
+            utterance_probs[utt] = math.exp(utility)
+            total += math.exp(utility)
+
+        # Normalize the values
+        for item in utterance_probs:
+            utterance_probs[item] /= total
+        return utterance_probs
+
+
+######################################################################
+# functions to run singleton and paired conditions, and function to get the best semantic values and other parameters
+
+
+def singleton_overspecification_rate(
+    alpha=13.7,
+    beta_fixed=0.69,
+    state_semvalue_marked=0.95,
+    state_semvalue_unmarked=0.9,
+    costWeight=0,
+    noncomp_semvalue_bare_unmarked=0.66,
+    typicalityWeight=1.34,
+):
+
+    utterances = ["door", "open_door", "closed_door", "other1", "other2", "other3"]
+    conditions = ["singleton_marked", "singleton_unmarked"]
+    overspecified_utts = [["open_door"], ["closed_door"]]
+    correct_utts = [["door", "open_door"], ["door", "closed_door"]]
+
+    overspecification_rates = []
+
+    for i, condition in enumerate(conditions):
+        this_world = parker_world[condition]
+
+        model = cs_rsa(
+            this_world,
+            alpha=alpha,
+            beta_fixed=beta_fixed,
+            state_semvalue_marked=state_semvalue_marked,
+            state_semvalue_unmarked=state_semvalue_unmarked,
+            noncomp_semvalue_bare_unmarked=noncomp_semvalue_bare_unmarked,
+            costWeight=costWeight,
+            typicalityWeight=typicalityWeight,
+        )
+        results = model.pragmatic_speaker(this_world[0], utterances)
+
+        numer = sum(results[u] for u in overspecified_utts[i])
+        denom = sum(results[u] for u in correct_utts[i])
+        overspecification_rates.append(numer / denom)
+
+    return overspecification_rates
+
+
+def pair_overspecification_rate(
+    alpha=13.7,
+    beta_fixed=0.69,
+    state_semvalue_marked=0.95,
+    state_semvalue_unmarked=0.9,
+    costWeight=0,
+    noncomp_semvalue_bare_unmarked=0.66,
+    typicalityWeight=1.34,
+):
+
+    utterances = [
+        "door",
+        "open_door",
+        "closed_door",
+        "big_door",
+        "big_open_door",
+        "big_closed_door",
+        "small_door",
+        "small_open_door",
+        "small_closed_door",
+        "other2",
+        "other3",
+    ]
+    conditions = ["pair_marked", "pair_unmarked"]
+    overspecified_utts = [["big_open_door"], ["big_closed_door"]]
+    correct_utts = [["big_door", "big_open_door"], ["big_door", "big_closed_door"]]
+
+    overspecification_rates = []
+    for i, condition in enumerate(conditions):
+        this_world = parker_world[condition]
+
+        model = cs_rsa(
+            this_world,
+            alpha=alpha,
+            beta_fixed=beta_fixed,
+            state_semvalue_marked=state_semvalue_marked,
+            state_semvalue_unmarked=state_semvalue_unmarked,
+            noncomp_semvalue_bare_unmarked=noncomp_semvalue_bare_unmarked,
+            costWeight=costWeight,
+            typicalityWeight=typicalityWeight,
+        )
+        results = model.pragmatic_speaker(this_world[0], utterances)
+
+        numer = sum(results[u] for u in overspecified_utts[i])
+        denom = sum(results[u] for u in correct_utts[i])
+        overspecification_rates.append(numer / denom)
+
+    return overspecification_rates
+
+
+def optimization(noncomp_semvalue_bare_unmarked=0.9):
+    target = np.array([0.24, 0.01])
+
+    def objective(params):
+        a, b, sm, costWeight = params
+        r_marked, r_unmarked = singleton_overspecification_rate(
+            alpha = float(a),
+            beta_fixed=float(b),
+            state_semvalue_marked=float(sm),
+            state_semvalue_unmarked=float(sm),
+            costWeight=float(costWeight),
+            noncomp_semvalue_bare_unmarked=noncomp_semvalue_bare_unmarked,
+        )
+        r = np.array([r_marked, r_unmarked], float)
+        L = float(np.sum((r - target) ** 2))
+        return L if np.isfinite(L) else 1e9
+
+    bounds = [(0, 50), (0, 1), (0, 1), (0, 10)]
+
+    res_g = dual_annealing(objective, bounds=bounds, maxiter=2000)
+    a, b, sm, costWeight = res_g.x
+
+    rates = singleton_overspecification_rate(
+        alpha = a,
+        beta_fixed=b,
+        state_semvalue_marked=sm,
+        state_semvalue_unmarked=sm,
+        costWeight=costWeight,
+        noncomp_semvalue_bare_unmarked=noncomp_semvalue_bare_unmarked,
+    )
+
+    print("=== Result ===")
+    print(f"  alpha                : {a:.4f}")
+    print(f"  beta_fixed           : {b:.4f}")
+    print(f"  state_semvalue_marked: {sm:.4f}")
+    print(f"  cost: {costWeight:.4f}")
+    print(f"  resulting rates      : [{rates[0]:.4f}, {rates[1]:.4f}]")
+    print(f"  target rates         : {target.tolist()}")
+    print(f"  final loss           : {res_g.fun:.6e}")
+
+    # # grid search
+    # grid_pts = 50
+    # step = 1.0 / (grid_pts - 1)
+    # ranges = (slice(0.0, 1.0 + 0.5*step, step),   # include 1.0 robustly
+    #           slice(0.0, 1.0 + 0.5*step, step),
+    #           slice(0.0, 1.0 + 0.5*step, step))
+
+    # x_brute, f_brute, _, _ = brute(objective, ranges,
+    #                                full_output=True, finish=None)  # finish=None avoids NM
+    # b2, sm2, su2 = np.clip(x_brute, 0, 1)
+    # rates2 = singleton_overspecification_rate(beta_fixed=b2, state_semvalue_marked=sm2,
+    #                                           state_semvalue_unmarked=su2, costWeight=costWeight)
+    # print("\n=== Brute (grid) ===")
+    # print(f"  beta_fixed              : {b2:.4f}")
+    # print(f"  state_semvalue_marked   : {sm2:.4f}")
+    # print(f"  state_semvalue_unmarked : {su2:.4f}")
+    # print(f"  resulting rates         : [{rates2[0]:.4f}, {rates2[1]:.4f}]")
+    # print(f"  target rates            : {target.tolist()}")
+    # print(f"  final loss              : {f_brute:.6e}")
+
+
+if __name__ == "__main__":
+
+    print("singleton")
+    print(
+        "pure compositional no cost",
+        singleton_overspecification_rate(
+            beta_fixed=1,
+            state_semvalue_marked=0.9,
+            state_semvalue_unmarked=0.9,
+            costWeight=0,
+        ),
+    )
+    print(
+        "pure non-compositional no cost",
+        singleton_overspecification_rate(
+            beta_fixed=0,
+            state_semvalue_marked=0.9,
+            state_semvalue_unmarked=0.9,
+            costWeight=0,
+        ),
+    )
+    print(
+        "0.69 mixed no cost",
+        singleton_overspecification_rate(
+            beta_fixed=0.69,
+            state_semvalue_marked=0.9,
+            state_semvalue_unmarked=0.9,
+            costWeight=0,
+        ),
+    )
+    print(
+        "0.69 mixed 1.5 cost",
+        singleton_overspecification_rate(
+            beta_fixed=0.69,
+            state_semvalue_marked=0.9,
+            state_semvalue_unmarked=0.9,
+            costWeight=1.5,
+        ),
+    )
+    print(
+        "0.69 mixed 3 cost",
+        singleton_overspecification_rate(
+            beta_fixed=0.69,
+            state_semvalue_marked=0.9,
+            state_semvalue_unmarked=0.9,
+            costWeight=3,
+        ),
+    )
+
+    print("\npair")
+    print(
+        "pure compositional no cost",
+        pair_overspecification_rate(
+            beta_fixed=1,
+            state_semvalue_marked=0.9,
+            state_semvalue_unmarked=0.9,
+            costWeight=0,
+        ),
+    )
+    print(
+        "pure non-compositional no cost",
+        pair_overspecification_rate(
+            beta_fixed=0,
+            state_semvalue_marked=0.9,
+            state_semvalue_unmarked=0.9,
+            costWeight=0,
+        ),
+    )
+    print(
+        "0.69 mixed no cost",
+        pair_overspecification_rate(
+            beta_fixed=0.69,
+            state_semvalue_marked=0.9,
+            state_semvalue_unmarked=0.9,
+            costWeight=0,
+        ),
+    )
+    print(
+        "0.69 mixed 1.5 cost",
+        pair_overspecification_rate(
+            beta_fixed=0.69,
+            state_semvalue_marked=0.9,
+            state_semvalue_unmarked=0.9,
+            costWeight=1.5,
+        ),
+    )
+
+    # cs_rsa().meaning('open_door', {"size": "None", "state": "None", "nominal": "other1"}, print_value=True)
+
+    # print(f"costWeight=0")
+    # optimization(costWeight=0)
+    # print(f"costWeight=2")
+    # optimization(costWeight=2)
