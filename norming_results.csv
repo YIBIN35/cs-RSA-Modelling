@@ -1,0 +1,1516 @@
+,Unnamed: 0,noun,utterance_x,image,state,adj,adj_utterance,natural_adj_utterance,item,natural_utterance,utterance_y,object,mean_response,count_response
+0,0,apple,apple,apple_sliced.jpg,a,sliced,,,apple,apple,apple,apple_sliced.jpg,5.857142857142857,21.0
+1,1,apple,apple,apple_unsliced.jpg,b,unsliced,,,apple,apple,apple,apple_unsliced.jpg,7.0,20.0
+2,2,apple,apple,lighthouse.jpg,,,,,apple,apple,apple,lighthouse.jpg,1.0,10.0
+3,3,apple,apple,pencilcase.jpg,,,,,apple,apple,apple,pencilcase.jpg,1.0,5.0
+4,4,apple,apple,rhino.jpg,,,,,apple,apple,,,,
+5,5,apple,sliced apple,apple_sliced.jpg,a,sliced,sliced,sliced,apple,sliced apple,sliced apple,apple_sliced.jpg,6.5,20.0
+6,6,apple,sliced apple,apple_unsliced.jpg,b,unsliced,sliced,sliced,apple,sliced apple,sliced apple,apple_unsliced.jpg,2.0,21.0
+7,7,apple,sliced apple,lighthouse.jpg,,,sliced,sliced,apple,sliced apple,sliced apple,lighthouse.jpg,1.0,4.0
+8,8,apple,sliced apple,pencilcase.jpg,,,sliced,sliced,apple,sliced apple,sliced apple,pencilcase.jpg,1.0,5.0
+9,9,apple,sliced apple,rhino.jpg,,,sliced,sliced,apple,sliced apple,sliced apple,rhino.jpg,1.0,6.0
+10,10,apple,unsliced apple,apple_sliced.jpg,a,sliced,unsliced,whole,apple,whole apple,whole apple,apple_sliced.jpg,2.4761904761904763,21.0
+11,11,apple,unsliced apple,apple_unsliced.jpg,b,unsliced,unsliced,whole,apple,whole apple,whole apple,apple_unsliced.jpg,6.904761904761905,21.0
+12,12,apple,unsliced apple,lighthouse.jpg,,,unsliced,whole,apple,whole apple,,,,
+13,13,apple,unsliced apple,pencilcase.jpg,,,unsliced,whole,apple,whole apple,whole apple,pencilcase.jpg,1.0,4.0
+14,14,apple,unsliced apple,rhino.jpg,,,unsliced,whole,apple,whole apple,whole apple,rhino.jpg,1.0,8.0
+15,15,backpack,backpack,backpack_open.jpg,a,open,,,backpack,backpack,backpack,backpack_open.jpg,6.476190476190476,21.0
+16,16,backpack,backpack,backpack_closed.jpg,b,closed,,,backpack,backpack,backpack,backpack_closed.jpg,6.666666666666667,21.0
+17,17,backpack,backpack,chick.jpg,,,,,backpack,backpack,backpack,chick.jpg,1.0,10.0
+18,18,backpack,backpack,vacuum.jpg,,,,,backpack,backpack,backpack,vacuum.jpg,1.4,5.0
+19,19,backpack,backpack,grater.jpg,,,,,backpack,backpack,,,,
+20,20,backpack,closed backpack,backpack_open.jpg,a,open,closed,closed,backpack,closed backpack,closed backpack,backpack_open.jpg,2.0526315789473686,19.0
+21,21,backpack,closed backpack,backpack_closed.jpg,b,closed,closed,closed,backpack,closed backpack,closed backpack,backpack_closed.jpg,6.523809523809524,21.0
+22,22,backpack,closed backpack,chick.jpg,,,closed,closed,backpack,closed backpack,closed backpack,chick.jpg,1.0,4.0
+23,23,backpack,closed backpack,vacuum.jpg,,,closed,closed,backpack,closed backpack,closed backpack,vacuum.jpg,1.0,5.0
+24,24,backpack,closed backpack,grater.jpg,,,closed,closed,backpack,closed backpack,closed backpack,grater.jpg,1.0,6.0
+25,25,backpack,open backpack,backpack_open.jpg,a,open,open,open,backpack,open backpack,open backpack,backpack_open.jpg,6.904761904761905,21.0
+26,26,backpack,open backpack,backpack_closed.jpg,b,closed,open,open,backpack,open backpack,open backpack,backpack_closed.jpg,1.9523809523809523,21.0
+27,27,backpack,open backpack,chick.jpg,,,open,open,backpack,open backpack,,,,
+28,28,backpack,open backpack,vacuum.jpg,,,open,open,backpack,open backpack,open backpack,vacuum.jpg,1.0,4.0
+29,29,backpack,open backpack,grater.jpg,,,open,open,backpack,open backpack,open backpack,grater.jpg,1.125,8.0
+30,30,banana,banana,banana_peeled.jpg,a,peeled,,,banana,banana,banana,banana_peeled.jpg,6.55,20.0
+31,31,banana,banana,banana_unpeeled.jpg,b,unpeeled,,,banana,banana,banana,banana_unpeeled.jpg,7.0,20.0
+32,32,banana,banana,rake.jpg,,,,,banana,banana,banana,rake.jpg,1.0,11.0
+33,33,banana,banana,calculator.jpg,,,,,banana,banana,banana,calculator.jpg,1.2,5.0
+34,34,banana,banana,lavalamp.jpg,,,,,banana,banana,,,,
+35,35,banana,peeled banana,banana_peeled.jpg,a,peeled,peeled,peeled,banana,peeled banana,peeled banana,banana_peeled.jpg,6.7,20.0
+36,36,banana,peeled banana,banana_unpeeled.jpg,b,unpeeled,peeled,peeled,banana,peeled banana,peeled banana,banana_unpeeled.jpg,2.0,20.0
+37,37,banana,peeled banana,rake.jpg,,,peeled,peeled,banana,peeled banana,peeled banana,rake.jpg,1.0,4.0
+38,38,banana,peeled banana,calculator.jpg,,,peeled,peeled,banana,peeled banana,peeled banana,calculator.jpg,1.0,5.0
+39,39,banana,peeled banana,lavalamp.jpg,,,peeled,peeled,banana,peeled banana,peeled banana,lavalamp.jpg,1.0,6.0
+40,40,banana,unpeeled banana,banana_peeled.jpg,a,peeled,unpeeled,unpeeled,banana,unpeeled banana,unpeeled banana,banana_peeled.jpg,4.181818181818182,22.0
+41,41,banana,unpeeled banana,banana_unpeeled.jpg,b,unpeeled,unpeeled,unpeeled,banana,unpeeled banana,unpeeled banana,banana_unpeeled.jpg,5.954545454545454,22.0
+42,42,banana,unpeeled banana,rake.jpg,,,unpeeled,unpeeled,banana,unpeeled banana,,,,
+43,43,banana,unpeeled banana,calculator.jpg,,,unpeeled,unpeeled,banana,unpeeled banana,unpeeled banana,calculator.jpg,1.0,5.0
+44,44,banana,unpeeled banana,lavalamp.jpg,,,unpeeled,unpeeled,banana,unpeeled banana,unpeeled banana,lavalamp.jpg,1.0,7.0
+45,45,bill,bill,bill_rolled.jpg,a,rolled,,,bill,bill,bill,bill_rolled.jpg,5.714285714285714,21.0
+46,46,bill,bill,bill_unrolled.jpg,b,unrolled,,,bill,bill,bill,bill_unrolled.jpg,6.473684210526316,19.0
+47,47,bill,bill,snowglobe.jpg,,,,,bill,bill,bill,snowglobe.jpg,1.0,11.0
+48,48,bill,bill,picnictable.jpg,,,,,bill,bill,bill,picnictable.jpg,1.0,5.0
+49,49,bill,bill,coatrack.jpg,,,,,bill,bill,,,,
+50,50,bill,rolled bill,bill_rolled.jpg,a,rolled,rolled,rolled,bill,rolled bill,rolled bill,bill_rolled.jpg,6.578947368421052,19.0
+51,51,bill,rolled bill,bill_unrolled.jpg,b,unrolled,rolled,rolled,bill,rolled bill,rolled bill,bill_unrolled.jpg,1.736842105263158,19.0
+52,52,bill,rolled bill,snowglobe.jpg,,,rolled,rolled,bill,rolled bill,rolled bill,snowglobe.jpg,1.0,2.0
+53,53,bill,rolled bill,picnictable.jpg,,,rolled,rolled,bill,rolled bill,rolled bill,picnictable.jpg,1.0,5.0
+54,54,bill,rolled bill,coatrack.jpg,,,rolled,rolled,bill,rolled bill,rolled bill,coatrack.jpg,1.0,6.0
+55,55,bill,unrolled bill,bill_rolled.jpg,a,rolled,unrolled,flat,bill,flat bill,flat bill,bill_rolled.jpg,1.894736842105263,19.0
+56,56,bill,unrolled bill,bill_unrolled.jpg,b,unrolled,unrolled,flat,bill,flat bill,flat bill,bill_unrolled.jpg,6.8,20.0
+57,57,bill,unrolled bill,snowglobe.jpg,,,unrolled,flat,bill,flat bill,,,,
+58,58,bill,unrolled bill,picnictable.jpg,,,unrolled,flat,bill,flat bill,flat bill,picnictable.jpg,1.0,4.0
+59,59,bill,unrolled bill,coatrack.jpg,,,unrolled,flat,bill,flat bill,flat bill,coatrack.jpg,1.0,8.0
+60,60,blanket,blanket,blanket_folded.jpg,a,folded,,,blanket,blanket,blanket,blanket_folded.jpg,6.0476190476190474,21.0
+61,61,blanket,blanket,blanket_unfolded.jpg,b,unfolded,,,blanket,blanket,blanket,blanket_unfolded.jpg,5.7894736842105265,19.0
+62,62,blanket,blanket,elephant.jpg,,,,,blanket,blanket,blanket,elephant.jpg,1.0909090909090908,11.0
+63,63,blanket,blanket,pingpongpaddle.jpg,,,,,blanket,blanket,blanket,pingpongpaddle.jpg,1.0,5.0
+64,64,blanket,blanket,camera.jpg,,,,,blanket,blanket,,,,
+65,65,blanket,folded blanket,blanket_folded.jpg,a,folded,folded,folded,blanket,folded blanket,folded blanket,blanket_folded.jpg,6.052631578947368,19.0
+66,66,blanket,folded blanket,blanket_unfolded.jpg,b,unfolded,folded,folded,blanket,folded blanket,folded blanket,blanket_unfolded.jpg,3.1904761904761907,21.0
+67,67,blanket,folded blanket,elephant.jpg,,,folded,folded,blanket,folded blanket,folded blanket,elephant.jpg,1.0,2.0
+68,68,blanket,folded blanket,pingpongpaddle.jpg,,,folded,folded,blanket,folded blanket,folded blanket,pingpongpaddle.jpg,1.0,5.0
+69,69,blanket,folded blanket,camera.jpg,,,folded,folded,blanket,folded blanket,folded blanket,camera.jpg,1.0,6.0
+70,70,blanket,unfolded blanket,blanket_folded.jpg,a,folded,unfolded,spead-out,blanket,spead-out blanket,spead-out blanket,blanket_folded.jpg,2.1578947368421053,19.0
+71,71,blanket,unfolded blanket,blanket_unfolded.jpg,b,unfolded,unfolded,spead-out,blanket,spead-out blanket,spead-out blanket,blanket_unfolded.jpg,5.7894736842105265,19.0
+72,72,blanket,unfolded blanket,elephant.jpg,,,unfolded,spead-out,blanket,spead-out blanket,,,,
+73,73,blanket,unfolded blanket,pingpongpaddle.jpg,,,unfolded,spead-out,blanket,spead-out blanket,spead-out blanket,pingpongpaddle.jpg,1.0,4.0
+74,74,blanket,unfolded blanket,camera.jpg,,,unfolded,spead-out,blanket,spead-out blanket,spead-out blanket,camera.jpg,1.0,6.0
+75,75,book,book,book_open.jpg,a,open,,,book,book,book,book_open.jpg,6.3,20.0
+76,76,book,book,book_closed.jpg,b,closed,,,book,book,book,book_closed.jpg,6.157894736842105,19.0
+77,77,book,book,faucet.jpg,,,,,book,book,book,faucet.jpg,1.0,10.0
+78,78,book,book,wreath.jpg,,,,,book,book,book,wreath.jpg,1.0,5.0
+79,79,book,book,scooter.jpg,,,,,book,book,,,,
+80,80,book,closed book,book_open.jpg,a,open,closed,closed,book,closed book,closed book,book_open.jpg,2.05,20.0
+81,81,book,closed book,book_closed.jpg,b,closed,closed,closed,book,closed book,closed book,book_closed.jpg,6.631578947368421,19.0
+82,82,book,closed book,faucet.jpg,,,closed,closed,book,closed book,closed book,faucet.jpg,1.0,4.0
+83,83,book,closed book,wreath.jpg,,,closed,closed,book,closed book,closed book,wreath.jpg,1.0,5.0
+84,84,book,closed book,scooter.jpg,,,closed,closed,book,closed book,closed book,scooter.jpg,1.0,6.0
+85,85,book,open book,book_open.jpg,a,open,open,open,book,open book,open book,book_open.jpg,6.631578947368421,19.0
+86,86,book,open book,book_closed.jpg,b,closed,open,open,book,open book,open book,book_closed.jpg,1.9444444444444444,18.0
+87,87,book,open book,faucet.jpg,,,open,open,book,open book,,,,
+88,88,book,open book,wreath.jpg,,,open,open,book,open book,open book,wreath.jpg,1.0,4.0
+89,89,book,open book,scooter.jpg,,,open,open,book,open book,open book,scooter.jpg,1.0,7.0
+90,90,boot,boot,boot_dirty.jpg,a,dirty,,,boot,boot,boot,boot_dirty.jpg,6.181818181818182,22.0
+91,91,boot,boot,boot_clean.jpg,b,clean,,,boot,boot,boot,boot_clean.jpg,6.545454545454546,22.0
+92,92,boot,boot,measuringtape.jpg,,,,,boot,boot,boot,measuringtape.jpg,1.0,10.0
+93,93,boot,boot,present.jpg,,,,,boot,boot,boot,present.jpg,1.0,5.0
+94,94,boot,boot,onionrings.jpg,,,,,boot,boot,,,,
+95,95,boot,clean boot,boot_dirty.jpg,a,dirty,clean,clean,boot,clean boot,clean boot,boot_dirty.jpg,1.9047619047619047,21.0
+96,96,boot,clean boot,boot_clean.jpg,b,clean,clean,clean,boot,clean boot,clean boot,boot_clean.jpg,6.409090909090909,22.0
+97,97,boot,clean boot,measuringtape.jpg,,,clean,clean,boot,clean boot,clean boot,measuringtape.jpg,1.0,3.0
+98,98,boot,clean boot,present.jpg,,,clean,clean,boot,clean boot,clean boot,present.jpg,1.0,5.0
+99,99,boot,clean boot,onionrings.jpg,,,clean,clean,boot,clean boot,clean boot,onionrings.jpg,1.0,6.0
+100,100,boot,dirty boot,boot_dirty.jpg,a,dirty,dirty,dirty,boot,dirty boot,dirty boot,boot_dirty.jpg,6.428571428571429,21.0
+101,101,boot,dirty boot,boot_clean.jpg,b,clean,dirty,dirty,boot,dirty boot,dirty boot,boot_clean.jpg,2.0526315789473686,19.0
+102,102,boot,dirty boot,measuringtape.jpg,,,dirty,dirty,boot,dirty boot,,,,
+103,103,boot,dirty boot,present.jpg,,,dirty,dirty,boot,dirty boot,dirty boot,present.jpg,1.0,4.0
+104,104,boot,dirty boot,onionrings.jpg,,,dirty,dirty,boot,dirty boot,dirty boot,onionrings.jpg,1.0,7.0
+105,105,bread,bread,bread_sliced.jpg,a,sliced,,,bread,bread,bread,bread_sliced.jpg,6.5,20.0
+106,106,bread,bread,bread_unsliced.jpg,b,unsliced,,,bread,bread,bread,bread_unsliced.jpg,6.904761904761905,21.0
+107,107,bread,bread,triangle.jpg,,,,,bread,bread,bread,triangle.jpg,1.0909090909090908,11.0
+108,108,bread,bread,necklace.jpg,,,,,bread,bread,bread,necklace.jpg,1.2,5.0
+109,109,bread,bread,shark.jpg,,,,,bread,bread,,,,
+110,110,bread,sliced bread,bread_sliced.jpg,a,sliced,sliced,sliced,bread,sliced bread,sliced bread,bread_sliced.jpg,6.809523809523809,21.0
+111,111,bread,sliced bread,bread_unsliced.jpg,b,unsliced,sliced,sliced,bread,sliced bread,sliced bread,bread_unsliced.jpg,2.1904761904761907,21.0
+112,112,bread,sliced bread,triangle.jpg,,,sliced,sliced,bread,sliced bread,sliced bread,triangle.jpg,1.0,3.0
+113,113,bread,sliced bread,necklace.jpg,,,sliced,sliced,bread,sliced bread,sliced bread,necklace.jpg,1.0,4.0
+114,114,bread,sliced bread,shark.jpg,,,sliced,sliced,bread,sliced bread,sliced bread,shark.jpg,1.0,6.0
+115,115,bread,unsliced bread,bread_sliced.jpg,a,sliced,unsliced,unsliced,bread,unsliced bread,unsliced bread,bread_sliced.jpg,1.9523809523809523,21.0
+116,116,bread,unsliced bread,bread_unsliced.jpg,b,unsliced,unsliced,unsliced,bread,unsliced bread,unsliced bread,bread_unsliced.jpg,6.6,20.0
+117,117,bread,unsliced bread,triangle.jpg,,,unsliced,unsliced,bread,unsliced bread,,,,
+118,118,bread,unsliced bread,necklace.jpg,,,unsliced,unsliced,bread,unsliced bread,unsliced bread,necklace.jpg,1.0,5.0
+119,119,bread,unsliced bread,shark.jpg,,,unsliced,unsliced,bread,unsliced bread,unsliced bread,shark.jpg,1.0,7.0
+120,120,bucket,bucket,bucket_dirty.jpg,a,dirty,,,bucket,bucket,bucket,bucket_dirty.jpg,6.333333333333333,21.0
+121,121,bucket,bucket,bucket_clean.jpg,b,clean,,,bucket,bucket,bucket,bucket_clean.jpg,6.571428571428571,21.0
+122,122,bucket,bucket,caterpillar.jpg,,,,,bucket,bucket,bucket,caterpillar.jpg,1.0,11.0
+123,123,bucket,bucket,electricscooter.jpg,,,,,bucket,bucket,bucket,electricscooter.jpg,1.0,5.0
+124,124,bucket,bucket,yoyo.jpg,,,,,bucket,bucket,,,,
+125,125,bucket,clean bucket,bucket_dirty.jpg,a,dirty,clean,clean,bucket,clean bucket,clean bucket,bucket_dirty.jpg,1.7619047619047619,21.0
+126,126,bucket,clean bucket,bucket_clean.jpg,b,clean,clean,clean,bucket,clean bucket,clean bucket,bucket_clean.jpg,6.7727272727272725,22.0
+127,127,bucket,clean bucket,caterpillar.jpg,,,clean,clean,bucket,clean bucket,clean bucket,caterpillar.jpg,1.0,4.0
+128,128,bucket,clean bucket,electricscooter.jpg,,,clean,clean,bucket,clean bucket,clean bucket,electricscooter.jpg,1.0,5.0
+129,129,bucket,clean bucket,yoyo.jpg,,,clean,clean,bucket,clean bucket,clean bucket,yoyo.jpg,1.0,4.0
+130,130,bucket,dirty bucket,bucket_dirty.jpg,a,dirty,dirty,dirty,bucket,dirty bucket,dirty bucket,bucket_dirty.jpg,6.590909090909091,22.0
+131,131,bucket,dirty bucket,bucket_clean.jpg,b,clean,dirty,dirty,bucket,dirty bucket,dirty bucket,bucket_clean.jpg,2.3181818181818183,22.0
+132,132,bucket,dirty bucket,caterpillar.jpg,,,dirty,dirty,bucket,dirty bucket,,,,
+133,133,bucket,dirty bucket,electricscooter.jpg,,,dirty,dirty,bucket,dirty bucket,dirty bucket,electricscooter.jpg,1.0,4.0
+134,134,bucket,dirty bucket,yoyo.jpg,,,dirty,dirty,bucket,dirty bucket,dirty bucket,yoyo.jpg,1.0,7.0
+135,135,cabinet,cabinet,cabinet_open.jpg,a,open,,,cabinet,cabinet,cabinet,cabinet_open.jpg,6.333333333333333,18.0
+136,136,cabinet,cabinet,cabinet_closed.jpg,b,closed,,,cabinet,cabinet,cabinet,cabinet_closed.jpg,6.444444444444445,18.0
+137,137,cabinet,cabinet,medal.jpg,,,,,cabinet,cabinet,cabinet,medal.jpg,1.0,11.0
+138,138,cabinet,cabinet,bicycle.jpg,,,,,cabinet,cabinet,cabinet,bicycle.jpg,1.0,5.0
+139,139,cabinet,cabinet,grapes.jpg,,,,,cabinet,cabinet,,,,
+140,140,cabinet,closed cabinet,cabinet_open.jpg,a,open,closed,closed,cabinet,closed cabinet,closed cabinet,cabinet_open.jpg,2.1578947368421053,19.0
+141,141,cabinet,closed cabinet,cabinet_closed.jpg,b,closed,closed,closed,cabinet,closed cabinet,closed cabinet,cabinet_closed.jpg,6.809523809523809,21.0
+142,142,cabinet,closed cabinet,medal.jpg,,,closed,closed,cabinet,closed cabinet,closed cabinet,medal.jpg,1.0,3.0
+143,143,cabinet,closed cabinet,bicycle.jpg,,,closed,closed,cabinet,closed cabinet,closed cabinet,bicycle.jpg,1.0,5.0
+144,144,cabinet,closed cabinet,grapes.jpg,,,closed,closed,cabinet,closed cabinet,closed cabinet,grapes.jpg,1.0,4.0
+145,145,cabinet,open cabinet,cabinet_open.jpg,a,open,open,open,cabinet,open cabinet,open cabinet,cabinet_open.jpg,6.6,20.0
+146,146,cabinet,open cabinet,cabinet_closed.jpg,b,closed,open,open,cabinet,open cabinet,open cabinet,cabinet_closed.jpg,2.1,20.0
+147,147,cabinet,open cabinet,medal.jpg,,,open,open,cabinet,open cabinet,,,,
+148,148,cabinet,open cabinet,bicycle.jpg,,,open,open,cabinet,open cabinet,open cabinet,bicycle.jpg,1.0,4.0
+149,149,cabinet,open cabinet,grapes.jpg,,,open,open,cabinet,open cabinet,open cabinet,grapes.jpg,1.0,7.0
+150,150,can,can,can_open.jpg,a,open,,,can,can,can,can_open.jpg,6.666666666666667,18.0
+151,151,can,can,can_closed.jpg,b,closed,,,can,can,can,can_closed.jpg,6.888888888888889,18.0
+152,152,can,can,iron.jpg,,,,,can,can,can,iron.jpg,1.0,11.0
+153,153,can,can,maracas.jpg,,,,,can,can,can,maracas.jpg,1.0,5.0
+154,154,can,can,gopher.jpg,,,,,can,can,,,,
+155,155,can,closed can,can_open.jpg,a,open,closed,sealed,can,sealed can,sealed can,can_open.jpg,1.8421052631578947,19.0
+156,156,can,closed can,can_closed.jpg,b,closed,closed,sealed,can,sealed can,sealed can,can_closed.jpg,6.3,20.0
+157,157,can,closed can,iron.jpg,,,closed,sealed,can,sealed can,sealed can,iron.jpg,1.0,4.0
+158,158,can,closed can,maracas.jpg,,,closed,sealed,can,sealed can,sealed can,maracas.jpg,1.0,5.0
+159,159,can,closed can,gopher.jpg,,,closed,sealed,can,sealed can,sealed can,gopher.jpg,1.0,6.0
+160,160,can,open can,can_open.jpg,a,open,open,open,can,open can,open can,can_open.jpg,6.888888888888889,18.0
+161,161,can,open can,can_closed.jpg,b,closed,open,open,can,open can,open can,can_closed.jpg,2.25,20.0
+162,162,can,open can,iron.jpg,,,open,open,can,open can,,,,
+163,163,can,open can,maracas.jpg,,,open,open,can,open can,open can,maracas.jpg,1.0,5.0
+164,164,can,open can,gopher.jpg,,,open,open,can,open can,open can,gopher.jpg,1.0,8.0
+165,165,car,car,car_dirty.jpg,a,dirty,,,car,car,car,car_dirty.jpg,6.857142857142857,21.0
+166,166,car,car,car_clean.jpg,b,clean,,,car,car,car,car_clean.jpg,6.8,20.0
+167,167,car,car,pepper.jpg,,,,,car,car,car,pepper.jpg,1.0,9.0
+168,168,car,car,butterfly.jpg,,,,,car,car,car,butterfly.jpg,1.0,5.0
+169,169,car,car,headphones.jpg,,,,,car,car,,,,
+170,170,car,clean car,car_dirty.jpg,a,dirty,clean,clean,car,clean car,clean car,car_dirty.jpg,2.210526315789474,19.0
+171,171,car,clean car,car_clean.jpg,b,clean,clean,clean,car,clean car,clean car,car_clean.jpg,6.476190476190476,21.0
+172,172,car,clean car,pepper.jpg,,,clean,clean,car,clean car,clean car,pepper.jpg,1.0,3.0
+173,173,car,clean car,butterfly.jpg,,,clean,clean,car,clean car,clean car,butterfly.jpg,1.0,5.0
+174,174,car,clean car,headphones.jpg,,,clean,clean,car,clean car,clean car,headphones.jpg,1.0,3.0
+175,175,car,dirty car,car_dirty.jpg,a,dirty,dirty,dirty,car,dirty car,dirty car,car_dirty.jpg,6.0476190476190474,21.0
+176,176,car,dirty car,car_clean.jpg,b,clean,dirty,dirty,car,dirty car,dirty car,car_clean.jpg,2.4285714285714284,21.0
+177,177,car,dirty car,pepper.jpg,,,dirty,dirty,car,dirty car,,,,
+178,178,car,dirty car,butterfly.jpg,,,dirty,dirty,car,dirty car,dirty car,butterfly.jpg,1.0,5.0
+179,179,car,dirty car,headphones.jpg,,,dirty,dirty,car,dirty car,dirty car,headphones.jpg,1.0,8.0
+180,180,carrot,carrot,carrot_peeled.jpg,a,peeled,,,carrot,carrot,carrot,carrot_peeled.jpg,6.75,20.0
+181,181,carrot,carrot,carrot_unpeeled.jpg,b,unpeeled,,,carrot,carrot,carrot,carrot_unpeeled.jpg,6.7368421052631575,19.0
+182,182,carrot,carrot,glue.jpg,,,,,carrot,carrot,carrot,glue.jpg,1.0,9.0
+183,183,carrot,carrot,starfish.jpg,,,,,carrot,carrot,carrot,starfish.jpg,1.0,5.0
+184,184,carrot,carrot,airhockeytable.jpg,,,,,carrot,carrot,,,,
+185,185,carrot,peeled carrot,carrot_peeled.jpg,a,peeled,peeled,peeled,carrot,peeled carrot,peeled carrot,carrot_peeled.jpg,6.2105263157894735,19.0
+186,186,carrot,peeled carrot,carrot_unpeeled.jpg,b,unpeeled,peeled,peeled,carrot,peeled carrot,peeled carrot,carrot_unpeeled.jpg,4.25,20.0
+187,187,carrot,peeled carrot,glue.jpg,,,peeled,peeled,carrot,peeled carrot,peeled carrot,glue.jpg,1.0,2.0
+188,188,carrot,peeled carrot,starfish.jpg,,,peeled,peeled,carrot,peeled carrot,peeled carrot,starfish.jpg,1.0,5.0
+189,189,carrot,peeled carrot,airhockeytable.jpg,,,peeled,peeled,carrot,peeled carrot,peeled carrot,airhockeytable.jpg,1.0,4.0
+190,190,carrot,unpeeled carrot,carrot_peeled.jpg,a,peeled,unpeeled,whole,carrot,whole carrot,whole carrot,carrot_peeled.jpg,5.7368421052631575,19.0
+191,191,carrot,unpeeled carrot,carrot_unpeeled.jpg,b,unpeeled,unpeeled,whole,carrot,whole carrot,whole carrot,carrot_unpeeled.jpg,6.578947368421052,19.0
+192,192,carrot,unpeeled carrot,glue.jpg,,,unpeeled,whole,carrot,whole carrot,,,,
+193,193,carrot,unpeeled carrot,starfish.jpg,,,unpeeled,whole,carrot,whole carrot,whole carrot,starfish.jpg,1.0,5.0
+194,194,carrot,unpeeled carrot,airhockeytable.jpg,,,unpeeled,whole,carrot,whole carrot,whole carrot,airhockeytable.jpg,1.1428571428571428,7.0
+195,195,cdplayer,cdplayer,cdplayer_open.jpg,a,open,,,cd player,cd player,cd player,cdplayer_open.jpg,6.473684210526316,19.0
+196,196,cdplayer,cdplayer,cdplayer_closed.jpg,b,closed,,,cd player,cd player,cd player,cdplayer_closed.jpg,6.588235294117647,17.0
+197,197,cdplayer,cdplayer,marbles.jpg,,,,,cd player,cd player,cd player,marbles.jpg,1.1111111111111112,9.0
+198,198,cdplayer,cdplayer,hotdog.jpg,,,,,cd player,cd player,cd player,hotdog.jpg,1.2,5.0
+199,199,cdplayer,cdplayer,bear.jpg,,,,,cd player,cd player,,,,
+200,200,cdplayer,closed cdplayer,cdplayer_open.jpg,a,open,closed,closed,cd player,closed cd player,closed cd player,cdplayer_open.jpg,2.3529411764705883,17.0
+201,201,cdplayer,closed cdplayer,cdplayer_closed.jpg,b,closed,closed,closed,cd player,closed cd player,closed cd player,cdplayer_closed.jpg,6.65,20.0
+202,202,cdplayer,closed cdplayer,marbles.jpg,,,closed,closed,cd player,closed cd player,closed cd player,marbles.jpg,1.0,4.0
+203,203,cdplayer,closed cdplayer,hotdog.jpg,,,closed,closed,cd player,closed cd player,closed cd player,hotdog.jpg,1.0,5.0
+204,204,cdplayer,closed cdplayer,bear.jpg,,,closed,closed,cd player,closed cd player,closed cd player,bear.jpg,1.0,5.0
+205,205,cdplayer,open cdplayer,cdplayer_open.jpg,a,open,open,open,cd player,open cd player,open cd player,cdplayer_open.jpg,6.65,20.0
+206,206,cdplayer,open cdplayer,cdplayer_closed.jpg,b,closed,open,open,cd player,open cd player,open cd player,cdplayer_closed.jpg,2.15,20.0
+207,207,cdplayer,open cdplayer,marbles.jpg,,,open,open,cd player,open cd player,,,,
+208,208,cdplayer,open cdplayer,hotdog.jpg,,,open,open,cd player,open cd player,open cd player,hotdog.jpg,1.0,5.0
+209,209,cdplayer,open cdplayer,bear.jpg,,,open,open,cd player,open cd player,open cd player,bear.jpg,1.0,7.0
+210,210,chain,broken chain,chain_broken.jpg,a,broken,broken,broken,chain,broken chain,broken chain,chain_broken.jpg,6.684210526315789,19.0
+211,211,chain,broken chain,chain_whole.jpg,b,whole,broken,broken,chain,broken chain,broken chain,chain_whole.jpg,1.8,20.0
+212,212,chain,broken chain,antelope.jpg,,,broken,broken,chain,broken chain,broken chain,antelope.jpg,1.0,9.0
+213,213,chain,broken chain,milkcrate.jpg,,,broken,broken,chain,broken chain,broken chain,milkcrate.jpg,1.2,5.0
+214,214,chain,broken chain,fuzzydice.jpg,,,broken,broken,chain,broken chain,,,,
+215,215,chain,chain,chain_broken.jpg,a,broken,,,chain,chain,chain,chain_broken.jpg,5.380952380952381,21.0
+216,216,chain,chain,chain_whole.jpg,b,whole,,,chain,chain,chain,chain_whole.jpg,6.857142857142857,21.0
+217,217,chain,chain,antelope.jpg,,,,,chain,chain,chain,antelope.jpg,1.0,4.0
+218,218,chain,chain,milkcrate.jpg,,,,,chain,chain,chain,milkcrate.jpg,1.0,5.0
+219,219,chain,chain,fuzzydice.jpg,,,,,chain,chain,chain,fuzzydice.jpg,1.8,5.0
+220,220,chain,whole chain,chain_broken.jpg,a,broken,whole,intact,chain,intact chain,intact chain,chain_broken.jpg,1.6666666666666667,21.0
+221,221,chain,whole chain,chain_whole.jpg,b,whole,whole,intact,chain,intact chain,intact chain,chain_whole.jpg,6.904761904761905,21.0
+222,222,chain,whole chain,antelope.jpg,,,whole,intact,chain,intact chain,,,,
+223,223,chain,whole chain,milkcrate.jpg,,,whole,intact,chain,intact chain,intact chain,milkcrate.jpg,1.2,5.0
+224,224,chain,whole chain,fuzzydice.jpg,,,whole,intact,chain,intact chain,intact chain,fuzzydice.jpg,1.125,8.0
+225,225,chapstick,chapstick,chapstick_open.jpg,a,open,,,chap stick,chap stick,chap stick,chapstick_open.jpg,6.578947368421052,19.0
+226,226,chapstick,chapstick,chapstick_closed.jpg,b,closed,,,chap stick,chap stick,chap stick,chapstick_closed.jpg,6.545454545454546,22.0
+227,227,chapstick,chapstick,toaster.jpg,,,,,chap stick,chap stick,chap stick,toaster.jpg,1.0909090909090908,11.0
+228,228,chapstick,chapstick,saw.jpg,,,,,chap stick,chap stick,chap stick,saw.jpg,1.2,5.0
+229,229,chapstick,chapstick,rollerskate.jpg,,,,,chap stick,chap stick,,,,
+230,230,chapstick,closed chapstick,chapstick_open.jpg,a,open,closed,capped,chap stick,capped chap stick,capped chap stick,chapstick_open.jpg,2.090909090909091,22.0
+231,231,chapstick,closed chapstick,chapstick_closed.jpg,b,closed,closed,capped,chap stick,capped chap stick,capped chap stick,chapstick_closed.jpg,6.681818181818182,22.0
+232,232,chapstick,closed chapstick,toaster.jpg,,,closed,capped,chap stick,capped chap stick,capped chap stick,toaster.jpg,1.0,4.0
+233,233,chapstick,closed chapstick,saw.jpg,,,closed,capped,chap stick,capped chap stick,capped chap stick,saw.jpg,1.0,5.0
+234,234,chapstick,closed chapstick,rollerskate.jpg,,,closed,capped,chap stick,capped chap stick,capped chap stick,rollerskate.jpg,1.0,6.0
+235,235,chapstick,open chapstick,chapstick_open.jpg,a,open,open,opened,chap stick,opened chap stick,opened chap stick,chapstick_open.jpg,6.909090909090909,22.0
+236,236,chapstick,open chapstick,chapstick_closed.jpg,b,closed,open,opened,chap stick,opened chap stick,opened chap stick,chapstick_closed.jpg,2.5454545454545454,22.0
+237,237,chapstick,open chapstick,toaster.jpg,,,open,opened,chap stick,opened chap stick,,,,
+238,238,chapstick,open chapstick,saw.jpg,,,open,opened,chap stick,opened chap stick,opened chap stick,saw.jpg,1.0,5.0
+239,239,chapstick,open chapstick,rollerskate.jpg,,,open,opened,chap stick,opened chap stick,opened chap stick,rollerskate.jpg,1.0,8.0
+240,240,chestofdrawers,chestofdrawers,chestofdrawers_open.jpg,a,open,,,chest of drawers,chest of drawers,chest of drawers,chestofdrawers_open.jpg,6.45,20.0
+241,241,chestofdrawers,chestofdrawers,chestofdrawers_closed.jpg,b,closed,,,chest of drawers,chest of drawers,chest of drawers,chestofdrawers_closed.jpg,6.4,20.0
+242,242,chestofdrawers,chestofdrawers,fish.jpg,,,,,chest of drawers,chest of drawers,chest of drawers,fish.jpg,1.0909090909090908,11.0
+243,243,chestofdrawers,chestofdrawers,ruler.jpg,,,,,chest of drawers,chest of drawers,chest of drawers,ruler.jpg,1.0,4.0
+244,244,chestofdrawers,chestofdrawers,tambourine.jpg,,,,,chest of drawers,chest of drawers,,,,
+245,245,chestofdrawers,closed chestofdrawers,chestofdrawers_open.jpg,a,open,closed,closed,chest of drawers,closed chest of drawers,closed chest of drawers,chestofdrawers_open.jpg,2.263157894736842,19.0
+246,246,chestofdrawers,closed chestofdrawers,chestofdrawers_closed.jpg,b,closed,closed,closed,chest of drawers,closed chest of drawers,closed chest of drawers,chestofdrawers_closed.jpg,6.818181818181818,22.0
+247,247,chestofdrawers,closed chestofdrawers,fish.jpg,,,closed,closed,chest of drawers,closed chest of drawers,closed chest of drawers,fish.jpg,1.0,3.0
+248,248,chestofdrawers,closed chestofdrawers,ruler.jpg,,,closed,closed,chest of drawers,closed chest of drawers,closed chest of drawers,ruler.jpg,1.2,5.0
+249,249,chestofdrawers,closed chestofdrawers,tambourine.jpg,,,closed,closed,chest of drawers,closed chest of drawers,closed chest of drawers,tambourine.jpg,1.0,5.0
+250,250,chestofdrawers,open chestofdrawers,chestofdrawers_open.jpg,a,open,open,opened,chest of drawers,opened chest of drawers,opened chest of drawers,chestofdrawers_open.jpg,6.809523809523809,21.0
+251,251,chestofdrawers,open chestofdrawers,chestofdrawers_closed.jpg,b,closed,open,opened,chest of drawers,opened chest of drawers,opened chest of drawers,chestofdrawers_closed.jpg,2.3333333333333335,21.0
+252,252,chestofdrawers,open chestofdrawers,fish.jpg,,,open,opened,chest of drawers,opened chest of drawers,,,,
+253,253,chestofdrawers,open chestofdrawers,ruler.jpg,,,open,opened,chest of drawers,opened chest of drawers,opened chest of drawers,ruler.jpg,1.2,5.0
+254,254,chestofdrawers,open chestofdrawers,tambourine.jpg,,,open,opened,chest of drawers,opened chest of drawers,opened chest of drawers,tambourine.jpg,1.0,8.0
+255,255,chipbag,chipbag,chipbag_ripped.jpg,a,ripped,,,chip bag,chip bag,chip bag,chipbag_ripped.jpg,6.6,20.0
+256,256,chipbag,chipbag,chipbag_whole.jpg,b,whole,,,chip bag,chip bag,chip bag,chipbag_whole.jpg,6.444444444444445,18.0
+257,257,chipbag,chipbag,funnel.jpg,,,,,chip bag,chip bag,chip bag,funnel.jpg,1.0,11.0
+258,258,chipbag,chipbag,column.jpg,,,,,chip bag,chip bag,chip bag,column.jpg,1.0,5.0
+259,259,chipbag,chipbag,hanger.jpg,,,,,chip bag,chip bag,,,,
+260,260,chipbag,ripped chipbag,chipbag_ripped.jpg,a,ripped,ripped,opened,chip bag,opened chip bag,opened chip bag,chipbag_ripped.jpg,4.842105263157895,19.0
+261,261,chipbag,ripped chipbag,chipbag_whole.jpg,b,whole,ripped,opened,chip bag,opened chip bag,opened chip bag,chipbag_whole.jpg,2.2857142857142856,21.0
+262,262,chipbag,ripped chipbag,funnel.jpg,,,ripped,opened,chip bag,opened chip bag,opened chip bag,funnel.jpg,1.0,3.0
+263,263,chipbag,ripped chipbag,column.jpg,,,ripped,opened,chip bag,opened chip bag,opened chip bag,column.jpg,1.0,5.0
+264,264,chipbag,ripped chipbag,hanger.jpg,,,ripped,opened,chip bag,opened chip bag,opened chip bag,hanger.jpg,1.0,6.0
+265,265,chipbag,whole chipbag,chipbag_ripped.jpg,a,ripped,whole,unopened,chip bag,unopened chip bag,unopened chip bag,chipbag_ripped.jpg,3.0476190476190474,21.0
+266,266,chipbag,whole chipbag,chipbag_whole.jpg,b,whole,whole,unopened,chip bag,unopened chip bag,unopened chip bag,chipbag_whole.jpg,6.285714285714286,21.0
+267,267,chipbag,whole chipbag,funnel.jpg,,,whole,unopened,chip bag,unopened chip bag,,,,
+268,268,chipbag,whole chipbag,column.jpg,,,whole,unopened,chip bag,unopened chip bag,unopened chip bag,column.jpg,1.0,5.0
+269,269,chipbag,whole chipbag,hanger.jpg,,,whole,unopened,chip bag,unopened chip bag,unopened chip bag,hanger.jpg,1.0,8.0
+270,270,chocolatebar,broken chocolatebar,chocolatebar_broken.jpg,a,broken,broken,broken,chocolate bar,broken chocolate bar,broken chocolate bar,chocolatebar_broken.jpg,6.818181818181818,22.0
+271,271,chocolatebar,broken chocolatebar,chocolatebar_whole.jpg,b,whole,broken,broken,chocolate bar,broken chocolate bar,broken chocolate bar,chocolatebar_whole.jpg,1.95,20.0
+272,272,chocolatebar,broken chocolatebar,screwdriver.jpg,,,broken,broken,chocolate bar,broken chocolate bar,broken chocolate bar,screwdriver.jpg,1.1111111111111112,9.0
+273,273,chocolatebar,broken chocolatebar,antlers.jpg,,,broken,broken,chocolate bar,broken chocolate bar,broken chocolate bar,antlers.jpg,1.0,5.0
+274,274,chocolatebar,broken chocolatebar,kite.jpg,,,broken,broken,chocolate bar,broken chocolate bar,,,,
+275,275,chocolatebar,chocolatebar,chocolatebar_broken.jpg,a,broken,,,chocolate bar,chocolate bar,chocolate bar,chocolatebar_broken.jpg,5.909090909090909,22.0
+276,276,chocolatebar,chocolatebar,chocolatebar_whole.jpg,b,whole,,,chocolate bar,chocolate bar,chocolate bar,chocolatebar_whole.jpg,6.7272727272727275,22.0
+277,277,chocolatebar,chocolatebar,screwdriver.jpg,,,,,chocolate bar,chocolate bar,chocolate bar,screwdriver.jpg,1.0,3.0
+278,278,chocolatebar,chocolatebar,antlers.jpg,,,,,chocolate bar,chocolate bar,chocolate bar,antlers.jpg,1.0,5.0
+279,279,chocolatebar,chocolatebar,kite.jpg,,,,,chocolate bar,chocolate bar,chocolate bar,kite.jpg,1.0,4.0
+280,280,chocolatebar,whole chocolatebar,chocolatebar_broken.jpg,a,broken,whole,whole,chocolate bar,whole chocolate bar,whole chocolate bar,chocolatebar_broken.jpg,3.65,20.0
+281,281,chocolatebar,whole chocolatebar,chocolatebar_whole.jpg,b,whole,whole,whole,chocolate bar,whole chocolate bar,whole chocolate bar,chocolatebar_whole.jpg,6.947368421052632,19.0
+282,282,chocolatebar,whole chocolatebar,screwdriver.jpg,,,whole,whole,chocolate bar,whole chocolate bar,,,,
+283,283,chocolatebar,whole chocolatebar,antlers.jpg,,,whole,whole,chocolate bar,whole chocolate bar,whole chocolate bar,antlers.jpg,1.0,5.0
+284,284,chocolatebar,whole chocolatebar,kite.jpg,,,whole,whole,chocolate bar,whole chocolate bar,whole chocolate bar,kite.jpg,1.0,7.0
+285,285,cigarette,broken cigarette,cigarette_broken.jpg,a,broken,broken,broken,cigarette,broken cigarette,broken cigarette,cigarette_broken.jpg,6.947368421052632,19.0
+286,286,cigarette,broken cigarette,cigarette_whole.jpg,b,whole,broken,broken,cigarette,broken cigarette,broken cigarette,cigarette_whole.jpg,2.0,20.0
+287,287,cigarette,broken cigarette,licenseplate.jpg,,,broken,broken,cigarette,broken cigarette,broken cigarette,licenseplate.jpg,1.1111111111111112,9.0
+288,288,cigarette,broken cigarette,kangaroo.jpg,,,broken,broken,cigarette,broken cigarette,broken cigarette,kangaroo.jpg,1.0,5.0
+289,289,cigarette,broken cigarette,pitchfork.jpg,,,broken,broken,cigarette,broken cigarette,,,,
+290,290,cigarette,cigarette,cigarette_broken.jpg,a,broken,,,cigarette,cigarette,cigarette,cigarette_broken.jpg,4.8,20.0
+291,291,cigarette,cigarette,cigarette_whole.jpg,b,whole,,,cigarette,cigarette,cigarette,cigarette_whole.jpg,7.0,21.0
+292,292,cigarette,cigarette,licenseplate.jpg,,,,,cigarette,cigarette,cigarette,licenseplate.jpg,1.0,3.0
+293,293,cigarette,cigarette,kangaroo.jpg,,,,,cigarette,cigarette,cigarette,kangaroo.jpg,1.0,5.0
+294,294,cigarette,cigarette,pitchfork.jpg,,,,,cigarette,cigarette,cigarette,pitchfork.jpg,1.0,4.0
+295,295,cigarette,whole cigarette,cigarette_broken.jpg,a,broken,whole,unlit,cigarette,unlit cigarette,unlit cigarette,cigarette_broken.jpg,3.8947368421052633,19.0
+296,296,cigarette,whole cigarette,cigarette_whole.jpg,b,whole,whole,unlit,cigarette,unlit cigarette,unlit cigarette,cigarette_whole.jpg,7.0,21.0
+297,297,cigarette,whole cigarette,licenseplate.jpg,,,whole,unlit,cigarette,unlit cigarette,,,,
+298,298,cigarette,whole cigarette,kangaroo.jpg,,,whole,unlit,cigarette,unlit cigarette,unlit cigarette,kangaroo.jpg,1.0,5.0
+299,299,cigarette,whole cigarette,pitchfork.jpg,,,whole,unlit,cigarette,unlit cigarette,unlit cigarette,pitchfork.jpg,1.1428571428571428,7.0
+300,300,cookie,broken cookie,cookie_broken.jpg,a,broken,broken,broken,cookie,broken cookie,broken cookie,cookie_broken.jpg,6.7894736842105265,19.0
+301,301,cookie,broken cookie,cookie_whole.jpg,b,whole,broken,broken,cookie,broken cookie,broken cookie,cookie_whole.jpg,2.1363636363636362,22.0
+302,302,cookie,broken cookie,shears.jpg,,,broken,broken,cookie,broken cookie,broken cookie,shears.jpg,1.0,10.0
+303,303,cookie,broken cookie,screen.jpg,,,broken,broken,cookie,broken cookie,broken cookie,screen.jpg,1.4,5.0
+304,304,cookie,broken cookie,lifevest.jpg,,,broken,broken,cookie,broken cookie,,,,
+305,305,cookie,cookie,cookie_broken.jpg,a,broken,,,cookie,cookie,cookie,cookie_broken.jpg,4.7368421052631575,19.0
+306,306,cookie,cookie,cookie_whole.jpg,b,whole,,,cookie,cookie,cookie,cookie_whole.jpg,6.842105263157895,19.0
+307,307,cookie,cookie,shears.jpg,,,,,cookie,cookie,cookie,shears.jpg,1.0,3.0
+308,308,cookie,cookie,screen.jpg,,,,,cookie,cookie,cookie,screen.jpg,1.0,5.0
+309,309,cookie,cookie,lifevest.jpg,,,,,cookie,cookie,cookie,lifevest.jpg,1.0,6.0
+310,310,cookie,whole cookie,cookie_broken.jpg,a,broken,whole,whole,cookie,whole cookie,whole cookie,cookie_broken.jpg,2.2857142857142856,21.0
+311,311,cookie,whole cookie,cookie_whole.jpg,b,whole,whole,whole,cookie,whole cookie,whole cookie,cookie_whole.jpg,6.85,20.0
+312,312,cookie,whole cookie,shears.jpg,,,whole,whole,cookie,whole cookie,,,,
+313,313,cookie,whole cookie,screen.jpg,,,whole,whole,cookie,whole cookie,whole cookie,screen.jpg,1.0,4.0
+314,314,cookie,whole cookie,lifevest.jpg,,,whole,whole,cookie,whole cookie,whole cookie,lifevest.jpg,1.0,8.0
+315,315,couch,clean couch,couch_dirty.jpg,a,dirty,clean,clean,couch,clean couch,clean couch,couch_dirty.jpg,3.55,20.0
+316,316,couch,clean couch,couch_clean.jpg,b,clean,clean,clean,couch,clean couch,clean couch,couch_clean.jpg,6.857142857142857,21.0
+317,317,couch,clean couch,recyclebin.jpg,,,clean,clean,couch,clean couch,clean couch,recyclebin.jpg,1.0909090909090908,11.0
+318,318,couch,clean couch,pliers.jpg,,,clean,clean,couch,clean couch,clean couch,pliers.jpg,1.0,5.0
+319,319,couch,clean couch,olive.jpg,,,clean,clean,couch,clean couch,,,,
+320,320,couch,couch,couch_dirty.jpg,a,dirty,,,couch,couch,couch,couch_dirty.jpg,6.842105263157895,19.0
+321,321,couch,couch,couch_clean.jpg,b,clean,,,couch,couch,couch,couch_clean.jpg,6.9,20.0
+322,322,couch,couch,recyclebin.jpg,,,,,couch,couch,couch,recyclebin.jpg,1.0,2.0
+323,323,couch,couch,pliers.jpg,,,,,couch,couch,couch,pliers.jpg,1.0,5.0
+324,324,couch,couch,olive.jpg,,,,,couch,couch,couch,olive.jpg,1.0,6.0
+325,325,couch,dirty couch,couch_dirty.jpg,a,dirty,dirty,dirty,couch,dirty couch,dirty couch,couch_dirty.jpg,6.15,20.0
+326,326,couch,dirty couch,couch_clean.jpg,b,clean,dirty,dirty,couch,dirty couch,dirty couch,couch_clean.jpg,2.3157894736842106,19.0
+327,327,couch,dirty couch,recyclebin.jpg,,,dirty,dirty,couch,dirty couch,,,,
+328,328,couch,dirty couch,pliers.jpg,,,dirty,dirty,couch,dirty couch,dirty couch,pliers.jpg,1.0,4.0
+329,329,couch,dirty couch,olive.jpg,,,dirty,dirty,couch,dirty couch,dirty couch,olive.jpg,1.0,6.0
+330,330,cracker,broken cracker,cracker_broken.jpg,a,broken,broken,broken,cracker,broken cracker,broken cracker,cracker_broken.jpg,6.8,20.0
+331,331,cracker,broken cracker,cracker_whole.jpg,b,whole,broken,broken,cracker,broken cracker,broken cracker,cracker_whole.jpg,2.380952380952381,21.0
+332,332,cracker,broken cracker,otoscope.jpg,,,broken,broken,cracker,broken cracker,broken cracker,otoscope.jpg,1.0,10.0
+333,333,cracker,broken cracker,shirt.jpg,,,broken,broken,cracker,broken cracker,broken cracker,shirt.jpg,1.2,5.0
+334,334,cracker,broken cracker,toyfarm.jpg,,,broken,broken,cracker,broken cracker,,,,
+335,335,cracker,cracker,cracker_broken.jpg,a,broken,,,cracker,cracker,cracker,cracker_broken.jpg,5.2272727272727275,22.0
+336,336,cracker,cracker,cracker_whole.jpg,b,whole,,,cracker,cracker,cracker,cracker_whole.jpg,6.761904761904762,21.0
+337,337,cracker,cracker,otoscope.jpg,,,,,cracker,cracker,cracker,otoscope.jpg,1.0,3.0
+338,338,cracker,cracker,shirt.jpg,,,,,cracker,cracker,cracker,shirt.jpg,1.0,5.0
+339,339,cracker,cracker,toyfarm.jpg,,,,,cracker,cracker,cracker,toyfarm.jpg,1.0,6.0
+340,340,cracker,whole cracker,cracker_broken.jpg,a,broken,whole,whole,cracker,whole cracker,whole cracker,cracker_broken.jpg,2.5,18.0
+341,341,cracker,whole cracker,cracker_whole.jpg,b,whole,whole,whole,cracker,whole cracker,whole cracker,cracker_whole.jpg,6.7368421052631575,19.0
+342,342,cracker,whole cracker,otoscope.jpg,,,whole,whole,cracker,whole cracker,,,,
+343,343,cracker,whole cracker,shirt.jpg,,,whole,whole,cracker,whole cracker,whole cracker,shirt.jpg,1.0,3.0
+344,344,cracker,whole cracker,toyfarm.jpg,,,whole,whole,cracker,whole cracker,whole cracker,toyfarm.jpg,1.0,7.0
+345,345,cup,clean cup,cup_dirty.jpg,a,dirty,clean,clean,cup,clean cup,clean cup,cup_dirty.jpg,3.2,20.0
+346,346,cup,clean cup,cup_clean.jpg,b,clean,clean,clean,cup,clean cup,clean cup,cup_clean.jpg,5.4,20.0
+347,347,cup,clean cup,pez.jpg,,,clean,clean,cup,clean cup,clean cup,pez.jpg,1.0,11.0
+348,348,cup,clean cup,scale.jpg,,,clean,clean,cup,clean cup,clean cup,scale.jpg,1.0,4.0
+349,349,cup,clean cup,ostrich.jpg,,,clean,clean,cup,clean cup,,,,
+350,350,cup,cup,cup_dirty.jpg,a,dirty,,,cup,cup,cup,cup_dirty.jpg,5.857142857142857,21.0
+351,351,cup,cup,cup_clean.jpg,b,clean,,,cup,cup,cup,cup_clean.jpg,6.2,20.0
+352,352,cup,cup,pez.jpg,,,,,cup,cup,cup,pez.jpg,1.0,4.0
+353,353,cup,cup,scale.jpg,,,,,cup,cup,cup,scale.jpg,1.0,4.0
+354,354,cup,cup,ostrich.jpg,,,,,cup,cup,cup,ostrich.jpg,1.0,5.0
+355,355,cup,dirty cup,cup_dirty.jpg,a,dirty,dirty,dirty,cup,dirty cup,dirty cup,cup_dirty.jpg,5.75,20.0
+356,356,cup,dirty cup,cup_clean.jpg,b,clean,dirty,dirty,cup,dirty cup,dirty cup,cup_clean.jpg,2.95,20.0
+357,357,cup,dirty cup,pez.jpg,,,dirty,dirty,cup,dirty cup,,,,
+358,358,cup,dirty cup,scale.jpg,,,dirty,dirty,cup,dirty cup,dirty cup,scale.jpg,1.2,5.0
+359,359,cup,dirty cup,ostrich.jpg,,,dirty,dirty,cup,dirty cup,dirty cup,ostrich.jpg,1.0,6.0
+360,360,dish,clean dish,dish_dirty.jpg,a,dirty,clean,clean,dish,clean dish,clean dish,dish_dirty.jpg,1.9473684210526316,19.0
+361,361,dish,clean dish,dish_clean.jpg,b,clean,clean,clean,dish,clean dish,clean dish,dish_clean.jpg,6.65,20.0
+362,362,dish,clean dish,compass.jpg,,,clean,clean,dish,clean dish,clean dish,compass.jpg,1.0909090909090908,11.0
+363,363,dish,clean dish,seal.jpg,,,clean,clean,dish,clean dish,clean dish,seal.jpg,1.0,4.0
+364,364,dish,clean dish,mascara.jpg,,,clean,clean,dish,clean dish,,,,
+365,365,dish,dirty dish,dish_dirty.jpg,a,dirty,dirty,dirty,dish,dirty dish,dirty dish,dish_dirty.jpg,6.545454545454546,22.0
+366,366,dish,dirty dish,dish_clean.jpg,b,clean,dirty,dirty,dish,dirty dish,dirty dish,dish_clean.jpg,1.8095238095238095,21.0
+367,367,dish,dirty dish,compass.jpg,,,dirty,dirty,dish,dirty dish,dirty dish,compass.jpg,1.0,4.0
+368,368,dish,dirty dish,seal.jpg,,,dirty,dirty,dish,dirty dish,dirty dish,seal.jpg,1.0,5.0
+369,369,dish,dirty dish,mascara.jpg,,,dirty,dirty,dish,dirty dish,dirty dish,mascara.jpg,1.0,5.0
+370,370,dish,dish,dish_dirty.jpg,a,dirty,,,dish,dish,dish,dish_dirty.jpg,5.368421052631579,19.0
+371,371,dish,dish,dish_clean.jpg,b,clean,,,dish,dish,dish,dish_clean.jpg,6.3,20.0
+372,372,dish,dish,compass.jpg,,,,,dish,dish,,,,
+373,373,dish,dish,seal.jpg,,,,,dish,dish,dish,seal.jpg,1.0,5.0
+374,374,dish,dish,mascara.jpg,,,,,dish,dish,dish,mascara.jpg,1.0,6.0
+375,375,dishwasher,closed dishwasher,dishwasher_open.jpg,a,open,closed,closed,dishwasher,closed dishwasher,closed dishwasher,dishwasher_open.jpg,2.238095238095238,21.0
+376,376,dishwasher,closed dishwasher,dishwasher_closed.jpg,b,closed,closed,closed,dishwasher,closed dishwasher,closed dishwasher,dishwasher_closed.jpg,6.6,20.0
+377,377,dishwasher,closed dishwasher,videocamera.jpg,,,closed,closed,dishwasher,closed dishwasher,closed dishwasher,videocamera.jpg,1.0909090909090908,11.0
+378,378,dishwasher,closed dishwasher,pillow.jpg,,,closed,closed,dishwasher,closed dishwasher,closed dishwasher,pillow.jpg,1.0,5.0
+379,379,dishwasher,closed dishwasher,giraffe.jpg,,,closed,closed,dishwasher,closed dishwasher,,,,
+380,380,dishwasher,dishwasher,dishwasher_open.jpg,a,open,,,dishwasher,dishwasher,dishwasher,dishwasher_open.jpg,6.684210526315789,19.0
+381,381,dishwasher,dishwasher,dishwasher_closed.jpg,b,closed,,,dishwasher,dishwasher,dishwasher,dishwasher_closed.jpg,6.476190476190476,21.0
+382,382,dishwasher,dishwasher,videocamera.jpg,,,,,dishwasher,dishwasher,dishwasher,videocamera.jpg,1.0,3.0
+383,383,dishwasher,dishwasher,pillow.jpg,,,,,dishwasher,dishwasher,dishwasher,pillow.jpg,1.0,5.0
+384,384,dishwasher,dishwasher,giraffe.jpg,,,,,dishwasher,dishwasher,dishwasher,giraffe.jpg,1.0,6.0
+385,385,dishwasher,open dishwasher,dishwasher_open.jpg,a,open,open,open,dishwasher,open dishwasher,open dishwasher,dishwasher_open.jpg,6.7368421052631575,19.0
+386,386,dishwasher,open dishwasher,dishwasher_closed.jpg,b,closed,open,open,dishwasher,open dishwasher,open dishwasher,dishwasher_closed.jpg,2.0,17.0
+387,387,dishwasher,open dishwasher,videocamera.jpg,,,open,open,dishwasher,open dishwasher,,,,
+388,388,dishwasher,open dishwasher,pillow.jpg,,,open,open,dishwasher,open dishwasher,open dishwasher,pillow.jpg,1.0,4.0
+389,389,dishwasher,open dishwasher,giraffe.jpg,,,open,open,dishwasher,open dishwasher,open dishwasher,giraffe.jpg,1.0,8.0
+390,390,door,closed door,door_open.jpg,a,open,closed,closed,door,closed door,closed door,door_open.jpg,1.8636363636363635,22.0
+391,391,door,closed door,door_closed.jpg,b,closed,closed,closed,door,closed door,closed door,door_closed.jpg,6.7,20.0
+392,392,door,closed door,magnifyingglass.jpg,,,closed,closed,door,closed door,closed door,magnifyingglass.jpg,1.0,11.0
+393,393,door,closed door,cheese.jpg,,,closed,closed,door,closed door,closed door,cheese.jpg,1.0,5.0
+394,394,door,closed door,penguin.jpg,,,closed,closed,door,closed door,,,,
+395,395,door,door,door_open.jpg,a,open,,,door,door,door,door_open.jpg,6.631578947368421,19.0
+396,396,door,door,door_closed.jpg,b,closed,,,door,door,door,door_closed.jpg,6.7894736842105265,19.0
+397,397,door,door,magnifyingglass.jpg,,,,,door,door,door,magnifyingglass.jpg,1.0,3.0
+398,398,door,door,cheese.jpg,,,,,door,door,door,cheese.jpg,1.4,5.0
+399,399,door,door,penguin.jpg,,,,,door,door,door,penguin.jpg,1.0,6.0
+400,400,door,open door,door_open.jpg,a,open,open,open,door,open door,open door,door_open.jpg,6.809523809523809,21.0
+401,401,door,open door,door_closed.jpg,b,closed,open,open,door,open door,open door,door_closed.jpg,2.5,20.0
+402,402,door,open door,magnifyingglass.jpg,,,open,open,door,open door,,,,
+403,403,door,open door,cheese.jpg,,,open,open,door,open door,open door,cheese.jpg,1.0,3.0
+404,404,door,open door,penguin.jpg,,,open,open,door,open door,open door,penguin.jpg,1.0,8.0
+405,405,egg,broken egg,egg_broken.jpg,a,broken,broken,broken,egg,broken egg,broken egg,egg_broken.jpg,6.85,20.0
+406,406,egg,broken egg,egg_whole.jpg,b,whole,broken,broken,egg,broken egg,broken egg,egg_whole.jpg,2.2,20.0
+407,407,egg,broken egg,dinghy.jpg,,,broken,broken,egg,broken egg,broken egg,dinghy.jpg,1.0,10.0
+408,408,egg,broken egg,musicstand.jpg,,,broken,broken,egg,broken egg,broken egg,musicstand.jpg,1.2,5.0
+409,409,egg,broken egg,vendingmachine.jpg,,,broken,broken,egg,broken egg,,,,
+410,410,egg,egg,egg_broken.jpg,a,broken,,,egg,egg,egg,egg_broken.jpg,5.428571428571429,21.0
+411,411,egg,egg,egg_whole.jpg,b,whole,,,egg,egg,egg,egg_whole.jpg,6.631578947368421,19.0
+412,412,egg,egg,dinghy.jpg,,,,,egg,egg,egg,dinghy.jpg,1.0,3.0
+413,413,egg,egg,musicstand.jpg,,,,,egg,egg,egg,musicstand.jpg,1.6,5.0
+414,414,egg,egg,vendingmachine.jpg,,,,,egg,egg,egg,vendingmachine.jpg,1.0,6.0
+415,415,egg,whole egg,egg_broken.jpg,a,broken,whole,whole,egg,whole egg,whole egg,egg_broken.jpg,2.8421052631578947,19.0
+416,416,egg,whole egg,egg_whole.jpg,b,whole,whole,whole,egg,whole egg,whole egg,egg_whole.jpg,6.631578947368421,19.0
+417,417,egg,whole egg,dinghy.jpg,,,whole,whole,egg,whole egg,,,,
+418,418,egg,whole egg,musicstand.jpg,,,whole,whole,egg,whole egg,whole egg,musicstand.jpg,1.0,4.0
+419,419,egg,whole egg,vendingmachine.jpg,,,whole,whole,egg,whole egg,whole egg,vendingmachine.jpg,1.125,8.0
+420,420,eggcarton,eggcarton,eggcarton_empty.jpg,a,empty,,,egg carton,egg carton,egg carton,eggcarton_empty.jpg,6.523809523809524,21.0
+421,421,eggcarton,eggcarton,eggcarton_full.jpg,b,full,,,egg carton,egg carton,egg carton,eggcarton_full.jpg,6.277777777777778,18.0
+422,422,eggcarton,eggcarton,beetle.jpg,,,,,egg carton,egg carton,egg carton,beetle.jpg,1.4,10.0
+423,423,eggcarton,eggcarton,paintroller.jpg,,,,,egg carton,egg carton,egg carton,paintroller.jpg,1.2,5.0
+424,424,eggcarton,eggcarton,armchair.jpg,,,,,egg carton,egg carton,,,,
+425,425,eggcarton,empty eggcarton,eggcarton_empty.jpg,a,empty,empty,empty,egg carton,empty egg carton,empty egg carton,eggcarton_empty.jpg,6.842105263157895,19.0
+426,426,eggcarton,empty eggcarton,eggcarton_full.jpg,b,full,empty,empty,egg carton,empty egg carton,empty egg carton,eggcarton_full.jpg,2.0588235294117645,17.0
+427,427,eggcarton,empty eggcarton,beetle.jpg,,,empty,empty,egg carton,empty egg carton,empty egg carton,beetle.jpg,1.0,3.0
+428,428,eggcarton,empty eggcarton,paintroller.jpg,,,empty,empty,egg carton,empty egg carton,empty egg carton,paintroller.jpg,1.8,5.0
+429,429,eggcarton,empty eggcarton,armchair.jpg,,,empty,empty,egg carton,empty egg carton,empty egg carton,armchair.jpg,1.0,4.0
+430,430,eggcarton,full eggcarton,eggcarton_empty.jpg,a,empty,full,full,egg carton,full egg carton,full egg carton,eggcarton_empty.jpg,2.9,20.0
+431,431,eggcarton,full eggcarton,eggcarton_full.jpg,b,full,full,full,egg carton,full egg carton,full egg carton,eggcarton_full.jpg,6.894736842105263,19.0
+432,432,eggcarton,full eggcarton,beetle.jpg,,,full,full,egg carton,full egg carton,,,,
+433,433,eggcarton,full eggcarton,paintroller.jpg,,,full,full,egg carton,full egg carton,full egg carton,paintroller.jpg,1.0,5.0
+434,434,eggcarton,full eggcarton,armchair.jpg,,,full,full,egg carton,full egg carton,full egg carton,armchair.jpg,1.0,6.0
+435,435,envelope,envelope,envelope_ripped.jpg,a,ripped,,,envelope,envelope,envelope,envelope_ripped.jpg,5.3125,16.0
+436,436,envelope,envelope,envelope_whole.jpg,b,whole,,,envelope,envelope,envelope,envelope_whole.jpg,6.578947368421052,19.0
+437,437,envelope,envelope,controller.jpg,,,,,envelope,envelope,envelope,controller.jpg,1.0,10.0
+438,438,envelope,envelope,hay.jpg,,,,,envelope,envelope,envelope,hay.jpg,1.0,5.0
+439,439,envelope,envelope,leash.jpg,,,,,envelope,envelope,,,,
+440,440,envelope,ripped envelope,envelope_ripped.jpg,a,ripped,ripped,opened,envelope,opened envelope,opened envelope,envelope_ripped.jpg,6.315789473684211,19.0
+441,441,envelope,ripped envelope,envelope_whole.jpg,b,whole,ripped,opened,envelope,opened envelope,opened envelope,envelope_whole.jpg,2.4,20.0
+442,442,envelope,ripped envelope,controller.jpg,,,ripped,opened,envelope,opened envelope,opened envelope,controller.jpg,1.0,2.0
+443,443,envelope,ripped envelope,hay.jpg,,,ripped,opened,envelope,opened envelope,opened envelope,hay.jpg,1.0,5.0
+444,444,envelope,ripped envelope,leash.jpg,,,ripped,opened,envelope,opened envelope,opened envelope,leash.jpg,1.0,5.0
+445,445,envelope,whole envelope,envelope_ripped.jpg,a,ripped,whole,sealed,envelope,sealed envelope,sealed envelope,envelope_ripped.jpg,1.8888888888888888,18.0
+446,446,envelope,whole envelope,envelope_whole.jpg,b,whole,whole,sealed,envelope,sealed envelope,sealed envelope,envelope_whole.jpg,6.647058823529412,17.0
+447,447,envelope,whole envelope,controller.jpg,,,whole,sealed,envelope,sealed envelope,,,,
+448,448,envelope,whole envelope,hay.jpg,,,whole,sealed,envelope,sealed envelope,sealed envelope,hay.jpg,1.2,5.0
+449,449,envelope,whole envelope,leash.jpg,,,whole,sealed,envelope,sealed envelope,sealed envelope,leash.jpg,1.125,8.0
+450,450,eye,closed eye,eye_open.jpg,a,open,closed,closed,eye,closed eye,closed eye,eye_open.jpg,1.7222222222222223,18.0
+451,451,eye,closed eye,eye_closed.jpg,b,closed,closed,closed,eye,closed eye,closed eye,eye_closed.jpg,6.75,16.0
+452,452,eye,closed eye,ladle.jpg,,,closed,closed,eye,closed eye,closed eye,ladle.jpg,1.0,10.0
+453,453,eye,closed eye,floppydisk.jpg,,,closed,closed,eye,closed eye,closed eye,floppydisk.jpg,1.0,5.0
+454,454,eye,closed eye,waterwings.jpg,,,closed,closed,eye,closed eye,,,,
+455,455,eye,eye,eye_open.jpg,a,open,,,eye,eye,eye,eye_open.jpg,6.95,20.0
+456,456,eye,eye,eye_closed.jpg,b,closed,,,eye,eye,eye,eye_closed.jpg,5.666666666666667,18.0
+457,457,eye,eye,ladle.jpg,,,,,eye,eye,eye,ladle.jpg,1.0,3.0
+458,458,eye,eye,floppydisk.jpg,,,,,eye,eye,eye,floppydisk.jpg,1.6,5.0
+459,459,eye,eye,waterwings.jpg,,,,,eye,eye,eye,waterwings.jpg,1.0,6.0
+460,460,eye,open eye,eye_open.jpg,a,open,open,open,eye,open eye,open eye,eye_open.jpg,6.842105263157895,19.0
+461,461,eye,open eye,eye_closed.jpg,b,closed,open,open,eye,open eye,open eye,eye_closed.jpg,1.7619047619047619,21.0
+462,462,eye,open eye,ladle.jpg,,,open,open,eye,open eye,,,,
+463,463,eye,open eye,floppydisk.jpg,,,open,open,eye,open eye,open eye,floppydisk.jpg,1.0,5.0
+464,464,eye,open eye,waterwings.jpg,,,open,open,eye,open eye,open eye,waterwings.jpg,1.0,7.0
+465,465,fence,broken fence,fence_broken.jpg,a,broken,broken,broken,fence,broken fence,broken fence,fence_broken.jpg,6.5,20.0
+466,466,fence,broken fence,fence_whole.jpg,b,whole,broken,broken,fence,broken fence,broken fence,fence_whole.jpg,1.95,20.0
+467,467,fence,broken fence,pin.jpg,,,broken,broken,fence,broken fence,broken fence,pin.jpg,1.0,11.0
+468,468,fence,broken fence,cds.jpg,,,broken,broken,fence,broken fence,broken fence,cds.jpg,1.0,4.0
+469,469,fence,broken fence,cucumber.jpg,,,broken,broken,fence,broken fence,,,,
+470,470,fence,fence,fence_broken.jpg,a,broken,,,fence,fence,fence,fence_broken.jpg,5.95,20.0
+471,471,fence,fence,fence_whole.jpg,b,whole,,,fence,fence,fence,fence_whole.jpg,6.85,20.0
+472,472,fence,fence,pin.jpg,,,,,fence,fence,fence,pin.jpg,1.0,4.0
+473,473,fence,fence,cds.jpg,,,,,fence,fence,fence,cds.jpg,1.0,5.0
+474,474,fence,fence,cucumber.jpg,,,,,fence,fence,fence,cucumber.jpg,1.1666666666666667,6.0
+475,475,fence,whole fence,fence_broken.jpg,a,broken,whole,intact,fence,intact fence,intact fence,fence_broken.jpg,2.210526315789474,19.0
+476,476,fence,whole fence,fence_whole.jpg,b,whole,whole,intact,fence,intact fence,intact fence,fence_whole.jpg,7.0,20.0
+477,477,fence,whole fence,pin.jpg,,,whole,intact,fence,intact fence,,,,
+478,478,fence,whole fence,cds.jpg,,,whole,intact,fence,intact fence,intact fence,cds.jpg,1.0,5.0
+479,479,fence,whole fence,cucumber.jpg,,,whole,intact,fence,intact fence,intact fence,cucumber.jpg,1.5,6.0
+480,480,filefolder,closed filefolder,filefolder_open.jpg,a,open,closed,closed,file folder,closed file folder,closed file folder,filefolder_open.jpg,2.0,21.0
+481,481,filefolder,closed filefolder,filefolder_closed.jpg,b,closed,closed,closed,file folder,closed file folder,closed file folder,filefolder_closed.jpg,6.25,20.0
+482,482,filefolder,closed filefolder,celery.jpg,,,closed,closed,file folder,closed file folder,closed file folder,celery.jpg,1.0,9.0
+483,483,filefolder,closed filefolder,dress.jpg,,,closed,closed,file folder,closed file folder,closed file folder,dress.jpg,1.4,5.0
+484,484,filefolder,closed filefolder,rock.jpg,,,closed,closed,file folder,closed file folder,,,,
+485,485,filefolder,filefolder,filefolder_open.jpg,a,open,,,file folder,file folder,file folder,filefolder_open.jpg,6.421052631578948,19.0
+486,486,filefolder,filefolder,filefolder_closed.jpg,b,closed,,,file folder,file folder,file folder,filefolder_closed.jpg,6.9523809523809526,21.0
+487,487,filefolder,filefolder,celery.jpg,,,,,file folder,file folder,file folder,celery.jpg,1.0,3.0
+488,488,filefolder,filefolder,dress.jpg,,,,,file folder,file folder,file folder,dress.jpg,1.0,5.0
+489,489,filefolder,filefolder,rock.jpg,,,,,file folder,file folder,file folder,rock.jpg,1.0,6.0
+490,490,filefolder,open filefolder,filefolder_open.jpg,a,open,open,opened,file folder,opened file folder,opened file folder,filefolder_open.jpg,6.470588235294118,17.0
+491,491,filefolder,open filefolder,filefolder_closed.jpg,b,closed,open,opened,file folder,opened file folder,opened file folder,filefolder_closed.jpg,3.0,20.0
+492,492,filefolder,open filefolder,celery.jpg,,,open,opened,file folder,opened file folder,,,,
+493,493,filefolder,open filefolder,dress.jpg,,,open,opened,file folder,opened file folder,opened file folder,dress.jpg,1.0,5.0
+494,494,filefolder,open filefolder,rock.jpg,,,open,opened,file folder,opened file folder,opened file folder,rock.jpg,2.0,5.0
+495,495,fridge,closed fridge,fridge_open.jpg,a,open,closed,closed,fridge,closed fridge,closed fridge,fridge_open.jpg,2.0,17.0
+496,496,fridge,closed fridge,fridge_closed.jpg,b,closed,closed,closed,fridge,closed fridge,closed fridge,fridge_closed.jpg,6.722222222222222,18.0
+497,497,fridge,closed fridge,mask.jpg,,,closed,closed,fridge,closed fridge,closed fridge,mask.jpg,1.0,11.0
+498,498,fridge,closed fridge,blocks.jpg,,,closed,closed,fridge,closed fridge,closed fridge,blocks.jpg,1.0,5.0
+499,499,fridge,closed fridge,shovel.jpg,,,closed,closed,fridge,closed fridge,,,,
+500,500,fridge,fridge,fridge_open.jpg,a,open,,,fridge,fridge,fridge,fridge_open.jpg,6.571428571428571,21.0
+501,501,fridge,fridge,fridge_closed.jpg,b,closed,,,fridge,fridge,fridge,fridge_closed.jpg,6.95,20.0
+502,502,fridge,fridge,mask.jpg,,,,,fridge,fridge,fridge,mask.jpg,1.0,3.0
+503,503,fridge,fridge,blocks.jpg,,,,,fridge,fridge,fridge,blocks.jpg,1.0,4.0
+504,504,fridge,fridge,shovel.jpg,,,,,fridge,fridge,fridge,shovel.jpg,1.0,6.0
+505,505,fridge,open fridge,fridge_open.jpg,a,open,open,open,fridge,open fridge,open fridge,fridge_open.jpg,6.9523809523809526,21.0
+506,506,fridge,open fridge,fridge_closed.jpg,b,closed,open,open,fridge,open fridge,open fridge,fridge_closed.jpg,1.9523809523809523,21.0
+507,507,fridge,open fridge,mask.jpg,,,open,open,fridge,open fridge,,,,
+508,508,fridge,open fridge,blocks.jpg,,,open,open,fridge,open fridge,open fridge,blocks.jpg,1.0,5.0
+509,509,fridge,open fridge,shovel.jpg,,,open,open,fridge,open fridge,open fridge,shovel.jpg,1.1428571428571428,7.0
+510,510,garbagecan,empty garbagecan,garbagecan_empty.jpg,a,empty,empty,empty,garbage can,empty garbage can,empty garbage can,garbagecan_empty.jpg,6.684210526315789,19.0
+511,511,garbagecan,empty garbagecan,garbagecan_full.jpg,b,full,empty,empty,garbage can,empty garbage can,empty garbage can,garbagecan_full.jpg,1.8571428571428572,21.0
+512,512,garbagecan,empty garbagecan,reindeerantlers.jpg,,,empty,empty,garbage can,empty garbage can,empty garbage can,reindeerantlers.jpg,1.0,11.0
+513,513,garbagecan,empty garbagecan,paddleboat.jpg,,,empty,empty,garbage can,empty garbage can,empty garbage can,paddleboat.jpg,1.4,5.0
+514,514,garbagecan,empty garbagecan,chainsaw.jpg,,,empty,empty,garbage can,empty garbage can,,,,
+515,515,garbagecan,full garbagecan,garbagecan_empty.jpg,a,empty,full,full,garbage can,full garbage can,full garbage can,garbagecan_empty.jpg,1.9545454545454546,22.0
+516,516,garbagecan,full garbagecan,garbagecan_full.jpg,b,full,full,full,garbage can,full garbage can,full garbage can,garbagecan_full.jpg,6.857142857142857,21.0
+517,517,garbagecan,full garbagecan,reindeerantlers.jpg,,,full,full,garbage can,full garbage can,full garbage can,reindeerantlers.jpg,1.0,3.0
+518,518,garbagecan,full garbagecan,paddleboat.jpg,,,full,full,garbage can,full garbage can,full garbage can,paddleboat.jpg,1.0,4.0
+519,519,garbagecan,full garbagecan,chainsaw.jpg,,,full,full,garbage can,full garbage can,full garbage can,chainsaw.jpg,1.0,6.0
+520,520,garbagecan,garbagecan,garbagecan_empty.jpg,a,empty,,,garbage can,garbage can,garbage can,garbagecan_empty.jpg,6.333333333333333,21.0
+521,521,garbagecan,garbagecan,garbagecan_full.jpg,b,full,,,garbage can,garbage can,garbage can,garbagecan_full.jpg,6.1,20.0
+522,522,garbagecan,garbagecan,reindeerantlers.jpg,,,,,garbage can,garbage can,,,,
+523,523,garbagecan,garbagecan,paddleboat.jpg,,,,,garbage can,garbage can,garbage can,paddleboat.jpg,1.0,5.0
+524,524,garbagecan,garbagecan,chainsaw.jpg,,,,,garbage can,garbage can,garbage can,chainsaw.jpg,1.125,8.0
+525,525,garlic,garlic,garlic_peeled.jpg,a,peeled,,,garlic,garlic,garlic,garlic_peeled.jpg,6.681818181818182,22.0
+526,526,garlic,garlic,garlic_unpeeled.jpg,b,unpeeled,,,garlic,garlic,garlic,garlic_unpeeled.jpg,6.809523809523809,21.0
+527,527,garlic,garlic,speakers.jpg,,,,,garlic,garlic,garlic,speakers.jpg,1.5,10.0
+528,528,garlic,garlic,crown.jpg,,,,,garlic,garlic,garlic,crown.jpg,1.2,5.0
+529,529,garlic,garlic,owl.jpg,,,,,garlic,garlic,,,,
+530,530,garlic,peeled garlic,garlic_peeled.jpg,a,peeled,peeled,peeled,garlic,peeled garlic,peeled garlic,garlic_peeled.jpg,6.476190476190476,21.0
+531,531,garlic,peeled garlic,garlic_unpeeled.jpg,b,unpeeled,peeled,peeled,garlic,peeled garlic,peeled garlic,garlic_unpeeled.jpg,3.761904761904762,21.0
+532,532,garlic,peeled garlic,speakers.jpg,,,peeled,peeled,garlic,peeled garlic,peeled garlic,speakers.jpg,1.0,3.0
+533,533,garlic,peeled garlic,crown.jpg,,,peeled,peeled,garlic,peeled garlic,peeled garlic,crown.jpg,1.0,4.0
+534,534,garlic,peeled garlic,owl.jpg,,,peeled,peeled,garlic,peeled garlic,peeled garlic,owl.jpg,1.0,6.0
+535,535,garlic,unpeeled garlic,garlic_peeled.jpg,a,peeled,unpeeled,unpeeled,garlic,unpeeled garlic,unpeeled garlic,garlic_peeled.jpg,3.789473684210526,19.0
+536,536,garlic,unpeeled garlic,garlic_unpeeled.jpg,b,unpeeled,unpeeled,unpeeled,garlic,unpeeled garlic,unpeeled garlic,garlic_unpeeled.jpg,5.142857142857143,21.0
+537,537,garlic,unpeeled garlic,speakers.jpg,,,unpeeled,unpeeled,garlic,unpeeled garlic,,,,
+538,538,garlic,unpeeled garlic,crown.jpg,,,unpeeled,unpeeled,garlic,unpeeled garlic,unpeeled garlic,crown.jpg,1.0,5.0
+539,539,garlic,unpeeled garlic,owl.jpg,,,unpeeled,unpeeled,garlic,unpeeled garlic,unpeeled garlic,owl.jpg,1.0,7.0
+540,540,gate,closed gate,gate_open.jpg,a,open,closed,closed,gate,closed gate,closed gate,gate_open.jpg,2.3,20.0
+541,541,gate,closed gate,gate_closed.jpg,b,closed,closed,closed,gate,closed gate,closed gate,gate_closed.jpg,6.9523809523809526,21.0
+542,542,gate,closed gate,icecreambar.jpg,,,closed,closed,gate,closed gate,closed gate,icecreambar.jpg,1.7,10.0
+543,543,gate,closed gate,skiboot.jpg,,,closed,closed,gate,closed gate,closed gate,skiboot.jpg,1.0,5.0
+544,544,gate,closed gate,trumpet.jpg,,,closed,closed,gate,closed gate,,,,
+545,545,gate,gate,gate_open.jpg,a,open,,,gate,gate,gate,gate_open.jpg,6.3,20.0
+546,546,gate,gate,gate_closed.jpg,b,closed,,,gate,gate,gate,gate_closed.jpg,6.761904761904762,21.0
+547,547,gate,gate,icecreambar.jpg,,,,,gate,gate,gate,icecreambar.jpg,1.0,4.0
+548,548,gate,gate,skiboot.jpg,,,,,gate,gate,gate,skiboot.jpg,1.0,4.0
+549,549,gate,gate,trumpet.jpg,,,,,gate,gate,gate,trumpet.jpg,1.1666666666666667,6.0
+550,550,gate,open gate,gate_open.jpg,a,open,open,open,gate,open gate,open gate,gate_open.jpg,6.894736842105263,19.0
+551,551,gate,open gate,gate_closed.jpg,b,closed,open,open,gate,open gate,open gate,gate_closed.jpg,2.1052631578947367,19.0
+552,552,gate,open gate,icecreambar.jpg,,,open,open,gate,open gate,,,,
+553,553,gate,open gate,skiboot.jpg,,,open,open,gate,open gate,open gate,skiboot.jpg,1.0,4.0
+554,554,gate,open gate,trumpet.jpg,,,open,open,gate,open gate,open gate,trumpet.jpg,1.0,6.0
+555,555,glasses,broken glasses,glasses_broken.jpg,a,broken,broken,broken,glasses,broken glasses,broken glasses,glasses_broken.jpg,6.888888888888889,18.0
+556,556,glasses,broken glasses,glasses_whole.jpg,b,whole,broken,broken,glasses,broken glasses,broken glasses,glasses_whole.jpg,1.7619047619047619,21.0
+557,557,glasses,broken glasses,toothbrush.jpg,,,broken,broken,glasses,broken glasses,broken glasses,toothbrush.jpg,1.4444444444444444,9.0
+558,558,glasses,broken glasses,coconut.jpg,,,broken,broken,glasses,broken glasses,broken glasses,coconut.jpg,1.2,5.0
+559,559,glasses,broken glasses,snake.jpg,,,broken,broken,glasses,broken glasses,,,,
+560,560,glasses,glasses,glasses_broken.jpg,a,broken,,,glasses,glasses,glasses,glasses_broken.jpg,4.5,20.0
+561,561,glasses,glasses,glasses_whole.jpg,b,whole,,,glasses,glasses,glasses,glasses_whole.jpg,6.761904761904762,21.0
+562,562,glasses,glasses,toothbrush.jpg,,,,,glasses,glasses,glasses,toothbrush.jpg,1.0,4.0
+563,563,glasses,glasses,coconut.jpg,,,,,glasses,glasses,glasses,coconut.jpg,1.0,4.0
+564,564,glasses,glasses,snake.jpg,,,,,glasses,glasses,glasses,snake.jpg,1.3333333333333333,6.0
+565,565,glasses,whole glasses,glasses_broken.jpg,a,broken,whole,intact,glasses,intact glasses,intact glasses,glasses_broken.jpg,1.619047619047619,21.0
+566,566,glasses,whole glasses,glasses_whole.jpg,b,whole,whole,intact,glasses,intact glasses,intact glasses,glasses_whole.jpg,6.904761904761905,21.0
+567,567,glasses,whole glasses,toothbrush.jpg,,,whole,intact,glasses,intact glasses,,,,
+568,568,glasses,whole glasses,coconut.jpg,,,whole,intact,glasses,intact glasses,intact glasses,coconut.jpg,1.0,5.0
+569,569,glasses,whole glasses,snake.jpg,,,whole,intact,glasses,intact glasses,intact glasses,snake.jpg,1.0,8.0
+570,570,gloves,clean gloves,gloves_dirty.jpg,a,dirty,clean,clean,gloves,clean gloves,clean gloves,gloves_dirty.jpg,1.8,20.0
+571,571,gloves,clean gloves,gloves_clean.jpg,b,clean,clean,clean,gloves,clean gloves,clean gloves,gloves_clean.jpg,6.7727272727272725,22.0
+572,572,gloves,clean gloves,manatee.jpg,,,clean,clean,gloves,clean gloves,clean gloves,manatee.jpg,1.0909090909090908,11.0
+573,573,gloves,clean gloves,barrel.jpg,,,clean,clean,gloves,clean gloves,clean gloves,barrel.jpg,1.2,5.0
+574,574,gloves,clean gloves,powerbar.jpg,,,clean,clean,gloves,clean gloves,,,,
+575,575,gloves,dirty gloves,gloves_dirty.jpg,a,dirty,dirty,dirty,gloves,dirty gloves,dirty gloves,gloves_dirty.jpg,6.545454545454546,22.0
+576,576,gloves,dirty gloves,gloves_clean.jpg,b,clean,dirty,dirty,gloves,dirty gloves,dirty gloves,gloves_clean.jpg,2.4545454545454546,22.0
+577,577,gloves,dirty gloves,manatee.jpg,,,dirty,dirty,gloves,dirty gloves,dirty gloves,manatee.jpg,1.0,4.0
+578,578,gloves,dirty gloves,barrel.jpg,,,dirty,dirty,gloves,dirty gloves,dirty gloves,barrel.jpg,1.0,4.0
+579,579,gloves,dirty gloves,powerbar.jpg,,,dirty,dirty,gloves,dirty gloves,dirty gloves,powerbar.jpg,1.1666666666666667,6.0
+580,580,gloves,gloves,gloves_dirty.jpg,a,dirty,,,gloves,gloves,gloves,gloves_dirty.jpg,5.578947368421052,19.0
+581,581,gloves,gloves,gloves_clean.jpg,b,clean,,,gloves,gloves,gloves,gloves_clean.jpg,6.55,20.0
+582,582,gloves,gloves,manatee.jpg,,,,,gloves,gloves,,,,
+583,583,gloves,gloves,barrel.jpg,,,,,gloves,gloves,gloves,barrel.jpg,1.0,4.0
+584,584,gloves,gloves,powerbar.jpg,,,,,gloves,gloves,gloves,powerbar.jpg,1.0,8.0
+585,585,hamper,empty hamper,hamper_empty.jpg,a,empty,empty,empty,hamper,empty hamper,empty hamper,hamper_empty.jpg,6.142857142857143,21.0
+586,586,hamper,empty hamper,hamper_full.jpg,b,full,empty,empty,hamper,empty hamper,empty hamper,hamper_full.jpg,1.6,20.0
+587,587,hamper,empty hamper,eliptical.jpg,,,empty,empty,hamper,empty hamper,empty hamper,eliptical.jpg,1.1818181818181819,11.0
+588,588,hamper,empty hamper,sandwich.jpg,,,empty,empty,hamper,empty hamper,empty hamper,sandwich.jpg,1.2,5.0
+589,589,hamper,empty hamper,carseat.jpg,,,empty,empty,hamper,empty hamper,,,,
+590,590,hamper,full hamper,hamper_empty.jpg,a,empty,full,full,hamper,full hamper,full hamper,hamper_empty.jpg,1.85,20.0
+591,591,hamper,full hamper,hamper_full.jpg,b,full,full,full,hamper,full hamper,full hamper,hamper_full.jpg,6.0,21.0
+592,592,hamper,full hamper,eliptical.jpg,,,full,full,hamper,full hamper,full hamper,eliptical.jpg,1.0,4.0
+593,593,hamper,full hamper,sandwich.jpg,,,full,full,hamper,full hamper,full hamper,sandwich.jpg,1.2,5.0
+594,594,hamper,full hamper,carseat.jpg,,,full,full,hamper,full hamper,full hamper,carseat.jpg,1.75,4.0
+595,595,hamper,hamper,hamper_empty.jpg,a,empty,,,hamper,hamper,hamper,hamper_empty.jpg,6.0,19.0
+596,596,hamper,hamper,hamper_full.jpg,b,full,,,hamper,hamper,hamper,hamper_full.jpg,5.9,20.0
+597,597,hamper,hamper,eliptical.jpg,,,,,hamper,hamper,,,,
+598,598,hamper,hamper,sandwich.jpg,,,,,hamper,hamper,hamper,sandwich.jpg,1.2,5.0
+599,599,hamper,hamper,carseat.jpg,,,,,hamper,hamper,hamper,carseat.jpg,1.375,8.0
+600,600,hands,clean hands,hands_dirty.jpg,a,dirty,clean,clean,hands,clean hands,clean hands,hands_dirty.jpg,1.5555555555555556,18.0
+601,601,hands,clean hands,hands_clean.jpg,b,clean,clean,clean,hands,clean hands,clean hands,hands_clean.jpg,6.55,20.0
+602,602,hands,clean hands,maze.jpg,,,clean,clean,hands,clean hands,clean hands,maze.jpg,1.0909090909090908,11.0
+603,603,hands,clean hands,bison.jpg,,,clean,clean,hands,clean hands,clean hands,bison.jpg,1.0,4.0
+604,604,hands,clean hands,rocket.jpg,,,clean,clean,hands,clean hands,,,,
+605,605,hands,dirty hands,hands_dirty.jpg,a,dirty,dirty,dirty,hands,dirty hands,dirty hands,hands_dirty.jpg,6.95,20.0
+606,606,hands,dirty hands,hands_clean.jpg,b,clean,dirty,dirty,hands,dirty hands,dirty hands,hands_clean.jpg,2.3684210526315788,19.0
+607,607,hands,dirty hands,maze.jpg,,,dirty,dirty,hands,dirty hands,dirty hands,maze.jpg,1.0,3.0
+608,608,hands,dirty hands,bison.jpg,,,dirty,dirty,hands,dirty hands,dirty hands,bison.jpg,1.0,4.0
+609,609,hands,dirty hands,rocket.jpg,,,dirty,dirty,hands,dirty hands,dirty hands,rocket.jpg,1.1666666666666667,6.0
+610,610,hands,hands,hands_dirty.jpg,a,dirty,,,hands,hands,hands,hands_dirty.jpg,5.842105263157895,19.0
+611,611,hands,hands,hands_clean.jpg,b,clean,,,hands,hands,hands,hands_clean.jpg,6.9,20.0
+612,612,hands,hands,maze.jpg,,,,,hands,hands,,,,
+613,613,hands,hands,bison.jpg,,,,,hands,hands,hands,bison.jpg,1.0,4.0
+614,614,hands,hands,rocket.jpg,,,,,hands,hands,hands,rocket.jpg,1.0,8.0
+615,615,jar,empty jar,jar_empty.jpg,a,empty,empty,empty,jar,empty jar,empty jar,jar_empty.jpg,6.904761904761905,21.0
+616,616,jar,empty jar,jar_full.jpg,b,full,empty,empty,jar,empty jar,empty jar,jar_full.jpg,2.0,21.0
+617,617,jar,empty jar,trolley.jpg,,,empty,empty,jar,empty jar,empty jar,trolley.jpg,1.0909090909090908,11.0
+618,618,jar,empty jar,skipoles.jpg,,,empty,empty,jar,empty jar,empty jar,skipoles.jpg,1.4,5.0
+619,619,jar,empty jar,mrpotatohead.jpg,,,empty,empty,jar,empty jar,,,,
+620,620,jar,full jar,jar_empty.jpg,a,empty,full,filled,jar,filled jar,filled jar,jar_empty.jpg,2.1904761904761907,21.0
+621,621,jar,full jar,jar_full.jpg,b,full,full,filled,jar,filled jar,filled jar,jar_full.jpg,6.611111111111111,18.0
+622,622,jar,full jar,trolley.jpg,,,full,filled,jar,filled jar,filled jar,trolley.jpg,1.0,3.0
+623,623,jar,full jar,skipoles.jpg,,,full,filled,jar,filled jar,filled jar,skipoles.jpg,1.0,5.0
+624,624,jar,full jar,mrpotatohead.jpg,,,full,filled,jar,filled jar,filled jar,mrpotatohead.jpg,1.0,6.0
+625,625,jar,jar,jar_empty.jpg,a,empty,,,jar,jar,jar,jar_empty.jpg,6.842105263157895,19.0
+626,626,jar,jar,jar_full.jpg,b,full,,,jar,jar,jar,jar_full.jpg,6.0,22.0
+627,627,jar,jar,trolley.jpg,,,,,jar,jar,,,,
+628,628,jar,jar,skipoles.jpg,,,,,jar,jar,jar,skipoles.jpg,1.0,5.0
+629,629,jar,jar,mrpotatohead.jpg,,,,,jar,jar,jar,mrpotatohead.jpg,1.0,8.0
+630,630,juicebottle,closed juicebottle,juicebottle_open.jpg,a,open,closed,unopened,juice bottle,unopened juice bottle,unopened juice bottle,juicebottle_open.jpg,2.263157894736842,19.0
+631,631,juicebottle,closed juicebottle,juicebottle_closed.jpg,b,closed,closed,unopened,juice bottle,unopened juice bottle,unopened juice bottle,juicebottle_closed.jpg,6.055555555555555,18.0
+632,632,juicebottle,closed juicebottle,dominos.jpg,,,closed,unopened,juice bottle,unopened juice bottle,unopened juice bottle,dominos.jpg,1.5,10.0
+633,633,juicebottle,closed juicebottle,television.jpg,,,closed,unopened,juice bottle,unopened juice bottle,unopened juice bottle,television.jpg,1.0,4.0
+634,634,juicebottle,closed juicebottle,flipflop.jpg,,,closed,unopened,juice bottle,unopened juice bottle,,,,
+635,635,juicebottle,juicebottle,juicebottle_open.jpg,a,open,,,juice bottle,juice bottle,juice bottle,juicebottle_open.jpg,6.1,20.0
+636,636,juicebottle,juicebottle,juicebottle_closed.jpg,b,closed,,,juice bottle,juice bottle,juice bottle,juicebottle_closed.jpg,6.588235294117647,17.0
+637,637,juicebottle,juicebottle,dominos.jpg,,,,,juice bottle,juice bottle,juice bottle,dominos.jpg,1.0,4.0
+638,638,juicebottle,juicebottle,television.jpg,,,,,juice bottle,juice bottle,juice bottle,television.jpg,2.0,4.0
+639,639,juicebottle,juicebottle,flipflop.jpg,,,,,juice bottle,juice bottle,juice bottle,flipflop.jpg,1.0,6.0
+640,640,juicebottle,open juicebottle,juicebottle_open.jpg,a,open,open,open,juice bottle,open juice bottle,open juice bottle,juicebottle_open.jpg,6.555555555555555,18.0
+641,641,juicebottle,open juicebottle,juicebottle_closed.jpg,b,closed,open,open,juice bottle,open juice bottle,open juice bottle,juicebottle_closed.jpg,2.3157894736842106,19.0
+642,642,juicebottle,open juicebottle,dominos.jpg,,,open,open,juice bottle,open juice bottle,,,,
+643,643,juicebottle,open juicebottle,television.jpg,,,open,open,juice bottle,open juice bottle,open juice bottle,television.jpg,1.2,5.0
+644,644,juicebottle,open juicebottle,flipflop.jpg,,,open,open,juice bottle,open juice bottle,open juice bottle,flipflop.jpg,1.0,7.0
+645,645,kiwi,kiwi,kiwi_sliced.jpg,a,sliced,,,kiwi,kiwi,kiwi,kiwi_sliced.jpg,6.476190476190476,21.0
+646,646,kiwi,kiwi,kiwi_unsliced.jpg,b,unsliced,,,kiwi,kiwi,kiwi,kiwi_unsliced.jpg,6.636363636363637,22.0
+647,647,kiwi,kiwi,ironingboard.jpg,,,,,kiwi,kiwi,kiwi,ironingboard.jpg,2.0,8.0
+648,648,kiwi,kiwi,paintbrushes.jpg,,,,,kiwi,kiwi,kiwi,paintbrushes.jpg,1.0,4.0
+649,649,kiwi,kiwi,tank.jpg,,,,,kiwi,kiwi,,,,
+650,650,kiwi,sliced kiwi,kiwi_sliced.jpg,a,sliced,sliced,sliced,kiwi,sliced kiwi,sliced kiwi,kiwi_sliced.jpg,7.0,21.0
+651,651,kiwi,sliced kiwi,kiwi_unsliced.jpg,b,unsliced,sliced,sliced,kiwi,sliced kiwi,sliced kiwi,kiwi_unsliced.jpg,1.9473684210526316,19.0
+652,652,kiwi,sliced kiwi,ironingboard.jpg,,,sliced,sliced,kiwi,sliced kiwi,sliced kiwi,ironingboard.jpg,1.0,4.0
+653,653,kiwi,sliced kiwi,paintbrushes.jpg,,,sliced,sliced,kiwi,sliced kiwi,sliced kiwi,paintbrushes.jpg,1.0,5.0
+654,654,kiwi,sliced kiwi,tank.jpg,,,sliced,sliced,kiwi,sliced kiwi,sliced kiwi,tank.jpg,1.0,6.0
+655,655,kiwi,unsliced kiwi,kiwi_sliced.jpg,a,sliced,unsliced,whole,kiwi,whole kiwi,whole kiwi,kiwi_sliced.jpg,3.85,20.0
+656,656,kiwi,unsliced kiwi,kiwi_unsliced.jpg,b,unsliced,unsliced,whole,kiwi,whole kiwi,whole kiwi,kiwi_unsliced.jpg,6.944444444444445,18.0
+657,657,kiwi,unsliced kiwi,ironingboard.jpg,,,unsliced,whole,kiwi,whole kiwi,,,,
+658,658,kiwi,unsliced kiwi,paintbrushes.jpg,,,unsliced,whole,kiwi,whole kiwi,whole kiwi,paintbrushes.jpg,1.0,4.0
+659,659,kiwi,unsliced kiwi,tank.jpg,,,unsliced,whole,kiwi,whole kiwi,whole kiwi,tank.jpg,1.0,7.0
+660,660,ladder,folded ladder,ladder_folded.jpg,a,folded,folded,folded,ladder,folded ladder,folded ladder,ladder_folded.jpg,6.318181818181818,22.0
+661,661,ladder,folded ladder,ladder_unfolded.jpg,b,unfolded,folded,folded,ladder,folded ladder,folded ladder,ladder_unfolded.jpg,3.8095238095238093,21.0
+662,662,ladder,folded ladder,chinesecheckers.jpg,,,folded,folded,ladder,folded ladder,folded ladder,chinesecheckers.jpg,1.0,9.0
+663,663,ladder,folded ladder,nailpolish.jpg,,,folded,folded,ladder,folded ladder,folded ladder,nailpolish.jpg,1.0,4.0
+664,664,ladder,folded ladder,crocodile.jpg,,,folded,folded,ladder,folded ladder,,,,
+665,665,ladder,ladder,ladder_folded.jpg,a,folded,,,ladder,ladder,ladder,ladder_folded.jpg,6.523809523809524,21.0
+666,666,ladder,ladder,ladder_unfolded.jpg,b,unfolded,,,ladder,ladder,ladder,ladder_unfolded.jpg,6.8,20.0
+667,667,ladder,ladder,chinesecheckers.jpg,,,,,ladder,ladder,ladder,chinesecheckers.jpg,1.0,3.0
+668,668,ladder,ladder,nailpolish.jpg,,,,,ladder,ladder,ladder,nailpolish.jpg,1.0,4.0
+669,669,ladder,ladder,crocodile.jpg,,,,,ladder,ladder,ladder,crocodile.jpg,1.0,5.0
+670,670,ladder,unfolded ladder,ladder_folded.jpg,a,folded,unfolded,open,ladder,open ladder,open ladder,ladder_folded.jpg,2.0952380952380953,21.0
+671,671,ladder,unfolded ladder,ladder_unfolded.jpg,b,unfolded,unfolded,open,ladder,open ladder,open ladder,ladder_unfolded.jpg,6.684210526315789,19.0
+672,672,ladder,unfolded ladder,chinesecheckers.jpg,,,unfolded,open,ladder,open ladder,,,,
+673,673,ladder,unfolded ladder,nailpolish.jpg,,,unfolded,open,ladder,open ladder,open ladder,nailpolish.jpg,1.0,3.0
+674,674,ladder,unfolded ladder,crocodile.jpg,,,unfolded,open,ladder,open ladder,open ladder,crocodile.jpg,1.0,8.0
+675,675,laptop,closed laptop,laptop_open.jpg,a,open,closed,closed,laptop,closed laptop,closed laptop,laptop_open.jpg,1.8571428571428572,21.0
+676,676,laptop,closed laptop,laptop_closed.jpg,b,closed,closed,closed,laptop,closed laptop,closed laptop,laptop_closed.jpg,6.85,20.0
+677,677,laptop,closed laptop,thermometer.jpg,,,closed,closed,laptop,closed laptop,closed laptop,thermometer.jpg,1.0909090909090908,11.0
+678,678,laptop,closed laptop,sign.jpg,,,closed,closed,laptop,closed laptop,closed laptop,sign.jpg,1.0,4.0
+679,679,laptop,closed laptop,grapefruit.jpg,,,closed,closed,laptop,closed laptop,,,,
+680,680,laptop,laptop,laptop_open.jpg,a,open,,,laptop,laptop,laptop,laptop_open.jpg,6.833333333333333,18.0
+681,681,laptop,laptop,laptop_closed.jpg,b,closed,,,laptop,laptop,laptop,laptop_closed.jpg,6.571428571428571,21.0
+682,682,laptop,laptop,thermometer.jpg,,,,,laptop,laptop,laptop,thermometer.jpg,1.0,3.0
+683,683,laptop,laptop,sign.jpg,,,,,laptop,laptop,laptop,sign.jpg,1.0,4.0
+684,684,laptop,laptop,grapefruit.jpg,,,,,laptop,laptop,laptop,grapefruit.jpg,1.0,5.0
+685,685,laptop,open laptop,laptop_open.jpg,a,open,open,open,laptop,open laptop,open laptop,laptop_open.jpg,6.611111111111111,18.0
+686,686,laptop,open laptop,laptop_closed.jpg,b,closed,open,open,laptop,open laptop,open laptop,laptop_closed.jpg,1.6666666666666667,18.0
+687,687,laptop,open laptop,thermometer.jpg,,,open,open,laptop,open laptop,,,,
+688,688,laptop,open laptop,sign.jpg,,,open,open,laptop,open laptop,open laptop,sign.jpg,1.0,5.0
+689,689,laptop,open laptop,grapefruit.jpg,,,open,open,laptop,open laptop,open laptop,grapefruit.jpg,1.0,7.0
+690,690,lawnchair,folded lawnchair,lawnchair_folded.jpg,a,folded,folded,folded,lawn chair,folded lawn chair,folded lawn chair,lawnchair_folded.jpg,6.85,20.0
+691,691,lawnchair,folded lawnchair,lawnchair_unfolded.jpg,b,unfolded,folded,folded,lawn chair,folded lawn chair,folded lawn chair,lawnchair_unfolded.jpg,1.9473684210526316,19.0
+692,692,lawnchair,folded lawnchair,anvil.jpg,,,folded,folded,lawn chair,folded lawn chair,folded lawn chair,anvil.jpg,1.0909090909090908,11.0
+693,693,lawnchair,folded lawnchair,cabbage.jpg,,,folded,folded,lawn chair,folded lawn chair,folded lawn chair,cabbage.jpg,1.2,5.0
+694,694,lawnchair,folded lawnchair,stamp.jpg,,,folded,folded,lawn chair,folded lawn chair,,,,
+695,695,lawnchair,lawnchair,lawnchair_folded.jpg,a,folded,,,lawn chair,lawn chair,lawn chair,lawnchair_folded.jpg,5.55,20.0
+696,696,lawnchair,lawnchair,lawnchair_unfolded.jpg,b,unfolded,,,lawn chair,lawn chair,lawn chair,lawnchair_unfolded.jpg,6.7,20.0
+697,697,lawnchair,lawnchair,anvil.jpg,,,,,lawn chair,lawn chair,lawn chair,anvil.jpg,1.0,4.0
+698,698,lawnchair,lawnchair,cabbage.jpg,,,,,lawn chair,lawn chair,lawn chair,cabbage.jpg,1.5,4.0
+699,699,lawnchair,lawnchair,stamp.jpg,,,,,lawn chair,lawn chair,lawn chair,stamp.jpg,1.1666666666666667,6.0
+700,700,lawnchair,unfolded lawnchair,lawnchair_folded.jpg,a,folded,unfolded,unfolded,lawn chair,unfolded lawn chair,unfolded lawn chair,lawnchair_folded.jpg,2.65,20.0
+701,701,lawnchair,unfolded lawnchair,lawnchair_unfolded.jpg,b,unfolded,unfolded,unfolded,lawn chair,unfolded lawn chair,unfolded lawn chair,lawnchair_unfolded.jpg,5.75,20.0
+702,702,lawnchair,unfolded lawnchair,anvil.jpg,,,unfolded,unfolded,lawn chair,unfolded lawn chair,,,,
+703,703,lawnchair,unfolded lawnchair,cabbage.jpg,,,unfolded,unfolded,lawn chair,unfolded lawn chair,unfolded lawn chair,cabbage.jpg,1.0,4.0
+704,704,lawnchair,unfolded lawnchair,stamp.jpg,,,unfolded,unfolded,lawn chair,unfolded lawn chair,unfolded lawn chair,stamp.jpg,1.0,7.0
+705,705,lime,lime,lime_sliced.jpg,a,sliced,,,lime,lime,lime,lime_sliced.jpg,6.3,20.0
+706,706,lime,lime,lime_unsliced.jpg,b,unsliced,,,lime,lime,lime,lime_unsliced.jpg,6.7368421052631575,19.0
+707,707,lime,lime,mittens.jpg,,,,,lime,lime,lime,mittens.jpg,1.5,10.0
+708,708,lime,lime,rubikscube.jpg,,,,,lime,lime,lime,rubikscube.jpg,1.4,5.0
+709,709,lime,lime,treadmill.jpg,,,,,lime,lime,,,,
+710,710,lime,sliced lime,lime_sliced.jpg,a,sliced,sliced,sliced,lime,sliced lime,sliced lime,lime_sliced.jpg,6.631578947368421,19.0
+711,711,lime,sliced lime,lime_unsliced.jpg,b,unsliced,sliced,sliced,lime,sliced lime,sliced lime,lime_unsliced.jpg,1.6666666666666667,21.0
+712,712,lime,sliced lime,mittens.jpg,,,sliced,sliced,lime,sliced lime,sliced lime,mittens.jpg,1.0,4.0
+713,713,lime,sliced lime,rubikscube.jpg,,,sliced,sliced,lime,sliced lime,sliced lime,rubikscube.jpg,1.0,4.0
+714,714,lime,sliced lime,treadmill.jpg,,,sliced,sliced,lime,sliced lime,sliced lime,treadmill.jpg,1.1666666666666667,6.0
+715,715,lime,unsliced lime,lime_sliced.jpg,a,sliced,unsliced,whole,lime,whole lime,whole lime,lime_sliced.jpg,3.5238095238095237,21.0
+716,716,lime,unsliced lime,lime_unsliced.jpg,b,unsliced,unsliced,whole,lime,whole lime,whole lime,lime_unsliced.jpg,6.722222222222222,18.0
+717,717,lime,unsliced lime,mittens.jpg,,,unsliced,whole,lime,whole lime,,,,
+718,718,lime,unsliced lime,rubikscube.jpg,,,unsliced,whole,lime,whole lime,whole lime,rubikscube.jpg,1.0,5.0
+719,719,lime,unsliced lime,treadmill.jpg,,,unsliced,whole,lime,whole lime,whole lime,treadmill.jpg,1.0,6.0
+720,720,lock,closed lock,lock_open.jpg,a,open,closed,locked,lock,locked lock,locked lock,lock_open.jpg,2.1,20.0
+721,721,lock,closed lock,lock_closed.jpg,b,closed,closed,locked,lock,locked lock,locked lock,lock_closed.jpg,6.65,20.0
+722,722,lock,closed lock,polarbear.jpg,,,closed,locked,lock,locked lock,locked lock,polarbear.jpg,1.625,8.0
+723,723,lock,closed lock,wine.jpg,,,closed,locked,lock,locked lock,locked lock,wine.jpg,1.2,5.0
+724,724,lock,closed lock,tennisball.jpg,,,closed,locked,lock,locked lock,,,,
+725,725,lock,lock,lock_open.jpg,a,open,,,lock,lock,lock,lock_open.jpg,5.9523809523809526,21.0
+726,726,lock,lock,lock_closed.jpg,b,closed,,,lock,lock,lock,lock_closed.jpg,6.761904761904762,21.0
+727,727,lock,lock,polarbear.jpg,,,,,lock,lock,lock,polarbear.jpg,1.0,4.0
+728,728,lock,lock,wine.jpg,,,,,lock,lock,lock,wine.jpg,1.0,4.0
+729,729,lock,lock,tennisball.jpg,,,,,lock,lock,lock,tennisball.jpg,1.0,6.0
+730,730,lock,open lock,lock_open.jpg,a,open,open,opened,lock,opened lock,opened lock,lock_open.jpg,6.65,20.0
+731,731,lock,open lock,lock_closed.jpg,b,closed,open,opened,lock,opened lock,opened lock,lock_closed.jpg,2.1666666666666665,18.0
+732,732,lock,open lock,polarbear.jpg,,,open,opened,lock,opened lock,,,,
+733,733,lock,open lock,wine.jpg,,,open,opened,lock,opened lock,opened lock,wine.jpg,1.0,5.0
+734,734,lock,open lock,tennisball.jpg,,,open,opened,lock,opened lock,opened lock,tennisball.jpg,2.0,6.0
+735,735,magnet,bent magnet,magnet_bent.jpg,a,bent,bent,bent,magnet,bent magnet,bent magnet,magnet_bent.jpg,6.285714285714286,21.0
+736,736,magnet,bent magnet,magnet_straight.jpg,b,straight,bent,bent,magnet,bent magnet,bent magnet,magnet_straight.jpg,5.6,20.0
+737,737,magnet,bent magnet,wardrobe.jpg,,,bent,bent,magnet,bent magnet,bent magnet,wardrobe.jpg,1.0,11.0
+738,738,magnet,bent magnet,gaspump.jpg,,,bent,bent,magnet,bent magnet,bent magnet,gaspump.jpg,1.4,5.0
+739,739,magnet,bent magnet,tray.jpg,,,bent,bent,magnet,bent magnet,,,,
+740,740,magnet,magnet,magnet_bent.jpg,a,bent,,,magnet,magnet,magnet,magnet_bent.jpg,6.045454545454546,22.0
+741,741,magnet,magnet,magnet_straight.jpg,b,straight,,,magnet,magnet,magnet,magnet_straight.jpg,6.909090909090909,22.0
+742,742,magnet,magnet,wardrobe.jpg,,,,,magnet,magnet,magnet,wardrobe.jpg,1.0,4.0
+743,743,magnet,magnet,gaspump.jpg,,,,,magnet,magnet,magnet,gaspump.jpg,1.25,4.0
+744,744,magnet,magnet,tray.jpg,,,,,magnet,magnet,magnet,tray.jpg,1.1666666666666667,6.0
+745,745,magnet,straight magnet,magnet_bent.jpg,a,bent,straight,straight,magnet,straight magnet,straight magnet,magnet_bent.jpg,2.090909090909091,22.0
+746,746,magnet,straight magnet,magnet_straight.jpg,b,straight,straight,straight,magnet,straight magnet,straight magnet,magnet_straight.jpg,2.888888888888889,18.0
+747,747,magnet,straight magnet,wardrobe.jpg,,,straight,straight,magnet,straight magnet,,,,
+748,748,magnet,straight magnet,gaspump.jpg,,,straight,straight,magnet,straight magnet,straight magnet,gaspump.jpg,1.0,5.0
+749,749,magnet,straight magnet,tray.jpg,,,straight,straight,magnet,straight magnet,straight magnet,tray.jpg,1.0,7.0
+750,750,marker,closed marker,marker_open.jpg,a,open,closed,capped,marker,capped marker,capped marker,marker_open.jpg,2.857142857142857,21.0
+751,751,marker,closed marker,marker_closed.jpg,b,closed,closed,capped,marker,capped marker,capped marker,marker_closed.jpg,6.7727272727272725,22.0
+752,752,marker,closed marker,tennisracket.jpg,,,closed,capped,marker,capped marker,capped marker,tennisracket.jpg,1.5,10.0
+753,753,marker,closed marker,babybottle.jpg,,,closed,capped,marker,capped marker,capped marker,babybottle.jpg,1.0,5.0
+754,754,marker,closed marker,workbench.jpg,,,closed,capped,marker,capped marker,,,,
+755,755,marker,marker,marker_open.jpg,a,open,,,marker,marker,marker,marker_open.jpg,6.2272727272727275,22.0
+756,756,marker,marker,marker_closed.jpg,b,closed,,,marker,marker,marker,marker_closed.jpg,6.285714285714286,21.0
+757,757,marker,marker,tennisracket.jpg,,,,,marker,marker,marker,tennisracket.jpg,1.0,4.0
+758,758,marker,marker,babybottle.jpg,,,,,marker,marker,marker,babybottle.jpg,1.0,5.0
+759,759,marker,marker,workbench.jpg,,,,,marker,marker,marker,workbench.jpg,1.0,5.0
+760,760,marker,open marker,marker_open.jpg,a,open,open,open,marker,open marker,open marker,marker_open.jpg,6.7272727272727275,22.0
+761,761,marker,open marker,marker_closed.jpg,b,closed,open,open,marker,open marker,open marker,marker_closed.jpg,2.0,22.0
+762,762,marker,open marker,tennisracket.jpg,,,open,open,marker,open marker,,,,
+763,763,marker,open marker,babybottle.jpg,,,open,open,marker,open marker,open marker,babybottle.jpg,1.0,5.0
+764,764,marker,open marker,workbench.jpg,,,open,open,marker,open marker,open marker,workbench.jpg,1.5714285714285714,7.0
+765,765,microwave,closed microwave,microwave_open.jpg,a,open,closed,closed,microwave,closed microwave,closed microwave,microwave_open.jpg,1.9444444444444444,18.0
+766,766,microwave,closed microwave,microwave_closed.jpg,b,closed,closed,closed,microwave,closed microwave,closed microwave,microwave_closed.jpg,6.619047619047619,21.0
+767,767,microwave,closed microwave,lamb.jpg,,,closed,closed,microwave,closed microwave,closed microwave,lamb.jpg,1.6,10.0
+768,768,microwave,closed microwave,hammock.jpg,,,closed,closed,microwave,closed microwave,closed microwave,hammock.jpg,1.2,5.0
+769,769,microwave,closed microwave,perfume.jpg,,,closed,closed,microwave,closed microwave,,,,
+770,770,microwave,microwave,microwave_open.jpg,a,open,,,microwave,microwave,microwave,microwave_open.jpg,6.368421052631579,19.0
+771,771,microwave,microwave,microwave_closed.jpg,b,closed,,,microwave,microwave,microwave,microwave_closed.jpg,6.9,20.0
+772,772,microwave,microwave,lamb.jpg,,,,,microwave,microwave,microwave,lamb.jpg,1.0,4.0
+773,773,microwave,microwave,hammock.jpg,,,,,microwave,microwave,microwave,hammock.jpg,1.0,5.0
+774,774,microwave,microwave,perfume.jpg,,,,,microwave,microwave,microwave,perfume.jpg,1.1666666666666667,6.0
+775,775,microwave,open microwave,microwave_open.jpg,a,open,open,open,microwave,open microwave,open microwave,microwave_open.jpg,6.909090909090909,22.0
+776,776,microwave,open microwave,microwave_closed.jpg,b,closed,open,open,microwave,open microwave,open microwave,microwave_closed.jpg,2.5714285714285716,21.0
+777,777,microwave,open microwave,lamb.jpg,,,open,open,microwave,open microwave,,,,
+778,778,microwave,open microwave,hammock.jpg,,,open,open,microwave,open microwave,open microwave,hammock.jpg,1.0,5.0
+779,779,microwave,open microwave,perfume.jpg,,,open,open,microwave,open microwave,open microwave,perfume.jpg,1.125,8.0
+780,780,milkcarton,closed milkcarton,milkcarton_open.jpg,a,open,closed,unopened,milk carton,unopened milk carton,unopened milk carton,milkcarton_open.jpg,2.4285714285714284,21.0
+781,781,milkcarton,closed milkcarton,milkcarton_closed.jpg,b,closed,closed,unopened,milk carton,unopened milk carton,unopened milk carton,milkcarton_closed.jpg,6.4,20.0
+782,782,milkcarton,closed milkcarton,eraser.jpg,,,closed,unopened,milk carton,unopened milk carton,unopened milk carton,eraser.jpg,1.4545454545454546,11.0
+783,783,milkcarton,closed milkcarton,steeringwheel.jpg,,,closed,unopened,milk carton,unopened milk carton,unopened milk carton,steeringwheel.jpg,1.0,5.0
+784,784,milkcarton,closed milkcarton,leaf.jpg,,,closed,unopened,milk carton,unopened milk carton,,,,
+785,785,milkcarton,milkcarton,milkcarton_open.jpg,a,open,,,milk carton,milk carton,milk carton,milkcarton_open.jpg,6.095238095238095,21.0
+786,786,milkcarton,milkcarton,milkcarton_closed.jpg,b,closed,,,milk carton,milk carton,milk carton,milkcarton_closed.jpg,6.428571428571429,21.0
+787,787,milkcarton,milkcarton,eraser.jpg,,,,,milk carton,milk carton,milk carton,eraser.jpg,1.0,4.0
+788,788,milkcarton,milkcarton,steeringwheel.jpg,,,,,milk carton,milk carton,milk carton,steeringwheel.jpg,1.0,5.0
+789,789,milkcarton,milkcarton,leaf.jpg,,,,,milk carton,milk carton,milk carton,leaf.jpg,1.0,5.0
+790,790,milkcarton,open milkcarton,milkcarton_open.jpg,a,open,open,open,milk carton,open milk carton,open milk carton,milkcarton_open.jpg,6.142857142857143,21.0
+791,791,milkcarton,open milkcarton,milkcarton_closed.jpg,b,closed,open,open,milk carton,open milk carton,open milk carton,milkcarton_closed.jpg,2.5714285714285716,21.0
+792,792,milkcarton,open milkcarton,eraser.jpg,,,open,open,milk carton,open milk carton,,,,
+793,793,milkcarton,open milkcarton,steeringwheel.jpg,,,open,open,milk carton,open milk carton,open milk carton,steeringwheel.jpg,1.0,5.0
+794,794,milkcarton,open milkcarton,leaf.jpg,,,open,open,milk carton,open milk carton,open milk carton,leaf.jpg,1.7142857142857142,7.0
+795,795,mirror,broken mirror,mirror_broken.jpg,a,broken,broken,broken,mirror,broken mirror,broken mirror,mirror_broken.jpg,6.9,20.0
+796,796,mirror,broken mirror,mirror_whole.jpg,b,whole,broken,broken,mirror,broken mirror,broken mirror,mirror_whole.jpg,1.65,20.0
+797,797,mirror,broken mirror,arch.jpg,,,broken,broken,mirror,broken mirror,broken mirror,arch.jpg,1.4444444444444444,9.0
+798,798,mirror,broken mirror,ipod.jpg,,,broken,broken,mirror,broken mirror,broken mirror,ipod.jpg,1.0,5.0
+799,799,mirror,broken mirror,lawnmower.jpg,,,broken,broken,mirror,broken mirror,,,,
+800,800,mirror,mirror,mirror_broken.jpg,a,broken,,,mirror,mirror,mirror,mirror_broken.jpg,5.181818181818182,22.0
+801,801,mirror,mirror,mirror_whole.jpg,b,whole,,,mirror,mirror,mirror,mirror_whole.jpg,6.55,20.0
+802,802,mirror,mirror,arch.jpg,,,,,mirror,mirror,mirror,arch.jpg,1.0,3.0
+803,803,mirror,mirror,ipod.jpg,,,,,mirror,mirror,mirror,ipod.jpg,1.0,5.0
+804,804,mirror,mirror,lawnmower.jpg,,,,,mirror,mirror,mirror,lawnmower.jpg,1.0,5.0
+805,805,mirror,whole mirror,mirror_broken.jpg,a,broken,whole,intact,mirror,intact mirror,intact mirror,mirror_broken.jpg,1.9047619047619047,21.0
+806,806,mirror,whole mirror,mirror_whole.jpg,b,whole,whole,intact,mirror,intact mirror,intact mirror,mirror_whole.jpg,6.545454545454546,22.0
+807,807,mirror,whole mirror,arch.jpg,,,whole,intact,mirror,intact mirror,,,,
+808,808,mirror,whole mirror,ipod.jpg,,,whole,intact,mirror,intact mirror,intact mirror,ipod.jpg,1.0,4.0
+809,809,mirror,whole mirror,lawnmower.jpg,,,whole,intact,mirror,intact mirror,intact mirror,lawnmower.jpg,1.8333333333333333,6.0
+810,810,naan,naan,naan_ripped.jpg,a,ripped,,,naan,naan,naan,naan_ripped.jpg,5.666666666666667,18.0
+811,811,naan,naan,naan_whole.jpg,b,whole,,,naan,naan,naan,naan_whole.jpg,6.647058823529412,17.0
+812,812,naan,naan,dart.jpg,,,,,naan,naan,naan,dart.jpg,1.0,8.0
+813,813,naan,naan,cementtruck.jpg,,,,,naan,naan,naan,cementtruck.jpg,1.0,5.0
+814,814,naan,naan,clock.jpg,,,,,naan,naan,,,,
+815,815,naan,ripped naan,naan_ripped.jpg,a,ripped,ripped,ripped,naan,ripped naan,ripped naan,naan_ripped.jpg,6.333333333333333,21.0
+816,816,naan,ripped naan,naan_whole.jpg,b,whole,ripped,ripped,naan,ripped naan,ripped naan,naan_whole.jpg,2.0,21.0
+817,817,naan,ripped naan,dart.jpg,,,ripped,ripped,naan,ripped naan,ripped naan,dart.jpg,1.0,2.0
+818,818,naan,ripped naan,cementtruck.jpg,,,ripped,ripped,naan,ripped naan,ripped naan,cementtruck.jpg,1.0,5.0
+819,819,naan,ripped naan,clock.jpg,,,ripped,ripped,naan,ripped naan,ripped naan,clock.jpg,1.1666666666666667,6.0
+820,820,naan,whole naan,naan_ripped.jpg,a,ripped,whole,whole,naan,whole naan,whole naan,naan_ripped.jpg,2.2857142857142856,21.0
+821,821,naan,whole naan,naan_whole.jpg,b,whole,whole,whole,naan,whole naan,whole naan,naan_whole.jpg,6.904761904761905,21.0
+822,822,naan,whole naan,dart.jpg,,,whole,whole,naan,whole naan,,,,
+823,823,naan,whole naan,cementtruck.jpg,,,whole,whole,naan,whole naan,whole naan,cementtruck.jpg,1.0,3.0
+824,824,naan,whole naan,clock.jpg,,,whole,whole,naan,whole naan,whole naan,clock.jpg,1.125,8.0
+825,825,nail,bent nail,nail_bent.jpg,a,bent,bent,bent,nail,bent nail,bent nail,nail_bent.jpg,6.904761904761905,21.0
+826,826,nail,bent nail,nail_straight.jpg,b,straight,bent,bent,nail,bent nail,bent nail,nail_straight.jpg,1.736842105263158,19.0
+827,827,nail,bent nail,pen.jpg,,,bent,bent,nail,bent nail,bent nail,pen.jpg,1.0,8.0
+828,828,nail,bent nail,candy.jpg,,,bent,bent,nail,bent nail,bent nail,candy.jpg,1.0,5.0
+829,829,nail,bent nail,frog.jpg,,,bent,bent,nail,bent nail,,,,
+830,830,nail,nail,nail_bent.jpg,a,bent,,,nail,nail,nail,nail_bent.jpg,5.9,20.0
+831,831,nail,nail,nail_straight.jpg,b,straight,,,nail,nail,nail,nail_straight.jpg,6.9523809523809526,21.0
+832,832,nail,nail,pen.jpg,,,,,nail,nail,nail,pen.jpg,1.0,3.0
+833,833,nail,nail,candy.jpg,,,,,nail,nail,nail,candy.jpg,1.0,5.0
+834,834,nail,nail,frog.jpg,,,,,nail,nail,nail,frog.jpg,1.25,4.0
+835,835,nail,straight nail,nail_bent.jpg,a,bent,straight,straight,nail,straight nail,straight nail,nail_bent.jpg,1.7619047619047619,21.0
+836,836,nail,straight nail,nail_straight.jpg,b,straight,straight,straight,nail,straight nail,straight nail,nail_straight.jpg,6.904761904761905,21.0
+837,837,nail,straight nail,pen.jpg,,,straight,straight,nail,straight nail,,,,
+838,838,nail,straight nail,candy.jpg,,,straight,straight,nail,straight nail,straight nail,candy.jpg,1.0,4.0
+839,839,nail,straight nail,frog.jpg,,,straight,straight,nail,straight nail,straight nail,frog.jpg,1.125,8.0
+840,840,napkin,folded napkin,napkin_folded.jpg,a,folded,folded,folded,napkin,folded napkin,folded napkin,napkin_folded.jpg,6.529411764705882,17.0
+841,841,napkin,folded napkin,napkin_unfolded.jpg,b,unfolded,folded,folded,napkin,folded napkin,folded napkin,napkin_unfolded.jpg,5.904761904761905,21.0
+842,842,napkin,folded napkin,bulldozer.jpg,,,folded,folded,napkin,folded napkin,folded napkin,bulldozer.jpg,1.0,11.0
+843,843,napkin,folded napkin,webcam.jpg,,,folded,folded,napkin,folded napkin,folded napkin,webcam.jpg,1.0,5.0
+844,844,napkin,folded napkin,dog.jpg,,,folded,folded,napkin,folded napkin,,,,
+845,845,napkin,napkin,napkin_folded.jpg,a,folded,,,napkin,napkin,napkin,napkin_folded.jpg,6.523809523809524,21.0
+846,846,napkin,napkin,napkin_unfolded.jpg,b,unfolded,,,napkin,napkin,napkin,napkin_unfolded.jpg,6.523809523809524,21.0
+847,847,napkin,napkin,bulldozer.jpg,,,,,napkin,napkin,napkin,bulldozer.jpg,1.0,3.0
+848,848,napkin,napkin,webcam.jpg,,,,,napkin,napkin,napkin,webcam.jpg,1.0,5.0
+849,849,napkin,napkin,dog.jpg,,,,,napkin,napkin,napkin,dog.jpg,1.0,5.0
+850,850,napkin,unfolded napkin,napkin_folded.jpg,a,folded,unfolded,unfolded,napkin,unfolded napkin,unfolded napkin,napkin_folded.jpg,2.35,20.0
+851,851,napkin,unfolded napkin,napkin_unfolded.jpg,b,unfolded,unfolded,unfolded,napkin,unfolded napkin,unfolded napkin,napkin_unfolded.jpg,3.2,20.0
+852,852,napkin,unfolded napkin,bulldozer.jpg,,,unfolded,unfolded,napkin,unfolded napkin,,,,
+853,853,napkin,unfolded napkin,webcam.jpg,,,unfolded,unfolded,napkin,unfolded napkin,unfolded napkin,webcam.jpg,1.0,4.0
+854,854,napkin,unfolded napkin,dog.jpg,,,unfolded,unfolded,napkin,unfolded napkin,unfolded napkin,dog.jpg,1.7142857142857142,7.0
+855,855,notepad,notepad,notepad_ripped.jpg,a,ripped,,,notepad,notepad,notepad,notepad_ripped.jpg,5.476190476190476,21.0
+856,856,notepad,notepad,notepad_whole.jpg,b,whole,,,notepad,notepad,notepad,notepad_whole.jpg,6.777777777777778,18.0
+857,857,notepad,notepad,partyhat.jpg,,,,,notepad,notepad,notepad,partyhat.jpg,1.5,10.0
+858,858,notepad,notepad,cart.jpg,,,,,notepad,notepad,notepad,cart.jpg,1.0,5.0
+859,859,notepad,notepad,hockeystick.jpg,,,,,notepad,notepad,,,,
+860,860,notepad,ripped notepad,notepad_ripped.jpg,a,ripped,ripped,ripped,notepad,ripped notepad,ripped notepad,notepad_ripped.jpg,6.65,20.0
+861,861,notepad,ripped notepad,notepad_whole.jpg,b,whole,ripped,ripped,notepad,ripped notepad,ripped notepad,notepad_whole.jpg,1.9047619047619047,21.0
+862,862,notepad,ripped notepad,partyhat.jpg,,,ripped,ripped,notepad,ripped notepad,ripped notepad,partyhat.jpg,1.0,3.0
+863,863,notepad,ripped notepad,cart.jpg,,,ripped,ripped,notepad,ripped notepad,ripped notepad,cart.jpg,1.0,5.0
+864,864,notepad,ripped notepad,hockeystick.jpg,,,ripped,ripped,notepad,ripped notepad,ripped notepad,hockeystick.jpg,1.0,6.0
+865,865,notepad,whole notepad,notepad_ripped.jpg,a,ripped,whole,unused,notepad,unused notepad,unused notepad,notepad_ripped.jpg,3.090909090909091,22.0
+866,866,notepad,whole notepad,notepad_whole.jpg,b,whole,whole,unused,notepad,unused notepad,unused notepad,notepad_whole.jpg,6.7,20.0
+867,867,notepad,whole notepad,partyhat.jpg,,,whole,unused,notepad,unused notepad,,,,
+868,868,notepad,whole notepad,cart.jpg,,,whole,unused,notepad,unused notepad,unused notepad,cart.jpg,1.0,5.0
+869,869,notepad,whole notepad,hockeystick.jpg,,,whole,unused,notepad,unused notepad,unused notepad,hockeystick.jpg,1.0,8.0
+870,870,onion,onion,onion_peeled.jpg,a,peeled,,,onion,onion,onion,onion_peeled.jpg,6.368421052631579,19.0
+871,871,onion,onion,onion_unpeeled.jpg,b,unpeeled,,,onion,onion,onion,onion_unpeeled.jpg,7.0,19.0
+872,872,onion,onion,cat.jpg,,,,,onion,onion,onion,cat.jpg,1.2,10.0
+873,873,onion,onion,suit.jpg,,,,,onion,onion,onion,suit.jpg,1.2,5.0
+874,874,onion,onion,radio.jpg,,,,,onion,onion,,,,
+875,875,onion,peeled onion,onion_peeled.jpg,a,peeled,peeled,peeled,onion,peeled onion,peeled onion,onion_peeled.jpg,6.444444444444445,18.0
+876,876,onion,peeled onion,onion_unpeeled.jpg,b,unpeeled,peeled,peeled,onion,peeled onion,peeled onion,onion_unpeeled.jpg,1.7142857142857142,21.0
+877,877,onion,peeled onion,cat.jpg,,,peeled,peeled,onion,peeled onion,peeled onion,cat.jpg,1.0,3.0
+878,878,onion,peeled onion,suit.jpg,,,peeled,peeled,onion,peeled onion,peeled onion,suit.jpg,1.0,5.0
+879,879,onion,peeled onion,radio.jpg,,,peeled,peeled,onion,peeled onion,peeled onion,radio.jpg,1.0,6.0
+880,880,onion,unpeeled onion,onion_peeled.jpg,a,peeled,unpeeled,unpeeled,onion,unpeeled onion,unpeeled onion,onion_peeled.jpg,3.1052631578947367,19.0
+881,881,onion,unpeeled onion,onion_unpeeled.jpg,b,unpeeled,unpeeled,unpeeled,onion,unpeeled onion,unpeeled onion,onion_unpeeled.jpg,6.190476190476191,21.0
+882,882,onion,unpeeled onion,cat.jpg,,,unpeeled,unpeeled,onion,unpeeled onion,,,,
+883,883,onion,unpeeled onion,suit.jpg,,,unpeeled,unpeeled,onion,unpeeled onion,unpeeled onion,suit.jpg,1.0,4.0
+884,884,onion,unpeeled onion,radio.jpg,,,unpeeled,unpeeled,onion,unpeeled onion,unpeeled onion,radio.jpg,1.0,8.0
+885,885,orange,orange,orange_peeled.jpg,a,peeled,,,orange,orange,orange,orange_peeled.jpg,6.238095238095238,21.0
+886,886,orange,orange,orange_unpeeled.jpg,b,unpeeled,,,orange,orange,orange,orange_unpeeled.jpg,6.842105263157895,19.0
+887,887,orange,orange,tuba.jpg,,,,,orange,orange,orange,tuba.jpg,1.0,11.0
+888,888,orange,orange,well.jpg,,,,,orange,orange,orange,well.jpg,1.0,4.0
+889,889,orange,orange,robe.jpg,,,,,orange,orange,,,,
+890,890,orange,peeled orange,orange_peeled.jpg,a,peeled,peeled,peeled,orange,peeled orange,peeled orange,orange_peeled.jpg,6.857142857142857,21.0
+891,891,orange,peeled orange,orange_unpeeled.jpg,b,unpeeled,peeled,peeled,orange,peeled orange,peeled orange,orange_unpeeled.jpg,1.6842105263157894,19.0
+892,892,orange,peeled orange,tuba.jpg,,,peeled,peeled,orange,peeled orange,peeled orange,tuba.jpg,1.0,4.0
+893,893,orange,peeled orange,well.jpg,,,peeled,peeled,orange,peeled orange,peeled orange,well.jpg,1.25,4.0
+894,894,orange,peeled orange,robe.jpg,,,peeled,peeled,orange,peeled orange,peeled orange,robe.jpg,1.0,6.0
+895,895,orange,unpeeled orange,orange_peeled.jpg,a,peeled,unpeeled,whole,orange,whole orange,whole orange,orange_peeled.jpg,3.588235294117647,17.0
+896,896,orange,unpeeled orange,orange_unpeeled.jpg,b,unpeeled,unpeeled,whole,orange,whole orange,whole orange,orange_unpeeled.jpg,7.0,20.0
+897,897,orange,unpeeled orange,tuba.jpg,,,unpeeled,whole,orange,whole orange,,,,
+898,898,orange,unpeeled orange,well.jpg,,,unpeeled,whole,orange,whole orange,whole orange,well.jpg,1.0,5.0
+899,899,orange,unpeeled orange,robe.jpg,,,unpeeled,whole,orange,whole orange,whole orange,robe.jpg,1.0,7.0
+900,900,paper,folded paper,paper_folded.jpg,a,folded,folded,folded,paper,folded paper,folded paper,paper_folded.jpg,5.045454545454546,22.0
+901,901,paper,folded paper,paper_unfolded.jpg,b,unfolded,folded,folded,paper,folded paper,folded paper,paper_unfolded.jpg,2.3684210526315788,19.0
+902,902,paper,folded paper,hinge.jpg,,,folded,folded,paper,folded paper,folded paper,hinge.jpg,1.4545454545454546,11.0
+903,903,paper,folded paper,teeth.jpg,,,folded,folded,paper,folded paper,folded paper,teeth.jpg,1.0,5.0
+904,904,paper,folded paper,kayak.jpg,,,folded,folded,paper,folded paper,,,,
+905,905,paper,paper,paper_folded.jpg,a,folded,,,paper,paper,paper,paper_folded.jpg,6.3,20.0
+906,906,paper,paper,paper_unfolded.jpg,b,unfolded,,,paper,paper,paper,paper_unfolded.jpg,7.0,18.0
+907,907,paper,paper,hinge.jpg,,,,,paper,paper,paper,hinge.jpg,1.0,3.0
+908,908,paper,paper,teeth.jpg,,,,,paper,paper,paper,teeth.jpg,1.0,4.0
+909,909,paper,paper,kayak.jpg,,,,,paper,paper,paper,kayak.jpg,1.0,6.0
+910,910,paper,unfolded paper,paper_folded.jpg,a,folded,unfolded,unfolded,paper,unfolded paper,unfolded paper,paper_folded.jpg,4.631578947368421,19.0
+911,911,paper,unfolded paper,paper_unfolded.jpg,b,unfolded,unfolded,unfolded,paper,unfolded paper,unfolded paper,paper_unfolded.jpg,6.352941176470588,17.0
+912,912,paper,unfolded paper,hinge.jpg,,,unfolded,unfolded,paper,unfolded paper,,,,
+913,913,paper,unfolded paper,teeth.jpg,,,unfolded,unfolded,paper,unfolded paper,unfolded paper,teeth.jpg,1.2,5.0
+914,914,paper,unfolded paper,kayak.jpg,,,unfolded,unfolded,paper,unfolded paper,unfolded paper,kayak.jpg,1.0,6.0
+915,915,paperclip,bent paperclip,paperclip_bent.jpg,a,bent,bent,bent,paperclip,bent paperclip,bent paperclip,paperclip_bent.jpg,6.714285714285714,21.0
+916,916,paperclip,bent paperclip,paperclip_straight.jpg,b,straight,bent,bent,paperclip,bent paperclip,bent paperclip,paperclip_straight.jpg,3.2222222222222223,18.0
+917,917,paperclip,bent paperclip,armytruck.jpg,,,bent,bent,paperclip,bent paperclip,bent paperclip,armytruck.jpg,1.7142857142857142,7.0
+918,918,paperclip,bent paperclip,shrimp.jpg,,,bent,bent,paperclip,bent paperclip,bent paperclip,shrimp.jpg,1.0,5.0
+919,919,paperclip,bent paperclip,daisies.jpg,,,bent,bent,paperclip,bent paperclip,,,,
+920,920,paperclip,paperclip,paperclip_bent.jpg,a,bent,,,paperclip,paperclip,paperclip,paperclip_bent.jpg,5.904761904761905,21.0
+921,921,paperclip,paperclip,paperclip_straight.jpg,b,straight,,,paperclip,paperclip,paperclip,paperclip_straight.jpg,6.947368421052632,19.0
+922,922,paperclip,paperclip,armytruck.jpg,,,,,paperclip,paperclip,paperclip,armytruck.jpg,1.0,4.0
+923,923,paperclip,paperclip,shrimp.jpg,,,,,paperclip,paperclip,paperclip,shrimp.jpg,1.0,5.0
+924,924,paperclip,paperclip,daisies.jpg,,,,,paperclip,paperclip,paperclip,daisies.jpg,1.0,6.0
+925,925,paperclip,straight paperclip,paperclip_bent.jpg,a,bent,straight,intact,paperclip,intact paperclip,intact paperclip,paperclip_bent.jpg,3.6315789473684212,19.0
+926,926,paperclip,straight paperclip,paperclip_straight.jpg,b,straight,straight,intact,paperclip,intact paperclip,intact paperclip,paperclip_straight.jpg,6.4,20.0
+927,927,paperclip,straight paperclip,armytruck.jpg,,,straight,intact,paperclip,intact paperclip,,,,
+928,928,paperclip,straight paperclip,shrimp.jpg,,,straight,intact,paperclip,intact paperclip,intact paperclip,shrimp.jpg,1.0,4.0
+929,929,paperclip,straight paperclip,daisies.jpg,,,straight,intact,paperclip,intact paperclip,intact paperclip,daisies.jpg,1.0,7.0
+930,930,pencil,broken pencil,pencil_broken.jpg,a,broken,broken,broken,pencil,broken pencil,broken pencil,pencil_broken.jpg,6.9,20.0
+931,931,pencil,broken pencil,pencil_whole.jpg,b,whole,broken,broken,pencil,broken pencil,broken pencil,pencil_whole.jpg,1.6111111111111112,18.0
+932,932,pencil,broken pencil,coin.jpg,,,broken,broken,pencil,broken pencil,broken pencil,coin.jpg,1.0,11.0
+933,933,pencil,broken pencil,spaghetti.jpg,,,broken,broken,pencil,broken pencil,broken pencil,spaghetti.jpg,1.0,4.0
+934,934,pencil,broken pencil,watercan.jpg,,,broken,broken,pencil,broken pencil,,,,
+935,935,pencil,pencil,pencil_broken.jpg,a,broken,,,pencil,pencil,pencil,pencil_broken.jpg,5.6,20.0
+936,936,pencil,pencil,pencil_whole.jpg,b,whole,,,pencil,pencil,pencil,pencil_whole.jpg,6.9,20.0
+937,937,pencil,pencil,coin.jpg,,,,,pencil,pencil,pencil,coin.jpg,1.0,3.0
+938,938,pencil,pencil,spaghetti.jpg,,,,,pencil,pencil,pencil,spaghetti.jpg,1.0,5.0
+939,939,pencil,pencil,watercan.jpg,,,,,pencil,pencil,pencil,watercan.jpg,1.0,6.0
+940,940,pencil,whole pencil,pencil_broken.jpg,a,broken,whole,intact,pencil,intact pencil,intact pencil,pencil_broken.jpg,2.15,20.0
+941,941,pencil,whole pencil,pencil_whole.jpg,b,whole,whole,intact,pencil,intact pencil,intact pencil,pencil_whole.jpg,6.761904761904762,21.0
+942,942,pencil,whole pencil,coin.jpg,,,whole,intact,pencil,intact pencil,,,,
+943,943,pencil,whole pencil,spaghetti.jpg,,,whole,intact,pencil,intact pencil,intact pencil,spaghetti.jpg,1.0,5.0
+944,944,pencil,whole pencil,watercan.jpg,,,whole,intact,pencil,intact pencil,intact pencil,watercan.jpg,2.0,6.0
+945,945,pickle,pickle,pickle_sliced.jpg,a,sliced,,,pickle,pickle,pickle,pickle_sliced.jpg,5.95,20.0
+946,946,pickle,pickle,pickle_unsliced.jpg,b,unsliced,,,pickle,pickle,pickle,pickle_unsliced.jpg,7.0,18.0
+947,947,pickle,pickle,wheelbarrow.jpg,,,,,pickle,pickle,pickle,wheelbarrow.jpg,1.0,11.0
+948,948,pickle,pickle,toucan.jpg,,,,,pickle,pickle,pickle,toucan.jpg,1.4,5.0
+949,949,pickle,pickle,cello.jpg,,,,,pickle,pickle,,,,
+950,950,pickle,sliced pickle,pickle_sliced.jpg,a,sliced,sliced,sliced,pickle,sliced pickle,sliced pickle,pickle_sliced.jpg,6.85,20.0
+951,951,pickle,sliced pickle,pickle_unsliced.jpg,b,unsliced,sliced,sliced,pickle,sliced pickle,sliced pickle,pickle_unsliced.jpg,2.35,20.0
+952,952,pickle,sliced pickle,wheelbarrow.jpg,,,sliced,sliced,pickle,sliced pickle,sliced pickle,wheelbarrow.jpg,1.0,3.0
+953,953,pickle,sliced pickle,toucan.jpg,,,sliced,sliced,pickle,sliced pickle,sliced pickle,toucan.jpg,1.8,5.0
+954,954,pickle,sliced pickle,cello.jpg,,,sliced,sliced,pickle,sliced pickle,sliced pickle,cello.jpg,1.1666666666666667,6.0
+955,955,pickle,unsliced pickle,pickle_sliced.jpg,a,sliced,unsliced,whole,pickle,whole pickle,whole pickle,pickle_sliced.jpg,3.5454545454545454,22.0
+956,956,pickle,unsliced pickle,pickle_unsliced.jpg,b,unsliced,unsliced,whole,pickle,whole pickle,whole pickle,pickle_unsliced.jpg,6.8,20.0
+957,957,pickle,unsliced pickle,wheelbarrow.jpg,,,unsliced,whole,pickle,whole pickle,,,,
+958,958,pickle,unsliced pickle,toucan.jpg,,,unsliced,whole,pickle,whole pickle,whole pickle,toucan.jpg,1.0,5.0
+959,959,pickle,unsliced pickle,cello.jpg,,,unsliced,whole,pickle,whole pickle,whole pickle,cello.jpg,1.8333333333333333,6.0
+960,960,pig,clean pig,pig_dirty.jpg,a,dirty,clean,young,pig,young pig,young pig,pig_dirty.jpg,4.684210526315789,19.0
+961,961,pig,clean pig,pig_clean.jpg,b,clean,clean,young,pig,young pig,young pig,pig_clean.jpg,6.454545454545454,22.0
+962,962,pig,clean pig,level.jpg,,,clean,young,pig,young pig,young pig,level.jpg,1.0,10.0
+963,963,pig,clean pig,tensorbandage.jpg,,,clean,young,pig,young pig,young pig,tensorbandage.jpg,1.0,4.0
+964,964,pig,clean pig,chesspieces.jpg,,,clean,young,pig,young pig,,,,
+965,965,pig,dirty pig,pig_dirty.jpg,a,dirty,dirty,dirty,pig,dirty pig,dirty pig,pig_dirty.jpg,6.2631578947368425,19.0
+966,966,pig,dirty pig,pig_clean.jpg,b,clean,dirty,dirty,pig,dirty pig,dirty pig,pig_clean.jpg,2.772727272727273,22.0
+967,967,pig,dirty pig,level.jpg,,,dirty,dirty,pig,dirty pig,dirty pig,level.jpg,1.0,4.0
+968,968,pig,dirty pig,tensorbandage.jpg,,,dirty,dirty,pig,dirty pig,dirty pig,tensorbandage.jpg,1.8,5.0
+969,969,pig,dirty pig,chesspieces.jpg,,,dirty,dirty,pig,dirty pig,dirty pig,chesspieces.jpg,1.0,5.0
+970,970,pig,pig,pig_dirty.jpg,a,dirty,,,pig,pig,pig,pig_dirty.jpg,6.3,20.0
+971,971,pig,pig,pig_clean.jpg,b,clean,,,pig,pig,pig,pig_clean.jpg,6.8,20.0
+972,972,pig,pig,level.jpg,,,,,pig,pig,,,,
+973,973,pig,pig,tensorbandage.jpg,,,,,pig,pig,pig,tensorbandage.jpg,1.2,5.0
+974,974,pig,pig,chesspieces.jpg,,,,,pig,pig,pig,chesspieces.jpg,2.0,6.0
+975,975,piggybank,broken piggybank,piggybank_broken.jpg,a,broken,broken,broken,piggy bank,broken piggy bank,broken piggy bank,piggybank_broken.jpg,6.526315789473684,19.0
+976,976,piggybank,broken piggybank,piggybank_whole.jpg,b,whole,broken,broken,piggy bank,broken piggy bank,broken piggy bank,piggybank_whole.jpg,2.2777777777777777,18.0
+977,977,piggybank,broken piggybank,fireplace.jpg,,,broken,broken,piggy bank,broken piggy bank,broken piggy bank,fireplace.jpg,1.0,11.0
+978,978,piggybank,broken piggybank,doorhandle.jpg,,,broken,broken,piggy bank,broken piggy bank,broken piggy bank,doorhandle.jpg,1.0,4.0
+979,979,piggybank,broken piggybank,rolls.jpg,,,broken,broken,piggy bank,broken piggy bank,,,,
+980,980,piggybank,piggybank,piggybank_broken.jpg,a,broken,,,piggy bank,piggy bank,piggy bank,piggybank_broken.jpg,4.7727272727272725,22.0
+981,981,piggybank,piggybank,piggybank_whole.jpg,b,whole,,,piggy bank,piggy bank,piggy bank,piggybank_whole.jpg,6.9523809523809526,21.0
+982,982,piggybank,piggybank,fireplace.jpg,,,,,piggy bank,piggy bank,piggy bank,fireplace.jpg,1.0,3.0
+983,983,piggybank,piggybank,doorhandle.jpg,,,,,piggy bank,piggy bank,piggy bank,doorhandle.jpg,1.0,5.0
+984,984,piggybank,piggybank,rolls.jpg,,,,,piggy bank,piggy bank,piggy bank,rolls.jpg,1.0,5.0
+985,985,piggybank,whole piggybank,piggybank_broken.jpg,a,broken,whole,intact,piggy bank,intact piggy bank,intact piggy bank,piggybank_broken.jpg,1.9411764705882353,17.0
+986,986,piggybank,whole piggybank,piggybank_whole.jpg,b,whole,whole,intact,piggy bank,intact piggy bank,intact piggy bank,piggybank_whole.jpg,6.8,20.0
+987,987,piggybank,whole piggybank,fireplace.jpg,,,whole,intact,piggy bank,intact piggy bank,,,,
+988,988,piggybank,whole piggybank,doorhandle.jpg,,,whole,intact,piggy bank,intact piggy bank,intact piggy bank,doorhandle.jpg,1.25,4.0
+989,989,piggybank,whole piggybank,rolls.jpg,,,whole,intact,piggy bank,intact piggy bank,intact piggy bank,rolls.jpg,1.125,8.0
+990,990,pineapple,pineapple,pineapple_sliced.jpg,a,sliced,,,pineapple,pineapple,pineapple,pineapple_sliced.jpg,6.0588235294117645,17.0
+991,991,pineapple,pineapple,pineapple_unsliced.jpg,b,unsliced,,,pineapple,pineapple,pineapple,pineapple_unsliced.jpg,6.9411764705882355,17.0
+992,992,pineapple,pineapple,yarn.jpg,,,,,pineapple,pineapple,pineapple,yarn.jpg,1.0909090909090908,11.0
+993,993,pineapple,pineapple,gameboy.jpg,,,,,pineapple,pineapple,pineapple,gameboy.jpg,1.4,5.0
+994,994,pineapple,pineapple,topiary.jpg,,,,,pineapple,pineapple,,,,
+995,995,pineapple,sliced pineapple,pineapple_sliced.jpg,a,sliced,sliced,sliced,pineapple,sliced pineapple,sliced pineapple,pineapple_sliced.jpg,6.333333333333333,21.0
+996,996,pineapple,sliced pineapple,pineapple_unsliced.jpg,b,unsliced,sliced,sliced,pineapple,sliced pineapple,sliced pineapple,pineapple_unsliced.jpg,2.3636363636363638,22.0
+997,997,pineapple,sliced pineapple,yarn.jpg,,,sliced,sliced,pineapple,sliced pineapple,sliced pineapple,yarn.jpg,1.0,4.0
+998,998,pineapple,sliced pineapple,gameboy.jpg,,,sliced,sliced,pineapple,sliced pineapple,sliced pineapple,gameboy.jpg,1.0,5.0
+999,999,pineapple,sliced pineapple,topiary.jpg,,,sliced,sliced,pineapple,sliced pineapple,sliced pineapple,topiary.jpg,1.1666666666666667,6.0
+1000,1000,pineapple,unsliced pineapple,pineapple_sliced.jpg,a,sliced,unsliced,whole,pineapple,whole pineapple,whole pineapple,pineapple_sliced.jpg,3.9411764705882355,17.0
+1001,1001,pineapple,unsliced pineapple,pineapple_unsliced.jpg,b,unsliced,unsliced,whole,pineapple,whole pineapple,whole pineapple,pineapple_unsliced.jpg,6.9523809523809526,21.0
+1002,1002,pineapple,unsliced pineapple,yarn.jpg,,,unsliced,whole,pineapple,whole pineapple,,,,
+1003,1003,pineapple,unsliced pineapple,gameboy.jpg,,,unsliced,whole,pineapple,whole pineapple,whole pineapple,gameboy.jpg,1.0,4.0
+1004,1004,pineapple,unsliced pineapple,topiary.jpg,,,unsliced,whole,pineapple,whole pineapple,whole pineapple,topiary.jpg,1.0,7.0
+1005,1005,pizza,pizza,pizza_sliced.jpg,a,sliced,,,pizza,pizza,pizza,pizza_sliced.jpg,6.421052631578948,19.0
+1006,1006,pizza,pizza,pizza_unsliced.jpg,b,unsliced,,,pizza,pizza,pizza,pizza_unsliced.jpg,6.9,20.0
+1007,1007,pizza,pizza,rope.jpg,,,,,pizza,pizza,pizza,rope.jpg,1.0909090909090908,11.0
+1008,1008,pizza,pizza,trophy.jpg,,,,,pizza,pizza,pizza,trophy.jpg,1.0,5.0
+1009,1009,pizza,pizza,fishbowl.jpg,,,,,pizza,pizza,,,,
+1010,1010,pizza,sliced pizza,pizza_sliced.jpg,a,sliced,sliced,sliced,pizza,sliced pizza,sliced pizza,pizza_sliced.jpg,6.75,20.0
+1011,1011,pizza,sliced pizza,pizza_unsliced.jpg,b,unsliced,sliced,sliced,pizza,sliced pizza,sliced pizza,pizza_unsliced.jpg,3.6842105263157894,19.0
+1012,1012,pizza,sliced pizza,rope.jpg,,,sliced,sliced,pizza,sliced pizza,sliced pizza,rope.jpg,1.0,3.0
+1013,1013,pizza,sliced pizza,trophy.jpg,,,sliced,sliced,pizza,sliced pizza,sliced pizza,trophy.jpg,1.0,5.0
+1014,1014,pizza,sliced pizza,fishbowl.jpg,,,sliced,sliced,pizza,sliced pizza,sliced pizza,fishbowl.jpg,1.0,5.0
+1015,1015,pizza,unsliced pizza,pizza_sliced.jpg,a,sliced,unsliced,whole,pizza,whole pizza,whole pizza,pizza_sliced.jpg,5.761904761904762,21.0
+1016,1016,pizza,unsliced pizza,pizza_unsliced.jpg,b,unsliced,unsliced,whole,pizza,whole pizza,whole pizza,pizza_unsliced.jpg,7.0,21.0
+1017,1017,pizza,unsliced pizza,rope.jpg,,,unsliced,whole,pizza,whole pizza,,,,
+1018,1018,pizza,unsliced pizza,trophy.jpg,,,unsliced,whole,pizza,whole pizza,whole pizza,trophy.jpg,1.0,4.0
+1019,1019,pizza,unsliced pizza,fishbowl.jpg,,,unsliced,whole,pizza,whole pizza,whole pizza,fishbowl.jpg,1.0,8.0
+1020,1020,plate,broken plate,plate_broken.jpg,a,broken,broken,broken,plate,broken plate,broken plate,plate_broken.jpg,6.578947368421052,19.0
+1021,1021,plate,broken plate,plate_whole.jpg,b,whole,broken,broken,plate,broken plate,broken plate,plate_whole.jpg,2.0,20.0
+1022,1022,plate,broken plate,jackinthebox.jpg,,,broken,broken,plate,broken plate,broken plate,jackinthebox.jpg,1.3,10.0
+1023,1023,plate,broken plate,computercord.jpg,,,broken,broken,plate,broken plate,broken plate,computercord.jpg,1.4,5.0
+1024,1024,plate,broken plate,ambulance.jpg,,,broken,broken,plate,broken plate,,,,
+1025,1025,plate,plate,plate_broken.jpg,a,broken,,,plate,plate,plate,plate_broken.jpg,5.0,21.0
+1026,1026,plate,plate,plate_whole.jpg,b,whole,,,plate,plate,plate,plate_whole.jpg,6.947368421052632,19.0
+1027,1027,plate,plate,jackinthebox.jpg,,,,,plate,plate,plate,jackinthebox.jpg,1.0,3.0
+1028,1028,plate,plate,computercord.jpg,,,,,plate,plate,plate,computercord.jpg,1.0,5.0
+1029,1029,plate,plate,ambulance.jpg,,,,,plate,plate,plate,ambulance.jpg,1.0,5.0
+1030,1030,plate,whole plate,plate_broken.jpg,a,broken,whole,intact,plate,intact plate,intact plate,plate_broken.jpg,1.8,20.0
+1031,1031,plate,whole plate,plate_whole.jpg,b,whole,whole,intact,plate,intact plate,intact plate,plate_whole.jpg,6.842105263157895,19.0
+1032,1032,plate,whole plate,jackinthebox.jpg,,,whole,intact,plate,intact plate,,,,
+1033,1033,plate,whole plate,computercord.jpg,,,whole,intact,plate,intact plate,intact plate,computercord.jpg,1.25,4.0
+1034,1034,plate,whole plate,ambulance.jpg,,,whole,intact,plate,intact plate,intact plate,ambulance.jpg,1.1666666666666667,6.0
+1035,1035,pot,closed pot,pot_open.jpg,a,open,closed,lidded,pot,lidded pot,lidded pot,pot_open.jpg,5.526315789473684,19.0
+1036,1036,pot,closed pot,pot_closed.jpg,b,closed,closed,lidded,pot,lidded pot,lidded pot,pot_closed.jpg,6.722222222222222,18.0
+1037,1037,pot,closed pot,horseshoe.jpg,,,closed,lidded,pot,lidded pot,lidded pot,horseshoe.jpg,1.0,10.0
+1038,1038,pot,closed pot,teddybear.jpg,,,closed,lidded,pot,lidded pot,lidded pot,teddybear.jpg,1.4,5.0
+1039,1039,pot,closed pot,walker.jpg,,,closed,lidded,pot,lidded pot,,,,
+1040,1040,pot,open pot,pot_open.jpg,a,open,open,open,pot,open pot,open pot,pot_open.jpg,6.761904761904762,21.0
+1041,1041,pot,open pot,pot_closed.jpg,b,closed,open,open,pot,open pot,open pot,pot_closed.jpg,2.05,20.0
+1042,1042,pot,open pot,horseshoe.jpg,,,open,open,pot,open pot,open pot,horseshoe.jpg,1.0,3.0
+1043,1043,pot,open pot,teddybear.jpg,,,open,open,pot,open pot,open pot,teddybear.jpg,1.0,4.0
+1044,1044,pot,open pot,walker.jpg,,,open,open,pot,open pot,open pot,walker.jpg,1.0,6.0
+1045,1045,pot,pot,pot_open.jpg,a,open,,,pot,pot,pot,pot_open.jpg,6.526315789473684,19.0
+1046,1046,pot,pot,pot_closed.jpg,b,closed,,,pot,pot,pot,pot_closed.jpg,6.833333333333333,18.0
+1047,1047,pot,pot,horseshoe.jpg,,,,,pot,pot,,,,
+1048,1048,pot,pot,teddybear.jpg,,,,,pot,pot,pot,teddybear.jpg,1.0,5.0
+1049,1049,pot,pot,walker.jpg,,,,,pot,pot,pot,walker.jpg,1.7142857142857142,7.0
+1050,1050,potato,clean potato,potato_dirty.jpg,a,dirty,clean,new,potato,new potato,new potato,potato_dirty.jpg,4.105263157894737,19.0
+1051,1051,potato,clean potato,potato_clean.jpg,b,clean,clean,new,potato,new potato,new potato,potato_clean.jpg,6.2105263157894735,19.0
+1052,1052,potato,clean potato,thimble.jpg,,,clean,new,potato,new potato,new potato,thimble.jpg,1.5,10.0
+1053,1053,potato,clean potato,wig.jpg,,,clean,new,potato,new potato,new potato,wig.jpg,1.2,5.0
+1054,1054,potato,clean potato,exercisebike.jpg,,,clean,new,potato,new potato,,,,
+1055,1055,potato,dirty potato,potato_dirty.jpg,a,dirty,dirty,dirty,potato,dirty potato,dirty potato,potato_dirty.jpg,6.277777777777778,18.0
+1056,1056,potato,dirty potato,potato_clean.jpg,b,clean,dirty,dirty,potato,dirty potato,dirty potato,potato_clean.jpg,2.4444444444444446,18.0
+1057,1057,potato,dirty potato,thimble.jpg,,,dirty,dirty,potato,dirty potato,dirty potato,thimble.jpg,1.0,4.0
+1058,1058,potato,dirty potato,wig.jpg,,,dirty,dirty,potato,dirty potato,dirty potato,wig.jpg,1.0,5.0
+1059,1059,potato,dirty potato,exercisebike.jpg,,,dirty,dirty,potato,dirty potato,dirty potato,exercisebike.jpg,1.0,5.0
+1060,1060,potato,potato,potato_dirty.jpg,a,dirty,,,potato,potato,potato,potato_dirty.jpg,6.052631578947368,19.0
+1061,1061,potato,potato,potato_clean.jpg,b,clean,,,potato,potato,potato,potato_clean.jpg,6.863636363636363,22.0
+1062,1062,potato,potato,thimble.jpg,,,,,potato,potato,,,,
+1063,1063,potato,potato,wig.jpg,,,,,potato,potato,potato,wig.jpg,1.0,4.0
+1064,1064,potato,potato,exercisebike.jpg,,,,,potato,potato,potato,exercisebike.jpg,2.0,7.0
+1065,1065,road,curved road,road_curved.jpg,a,curved,curved,winding,road,winding road,winding road,road_curved.jpg,6.444444444444445,18.0
+1066,1066,road,curved road,road_straight.jpg,b,straight,curved,winding,road,winding road,winding road,road_straight.jpg,2.0,21.0
+1067,1067,road,curved road,tripod.jpg,,,curved,winding,road,winding road,winding road,tripod.jpg,1.5,10.0
+1068,1068,road,curved road,feather.jpg,,,curved,winding,road,winding road,winding road,feather.jpg,1.0,5.0
+1069,1069,road,curved road,plum.jpg,,,curved,winding,road,winding road,,,,
+1070,1070,road,road,road_curved.jpg,a,curved,,,road,road,road,road_curved.jpg,6.473684210526316,19.0
+1071,1071,road,road,road_straight.jpg,b,straight,,,road,road,road,road_straight.jpg,6.705882352941177,17.0
+1072,1072,road,road,tripod.jpg,,,,,road,road,road,tripod.jpg,1.0,4.0
+1073,1073,road,road,feather.jpg,,,,,road,road,road,feather.jpg,1.0,4.0
+1074,1074,road,road,plum.jpg,,,,,road,road,road,plum.jpg,1.0,5.0
+1075,1075,road,straight road,road_curved.jpg,a,curved,straight,straight,road,straight road,straight road,road_curved.jpg,2.3,20.0
+1076,1076,road,straight road,road_straight.jpg,b,straight,straight,straight,road,straight road,straight road,road_straight.jpg,6.85,20.0
+1077,1077,road,straight road,tripod.jpg,,,straight,straight,road,straight road,,,,
+1078,1078,road,straight road,feather.jpg,,,straight,straight,road,straight road,straight road,feather.jpg,1.0,5.0
+1079,1079,road,straight road,plum.jpg,,,straight,straight,road,straight road,straight road,plum.jpg,1.5714285714285714,7.0
+1080,1080,rug,rolled rug,rug_rolled.jpg,a,rolled,rolled,rolled,rug,rolled rug,rolled rug,rug_rolled.jpg,6.7,20.0
+1081,1081,rug,rolled rug,rug_unrolled.jpg,b,unrolled,rolled,rolled,rug,rolled rug,rolled rug,rug_unrolled.jpg,2.0,22.0
+1082,1082,rug,rolled rug,canoe.jpg,,,rolled,rolled,rug,rolled rug,rolled rug,canoe.jpg,1.0,10.0
+1083,1083,rug,rolled rug,lemon.jpg,,,rolled,rolled,rug,rolled rug,rolled rug,lemon.jpg,1.0,5.0
+1084,1084,rug,rolled rug,hockeypuck.jpg,,,rolled,rolled,rug,rolled rug,,,,
+1085,1085,rug,rug,rug_rolled.jpg,a,rolled,,,rug,rug,rug,rug_rolled.jpg,5.7272727272727275,22.0
+1086,1086,rug,rug,rug_unrolled.jpg,b,unrolled,,,rug,rug,rug,rug_unrolled.jpg,6.052631578947368,19.0
+1087,1087,rug,rug,canoe.jpg,,,,,rug,rug,rug,canoe.jpg,1.0,4.0
+1088,1088,rug,rug,lemon.jpg,,,,,rug,rug,rug,lemon.jpg,1.0,5.0
+1089,1089,rug,rug,hockeypuck.jpg,,,,,rug,rug,rug,hockeypuck.jpg,1.0,4.0
+1090,1090,rug,unrolled rug,rug_rolled.jpg,a,rolled,unrolled,flat,rug,flat rug,flat rug,rug_rolled.jpg,2.5,20.0
+1091,1091,rug,unrolled rug,rug_unrolled.jpg,b,unrolled,unrolled,flat,rug,flat rug,flat rug,rug_unrolled.jpg,5.761904761904762,21.0
+1092,1092,rug,unrolled rug,canoe.jpg,,,unrolled,flat,rug,flat rug,,,,
+1093,1093,rug,unrolled rug,lemon.jpg,,,unrolled,flat,rug,flat rug,flat rug,lemon.jpg,1.0,4.0
+1094,1094,rug,unrolled rug,hockeypuck.jpg,,,unrolled,flat,rug,flat rug,flat rug,hockeypuck.jpg,1.0,7.0
+1095,1095,safetypin,bent safetypin,safetypin_bent.jpg,a,bent,bent,bent,safety pin,bent safety pin,bent safety pin,safetypin_bent.jpg,6.523809523809524,21.0
+1096,1096,safetypin,bent safetypin,safetypin_straight.jpg,b,straight,bent,bent,safety pin,bent safety pin,bent safety pin,safetypin_straight.jpg,2.6,20.0
+1097,1097,safetypin,bent safetypin,shaver.jpg,,,bent,bent,safety pin,bent safety pin,bent safety pin,shaver.jpg,1.0,11.0
+1098,1098,safetypin,bent safetypin,avocado.jpg,,,bent,bent,safety pin,bent safety pin,bent safety pin,avocado.jpg,1.2,5.0
+1099,1099,safetypin,bent safetypin,fox.jpg,,,bent,bent,safety pin,bent safety pin,,,,
+1100,1100,safetypin,safetypin,safetypin_bent.jpg,a,bent,,,safety pin,safety pin,safety pin,safetypin_bent.jpg,5.454545454545454,22.0
+1101,1101,safetypin,safetypin,safetypin_straight.jpg,b,straight,,,safety pin,safety pin,safety pin,safetypin_straight.jpg,6.9523809523809526,21.0
+1102,1102,safetypin,safetypin,shaver.jpg,,,,,safety pin,safety pin,safety pin,shaver.jpg,1.0,4.0
+1103,1103,safetypin,safetypin,avocado.jpg,,,,,safety pin,safety pin,safety pin,avocado.jpg,1.0,5.0
+1104,1104,safetypin,safetypin,fox.jpg,,,,,safety pin,safety pin,safety pin,fox.jpg,1.25,4.0
+1105,1105,safetypin,straight safetypin,safetypin_bent.jpg,a,bent,straight,closed,safety pin,closed safety pin,closed safety pin,safetypin_bent.jpg,4.684210526315789,19.0
+1106,1106,safetypin,straight safetypin,safetypin_straight.jpg,b,straight,straight,closed,safety pin,closed safety pin,closed safety pin,safetypin_straight.jpg,6.85,20.0
+1107,1107,safetypin,straight safetypin,shaver.jpg,,,straight,closed,safety pin,closed safety pin,,,,
+1108,1108,safetypin,straight safetypin,avocado.jpg,,,straight,closed,safety pin,closed safety pin,closed safety pin,avocado.jpg,1.0,5.0
+1109,1109,safetypin,straight safetypin,fox.jpg,,,straight,closed,safety pin,closed safety pin,closed safety pin,fox.jpg,1.0,6.0
+1110,1110,salami,salami,salami_sliced.jpg,a,sliced,,,salami,salami,salami,salami_sliced.jpg,6.6,20.0
+1111,1111,salami,salami,salami_unsliced.jpg,b,unsliced,,,salami,salami,salami,salami_unsliced.jpg,6.894736842105263,19.0
+1112,1112,salami,salami,baseballbat.jpg,,,,,salami,salami,salami,baseballbat.jpg,1.1111111111111112,9.0
+1113,1113,salami,salami,tiger.jpg,,,,,salami,salami,salami,tiger.jpg,1.2,5.0
+1114,1114,salami,salami,propeller.jpg,,,,,salami,salami,,,,
+1115,1115,salami,sliced salami,salami_sliced.jpg,a,sliced,sliced,sliced,salami,sliced salami,sliced salami,salami_sliced.jpg,6.55,20.0
+1116,1116,salami,sliced salami,salami_unsliced.jpg,b,unsliced,sliced,sliced,salami,sliced salami,sliced salami,salami_unsliced.jpg,1.8,20.0
+1117,1117,salami,sliced salami,baseballbat.jpg,,,sliced,sliced,salami,sliced salami,sliced salami,baseballbat.jpg,1.0,4.0
+1118,1118,salami,sliced salami,tiger.jpg,,,sliced,sliced,salami,sliced salami,sliced salami,tiger.jpg,1.0,5.0
+1119,1119,salami,sliced salami,propeller.jpg,,,sliced,sliced,salami,sliced salami,sliced salami,propeller.jpg,1.0,4.0
+1120,1120,salami,unsliced salami,salami_sliced.jpg,a,sliced,unsliced,whole,salami,whole salami,whole salami,salami_sliced.jpg,3.3684210526315788,19.0
+1121,1121,salami,unsliced salami,salami_unsliced.jpg,b,unsliced,unsliced,whole,salami,whole salami,whole salami,salami_unsliced.jpg,6.714285714285714,21.0
+1122,1122,salami,unsliced salami,baseballbat.jpg,,,unsliced,whole,salami,whole salami,,,,
+1123,1123,salami,unsliced salami,tiger.jpg,,,unsliced,whole,salami,whole salami,whole salami,tiger.jpg,1.2,5.0
+1124,1124,salami,unsliced salami,propeller.jpg,,,unsliced,whole,salami,whole salami,whole salami,propeller.jpg,1.0,7.0
+1125,1125,scissors,closed scissors,scissors_open.jpg,a,open,closed,closed,scissors,closed scissors,closed scissors,scissors_open.jpg,2.0,19.0
+1126,1126,scissors,closed scissors,scissors_closed.jpg,b,closed,closed,closed,scissors,closed scissors,closed scissors,scissors_closed.jpg,7.0,21.0
+1127,1127,scissors,closed scissors,hamsterwheel.jpg,,,closed,closed,scissors,closed scissors,closed scissors,hamsterwheel.jpg,1.1111111111111112,9.0
+1128,1128,scissors,closed scissors,bathingsuit.jpg,,,closed,closed,scissors,closed scissors,closed scissors,bathingsuit.jpg,1.2,5.0
+1129,1129,scissors,closed scissors,videotape.jpg,,,closed,closed,scissors,closed scissors,,,,
+1130,1130,scissors,open scissors,scissors_open.jpg,a,open,open,opened,scissors,opened scissors,opened scissors,scissors_open.jpg,7.0,20.0
+1131,1131,scissors,open scissors,scissors_closed.jpg,b,closed,open,opened,scissors,opened scissors,opened scissors,scissors_closed.jpg,2.0526315789473686,19.0
+1132,1132,scissors,open scissors,hamsterwheel.jpg,,,open,opened,scissors,opened scissors,opened scissors,hamsterwheel.jpg,1.0,4.0
+1133,1133,scissors,open scissors,bathingsuit.jpg,,,open,opened,scissors,opened scissors,opened scissors,bathingsuit.jpg,1.0,4.0
+1134,1134,scissors,open scissors,videotape.jpg,,,open,opened,scissors,opened scissors,opened scissors,videotape.jpg,1.0,6.0
+1135,1135,scissors,scissors,scissors_open.jpg,a,open,,,scissors,scissors,scissors,scissors_open.jpg,6.761904761904762,21.0
+1136,1136,scissors,scissors,scissors_closed.jpg,b,closed,,,scissors,scissors,scissors,scissors_closed.jpg,6.7368421052631575,19.0
+1137,1137,scissors,scissors,hamsterwheel.jpg,,,,,scissors,scissors,,,,
+1138,1138,scissors,scissors,bathingsuit.jpg,,,,,scissors,scissors,scissors,bathingsuit.jpg,1.0,3.0
+1139,1139,scissors,scissors,videotape.jpg,,,,,scissors,scissors,scissors,videotape.jpg,1.1428571428571428,7.0
+1140,1140,seatbelt,closed seatbelt,seatbelt_open.jpg,a,open,closed,unbuckled,seatbelt,unbuckled seatbelt,unbuckled seatbelt,seatbelt_open.jpg,6.8,20.0
+1141,1141,seatbelt,closed seatbelt,seatbelt_closed.jpg,b,closed,closed,unbuckled,seatbelt,unbuckled seatbelt,unbuckled seatbelt,seatbelt_closed.jpg,2.111111111111111,18.0
+1142,1142,seatbelt,closed seatbelt,hamburger.jpg,,,closed,unbuckled,seatbelt,unbuckled seatbelt,unbuckled seatbelt,hamburger.jpg,1.0,11.0
+1143,1143,seatbelt,closed seatbelt,lion.jpg,,,closed,unbuckled,seatbelt,unbuckled seatbelt,unbuckled seatbelt,lion.jpg,1.2,5.0
+1144,1144,seatbelt,closed seatbelt,drum.jpg,,,closed,unbuckled,seatbelt,unbuckled seatbelt,,,,
+1145,1145,seatbelt,open seatbelt,seatbelt_open.jpg,a,open,open,unfastened,seatbelt,unfastened seatbelt,unfastened seatbelt,seatbelt_open.jpg,6.631578947368421,19.0
+1146,1146,seatbelt,open seatbelt,seatbelt_closed.jpg,b,closed,open,unfastened,seatbelt,unfastened seatbelt,unfastened seatbelt,seatbelt_closed.jpg,2.380952380952381,21.0
+1147,1147,seatbelt,open seatbelt,hamburger.jpg,,,open,unfastened,seatbelt,unfastened seatbelt,unfastened seatbelt,hamburger.jpg,1.0,4.0
+1148,1148,seatbelt,open seatbelt,lion.jpg,,,open,unfastened,seatbelt,unfastened seatbelt,unfastened seatbelt,lion.jpg,2.0,4.0
+1149,1149,seatbelt,open seatbelt,drum.jpg,,,open,unfastened,seatbelt,unfastened seatbelt,unfastened seatbelt,drum.jpg,1.0,6.0
+1150,1150,seatbelt,seatbelt,seatbelt_open.jpg,a,open,,,seatbelt,seatbelt,seatbelt,seatbelt_open.jpg,6.454545454545454,22.0
+1151,1151,seatbelt,seatbelt,seatbelt_closed.jpg,b,closed,,,seatbelt,seatbelt,seatbelt,seatbelt_closed.jpg,6.666666666666667,21.0
+1152,1152,seatbelt,seatbelt,hamburger.jpg,,,,,seatbelt,seatbelt,,,,
+1153,1153,seatbelt,seatbelt,lion.jpg,,,,,seatbelt,seatbelt,seatbelt,lion.jpg,1.0,5.0
+1154,1154,seatbelt,seatbelt,drum.jpg,,,,,seatbelt,seatbelt,seatbelt,drum.jpg,1.0,7.0
+1155,1155,shoe,clean shoe,shoe_dirty.jpg,a,dirty,clean,clean,shoe,clean shoe,clean shoe,shoe_dirty.jpg,2.3684210526315788,19.0
+1156,1156,shoe,clean shoe,shoe_clean.jpg,b,clean,clean,clean,shoe,clean shoe,clean shoe,shoe_clean.jpg,6.8,20.0
+1157,1157,shoe,clean shoe,pinecone.jpg,,,clean,clean,shoe,clean shoe,clean shoe,pinecone.jpg,1.2727272727272727,11.0
+1158,1158,shoe,clean shoe,frenchfries.jpg,,,clean,clean,shoe,clean shoe,clean shoe,frenchfries.jpg,1.0,5.0
+1159,1159,shoe,clean shoe,bandage.jpg,,,clean,clean,shoe,clean shoe,,,,
+1160,1160,shoe,dirty shoe,shoe_dirty.jpg,a,dirty,dirty,dirty,shoe,dirty shoe,dirty shoe,shoe_dirty.jpg,6.315789473684211,19.0
+1161,1161,shoe,dirty shoe,shoe_clean.jpg,b,clean,dirty,dirty,shoe,dirty shoe,dirty shoe,shoe_clean.jpg,2.3,20.0
+1162,1162,shoe,dirty shoe,pinecone.jpg,,,dirty,dirty,shoe,dirty shoe,dirty shoe,pinecone.jpg,1.0,4.0
+1163,1163,shoe,dirty shoe,frenchfries.jpg,,,dirty,dirty,shoe,dirty shoe,dirty shoe,frenchfries.jpg,1.0,4.0
+1164,1164,shoe,dirty shoe,bandage.jpg,,,dirty,dirty,shoe,dirty shoe,dirty shoe,bandage.jpg,1.0,6.0
+1165,1165,shoe,shoe,shoe_dirty.jpg,a,dirty,,,shoe,shoe,shoe,shoe_dirty.jpg,6.181818181818182,22.0
+1166,1166,shoe,shoe,shoe_clean.jpg,b,clean,,,shoe,shoe,shoe,shoe_clean.jpg,6.55,20.0
+1167,1167,shoe,shoe,pinecone.jpg,,,,,shoe,shoe,,,,
+1168,1168,shoe,shoe,frenchfries.jpg,,,,,shoe,shoe,shoe,frenchfries.jpg,1.0,4.0
+1169,1169,shoe,shoe,bandage.jpg,,,,,shoe,shoe,shoe,bandage.jpg,1.25,8.0
+1170,1170,shoelace,shoelace,shoelace_tied.jpg,a,tied,,,shoelace,shoelace,shoelace,shoelace_tied.jpg,6.45,20.0
+1171,1171,shoelace,shoelace,shoelace_untied.jpg,b,untied,,,shoelace,shoelace,shoelace,shoelace_untied.jpg,6.45,20.0
+1172,1172,shoelace,shoelace,walkietalkie.jpg,,,,,shoelace,shoelace,shoelace,walkietalkie.jpg,1.1111111111111112,9.0
+1173,1173,shoelace,shoelace,dogdish.jpg,,,,,shoelace,shoelace,shoelace,dogdish.jpg,1.0,5.0
+1174,1174,shoelace,shoelace,cactus.jpg,,,,,shoelace,shoelace,,,,
+1175,1175,shoelace,tied shoelace,shoelace_tied.jpg,a,tied,tied,tied,shoelace,tied shoelace,tied shoelace,shoelace_tied.jpg,4.473684210526316,19.0
+1176,1176,shoelace,tied shoelace,shoelace_untied.jpg,b,untied,tied,tied,shoelace,tied shoelace,tied shoelace,shoelace_untied.jpg,2.0,22.0
+1177,1177,shoelace,tied shoelace,walkietalkie.jpg,,,tied,tied,shoelace,tied shoelace,tied shoelace,walkietalkie.jpg,1.0,4.0
+1178,1178,shoelace,tied shoelace,dogdish.jpg,,,tied,tied,shoelace,tied shoelace,tied shoelace,dogdish.jpg,1.0,5.0
+1179,1179,shoelace,tied shoelace,cactus.jpg,,,tied,tied,shoelace,tied shoelace,tied shoelace,cactus.jpg,1.0,4.0
+1180,1180,shoelace,untied shoelace,shoelace_tied.jpg,a,tied,untied,untied,shoelace,untied shoelace,untied shoelace,shoelace_tied.jpg,3.35,20.0
+1181,1181,shoelace,untied shoelace,shoelace_untied.jpg,b,untied,untied,untied,shoelace,untied shoelace,untied shoelace,shoelace_untied.jpg,5.315789473684211,19.0
+1182,1182,shoelace,untied shoelace,walkietalkie.jpg,,,untied,untied,shoelace,untied shoelace,,,,
+1183,1183,shoelace,untied shoelace,dogdish.jpg,,,untied,untied,shoelace,untied shoelace,untied shoelace,dogdish.jpg,1.0,4.0
+1184,1184,shoelace,untied shoelace,cactus.jpg,,,untied,untied,shoelace,untied shoelace,untied shoelace,cactus.jpg,1.5714285714285714,7.0
+1185,1185,shoppingcart,empty shoppingcart,shoppingcart_empty.jpg,a,empty,empty,empty,shopping cart,empty shopping cart,empty shopping cart,shoppingcart_empty.jpg,6.9523809523809526,21.0
+1186,1186,shoppingcart,empty shoppingcart,shoppingcart_full.jpg,b,full,empty,empty,shopping cart,empty shopping cart,empty shopping cart,shoppingcart_full.jpg,1.6842105263157894,19.0
+1187,1187,shoppingcart,empty shoppingcart,jukebox.jpg,,,empty,empty,shopping cart,empty shopping cart,empty shopping cart,jukebox.jpg,1.0,8.0
+1188,1188,shoppingcart,empty shoppingcart,bridge.jpg,,,empty,empty,shopping cart,empty shopping cart,empty shopping cart,bridge.jpg,1.0,5.0
+1189,1189,shoppingcart,empty shoppingcart,hat.jpg,,,empty,empty,shopping cart,empty shopping cart,,,,
+1190,1190,shoppingcart,full shoppingcart,shoppingcart_empty.jpg,a,empty,full,filled,shopping cart,filled shopping cart,filled shopping cart,shoppingcart_empty.jpg,1.6666666666666667,21.0
+1191,1191,shoppingcart,full shoppingcart,shoppingcart_full.jpg,b,full,full,filled,shopping cart,filled shopping cart,filled shopping cart,shoppingcart_full.jpg,6.636363636363637,22.0
+1192,1192,shoppingcart,full shoppingcart,jukebox.jpg,,,full,filled,shopping cart,filled shopping cart,filled shopping cart,jukebox.jpg,1.0,2.0
+1193,1193,shoppingcart,full shoppingcart,bridge.jpg,,,full,filled,shopping cart,filled shopping cart,filled shopping cart,bridge.jpg,1.0,5.0
+1194,1194,shoppingcart,full shoppingcart,hat.jpg,,,full,filled,shopping cart,filled shopping cart,filled shopping cart,hat.jpg,1.0,6.0
+1195,1195,shoppingcart,shoppingcart,shoppingcart_empty.jpg,a,empty,,,shopping cart,shopping cart,shopping cart,shoppingcart_empty.jpg,7.0,21.0
+1196,1196,shoppingcart,shoppingcart,shoppingcart_full.jpg,b,full,,,shopping cart,shopping cart,shopping cart,shoppingcart_full.jpg,6.7894736842105265,19.0
+1197,1197,shoppingcart,shoppingcart,jukebox.jpg,,,,,shopping cart,shopping cart,,,,
+1198,1198,shoppingcart,shoppingcart,bridge.jpg,,,,,shopping cart,shopping cart,shopping cart,bridge.jpg,1.0,4.0
+1199,1199,shoppingcart,shoppingcart,hat.jpg,,,,,shopping cart,shopping cart,shopping cart,hat.jpg,1.0,7.0
+1200,1200,sleepingbag,rolled sleepingbag,sleepingbag_rolled.jpg,a,rolled,rolled,rolled,sleeping bag,rolled sleeping bag,rolled sleeping bag,sleepingbag_rolled.jpg,7.0,22.0
+1201,1201,sleepingbag,rolled sleepingbag,sleepingbag_unrolled.jpg,b,unrolled,rolled,rolled,sleeping bag,rolled sleeping bag,rolled sleeping bag,sleepingbag_unrolled.jpg,2.5454545454545454,22.0
+1202,1202,sleepingbag,rolled sleepingbag,clarinet.jpg,,,rolled,rolled,sleeping bag,rolled sleeping bag,rolled sleeping bag,clarinet.jpg,1.0,11.0
+1203,1203,sleepingbag,rolled sleepingbag,muffintin.jpg,,,rolled,rolled,sleeping bag,rolled sleeping bag,rolled sleeping bag,muffintin.jpg,1.0,5.0
+1204,1204,sleepingbag,rolled sleepingbag,dreidel.jpg,,,rolled,rolled,sleeping bag,rolled sleeping bag,,,,
+1205,1205,sleepingbag,sleepingbag,sleepingbag_rolled.jpg,a,rolled,,,sleeping bag,sleeping bag,sleeping bag,sleepingbag_rolled.jpg,6.666666666666667,21.0
+1206,1206,sleepingbag,sleepingbag,sleepingbag_unrolled.jpg,b,unrolled,,,sleeping bag,sleeping bag,sleeping bag,sleepingbag_unrolled.jpg,6.590909090909091,22.0
+1207,1207,sleepingbag,sleepingbag,clarinet.jpg,,,,,sleeping bag,sleeping bag,sleeping bag,clarinet.jpg,1.0,3.0
+1208,1208,sleepingbag,sleepingbag,muffintin.jpg,,,,,sleeping bag,sleeping bag,sleeping bag,muffintin.jpg,1.0,5.0
+1209,1209,sleepingbag,sleepingbag,dreidel.jpg,,,,,sleeping bag,sleeping bag,sleeping bag,dreidel.jpg,1.0,6.0
+1210,1210,sleepingbag,unrolled sleepingbag,sleepingbag_rolled.jpg,a,rolled,unrolled,unzipped,sleeping bag,unzipped sleeping bag,unzipped sleeping bag,sleepingbag_rolled.jpg,4.523809523809524,21.0
+1211,1211,sleepingbag,unrolled sleepingbag,sleepingbag_unrolled.jpg,b,unrolled,unrolled,unzipped,sleeping bag,unzipped sleeping bag,unzipped sleeping bag,sleepingbag_unrolled.jpg,5.454545454545454,22.0
+1212,1212,sleepingbag,unrolled sleepingbag,clarinet.jpg,,,unrolled,unzipped,sleeping bag,unzipped sleeping bag,,,,
+1213,1213,sleepingbag,unrolled sleepingbag,muffintin.jpg,,,unrolled,unzipped,sleeping bag,unzipped sleeping bag,unzipped sleeping bag,muffintin.jpg,1.0,4.0
+1214,1214,sleepingbag,unrolled sleepingbag,dreidel.jpg,,,unrolled,unzipped,sleeping bag,unzipped sleeping bag,unzipped sleeping bag,dreidel.jpg,1.0,8.0
+1215,1215,soccerball,clean soccerball,soccerball_dirty.jpg,a,dirty,clean,clean,soccer ball,clean soccer ball,clean soccer ball,soccerball_dirty.jpg,2.857142857142857,21.0
+1216,1216,soccerball,clean soccerball,soccerball_clean.jpg,b,clean,clean,clean,soccer ball,clean soccer ball,clean soccer ball,soccerball_clean.jpg,6.9523809523809526,21.0
+1217,1217,soccerball,clean soccerball,anchor.jpg,,,clean,clean,soccer ball,clean soccer ball,clean soccer ball,anchor.jpg,1.0,11.0
+1218,1218,soccerball,clean soccerball,knife.jpg,,,clean,clean,soccer ball,clean soccer ball,clean soccer ball,knife.jpg,1.2,5.0
+1219,1219,soccerball,clean soccerball,outhouse.jpg,,,clean,clean,soccer ball,clean soccer ball,,,,
+1220,1220,soccerball,dirty soccerball,soccerball_dirty.jpg,a,dirty,dirty,dirty,soccer ball,dirty soccer ball,dirty soccer ball,soccerball_dirty.jpg,6.65,20.0
+1221,1221,soccerball,dirty soccerball,soccerball_clean.jpg,b,clean,dirty,dirty,soccer ball,dirty soccer ball,dirty soccer ball,soccerball_clean.jpg,2.1904761904761907,21.0
+1222,1222,soccerball,dirty soccerball,anchor.jpg,,,dirty,dirty,soccer ball,dirty soccer ball,dirty soccer ball,anchor.jpg,1.0,4.0
+1223,1223,soccerball,dirty soccerball,knife.jpg,,,dirty,dirty,soccer ball,dirty soccer ball,dirty soccer ball,knife.jpg,1.0,5.0
+1224,1224,soccerball,dirty soccerball,outhouse.jpg,,,dirty,dirty,soccer ball,dirty soccer ball,dirty soccer ball,outhouse.jpg,1.0,6.0
+1225,1225,soccerball,soccerball,soccerball_dirty.jpg,a,dirty,,,soccer ball,soccer ball,soccer ball,soccerball_dirty.jpg,6.7272727272727275,22.0
+1226,1226,soccerball,soccerball,soccerball_clean.jpg,b,clean,,,soccer ball,soccer ball,soccer ball,soccerball_clean.jpg,6.8,20.0
+1227,1227,soccerball,soccerball,anchor.jpg,,,,,soccer ball,soccer ball,,,,
+1228,1228,soccerball,soccerball,knife.jpg,,,,,soccer ball,soccer ball,soccer ball,knife.jpg,1.0,4.0
+1229,1229,soccerball,soccerball,outhouse.jpg,,,,,soccer ball,soccer ball,soccer ball,outhouse.jpg,1.0,8.0
+1230,1230,spoon,clean spoon,spoon_dirty.jpg,a,dirty,clean,clean,spoon,clean spoon,clean spoon,spoon_dirty.jpg,2.3333333333333335,21.0
+1231,1231,spoon,clean spoon,spoon_clean.jpg,b,clean,clean,clean,spoon,clean spoon,clean spoon,spoon_clean.jpg,6.4,20.0
+1232,1232,spoon,clean spoon,goggles.jpg,,,clean,clean,spoon,clean spoon,clean spoon,goggles.jpg,1.4444444444444444,9.0
+1233,1233,spoon,clean spoon,basketballnet.jpg,,,clean,clean,spoon,clean spoon,clean spoon,basketballnet.jpg,1.2,5.0
+1234,1234,spoon,clean spoon,mattress.jpg,,,clean,clean,spoon,clean spoon,,,,
+1235,1235,spoon,dirty spoon,spoon_dirty.jpg,a,dirty,dirty,dirty,spoon,dirty spoon,dirty spoon,spoon_dirty.jpg,6.947368421052632,19.0
+1236,1236,spoon,dirty spoon,spoon_clean.jpg,b,clean,dirty,dirty,spoon,dirty spoon,dirty spoon,spoon_clean.jpg,1.9545454545454546,22.0
+1237,1237,spoon,dirty spoon,goggles.jpg,,,dirty,dirty,spoon,dirty spoon,dirty spoon,goggles.jpg,1.0,4.0
+1238,1238,spoon,dirty spoon,basketballnet.jpg,,,dirty,dirty,spoon,dirty spoon,dirty spoon,basketballnet.jpg,1.2,5.0
+1239,1239,spoon,dirty spoon,mattress.jpg,,,dirty,dirty,spoon,dirty spoon,dirty spoon,mattress.jpg,1.1666666666666667,6.0
+1240,1240,spoon,spoon,spoon_dirty.jpg,a,dirty,,,spoon,spoon,spoon,spoon_dirty.jpg,5.9,20.0
+1241,1241,spoon,spoon,spoon_clean.jpg,b,clean,,,spoon,spoon,spoon,spoon_clean.jpg,6.714285714285714,21.0
+1242,1242,spoon,spoon,goggles.jpg,,,,,spoon,spoon,,,,
+1243,1243,spoon,spoon,basketballnet.jpg,,,,,spoon,spoon,spoon,basketballnet.jpg,1.0,5.0
+1244,1244,spoon,spoon,mattress.jpg,,,,,spoon,spoon,spoon,mattress.jpg,1.1428571428571428,7.0
+1245,1245,staircase,curved staircase,staircase_curved.jpg,a,curved,curved,windy,staircase,windy staircase,windy staircase,staircase_curved.jpg,6.0,20.0
+1246,1246,staircase,curved staircase,staircase_straight.jpg,b,straight,curved,windy,staircase,windy staircase,windy staircase,staircase_straight.jpg,2.0,17.0
+1247,1247,staircase,curved staircase,fishingrod.jpg,,,curved,windy,staircase,windy staircase,windy staircase,fishingrod.jpg,1.4,10.0
+1248,1248,staircase,curved staircase,mushroom.jpg,,,curved,windy,staircase,windy staircase,windy staircase,mushroom.jpg,1.0,5.0
+1249,1249,staircase,curved staircase,holepuncher.jpg,,,curved,windy,staircase,windy staircase,,,,
+1250,1250,staircase,staircase,staircase_curved.jpg,a,curved,,,staircase,staircase,staircase,staircase_curved.jpg,5.666666666666667,18.0
+1251,1251,staircase,staircase,staircase_straight.jpg,b,straight,,,staircase,staircase,staircase,staircase_straight.jpg,6.75,20.0
+1252,1252,staircase,staircase,fishingrod.jpg,,,,,staircase,staircase,staircase,fishingrod.jpg,1.0,4.0
+1253,1253,staircase,staircase,mushroom.jpg,,,,,staircase,staircase,staircase,mushroom.jpg,1.0,5.0
+1254,1254,staircase,staircase,holepuncher.jpg,,,,,staircase,staircase,staircase,holepuncher.jpg,1.1666666666666667,6.0
+1255,1255,staircase,straight staircase,staircase_curved.jpg,a,curved,straight,straight,staircase,straight staircase,straight staircase,staircase_curved.jpg,1.9545454545454546,22.0
+1256,1256,staircase,straight staircase,staircase_straight.jpg,b,straight,straight,straight,staircase,straight staircase,straight staircase,staircase_straight.jpg,6.2631578947368425,19.0
+1257,1257,staircase,straight staircase,fishingrod.jpg,,,straight,straight,staircase,straight staircase,,,,
+1258,1258,staircase,straight staircase,mushroom.jpg,,,straight,straight,staircase,straight staircase,straight staircase,mushroom.jpg,1.0,4.0
+1259,1259,staircase,straight staircase,holepuncher.jpg,,,straight,straight,staircase,straight staircase,straight staircase,holepuncher.jpg,1.1428571428571428,7.0
+1260,1260,stapler,closed stapler,stapler_open.jpg,a,open,closed,closed,stapler,closed stapler,closed stapler,stapler_open.jpg,2.0476190476190474,21.0
+1261,1261,stapler,closed stapler,stapler_closed.jpg,b,closed,closed,closed,stapler,closed stapler,closed stapler,stapler_closed.jpg,6.555555555555555,18.0
+1262,1262,stapler,closed stapler,bench.jpg,,,closed,closed,stapler,closed stapler,closed stapler,bench.jpg,1.5,10.0
+1263,1263,stapler,closed stapler,hook.jpg,,,closed,closed,stapler,closed stapler,closed stapler,hook.jpg,1.0,5.0
+1264,1264,stapler,closed stapler,muffin.jpg,,,closed,closed,stapler,closed stapler,,,,
+1265,1265,stapler,open stapler,stapler_open.jpg,a,open,open,open,stapler,open stapler,open stapler,stapler_open.jpg,6.611111111111111,18.0
+1266,1266,stapler,open stapler,stapler_closed.jpg,b,closed,open,open,stapler,open stapler,open stapler,stapler_closed.jpg,3.090909090909091,22.0
+1267,1267,stapler,open stapler,bench.jpg,,,open,open,stapler,open stapler,open stapler,bench.jpg,1.0,4.0
+1268,1268,stapler,open stapler,hook.jpg,,,open,open,stapler,open stapler,open stapler,hook.jpg,1.2,5.0
+1269,1269,stapler,open stapler,muffin.jpg,,,open,open,stapler,open stapler,open stapler,muffin.jpg,1.0,5.0
+1270,1270,stapler,stapler,stapler_open.jpg,a,open,,,stapler,stapler,stapler,stapler_open.jpg,6.368421052631579,19.0
+1271,1271,stapler,stapler,stapler_closed.jpg,b,closed,,,stapler,stapler,stapler,stapler_closed.jpg,6.9411764705882355,17.0
+1272,1272,stapler,stapler,bench.jpg,,,,,stapler,stapler,,,,
+1273,1273,stapler,stapler,hook.jpg,,,,,stapler,stapler,stapler,hook.jpg,1.0,4.0
+1274,1274,stapler,stapler,muffin.jpg,,,,,stapler,stapler,stapler,muffin.jpg,1.0,6.0
+1275,1275,stovetop,clean stovetop,stovetop_dirty.jpg,a,dirty,clean,clean,stovetop,clean stovetop,clean stovetop,stovetop_dirty.jpg,2.3333333333333335,21.0
+1276,1276,stovetop,clean stovetop,stovetop_clean.jpg,b,clean,clean,clean,stovetop,clean stovetop,clean stovetop,stovetop_clean.jpg,6.5,20.0
+1277,1277,stovetop,clean stovetop,boxcutter.jpg,,,clean,clean,stovetop,clean stovetop,clean stovetop,boxcutter.jpg,1.0,11.0
+1278,1278,stovetop,clean stovetop,money.jpg,,,clean,clean,stovetop,clean stovetop,clean stovetop,money.jpg,2.5,4.0
+1279,1279,stovetop,clean stovetop,leopard.jpg,,,clean,clean,stovetop,clean stovetop,,,,
+1280,1280,stovetop,dirty stovetop,stovetop_dirty.jpg,a,dirty,dirty,dirty,stovetop,dirty stovetop,dirty stovetop,stovetop_dirty.jpg,6.684210526315789,19.0
+1281,1281,stovetop,dirty stovetop,stovetop_clean.jpg,b,clean,dirty,dirty,stovetop,dirty stovetop,dirty stovetop,stovetop_clean.jpg,3.2,20.0
+1282,1282,stovetop,dirty stovetop,boxcutter.jpg,,,dirty,dirty,stovetop,dirty stovetop,dirty stovetop,boxcutter.jpg,1.0,3.0
+1283,1283,stovetop,dirty stovetop,money.jpg,,,dirty,dirty,stovetop,dirty stovetop,dirty stovetop,money.jpg,1.0,5.0
+1284,1284,stovetop,dirty stovetop,leopard.jpg,,,dirty,dirty,stovetop,dirty stovetop,dirty stovetop,leopard.jpg,1.0,6.0
+1285,1285,stovetop,stovetop,stovetop_dirty.jpg,a,dirty,,,stovetop,stovetop,stovetop,stovetop_dirty.jpg,6.6,20.0
+1286,1286,stovetop,stovetop,stovetop_clean.jpg,b,clean,,,stovetop,stovetop,stovetop,stovetop_clean.jpg,6.578947368421052,19.0
+1287,1287,stovetop,stovetop,boxcutter.jpg,,,,,stovetop,stovetop,,,,
+1288,1288,stovetop,stovetop,money.jpg,,,,,stovetop,stovetop,stovetop,money.jpg,1.0,5.0
+1289,1289,stovetop,stovetop,leopard.jpg,,,,,stovetop,stovetop,stovetop,leopard.jpg,1.7142857142857142,7.0
+1290,1290,straw,bent straw,straw_bent.jpg,a,bent,bent,folded,straw,folded straw,folded straw,straw_bent.jpg,5.842105263157895,19.0
+1291,1291,straw,bent straw,straw_straight.jpg,b,straight,bent,folded,straw,folded straw,folded straw,straw_straight.jpg,2.2,20.0
+1292,1292,straw,bent straw,desk.jpg,,,bent,folded,straw,folded straw,folded straw,desk.jpg,1.0,8.0
+1293,1293,straw,bent straw,pants.jpg,,,bent,folded,straw,folded straw,folded straw,pants.jpg,1.0,4.0
+1294,1294,straw,bent straw,toycar.jpg,,,bent,folded,straw,folded straw,,,,
+1295,1295,straw,straight straw,straw_bent.jpg,a,bent,straight,straight,straw,straight straw,straight straw,straw_bent.jpg,2.4705882352941178,17.0
+1296,1296,straw,straight straw,straw_straight.jpg,b,straight,straight,straight,straw,straight straw,straight straw,straw_straight.jpg,6.7368421052631575,19.0
+1297,1297,straw,straight straw,desk.jpg,,,straight,straight,straw,straight straw,straight straw,desk.jpg,1.0,3.0
+1298,1298,straw,straight straw,pants.jpg,,,straight,straight,straw,straight straw,straight straw,pants.jpg,1.0,5.0
+1299,1299,straw,straight straw,toycar.jpg,,,straight,straight,straw,straight straw,straight straw,toycar.jpg,1.0,5.0
+1300,1300,straw,straw,straw_bent.jpg,a,bent,,,straw,straw,straw,straw_bent.jpg,6.842105263157895,19.0
+1301,1301,straw,straw,straw_straight.jpg,b,straight,,,straw,straw,straw,straw_straight.jpg,6.705882352941177,17.0
+1302,1302,straw,straw,desk.jpg,,,,,straw,straw,,,,
+1303,1303,straw,straw,pants.jpg,,,,,straw,straw,straw,pants.jpg,1.0,4.0
+1304,1304,straw,straw,toycar.jpg,,,,,straw,straw,straw,toycar.jpg,1.0,7.0
+1305,1305,sugarpacket,ripped sugarpacket,sugarpacket_ripped.jpg,a,ripped,ripped,opened,sugar packet,opened sugar packet,opened sugar packet,sugarpacket_ripped.jpg,6.714285714285714,21.0
+1306,1306,sugarpacket,ripped sugarpacket,sugarpacket_whole.jpg,b,whole,ripped,opened,sugar packet,opened sugar packet,opened sugar packet,sugarpacket_whole.jpg,2.526315789473684,19.0
+1307,1307,sugarpacket,ripped sugarpacket,chipmunk.jpg,,,ripped,opened,sugar packet,opened sugar packet,opened sugar packet,chipmunk.jpg,1.75,8.0
+1308,1308,sugarpacket,ripped sugarpacket,candle.jpg,,,ripped,opened,sugar packet,opened sugar packet,opened sugar packet,candle.jpg,1.0,5.0
+1309,1309,sugarpacket,ripped sugarpacket,bus.jpg,,,ripped,opened,sugar packet,opened sugar packet,,,,
+1310,1310,sugarpacket,sugarpacket,sugarpacket_ripped.jpg,a,ripped,,,sugar packet,sugar packet,sugar packet,sugarpacket_ripped.jpg,5.277777777777778,18.0
+1311,1311,sugarpacket,sugarpacket,sugarpacket_whole.jpg,b,whole,,,sugar packet,sugar packet,sugar packet,sugarpacket_whole.jpg,6.705882352941177,17.0
+1312,1312,sugarpacket,sugarpacket,chipmunk.jpg,,,,,sugar packet,sugar packet,sugar packet,chipmunk.jpg,1.0,4.0
+1313,1313,sugarpacket,sugarpacket,candle.jpg,,,,,sugar packet,sugar packet,sugar packet,candle.jpg,1.0,5.0
+1314,1314,sugarpacket,sugarpacket,bus.jpg,,,,,sugar packet,sugar packet,sugar packet,bus.jpg,1.25,4.0
+1315,1315,sugarpacket,whole sugarpacket,sugarpacket_ripped.jpg,a,ripped,whole,unopened,sugar packet,unopened sugar packet,unopened sugar packet,sugarpacket_ripped.jpg,2.1052631578947367,19.0
+1316,1316,sugarpacket,whole sugarpacket,sugarpacket_whole.jpg,b,whole,whole,unopened,sugar packet,unopened sugar packet,unopened sugar packet,sugarpacket_whole.jpg,6.7368421052631575,19.0
+1317,1317,sugarpacket,whole sugarpacket,chipmunk.jpg,,,whole,unopened,sugar packet,unopened sugar packet,,,,
+1318,1318,sugarpacket,whole sugarpacket,candle.jpg,,,whole,unopened,sugar packet,unopened sugar packet,unopened sugar packet,candle.jpg,1.0,5.0
+1319,1319,sugarpacket,whole sugarpacket,bus.jpg,,,whole,unopened,sugar packet,unopened sugar packet,unopened sugar packet,bus.jpg,1.0,8.0
+1320,1320,suitcase,closed suitcase,suitcase_open.jpg,a,open,closed,closed,suitcase,closed suitcase,closed suitcase,suitcase_open.jpg,1.65,20.0
+1321,1321,suitcase,closed suitcase,suitcase_closed.jpg,b,closed,closed,closed,suitcase,closed suitcase,closed suitcase,suitcase_closed.jpg,6.65,20.0
+1322,1322,suitcase,closed suitcase,waterfilter.jpg,,,closed,closed,suitcase,closed suitcase,closed suitcase,waterfilter.jpg,1.1111111111111112,9.0
+1323,1323,suitcase,closed suitcase,microphone.jpg,,,closed,closed,suitcase,closed suitcase,closed suitcase,microphone.jpg,1.0,5.0
+1324,1324,suitcase,closed suitcase,lizard.jpg,,,closed,closed,suitcase,closed suitcase,,,,
+1325,1325,suitcase,open suitcase,suitcase_open.jpg,a,open,open,open,suitcase,open suitcase,open suitcase,suitcase_open.jpg,6.9,20.0
+1326,1326,suitcase,open suitcase,suitcase_closed.jpg,b,closed,open,open,suitcase,open suitcase,open suitcase,suitcase_closed.jpg,2.1818181818181817,22.0
+1327,1327,suitcase,open suitcase,waterfilter.jpg,,,open,open,suitcase,open suitcase,open suitcase,waterfilter.jpg,1.0,4.0
+1328,1328,suitcase,open suitcase,microphone.jpg,,,open,open,suitcase,open suitcase,open suitcase,microphone.jpg,1.0,5.0
+1329,1329,suitcase,open suitcase,lizard.jpg,,,open,open,suitcase,open suitcase,open suitcase,lizard.jpg,1.0,6.0
+1330,1330,suitcase,suitcase,suitcase_open.jpg,a,open,,,suitcase,suitcase,suitcase,suitcase_open.jpg,6.181818181818182,22.0
+1331,1331,suitcase,suitcase,suitcase_closed.jpg,b,closed,,,suitcase,suitcase,suitcase,suitcase_closed.jpg,6.45,20.0
+1332,1332,suitcase,suitcase,waterfilter.jpg,,,,,suitcase,suitcase,,,,
+1333,1333,suitcase,suitcase,microphone.jpg,,,,,suitcase,suitcase,suitcase,microphone.jpg,1.0,5.0
+1334,1334,suitcase,suitcase,lizard.jpg,,,,,suitcase,suitcase,suitcase,lizard.jpg,1.0,6.0
+1335,1335,sweater,folded sweater,sweater_folded.jpg,a,folded,folded,folded,sweater,folded sweater,folded sweater,sweater_folded.jpg,6.181818181818182,22.0
+1336,1336,sweater,folded sweater,sweater_unfolded.jpg,b,unfolded,folded,folded,sweater,folded sweater,folded sweater,sweater_unfolded.jpg,2.0,21.0
+1337,1337,sweater,folded sweater,dolphin.jpg,,,folded,folded,sweater,folded sweater,folded sweater,dolphin.jpg,1.0,11.0
+1338,1338,sweater,folded sweater,projector.jpg,,,folded,folded,sweater,folded sweater,folded sweater,projector.jpg,1.2,5.0
+1339,1339,sweater,folded sweater,crutches.jpg,,,folded,folded,sweater,folded sweater,,,,
+1340,1340,sweater,sweater,sweater_folded.jpg,a,folded,,,sweater,sweater,sweater,sweater_folded.jpg,5.476190476190476,21.0
+1341,1341,sweater,sweater,sweater_unfolded.jpg,b,unfolded,,,sweater,sweater,sweater,sweater_unfolded.jpg,6.571428571428571,21.0
+1342,1342,sweater,sweater,dolphin.jpg,,,,,sweater,sweater,sweater,dolphin.jpg,1.0,4.0
+1343,1343,sweater,sweater,projector.jpg,,,,,sweater,sweater,sweater,projector.jpg,1.0,5.0
+1344,1344,sweater,sweater,crutches.jpg,,,,,sweater,sweater,sweater,crutches.jpg,1.0,5.0
+1345,1345,sweater,unfolded sweater,sweater_folded.jpg,a,folded,unfolded,unfolded,sweater,unfolded sweater,unfolded sweater,sweater_folded.jpg,2.090909090909091,22.0
+1346,1346,sweater,unfolded sweater,sweater_unfolded.jpg,b,unfolded,unfolded,unfolded,sweater,unfolded sweater,unfolded sweater,sweater_unfolded.jpg,6.0,22.0
+1347,1347,sweater,unfolded sweater,dolphin.jpg,,,unfolded,unfolded,sweater,unfolded sweater,,,,
+1348,1348,sweater,unfolded sweater,projector.jpg,,,unfolded,unfolded,sweater,unfolded sweater,unfolded sweater,projector.jpg,1.5,4.0
+1349,1349,sweater,unfolded sweater,crutches.jpg,,,unfolded,unfolded,sweater,unfolded sweater,unfolded sweater,crutches.jpg,1.0,8.0
+1350,1350,table,broken table,table_broken.jpg,a,broken,broken,broken,table,broken table,broken table,table_broken.jpg,6.666666666666667,21.0
+1351,1351,table,broken table,table_whole.jpg,b,whole,broken,broken,table,broken table,broken table,table_whole.jpg,1.5,20.0
+1352,1352,table,broken table,paintcan.jpg,,,broken,broken,table,broken table,broken table,paintcan.jpg,1.3636363636363635,11.0
+1353,1353,table,broken table,seahorse.jpg,,,broken,broken,table,broken table,broken table,seahorse.jpg,1.2,5.0
+1354,1354,table,broken table,robot.jpg,,,broken,broken,table,broken table,,,,
+1355,1355,table,table,table_broken.jpg,a,broken,,,table,table,table,table_broken.jpg,4.9523809523809526,21.0
+1356,1356,table,table,table_whole.jpg,b,whole,,,table,table,table,table_whole.jpg,6.761904761904762,21.0
+1357,1357,table,table,paintcan.jpg,,,,,table,table,table,paintcan.jpg,1.0,4.0
+1358,1358,table,table,seahorse.jpg,,,,,table,table,table,seahorse.jpg,1.0,5.0
+1359,1359,table,table,robot.jpg,,,,,table,table,table,robot.jpg,1.0,5.0
+1360,1360,table,whole table,table_broken.jpg,a,broken,whole,intact,table,intact table,intact table,table_broken.jpg,1.6,20.0
+1361,1361,table,whole table,table_whole.jpg,b,whole,whole,intact,table,intact table,intact table,table_whole.jpg,6.7,20.0
+1362,1362,table,whole table,paintcan.jpg,,,whole,intact,table,intact table,,,,
+1363,1363,table,whole table,seahorse.jpg,,,whole,intact,table,intact table,intact table,seahorse.jpg,1.0,5.0
+1364,1364,table,whole table,robot.jpg,,,whole,intact,table,intact table,intact table,robot.jpg,1.0,7.0
+1365,1365,tire,broken tire,tire_broken.jpg,a,broken,broken,flat,tire,flat tire,flat tire,tire_broken.jpg,6.95,20.0
+1366,1366,tire,broken tire,tire_whole.jpg,b,whole,broken,flat,tire,flat tire,flat tire,tire_whole.jpg,4.190476190476191,21.0
+1367,1367,tire,broken tire,checkers.jpg,,,broken,flat,tire,flat tire,flat tire,checkers.jpg,1.0909090909090908,11.0
+1368,1368,tire,broken tire,skiis.jpg,,,broken,flat,tire,flat tire,flat tire,skiis.jpg,1.0,4.0
+1369,1369,tire,broken tire,comb.jpg,,,broken,flat,tire,flat tire,,,,
+1370,1370,tire,tire,tire_broken.jpg,a,broken,,,tire,tire,tire,tire_broken.jpg,5.809523809523809,21.0
+1371,1371,tire,tire,tire_whole.jpg,b,whole,,,tire,tire,tire,tire_whole.jpg,6.35,20.0
+1372,1372,tire,tire,checkers.jpg,,,,,tire,tire,tire,checkers.jpg,1.0,4.0
+1373,1373,tire,tire,skiis.jpg,,,,,tire,tire,tire,skiis.jpg,1.0,4.0
+1374,1374,tire,tire,comb.jpg,,,,,tire,tire,tire,comb.jpg,1.1666666666666667,6.0
+1375,1375,tire,whole tire,tire_broken.jpg,a,broken,whole,inflated,tire,inflated tire,inflated tire,tire_broken.jpg,2.380952380952381,21.0
+1376,1376,tire,whole tire,tire_whole.jpg,b,whole,whole,inflated,tire,inflated tire,inflated tire,tire_whole.jpg,4.714285714285714,21.0
+1377,1377,tire,whole tire,checkers.jpg,,,whole,inflated,tire,inflated tire,,,,
+1378,1378,tire,whole tire,skiis.jpg,,,whole,inflated,tire,inflated tire,inflated tire,skiis.jpg,1.0,5.0
+1379,1379,tire,whole tire,comb.jpg,,,whole,inflated,tire,inflated tire,inflated tire,comb.jpg,1.0,7.0
+1380,1380,towel,folded towel,towel_folded.jpg,a,folded,folded,folded,towel,folded towel,folded towel,towel_folded.jpg,6.95,20.0
+1381,1381,towel,folded towel,towel_unfolded.jpg,b,unfolded,folded,folded,towel,folded towel,folded towel,towel_unfolded.jpg,1.8571428571428572,21.0
+1382,1382,towel,folded towel,spade.jpg,,,folded,folded,towel,folded towel,folded towel,spade.jpg,1.0,8.0
+1383,1383,towel,folded towel,doll.jpg,,,folded,folded,towel,folded towel,folded towel,doll.jpg,1.0,5.0
+1384,1384,towel,folded towel,keyboard.jpg,,,folded,folded,towel,folded towel,,,,
+1385,1385,towel,towel,towel_folded.jpg,a,folded,,,towel,towel,towel,towel_folded.jpg,6.75,20.0
+1386,1386,towel,towel,towel_unfolded.jpg,b,unfolded,,,towel,towel,towel,towel_unfolded.jpg,6.714285714285714,21.0
+1387,1387,towel,towel,spade.jpg,,,,,towel,towel,towel,spade.jpg,1.0,4.0
+1388,1388,towel,towel,doll.jpg,,,,,towel,towel,towel,doll.jpg,1.0,4.0
+1389,1389,towel,towel,keyboard.jpg,,,,,towel,towel,towel,keyboard.jpg,1.25,4.0
+1390,1390,towel,unfolded towel,towel_folded.jpg,a,folded,unfolded,unfolded,towel,unfolded towel,unfolded towel,towel_folded.jpg,1.9545454545454546,22.0
+1391,1391,towel,unfolded towel,towel_unfolded.jpg,b,unfolded,unfolded,unfolded,towel,unfolded towel,unfolded towel,towel_unfolded.jpg,6.476190476190476,21.0
+1392,1392,towel,unfolded towel,spade.jpg,,,unfolded,unfolded,towel,unfolded towel,,,,
+1393,1393,towel,unfolded towel,doll.jpg,,,unfolded,unfolded,towel,unfolded towel,unfolded towel,doll.jpg,1.2,5.0
+1394,1394,towel,unfolded towel,keyboard.jpg,,,unfolded,unfolded,towel,unfolded towel,unfolded towel,keyboard.jpg,1.625,8.0
+1395,1395,treasurechest,closed treasurechest,treasurechest_open.jpg,a,open,closed,closed,treasure chest,closed treasure chest,closed treasure chest,treasurechest_open.jpg,1.85,20.0
+1396,1396,treasurechest,closed treasurechest,treasurechest_closed.jpg,b,closed,closed,closed,treasure chest,closed treasure chest,closed treasure chest,treasurechest_closed.jpg,6.809523809523809,21.0
+1397,1397,treasurechest,closed treasurechest,fireextinguisher.jpg,,,closed,closed,treasure chest,closed treasure chest,closed treasure chest,fireextinguisher.jpg,1.1111111111111112,9.0
+1398,1398,treasurechest,closed treasurechest,greenbean.jpg,,,closed,closed,treasure chest,closed treasure chest,closed treasure chest,greenbean.jpg,1.0,5.0
+1399,1399,treasurechest,closed treasurechest,easel.jpg,,,closed,closed,treasure chest,closed treasure chest,,,,
+1400,1400,treasurechest,open treasurechest,treasurechest_open.jpg,a,open,open,open,treasure chest,open treasure chest,open treasure chest,treasurechest_open.jpg,6.666666666666667,21.0
+1401,1401,treasurechest,open treasurechest,treasurechest_closed.jpg,b,closed,open,open,treasure chest,open treasure chest,open treasure chest,treasurechest_closed.jpg,1.9,20.0
+1402,1402,treasurechest,open treasurechest,fireextinguisher.jpg,,,open,open,treasure chest,open treasure chest,open treasure chest,fireextinguisher.jpg,1.0,3.0
+1403,1403,treasurechest,open treasurechest,greenbean.jpg,,,open,open,treasure chest,open treasure chest,open treasure chest,greenbean.jpg,1.0,5.0
+1404,1404,treasurechest,open treasurechest,easel.jpg,,,open,open,treasure chest,open treasure chest,open treasure chest,easel.jpg,1.0,3.0
+1405,1405,treasurechest,treasurechest,treasurechest_open.jpg,a,open,,,treasure chest,treasure chest,treasure chest,treasurechest_open.jpg,6.222222222222222,18.0
+1406,1406,treasurechest,treasurechest,treasurechest_closed.jpg,b,closed,,,treasure chest,treasure chest,treasure chest,treasurechest_closed.jpg,6.2,20.0
+1407,1407,treasurechest,treasurechest,fireextinguisher.jpg,,,,,treasure chest,treasure chest,,,,
+1408,1408,treasurechest,treasurechest,greenbean.jpg,,,,,treasure chest,treasure chest,treasure chest,greenbean.jpg,1.2,5.0
+1409,1409,treasurechest,treasurechest,easel.jpg,,,,,treasure chest,treasure chest,treasure chest,easel.jpg,1.3333333333333333,6.0
+1410,1410,vase,broken vase,vase_broken.jpg,a,broken,broken,broken,vase,broken vase,broken vase,vase_broken.jpg,5.4,20.0
+1411,1411,vase,broken vase,vase_whole.jpg,b,whole,broken,broken,vase,broken vase,broken vase,vase_whole.jpg,2.1666666666666665,18.0
+1412,1412,vase,broken vase,pretzel.jpg,,,broken,broken,vase,broken vase,broken vase,pretzel.jpg,1.7777777777777777,9.0
+1413,1413,vase,broken vase,deer.jpg,,,broken,broken,vase,broken vase,broken vase,deer.jpg,1.0,4.0
+1414,1414,vase,broken vase,lipstick.jpg,,,broken,broken,vase,broken vase,,,,
+1415,1415,vase,vase,vase_broken.jpg,a,broken,,,vase,vase,vase,vase_broken.jpg,6.352941176470588,17.0
+1416,1416,vase,vase,vase_whole.jpg,b,whole,,,vase,vase,vase,vase_whole.jpg,6.857142857142857,21.0
+1417,1417,vase,vase,pretzel.jpg,,,,,vase,vase,vase,pretzel.jpg,1.0,4.0
+1418,1418,vase,vase,deer.jpg,,,,,vase,vase,vase,deer.jpg,1.0,5.0
+1419,1419,vase,vase,lipstick.jpg,,,,,vase,vase,vase,lipstick.jpg,1.0,5.0
+1420,1420,vase,whole vase,vase_broken.jpg,a,broken,whole,intact,vase,intact vase,intact vase,vase_broken.jpg,3.3636363636363638,22.0
+1421,1421,vase,whole vase,vase_whole.jpg,b,whole,whole,intact,vase,intact vase,intact vase,vase_whole.jpg,6.722222222222222,18.0
+1422,1422,vase,whole vase,pretzel.jpg,,,whole,intact,vase,intact vase,,,,
+1423,1423,vase,whole vase,deer.jpg,,,whole,intact,vase,intact vase,intact vase,deer.jpg,1.2,5.0
+1424,1424,vase,whole vase,lipstick.jpg,,,whole,intact,vase,intact vase,intact vase,lipstick.jpg,1.5,6.0
+1425,1425,wallet,closed wallet,wallet_open.jpg,a,open,closed,closed,wallet,closed wallet,closed wallet,wallet_open.jpg,2.2,20.0
+1426,1426,wallet,closed wallet,wallet_closed.jpg,b,closed,closed,closed,wallet,closed wallet,closed wallet,wallet_closed.jpg,6.352941176470588,17.0
+1427,1427,wallet,closed wallet,lentils.jpg,,,closed,closed,wallet,closed wallet,closed wallet,lentils.jpg,1.1818181818181819,11.0
+1428,1428,wallet,closed wallet,house.jpg,,,closed,closed,wallet,closed wallet,closed wallet,house.jpg,1.0,4.0
+1429,1429,wallet,closed wallet,xylophone.jpg,,,closed,closed,wallet,closed wallet,,,,
+1430,1430,wallet,open wallet,wallet_open.jpg,a,open,open,open,wallet,open wallet,open wallet,wallet_open.jpg,6.095238095238095,21.0
+1431,1431,wallet,open wallet,wallet_closed.jpg,b,closed,open,open,wallet,open wallet,open wallet,wallet_closed.jpg,2.380952380952381,21.0
+1432,1432,wallet,open wallet,lentils.jpg,,,open,open,wallet,open wallet,open wallet,lentils.jpg,1.0,4.0
+1433,1433,wallet,open wallet,house.jpg,,,open,open,wallet,open wallet,open wallet,house.jpg,1.0,5.0
+1434,1434,wallet,open wallet,xylophone.jpg,,,open,open,wallet,open wallet,open wallet,xylophone.jpg,1.0,5.0
+1435,1435,wallet,wallet,wallet_open.jpg,a,open,,,wallet,wallet,wallet,wallet_open.jpg,5.947368421052632,19.0
+1436,1436,wallet,wallet,wallet_closed.jpg,b,closed,,,wallet,wallet,wallet,wallet_closed.jpg,5.894736842105263,19.0
+1437,1437,wallet,wallet,lentils.jpg,,,,,wallet,wallet,,,,
+1438,1438,wallet,wallet,house.jpg,,,,,wallet,wallet,wallet,house.jpg,1.0,5.0
+1439,1439,wallet,wallet,xylophone.jpg,,,,,wallet,wallet,wallet,xylophone.jpg,1.0,8.0
+1440,1440,waterbottle,closed waterbottle,waterbottle_open.jpg,a,open,closed,capped,water bottle,capped water bottle,capped water bottle,waterbottle_open.jpg,4.166666666666667,18.0
+1441,1441,waterbottle,closed waterbottle,waterbottle_closed.jpg,b,closed,closed,capped,water bottle,capped water bottle,capped water bottle,waterbottle_closed.jpg,6.65,20.0
+1442,1442,waterbottle,closed waterbottle,violin.jpg,,,closed,capped,water bottle,capped water bottle,capped water bottle,violin.jpg,1.0909090909090908,11.0
+1443,1443,waterbottle,closed waterbottle,pencilsharpener.jpg,,,closed,capped,water bottle,capped water bottle,capped water bottle,pencilsharpener.jpg,1.0,4.0
+1444,1444,waterbottle,closed waterbottle,monkey.jpg,,,closed,capped,water bottle,capped water bottle,,,,
+1445,1445,waterbottle,open waterbottle,waterbottle_open.jpg,a,open,open,opened,water bottle,opened water bottle,opened water bottle,waterbottle_open.jpg,6.444444444444445,18.0
+1446,1446,waterbottle,open waterbottle,waterbottle_closed.jpg,b,closed,open,opened,water bottle,opened water bottle,opened water bottle,waterbottle_closed.jpg,2.4705882352941178,17.0
+1447,1447,waterbottle,open waterbottle,violin.jpg,,,open,opened,water bottle,opened water bottle,opened water bottle,violin.jpg,1.0,3.0
+1448,1448,waterbottle,open waterbottle,pencilsharpener.jpg,,,open,opened,water bottle,opened water bottle,opened water bottle,pencilsharpener.jpg,1.0,5.0
+1449,1449,waterbottle,open waterbottle,monkey.jpg,,,open,opened,water bottle,opened water bottle,opened water bottle,monkey.jpg,1.0,5.0
+1450,1450,waterbottle,waterbottle,waterbottle_open.jpg,a,open,,,water bottle,water bottle,water bottle,waterbottle_open.jpg,6.388888888888889,18.0
+1451,1451,waterbottle,waterbottle,waterbottle_closed.jpg,b,closed,,,water bottle,water bottle,water bottle,waterbottle_closed.jpg,6.555555555555555,18.0
+1452,1452,waterbottle,waterbottle,violin.jpg,,,,,water bottle,water bottle,,,,
+1453,1453,waterbottle,waterbottle,pencilsharpener.jpg,,,,,water bottle,water bottle,water bottle,pencilsharpener.jpg,1.2,5.0
+1454,1454,waterbottle,waterbottle,monkey.jpg,,,,,water bottle,water bottle,water bottle,monkey.jpg,1.0,7.0
+1455,1455,watermelon,sliced watermelon,watermelon_sliced.jpg,a,sliced,sliced,sliced,watermelon,sliced watermelon,sliced watermelon,watermelon_sliced.jpg,6.666666666666667,18.0
+1456,1456,watermelon,sliced watermelon,watermelon_unsliced.jpg,b,unsliced,sliced,sliced,watermelon,sliced watermelon,sliced watermelon,watermelon_unsliced.jpg,2.3684210526315788,19.0
+1457,1457,watermelon,sliced watermelon,needle.jpg,,,sliced,sliced,watermelon,sliced watermelon,sliced watermelon,needle.jpg,1.0909090909090908,11.0
+1458,1458,watermelon,sliced watermelon,guineapig.jpg,,,sliced,sliced,watermelon,sliced watermelon,sliced watermelon,guineapig.jpg,1.0,4.0
+1459,1459,watermelon,sliced watermelon,paintpalette.jpg,,,sliced,sliced,watermelon,sliced watermelon,,,,
+1460,1460,watermelon,unsliced watermelon,watermelon_sliced.jpg,a,sliced,unsliced,whole,watermelon,whole watermelon,whole watermelon,watermelon_sliced.jpg,3.619047619047619,21.0
+1461,1461,watermelon,unsliced watermelon,watermelon_unsliced.jpg,b,unsliced,unsliced,whole,watermelon,whole watermelon,whole watermelon,watermelon_unsliced.jpg,6.9523809523809526,21.0
+1462,1462,watermelon,unsliced watermelon,needle.jpg,,,unsliced,whole,watermelon,whole watermelon,whole watermelon,needle.jpg,1.0,3.0
+1463,1463,watermelon,unsliced watermelon,guineapig.jpg,,,unsliced,whole,watermelon,whole watermelon,whole watermelon,guineapig.jpg,1.0,5.0
+1464,1464,watermelon,unsliced watermelon,paintpalette.jpg,,,unsliced,whole,watermelon,whole watermelon,whole watermelon,paintpalette.jpg,1.0,5.0
+1465,1465,watermelon,watermelon,watermelon_sliced.jpg,a,sliced,,,watermelon,watermelon,watermelon,watermelon_sliced.jpg,6.25,20.0
+1466,1466,watermelon,watermelon,watermelon_unsliced.jpg,b,unsliced,,,watermelon,watermelon,watermelon,watermelon_unsliced.jpg,6.9,20.0
+1467,1467,watermelon,watermelon,needle.jpg,,,,,watermelon,watermelon,,,,
+1468,1468,watermelon,watermelon,guineapig.jpg,,,,,watermelon,watermelon,watermelon,guineapig.jpg,1.2,5.0
+1469,1469,watermelon,watermelon,paintpalette.jpg,,,,,watermelon,watermelon,watermelon,paintpalette.jpg,1.0,6.0
+1470,1470,waterpipe,bent waterpipe,waterpipe_bent.jpg,a,bent,bent,curved,water pipe,curved water pipe,curved water pipe,waterpipe_bent.jpg,6.5,20.0
+1471,1471,waterpipe,bent waterpipe,waterpipe_straight.jpg,b,straight,bent,curved,water pipe,curved water pipe,curved water pipe,waterpipe_straight.jpg,2.05,20.0
+1472,1472,waterpipe,bent waterpipe,tower.jpg,,,bent,curved,water pipe,curved water pipe,curved water pipe,tower.jpg,1.0,11.0
+1473,1473,waterpipe,bent waterpipe,jacket.jpg,,,bent,curved,water pipe,curved water pipe,curved water pipe,jacket.jpg,1.0,4.0
+1474,1474,waterpipe,bent waterpipe,flamingo.jpg,,,bent,curved,water pipe,curved water pipe,,,,
+1475,1475,waterpipe,straight waterpipe,waterpipe_bent.jpg,a,bent,straight,straight,water pipe,straight water pipe,straight water pipe,waterpipe_bent.jpg,1.9523809523809523,21.0
+1476,1476,waterpipe,straight waterpipe,waterpipe_straight.jpg,b,straight,straight,straight,water pipe,straight water pipe,straight water pipe,waterpipe_straight.jpg,6.578947368421052,19.0
+1477,1477,waterpipe,straight waterpipe,tower.jpg,,,straight,straight,water pipe,straight water pipe,straight water pipe,tower.jpg,1.0,3.0
+1478,1478,waterpipe,straight waterpipe,jacket.jpg,,,straight,straight,water pipe,straight water pipe,straight water pipe,jacket.jpg,1.0,5.0
+1479,1479,waterpipe,straight waterpipe,flamingo.jpg,,,straight,straight,water pipe,straight water pipe,straight water pipe,flamingo.jpg,1.0,5.0
+1480,1480,waterpipe,waterpipe,waterpipe_bent.jpg,a,bent,,,water pipe,water pipe,water pipe,waterpipe_bent.jpg,6.333333333333333,18.0
+1481,1481,waterpipe,waterpipe,waterpipe_straight.jpg,b,straight,,,water pipe,water pipe,water pipe,waterpipe_straight.jpg,6.473684210526316,19.0
+1482,1482,waterpipe,waterpipe,tower.jpg,,,,,water pipe,water pipe,,,,
+1483,1483,waterpipe,waterpipe,jacket.jpg,,,,,water pipe,water pipe,water pipe,jacket.jpg,1.0,5.0
+1484,1484,waterpipe,waterpipe,flamingo.jpg,,,,,water pipe,water pipe,water pipe,flamingo.jpg,1.7142857142857142,7.0
+1485,1485,wineglass,empty wineglass,wineglass_empty.jpg,a,empty,empty,empty,wineglass,empty wineglass,empty wineglass,wineglass_empty.jpg,7.0,21.0
+1486,1486,wineglass,empty wineglass,wineglass_full.jpg,b,full,empty,empty,wineglass,empty wineglass,empty wineglass,wineglass_full.jpg,2.0,19.0
+1487,1487,wineglass,empty wineglass,golfclubs.jpg,,,empty,empty,wineglass,empty wineglass,empty wineglass,golfclubs.jpg,1.6,10.0
+1488,1488,wineglass,empty wineglass,skateboard.jpg,,,empty,empty,wineglass,empty wineglass,empty wineglass,skateboard.jpg,1.2,5.0
+1489,1489,wineglass,empty wineglass,cashregister.jpg,,,empty,empty,wineglass,empty wineglass,,,,
+1490,1490,wineglass,full wineglass,wineglass_empty.jpg,a,empty,full,filled,wineglass,filled wineglass,filled wineglass,wineglass_empty.jpg,1.8421052631578947,19.0
+1491,1491,wineglass,full wineglass,wineglass_full.jpg,b,full,full,filled,wineglass,filled wineglass,filled wineglass,wineglass_full.jpg,6.894736842105263,19.0
+1492,1492,wineglass,full wineglass,golfclubs.jpg,,,full,filled,wineglass,filled wineglass,filled wineglass,golfclubs.jpg,1.0,4.0
+1493,1493,wineglass,full wineglass,skateboard.jpg,,,full,filled,wineglass,filled wineglass,filled wineglass,skateboard.jpg,1.0,5.0
+1494,1494,wineglass,full wineglass,cashregister.jpg,,,full,filled,wineglass,filled wineglass,filled wineglass,cashregister.jpg,1.1666666666666667,6.0
+1495,1495,wineglass,wineglass,wineglass_empty.jpg,a,empty,,,wineglass,wineglass,wineglass,wineglass_empty.jpg,6.833333333333333,18.0
+1496,1496,wineglass,wineglass,wineglass_full.jpg,b,full,,,wineglass,wineglass,wineglass,wineglass_full.jpg,6.318181818181818,22.0
+1497,1497,wineglass,wineglass,golfclubs.jpg,,,,,wineglass,wineglass,,,,
+1498,1498,wineglass,wineglass,skateboard.jpg,,,,,wineglass,wineglass,wineglass,skateboard.jpg,1.0,4.0
+1499,1499,wineglass,wineglass,cashregister.jpg,,,,,wineglass,wineglass,wineglass,cashregister.jpg,1.125,8.0
+1500,1500,yogamat,rolled yogamat,yogamat_rolled.jpg,a,rolled,rolled,rolled,yoga mat,rolled yoga mat,rolled yoga mat,yogamat_rolled.jpg,6.684210526315789,19.0
+1501,1501,yogamat,rolled yogamat,yogamat_unrolled.jpg,b,unrolled,rolled,rolled,yoga mat,rolled yoga mat,rolled yoga mat,yogamat_unrolled.jpg,2.142857142857143,21.0
+1502,1502,yogamat,rolled yogamat,camel.jpg,,,rolled,rolled,yoga mat,rolled yoga mat,rolled yoga mat,camel.jpg,1.0909090909090908,11.0
+1503,1503,yogamat,rolled yogamat,saxophone.jpg,,,rolled,rolled,yoga mat,rolled yoga mat,rolled yoga mat,saxophone.jpg,1.0,5.0
+1504,1504,yogamat,rolled yogamat,fork.jpg,,,rolled,rolled,yoga mat,rolled yoga mat,,,,
+1505,1505,yogamat,unrolled yogamat,yogamat_rolled.jpg,a,rolled,unrolled,unrolled,yoga mat,unrolled yoga mat,unrolled yoga mat,yogamat_rolled.jpg,4.045454545454546,22.0
+1506,1506,yogamat,unrolled yogamat,yogamat_unrolled.jpg,b,unrolled,unrolled,unrolled,yoga mat,unrolled yoga mat,unrolled yoga mat,yogamat_unrolled.jpg,6.65,20.0
+1507,1507,yogamat,unrolled yogamat,camel.jpg,,,unrolled,unrolled,yoga mat,unrolled yoga mat,unrolled yoga mat,camel.jpg,1.0,4.0
+1508,1508,yogamat,unrolled yogamat,saxophone.jpg,,,unrolled,unrolled,yoga mat,unrolled yoga mat,unrolled yoga mat,saxophone.jpg,1.0,5.0
+1509,1509,yogamat,unrolled yogamat,fork.jpg,,,unrolled,unrolled,yoga mat,unrolled yoga mat,unrolled yoga mat,fork.jpg,1.0,6.0
+1510,1510,yogamat,yogamat,yogamat_rolled.jpg,a,rolled,,,yoga mat,yoga mat,yoga mat,yogamat_rolled.jpg,6.157894736842105,19.0
+1511,1511,yogamat,yogamat,yogamat_unrolled.jpg,b,unrolled,,,yoga mat,yoga mat,yoga mat,yogamat_unrolled.jpg,6.2105263157894735,19.0
+1512,1512,yogamat,yogamat,camel.jpg,,,,,yoga mat,yoga mat,,,,
+1513,1513,yogamat,yogamat,saxophone.jpg,,,,,yoga mat,yoga mat,yoga mat,saxophone.jpg,1.2,5.0
+1514,1514,yogamat,yogamat,fork.jpg,,,,,yoga mat,yoga mat,yoga mat,fork.jpg,1.6666666666666667,6.0

@@ -2,8 +2,12 @@ import math
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.optimize import dual_annealing, minimize, brute
+import pandas as pd
+import dtale
 
 plt.ion()
+
+df_words = pd.read_csv("./norming_results.csv") # created in norming_exp repo
 
 parker_world = {
     "singleton_marked": [
@@ -33,11 +37,105 @@ parker_world = {
 }
 
 
+def create_word_world(word, df=df_words):
+
+    df_word = df_words[df_words["noun"] == word]
+    assert len(df_word[df_word["state"] == "a"]["adj"].unique()) == 1
+
+    marked_state = df_word[df_word["state"] == "a"]["adj"].unique()[0]
+    unmarked_state = df_word[df_word["state"] == "b"]["adj"].unique()[0]
+
+    parker_world = {
+        "singleton_marked": [
+            {"size": None, "state": marked_state, "nominal": word},
+            {"size": None, "state": None, "nominal": "other1"},
+            {"size": None, "state": None, "nominal": "other2"},
+            {"size": None, "state": None, "nominal": "other3"},
+        ],
+        "singleton_unmarked": [
+            {"size": None, "state": unmarked_state, "nominal": word},
+            {"size": None, "state": None, "nominal": "other1"},
+            {"size": None, "state": None, "nominal": "other2"},
+            {"size": None, "state": None, "nominal": "other3"},
+        ],
+        "pair_marked": [
+            {"size": "big", "state": marked_state, "nominal": word},
+            {"size": "small", "state": marked_state, "nominal": word},
+            {"size": None, "state": None, "nominal": "other2"},
+            {"size": None, "state": None, "nominal": "other3"},
+        ],
+        "pair_unmarked": [
+            {"size": "big", "state": unmarked_state, "nominal": word},
+            {"size": "small", "state": unmarked_state, "nominal": word},
+            {"size": None, "state": None, "nominal": "other2"},
+            {"size": None, "state": None, "nominal": "other3"},
+        ],
+    }
+
+    noncomp_semvalue = {}
+    noncomp_semvalue["bare_marked"] = (
+        df_word[(df_word["adj_utterance"].isna()) & (df_word["adj"] == marked_state)][
+            "mean_response"
+        ].values
+        / 7
+    ).item()
+    noncomp_semvalue["bare_unmarked"] = (
+        df_word[(df_word["adj_utterance"].isna()) & (df_word["adj"] == unmarked_state)][
+            "mean_response"
+        ].values
+        / 7
+    ).item()
+
+    noncomp_semvalue["modified_marked_T"] = (
+        df_word[
+            (df_word["adj_utterance"] == marked_state)
+            & (df_word["adj"] == marked_state)
+        ]["mean_response"].values
+        / 7
+    ).item()
+    noncomp_semvalue["modified_marked_F"] = (
+        df_word[
+            (df_word["adj_utterance"] == marked_state)
+            & (df_word["adj"] == unmarked_state)
+        ]["mean_response"].values
+        / 7
+    ).item()
+
+    noncomp_semvalue["modified_unmarked_T"] = (
+        df_word[
+            (df_word["adj_utterance"] == unmarked_state)
+            & (df_word["adj"] == unmarked_state)
+        ]["mean_response"].values
+        / 7
+    ).item()
+    noncomp_semvalue["modified_unmarked_F"] = (
+        df_word[
+            (df_word["adj_utterance"] == unmarked_state)
+            & (df_word["adj"] == marked_state)
+        ]["mean_response"].values
+        / 7
+    ).item()
+
+    utterances = [
+        word,
+        f'{marked_state} {word}',
+        f'{unmarked_state} {word}',
+        "other1",
+        "other2",
+        "other3",
+    ]
+
+    return utterances, marked_state, unmarked_state, parker_world, noncomp_semvalue
+
+
 class cs_rsa:
 
     def __init__(
         self,
-        world=None,
+        world,
+        marked_state,
+        unmarked_state,
+        noncomp_semvalue_dict,
         alpha=13.7,
         beta_fixed=0.69,
         costWeight=0,
@@ -45,12 +143,6 @@ class cs_rsa:
         size_semvalue=0.8,
         state_semvalue_marked=0.9,
         state_semvalue_unmarked=0.9,
-        noncomp_semvalue_bare_unmarked=0.66,
-        # noncomp_semvalue_bare_marked=0.66,
-        # noncomp_semvalue_modified_marked_T=0.66,
-        # noncomp_semvalue_modified_marked_F=0.66,
-        # noncomp_semvalue_modified_unmarked_T=0.66,
-        # noncomp_semvalue_modified_unmarked_F=0.66,
         nominal_semvalue=0.99,
     ):
 
@@ -65,19 +157,28 @@ class cs_rsa:
         self.state_semvalue_marked = state_semvalue_marked
         self.state_semvalue_unmarked = state_semvalue_unmarked
         self.nominal_semvalue = nominal_semvalue
-        self.noncomp_semvalue_bare_unmarked = noncomp_semvalue_bare_unmarked
-
-        # vocab
-        self.sizes = ["big", "small"]
-        self.states = ["open", "closed"]
-        self.nominals = ["door", "other1", "other2", "other3"]
+        self.noncomp_semvalue_dict = noncomp_semvalue_dict
 
         # world
         self.world = world
 
+        # states
+        self.marked_state = marked_state
+        self.unmarked_state = unmarked_state
+
+        # vocab
+        self.sizes = ["big", "small"]
+        self.states = [self.marked_state, self.unmarked_state]
+        self.nominals = [
+            world[0]["nominal"],
+            "other1",
+            "other2",
+            "other3",
+        ]
+
     def _parse_utterance(self, utt):
         """Return a parsed dict {'size': token|None, 'state': token|None, 'nominal': token|None}."""
-        parts = utt.split("_")
+        parts = utt.split(" ")
         out = {"size": None, "state": None, "nominal": None}
 
         cat_map = {}
@@ -139,15 +240,15 @@ class cs_rsa:
                     )  # "door" -> None | "other" -> None
         # STATE
         if state_word is not None:
-            if state_word == "open":
-                if obj["state"] == "open":
+            if state_word == self.marked_state:
+                if obj["state"] == self.marked_state:
                     state_val = self.state_semvalue_marked  # "open" -> open
                 else:
                     state_val = (
                         1.0 - self.state_semvalue_marked
                     )  # "open" -> None | "open" -> closed
-            elif state_word == "closed":
-                if obj["state"] == "closed":
+            elif state_word == self.unmarked_state:
+                if obj["state"] == self.unmarked_state:
                     state_val = self.state_semvalue_unmarked  # "closed" -> closed
                 else:
                     state_val = (
@@ -185,26 +286,36 @@ class cs_rsa:
                 noncomp_semval = self.nominal_semvalue
 
             elif state is None:  # "door"
-                if obj["state"] == "closed":
-                    noncomp_semval = 0.98  # "door" -> closed door
-                elif obj["state"] == "open":
-                    noncomp_semval = (
-                        self.noncomp_semvalue_bare_unmarked
-                    )  # "door" -> open door 0.66
+                if obj["state"] == self.unmarked_state:
+                    noncomp_semval = self.noncomp_semvalue_dict[
+                        "bare_unmarked"
+                    ]  # "door" -> closed door
+                elif obj["state"] == self.marked_state:
+                    noncomp_semval = self.noncomp_semvalue_dict[
+                        "bare_marked"
+                    ]  # "door" -> open door 0.66
                 else:
                     raise Exception("something is wrong")
 
-            elif state == "closed":  # 'closed_door'
-                if obj["state"] == "closed":
-                    noncomp_semval = 0.97  # "closed_door" -> closed door
+            elif state == self.unmarked_state:  # 'closed_door'
+                if obj["state"] == self.unmarked_state:
+                    noncomp_semval = self.noncomp_semvalue_dict[
+                        "modified_unmarked_T"
+                    ]  # "closed_door" -> closed door
                 else:
-                    noncomp_semval = 0.30  # "closed_door" -> open door
+                    noncomp_semval = self.noncomp_semvalue_dict[
+                        "modified_unmarked_F"
+                    ]  # "closed_door" -> open door
 
-            elif state == "open":  # 'open_door'
-                if obj["state"] == "open":
-                    noncomp_semval = 0.91  # "open_door" -> open door
+            elif state == self.marked_state:  # 'open_door'
+                if obj["state"] == self.marked_state:
+                    noncomp_semval = self.noncomp_semvalue_dict[
+                        "modified_marked_T"
+                    ]  # "open_door" -> open door
                 else:
-                    noncomp_semval = 0.22  # "open_door" -> closed door
+                    noncomp_semval = self.noncomp_semvalue_dict[
+                        "modified_marked_F"
+                    ]  # "open_door" -> closed door
         else:
             raise Exception("something is wrong")
         if print_value == True:
@@ -250,7 +361,7 @@ class cs_rsa:
         return probabilities
 
     def cost(self, utt):
-        return len(utt.split("_"))
+        return len(utt.split(" "))
 
     def pragmatic_speaker(self, obj, utterances):
         obj_key = tuple(sorted(obj.items()))
@@ -277,36 +388,39 @@ class cs_rsa:
 
 
 def singleton_overspecification_rate(
+    word,
     alpha=13.7,
     beta_fixed=0.69,
-    state_semvalue_marked=0.95,
+    state_semvalue_marked=0.90,
     state_semvalue_unmarked=0.9,
     costWeight=0,
-    noncomp_semvalue_bare_unmarked=0.66,
     typicalityWeight=1.34,
 ):
 
-    utterances = ["door", "open_door", "closed_door", "other1", "other2", "other3"]
+    utterances, marked_state, unmarked_state, world, noncomp_semvalue_dict = create_word_world(word)
     conditions = ["singleton_marked", "singleton_unmarked"]
-    overspecified_utts = [["open_door"], ["closed_door"]]
-    correct_utts = [["door", "open_door"], ["door", "closed_door"]]
+    overspecified_utts = [[utterances[1]],[utterances[2]]]
+    correct_utts = [[utterances[0], utterances[1]], [utterances[0], utterances[2]]]
 
     overspecification_rates = []
 
     for i, condition in enumerate(conditions):
-        this_world = parker_world[condition]
+        this_world = world[condition]
 
         model = cs_rsa(
             this_world,
+            marked_state,
+            unmarked_state,
+            noncomp_semvalue_dict,
             alpha=alpha,
             beta_fixed=beta_fixed,
-            state_semvalue_marked=state_semvalue_marked,
-            state_semvalue_unmarked=state_semvalue_unmarked,
-            noncomp_semvalue_bare_unmarked=noncomp_semvalue_bare_unmarked,
             costWeight=costWeight,
             typicalityWeight=typicalityWeight,
+            state_semvalue_marked=state_semvalue_marked,
+            state_semvalue_unmarked=state_semvalue_unmarked,
         )
         results = model.pragmatic_speaker(this_world[0], utterances)
+        # print(results)
 
         numer = sum(results[u] for u in overspecified_utts[i])
         denom = sum(results[u] for u in correct_utts[i])
@@ -316,6 +430,7 @@ def singleton_overspecification_rate(
 
 
 def pair_overspecification_rate(
+    parker_world=parker_world,
     alpha=13.7,
     beta_fixed=0.69,
     state_semvalue_marked=0.95,
@@ -365,157 +480,184 @@ def pair_overspecification_rate(
     return overspecification_rates
 
 
-def optimization(noncomp_semvalue_bare_unmarked=0.9):
+def optimization(words):
     target = np.array([0.24, 0.01])
+    max_iter = 2000
+    iter_count = {"i": 0}
 
     def objective(params):
         a, b, sm, costWeight = params
-        r_marked, r_unmarked = singleton_overspecification_rate(
-            alpha = float(a),
+
+        rates_all = [
+            singleton_overspecification_rate(
+                word=w,
+                alpha=float(a),
+                beta_fixed=float(b),
+                state_semvalue_marked=float(sm),
+                state_semvalue_unmarked=float(sm),
+                costWeight=float(costWeight),
+            )
+            for w in words
+        ]
+
+        # separate and average r_marked and r_unmarked
+        r_marked_vals   = [rm for (rm, ru) in rates_all]
+        r_unmarked_vals = [ru for (rm, ru) in rates_all]
+
+        r = np.array(
+            [np.mean(r_marked_vals), np.mean(r_unmarked_vals)],
+            float,
+        )
+        L = float(np.sum((r - target) ** 2))
+        return L if np.isfinite(L) else 1e9
+
+    def cb(x, f, context):
+        iter_count["i"] += 1
+        p = iter_count["i"] / max_iter * 100
+        print(f"Progress: {iter_count['i']}/{max_iter}  ({p:5.1f}%)   best loss={f:.6f}")
+        return False  # keep going
+
+    bounds = [(0, 50), (0, 1), (0, 1), (0, 10)]
+
+    x0 = np.array([13.7, 0.69, 0.9, 0.0])
+    res_g = minimize(
+        objective,
+        x0=x0,
+        method="L-BFGS-B",
+        bounds=bounds,
+        options={"maxiter": max_iter},
+    )
+    a, b, sm, costWeight = res_g.x
+
+    # res_g = dual_annealing(objective, bounds=bounds, maxiter=max_iter, callback=cb)
+    # a, b, sm, costWeight = res_g.x
+
+    # reporting
+    rates_all = [
+        singleton_overspecification_rate(
+            word=w,
+            alpha=float(a),
             beta_fixed=float(b),
             state_semvalue_marked=float(sm),
             state_semvalue_unmarked=float(sm),
             costWeight=float(costWeight),
-            noncomp_semvalue_bare_unmarked=noncomp_semvalue_bare_unmarked,
         )
-        r = np.array([r_marked, r_unmarked], float)
-        L = float(np.sum((r - target) ** 2))
+        for w in words
+    ]
+    r_marked_vals   = [rm for (rm, ru) in rates_all]
+    r_unmarked_vals = [ru for (rm, ru) in rates_all]
+    rates = (np.mean(r_marked_vals), np.mean(r_unmarked_vals))
+
+    # === print results ===
+    print("=== Result ===")
+    print(f"  alpha                : {a:.4f}")
+    print(f"  beta_fixed           : {b:.4f}")
+    print(f"  state_semvalue_marked: {sm:.4f}")
+    print(f"  cost                 : {costWeight:.4f}")
+    print(f"  resulting rates      : [{rates[0]:.4f}, {rates[1]:.4f}]")
+    print(f"  target rates         : {target.tolist()}")
+    print(f"  final loss           : {res_g.fun:.6e}")
+
+    return res_g, rates
+
+def compute_targets():
+    df = pd.read_csv('./overspec_rate_result.csv')
+    targets = {}
+
+    for noun, sub in df.groupby("noun"):
+        rates = []
+
+        for state in ["state_A", "state_B"]:
+            sub_state = sub[sub["State_1"] == state]
+
+            if len(sub_state) == 0:
+                rates.append(0.0)
+            else:
+                num = sub_state["overspec_n_singleton"].sum()
+                # need to make sure of this
+                # den = sub_state["singleton_total_n"].sum()
+                den = 8
+                rates.append(num / den if den > 0 else 0.0)
+
+        targets[noun] = np.array(rates, float)
+
+    return targets
+
+def optimization_individually():
+
+    targets = compute_targets()
+    words = list(targets.keys())
+
+    def objective(params):
+        a, b, sm, costWeight = params
+
+        losses = []
+        for w in words:
+            # model prediction for this word
+            r_marked, r_unmarked = singleton_overspecification_rate(
+                word=w,
+                alpha=float(a),
+                beta_fixed=float(b),
+                state_semvalue_marked=float(sm),
+                state_semvalue_unmarked=float(sm),
+                costWeight=float(costWeight),
+            )
+            r = np.array([r_marked, r_unmarked], float)
+
+            # word-specific target
+            t = np.array(targets[w], float)
+
+            # squared error for this word
+            losses.append(np.sum((r - t) ** 2))
+
+        # average loss across words
+        L = float(np.sum(losses))
         return L if np.isfinite(L) else 1e9
 
     bounds = [(0, 50), (0, 1), (0, 1), (0, 10)]
 
-    res_g = dual_annealing(objective, bounds=bounds, maxiter=2000)
+    res_da = dual_annealing(objective, bounds=bounds, maxiter=200)  # smaller
+    res_g  = minimize(objective, x0=res_da.x, method="L-BFGS-B", bounds=bounds)
     a, b, sm, costWeight = res_g.x
 
-    rates = singleton_overspecification_rate(
-        alpha = a,
-        beta_fixed=b,
-        state_semvalue_marked=sm,
-        state_semvalue_unmarked=sm,
-        costWeight=costWeight,
-        noncomp_semvalue_bare_unmarked=noncomp_semvalue_bare_unmarked,
-    )
+    # --- compute average predicted + average target for reporting ---
+    preds = []
+    t_list = []
+    for w in words:
+        r_marked, r_unmarked = singleton_overspecification_rate(
+            word=w,
+            alpha=float(a),
+            beta_fixed=float(b),
+            state_semvalue_marked=float(sm),
+            state_semvalue_unmarked=float(sm),
+            costWeight=float(costWeight),
+        )
+        preds.append([r_marked, r_unmarked])
+        t_list.append(targets[w])
+
+    preds = np.array(preds, float)
+    t_arr = np.array(t_list, float)
+
+    avg_pred   = preds.mean(axis=0)
+    avg_target = t_arr.mean(axis=0)
 
     print("=== Result ===")
     print(f"  alpha                : {a:.4f}")
     print(f"  beta_fixed           : {b:.4f}")
     print(f"  state_semvalue_marked: {sm:.4f}")
-    print(f"  cost: {costWeight:.4f}")
-    print(f"  resulting rates      : [{rates[0]:.4f}, {rates[1]:.4f}]")
-    print(f"  target rates         : {target.tolist()}")
-    print(f"  final loss           : {res_g.fun:.6e}")
+    print(f"  cost                 : {costWeight:.4f}")
+    print(f"  avg predicted rates  : [{avg_pred[0]:.4f}, {avg_pred[1]:.4f}]")
+    print(f"  avg target rates     : [{avg_target[0]:.4f}, {avg_target[1]:.4f}]")
+    print(f"  final avg loss       : {res_g.fun:.6e}")
 
-    # # grid search
-    # grid_pts = 50
-    # step = 1.0 / (grid_pts - 1)
-    # ranges = (slice(0.0, 1.0 + 0.5*step, step),   # include 1.0 robustly
-    #           slice(0.0, 1.0 + 0.5*step, step),
-    #           slice(0.0, 1.0 + 0.5*step, step))
-
-    # x_brute, f_brute, _, _ = brute(objective, ranges,
-    #                                full_output=True, finish=None)  # finish=None avoids NM
-    # b2, sm2, su2 = np.clip(x_brute, 0, 1)
-    # rates2 = singleton_overspecification_rate(beta_fixed=b2, state_semvalue_marked=sm2,
-    #                                           state_semvalue_unmarked=su2, costWeight=costWeight)
-    # print("\n=== Brute (grid) ===")
-    # print(f"  beta_fixed              : {b2:.4f}")
-    # print(f"  state_semvalue_marked   : {sm2:.4f}")
-    # print(f"  state_semvalue_unmarked : {su2:.4f}")
-    # print(f"  resulting rates         : [{rates2[0]:.4f}, {rates2[1]:.4f}]")
-    # print(f"  target rates            : {target.tolist()}")
-    # print(f"  final loss              : {f_brute:.6e}")
-
+    return res_g, preds, t_arr, words
 
 if __name__ == "__main__":
+    optimization_individually()
 
-    print("singleton")
-    print(
-        "pure compositional no cost",
-        singleton_overspecification_rate(
-            beta_fixed=1,
-            state_semvalue_marked=0.9,
-            state_semvalue_unmarked=0.9,
-            costWeight=0,
-        ),
-    )
-    print(
-        "pure non-compositional no cost",
-        singleton_overspecification_rate(
-            beta_fixed=0,
-            state_semvalue_marked=0.9,
-            state_semvalue_unmarked=0.9,
-            costWeight=0,
-        ),
-    )
-    print(
-        "0.69 mixed no cost",
-        singleton_overspecification_rate(
-            beta_fixed=0.69,
-            state_semvalue_marked=0.9,
-            state_semvalue_unmarked=0.9,
-            costWeight=0,
-        ),
-    )
-    print(
-        "0.69 mixed 1.5 cost",
-        singleton_overspecification_rate(
-            beta_fixed=0.69,
-            state_semvalue_marked=0.9,
-            state_semvalue_unmarked=0.9,
-            costWeight=1.5,
-        ),
-    )
-    print(
-        "0.69 mixed 3 cost",
-        singleton_overspecification_rate(
-            beta_fixed=0.69,
-            state_semvalue_marked=0.9,
-            state_semvalue_unmarked=0.9,
-            costWeight=3,
-        ),
-    )
+    # utterance, world, noncomp_semvalue_dict = create_word_world("apple")
+    # model = cs_rsa(world, noncomp_semvalue_dict)
+    # singleton_overspecification_rate('apple')
+    # words = df_words['noun'].unique()
+    # optimization(words)
 
-    print("\npair")
-    print(
-        "pure compositional no cost",
-        pair_overspecification_rate(
-            beta_fixed=1,
-            state_semvalue_marked=0.9,
-            state_semvalue_unmarked=0.9,
-            costWeight=0,
-        ),
-    )
-    print(
-        "pure non-compositional no cost",
-        pair_overspecification_rate(
-            beta_fixed=0,
-            state_semvalue_marked=0.9,
-            state_semvalue_unmarked=0.9,
-            costWeight=0,
-        ),
-    )
-    print(
-        "0.69 mixed no cost",
-        pair_overspecification_rate(
-            beta_fixed=0.69,
-            state_semvalue_marked=0.9,
-            state_semvalue_unmarked=0.9,
-            costWeight=0,
-        ),
-    )
-    print(
-        "0.69 mixed 1.5 cost",
-        pair_overspecification_rate(
-            beta_fixed=0.69,
-            state_semvalue_marked=0.9,
-            state_semvalue_unmarked=0.9,
-            costWeight=1.5,
-        ),
-    )
-
-    # cs_rsa().meaning('open_door', {"size": "None", "state": "None", "nominal": "other1"}, print_value=True)
-
-    # print(f"costWeight=0")
-    # optimization(costWeight=0)
-    # print(f"costWeight=2")
-    # optimization(costWeight=2)

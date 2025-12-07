@@ -1,0 +1,105 @@
+,trial_id,State_1,$images_1,over_spec_n,overspec_n_singleton,overspec_n_pair,all_overspec,noun,total_n,singleton_total_n,pair_total_n
+0,3,state_A,seatbelt_open.jpg,1,1,0,['unfastened'],seatbelt,15,7,8.0
+1,4,state_A,book_open.jpg,1,1,0,"['open', 'blue', ""that's face down""]",book,15,8,7.0
+2,5,state_A,milkcarton_open.jpg,1,1,0,['open'],milkcarton,15,8,7.0
+3,9,state_A,can_open.jpg,5,4,1,"['opened', 'tin', 'open', 'open', 'opened', 'large', 'open']",can,16,8,8.0
+4,10,state_A,backpack_open.jpg,3,3,0,"['opened up', 'folding', 'modern', 'open', 'open']",backpack,15,8,7.0
+5,11,state_A,waterbottle_open.jpg,1,1,0,"['blue', 'opened']",waterbottle,14,7,7.0
+6,12,state_A,cabinet_open.jpg,1,1,0,['open'],cabinet,14,8,6.0
+7,14,state_A,dishwasher_open.jpg,1,1,0,['open'],dishwasher,13,7,6.0
+8,16,state_A,stapler_open.jpg,3,1,2,"['open', 'blue', 'opened', 'blue', 'open']",stapler,16,8,8.0
+9,17,state_A,door_open.jpg,4,2,2,"['open', 'open', 'open', 'open']",door,16,8,8.0
+10,18,state_A,chestofdrawers_open.jpg,2,2,0,"['three drawered', 'opened', 'opened']",chestofdrawers,15,7,8.0
+11,19,state_A,filefolder_open.jpg,1,1,0,['opened'],filefolder,16,8,8.0
+12,20,state_A,fridge_open.jpg,3,1,2,"['opened bottom door', 'open', 'open']",fridge,16,8,8.0
+13,22,state_A,juicebottle_open.jpg,2,2,0,"['open', 'orange', 'energy drink', 'plastic', 'with cap open']",juicebottle,15,7,8.0
+14,23,state_A,gate_open.jpg,3,3,0,"['open', 'open', 'open']",gate,15,8,7.0
+15,24,state_A,lock_open.jpg,4,2,2,"['opened', 'opened', 'open', 'open']",lock,16,8,8.0
+16,27,state_A,microwave_open.jpg,1,1,0,['open'],microwave,16,8,8.0
+17,28,state_A,cdplayer_open.jpg,1,1,0,"[""that's open""]",cdplayer,15,8,7.0
+18,30,state_A,wallet_open.jpg,1,1,0,"['open', 'tartan', 'brown', 'leather']",wallet,16,8,8.0
+19,31,state_A,suitcase_open.jpg,2,2,0,"['open', 'opened', 'purple']",suitcase,11,8,3.0
+20,35,state_A,chapstick_open.jpg,1,1,0,['opened'],chapstick,16,8,8.0
+21,37,state_B,laptop_closed.jpg,1,1,0,"['silver', 'closed']",laptop,15,8,7.0
+22,38,state_A,marker_open.jpg,1,1,0,"['blue', 'with cap open']",marker,16,8,8.0
+23,40,state_A,scissors_open.jpg,1,0,1,['opened'],scissors,16,8,8.0
+24,44,state_B,eye_closed.jpg,3,1,2,"['closed', ""woman's"", 'closed', 'that have black mascara', 'closed']",eye,10,4,6.0
+25,48,state_A,treasurechest_open.jpg,2,2,0,"['open', 'open']",treasurechest,15,7,8.0
+26,50,state_A,pot_open.jpg,2,2,0,"['open', 'brown-beige', 'enamel', 'porcelain', 'cooking', 'open']",pot,16,8,8.0
+27,51,state_A,pizza_sliced.jpg,3,3,0,"['which is cut in slices', 'sliced', 'sliced']",pizza,16,8,8.0
+28,52,state_A,kiwi_sliced.jpg,8,3,5,"['cut', 'sliced', 'sliced', 'sliced', 'sliced', 'cut up', 'sliced', 'sliced']",kiwi,14,7,7.0
+29,53,state_A,lime_sliced.jpg,3,0,3,"['sliced', 'diced', 'sliced']",lime,16,8,8.0
+30,54,state_A,pickle_sliced.jpg,10,6,4,"['sliced', 'sliced', 'sliced', 'sets of ', 'sliced', 'cut', 'sliced', 'cut', 'sliced', 'sliced', 'sliced']",pickle,15,8,7.0
+31,55,state_A,watermelon_sliced.jpg,3,2,1,"['sliced up', 'sliced', 'which is sliced']",watermelon,16,8,8.0
+32,56,state_A,salami_sliced.jpg,7,3,4,"['chopped', 'cut', 'sliced', 'sliced', 'cut', 'sliced', 'sliced']",salami,15,8,7.0
+33,57,state_A,pineapple_sliced.jpg,4,1,3,"['sliced', 'sliced', 'which is sliced', 'cut up']",pineapple,16,8,8.0
+34,58,state_A,bread_sliced.jpg,8,7,1,"['sliced', 'sliced', 'sliced', 'sliced', 'sliced', 'sliced', 'sliced', 'sliced']",bread,16,8,8.0
+35,59,state_A,apple_sliced.jpg,6,3,3,"['sliced', 'sliced up', 'cut', 'which is sliced', 'sliced', 'sliced']",apple,16,8,8.0
+36,61,state_A,garlic_peeled.jpg,2,1,1,"['peeled', 'beautiful', 'peeled']",garlic,16,8,8.0
+37,62,state_A,banana_peeled.jpg,8,5,3,"['peeled', 'peeled', 'peeled', 'peeled', 'peeled', 'peeled', 'peeled', 'peeled']",banana,16,8,8.0
+38,63,state_A,carrot_peeled.jpg,1,0,1,['peeled'],carrot,15,7,8.0
+39,64,state_A,orange_peeled.jpg,7,2,5,"['peeled', 'peeled', 'peeled', 'peeled', 'peeled', 'peeled', 'half-peeled']",orange,15,7,8.0
+40,65,state_A,onion_peeled.jpg,3,2,1,"['which has been peeled a little bit', 'peeled', 'peeled']",onion,16,8,8.0
+41,66,state_A,blanket_folded.jpg,2,1,1,"['folded', 'red black and white', 'red', 'folded']",blanket,7,2,5.0
+42,68,state_A,paper_folded.jpg,2,0,2,"['folded', 'lined', 'folded']",paper,15,7,8.0
+43,69,state_A,sweater_folded.jpg,2,0,2,"['folded', 'red', 'folded', 'woolen', 'red']",sweater,15,7,8.0
+44,70,state_A,napkin_folded.jpg,6,5,1,"['folded', 'folded', 'folded', 'folded', 'folded', 'folded', 'white']",napkin,15,8,7.0
+45,71,state_A,towel_folded.jpg,2,2,0,"['folded', 'white', 'folded']",towel,16,8,8.0
+46,72,state_A,ladder_folded.jpg,1,1,0,"['little', 'folded']",ladder,16,8,8.0
+47,73,state_A,lawnchair_folded.jpg,4,2,2,"['folded', 'folded', 'folded', 'folded up']",lawnchair,15,8,7.0
+48,75,state_A,shoelace_tied.jpg,2,2,0,"['tied', 'that is tied in a knot']",shoelace,15,8,7.0
+49,76,state_A,rug_rolled.jpg,8,3,5,"['orange', 'that is rolled up', 'rolled up', 'rolled', 'rolled up', 'rolled', 'rolled up', 'rolled up', 'orange', 'orange', 'rolled-up']",rug,14,6,8.0
+50,77,state_A,bill_rolled.jpg,3,1,2,"['rolled', 'of fifty bucks', 'rolled up', 'rolled', 'fifty dollar']",bill,16,8,8.0
+51,78,state_A,sleepingbag_rolled.jpg,7,4,3,"['rolled up', 'rolled up', 'rolled up', ""they're a light green colour"", 'rolled up', 'green', 'wrapped up', 'folded up', 'light', 'rolled up']",sleepingbag,15,7,8.0
+52,79,state_A,yogamat_rolled.jpg,1,1,0,"['rolled up', 'blue']",yogamat,15,8,7.0
+53,80,state_A,straw_bent.jpg,2,1,1,"['folded', 'bent']",straw,14,7,7.0
+54,82,state_A,waterpipe_bent.jpg,1,1,0,"['somewhat curved', 'metallic in colour']",waterpipe,15,7,8.0
+55,84,state_A,safetypin_bent.jpg,5,2,3,"['bent', 'bent', 'folded', 'bent', 'bent']",safetypin,9,5,4.0
+56,85,state_A,nail_bent.jpg,8,4,4,"['bent', 'bent', 'bent', 'bent', 'bent', 'bent', 'bent', 'bent']",nail,14,8,6.0
+57,87,state_A,paperclip_bent.jpg,5,3,2,"['bent', 'bent', 'bent', 'bent up', 'twisted']",paperclip,15,7,8.0
+58,92,state_A,magnet_bent.jpg,1,0,1,['bent'],magnet,14,8,6.0
+59,94,state_A,road_curved.jpg,5,3,2,"['winding', 'winding', 'winding', 'in the desert', 'winding', 'winding']",road,16,8,8.0
+60,97,state_A,staircase_curved.jpg,1,0,1,['windy'],staircase,16,8,8.0
+61,98,state_A,boot_dirty.jpg,6,5,1,"['dirty', 'rubber', 'dirty', 'dirty', 'dirty', 'yellow', 'soiled', 'yellow', 'muddy', 'yellow']",boot,16,8,8.0
+62,99,state_A,dish_dirty.jpg,7,4,3,"['dirty', 'dirty', 'dirty ', 'dirty', 'dirty', 'white', ""that's dirty"", 'dirty']",dish,16,8,8.0
+63,100,state_A,car_dirty.jpg,4,2,2,"['dirty', 'dirty', 'dirty', 'dirty']",car,16,8,8.0
+64,104,state_A,gloves_dirty.jpg,7,3,4,"['dirty', 'dirty', 'soiled', 'yellow', 'yellow', 'that are dirty', 'dirty', 'yellow', 'pair of', 'dirty', 'dirty', 'yellow']",gloves,16,8,8.0
+65,106,state_A,spoon_dirty.jpg,5,2,3,"['dirty', 'dirty', 'dirty', 'dirty', 'dirty']",spoon,15,7,8.0
+66,108,state_A,stovetop_dirty.jpg,8,3,5,"['dirtier', 'dirty', 'dirty', 'household', 'dirty', 'dirty', 'dirty', 'dirty', 'dirty']",stovetop,16,8,8.0
+67,109,state_A,bucket_dirty.jpg,2,0,2,"['dirty', 'moldy']",bucket,16,8,8.0
+68,110,state_A,shoe_dirty.jpg,4,4,0,"['dirty', 'dirty', 'pair of', 'black', 'dirty', 'worn', 'dirty']",shoe,16,8,8.0
+69,111,state_A,cup_dirty.jpg,1,1,0,['dirty'],cup,16,8,8.0
+70,112,state_A,hands_dirty.jpg,9,3,6,"['pair of', 'that are dirty', 'dirty', 'pair of', 'dirty', 'dirty', 'dirty', 'two', 'palms both visible, fingers extended upraised', 'both soiled with dirt and or black ink', 'dirty', 'pair of', 'dirty', 'pair of', 'dirty']",hands,16,8,8.0
+71,113,state_A,soccerball_dirty.jpg,1,1,0,['dirty'],soccerball,16,8,8.0
+72,114,state_A,potato_dirty.jpg,2,1,1,"['dirty', 'dirty']",potato,15,7,8.0
+73,115,state_A,couch_dirty.jpg,2,2,0,"['dirty', 'white', 'white', 'dirty']",couch,16,8,8.0
+74,116,state_A,pig_dirty.jpg,3,2,1,"['dirty', 'dirty', 'dirty']",pig,16,8,8.0
+75,121,state_A,cookie_broken.jpg,8,3,5,"['broken', 'broken', 'broken', 'chocolate chip', 'broken', 'crumbled', 'chocolate chip', 'broken', 'crumbled', 'crumpled']",cookie,16,8,8.0
+76,122,state_A,cracker_broken.jpg,10,6,4,"['broken', 'broken up', 'of cracker', 'broken apart', 'sets of', 'broken', 'cracked', 'broken', 'broken', 'broken', 'broken up', 'three ', 'broken']",cracker,16,8,8.0
+77,123,state_A,chocolatebar_broken.jpg,4,4,0,"['broken', 'broken', 'broken', 'which is brown in colour', 'is broken into several pieces']",chocolatebar,16,8,8.0
+78,124,state_A,vase_broken.jpg,11,5,6,"['broken', 'green', 'broken', 'broken', 'broken', 'broken', 'flower', 'damaged', 'broken', 'broken', 'cracked', 'cracked', 'broken']",vase,16,8,8.0
+79,125,state_A,glasses_broken.jpg,12,6,6,"['broken', 'broken', 'broken', 'broken', 'broken', 'broken', 'broken', 'broken', 'broken', 'broken', 'broken', 'broken']",glasses,16,8,8.0
+80,126,state_A,egg_broken.jpg,11,5,6,"['broken', 'broken', 'broken', 'cracked', 'broken', 'broken', 'broken', 'broken', 'cracked', 'broken', 'with the yolk spilling out', 'cracked']",egg,16,8,8.0
+81,127,state_A,fence_broken.jpg,10,7,3,"['broken', 'broken', 'broken', 'broken', 'broken', 'broken', 'broken', 'broken', 'broken', 'broken', 'wooden']",fence,16,8,8.0
+82,128,state_A,mirror_broken.jpg,13,7,6,"['broken', 'broken', 'broken', 'broken', 'broken', 'cracked', 'broken', 'broken', 'cracked', 'broken', 'broken', 'broken', 'broken']",mirror,16,8,8.0
+83,129,state_A,tire_broken.jpg,12,6,6,"['flat', 'flat', 'broken', 'flat', 'flat', 'flat', 'flat', 'flat', 'flat', 'deflated', 'flat', 'flat']",tire,16,8,8.0
+84,129,state_B,tire_whole.jpg,1,1,0,"['flat', 'and wheel']",tire,16,8,8.0
+85,130,state_A,cigarette_broken.jpg,8,5,3,"['broken', 'broken', 'broken', 'broken', 'broken', 'broken', 'broken', 'broken']",cigarette,15,8,7.0
+86,131,state_A,pencil_broken.jpg,12,6,6,"['broken', 'broken', 'broken', 'broken', 'broken', 'broken', 'broken', 'broken', 'half', 'broken', 'broken', 'broken', 'broken']",pencil,16,8,8.0
+87,132,state_A,piggybank_broken.jpg,11,6,5,"['broken', 'pink', 'broken', 'broken', 'broken', 'broken', 'broken', 'with the coins in them', 'broken', 'broken', 'broken', 'broken', 'broken']",piggybank,16,8,8.0
+88,134,state_A,plate_broken.jpg,15,8,7,"['broken', 'broken', 'cracked', 'broken', 'broken', 'broken', 'two sets', 'broken', 'broken', 'broken', 'broken', 'broken', 'broken', 'broken', 'broken', 'cracked']",plate,16,8,8.0
+89,135,state_A,table_broken.jpg,14,7,7,"['broken', 'broken', 'broken', 'broken', 'broken', 'broken', 'broken', 'broken', 'broken', 'broken', 'broken', 'broken', 'broken', 'broken']",table,16,8,8.0
+90,136,state_A,chain_broken.jpg,9,4,5,"['broken', 'broken', 'broken', 'broken', 'broken', 'broken', 'broken', 'broken', ""that's broken""]",chain,16,8,8.0
+91,138,state_A,envelope_ripped.jpg,12,7,5,"['opened', 'torn', 'ripped', 'ripped', 'open', 'open', 'open', 'opened', 'opened', 'ripped', 'torn', 'opened', 'opened']",envelope,16,8,8.0
+92,139,state_A,naan_ripped.jpg,1,1,0,['ripped'],naan,13,5,8.0
+93,140,state_A,sugarpacket_ripped.jpg,4,1,3,"['opened', 'opened', 'opened', 'torn open']",sugarpacket,16,8,8.0
+94,141,state_A,notepad_ripped.jpg,7,3,4,"['teared', 'ripped', 'torn', 'ripped', 'ripped', 'ripped up', 'torn', 'graph']",notepad,16,8,8.0
+95,142,state_A,chipbag_ripped.jpg,3,3,0,"['opened', 'open', 'opened', 'rosksalt and vinegar']",chipbag,15,7,8.0
+96,143,state_A,jar_empty.jpg,2,2,0,"['empty', 'empty']",jar,15,8,7.0
+97,143,state_B,jar_full.jpg,1,0,1,"['glass', 'filled with almonds']",jar,14,6,8.0
+98,144,state_B,garbagecan_full.jpg,1,1,0,['full of crumpled paper'],garbagecan,12,5,7.0
+99,145,state_B,hamper_full.jpg,1,1,0,"['dirty clothes', 'full of clothes']",hamper,15,7,8.0
+100,146,state_A,eggcarton_empty.jpg,4,3,1,"['empty', 'empty', 'empty', 'open', 'empty']",eggcarton,14,6,8.0
+101,147,state_A,wineglass_empty.jpg,1,0,1,['empty'],wineglass,15,7,8.0
+102,147,state_B,wineglass_full.jpg,1,1,0,['filled with liquid in it'],wineglass,16,8,8.0
+103,148,state_B,shoppingcart_full.jpg,3,2,1,"['filled with groceries', 'full of groceries', 'full', 'of breautiful produce']",shoppingcart,16,8,8.0
