@@ -38,7 +38,7 @@ df_words = pd.read_csv("./norming_results.csv") # created in norming_exp repo
 # }
 
 
-def create_word_world(word, df=df_words):
+def create_word_world(word, df_words=df_words):
 
     df_word = df_words[df_words["noun"] == word]
     assert len(df_word[df_word["state"] == "a"]["adj"].unique()) == 1
@@ -137,6 +137,7 @@ class cs_rsa:
         marked_state,
         unmarked_state,
         noncomp_semvalue_dict,
+        model_type='mixture',
         alpha=13.7,
         beta_fixed=0.69,
         costWeight=0,
@@ -146,6 +147,10 @@ class cs_rsa:
         state_semvalue_unmarked=0.9,
         nominal_semvalue=0.99,
     ):
+
+        # model type
+        self.model_type = model_type
+
 
         # parameters
         self.alpha = alpha
@@ -344,7 +349,14 @@ class cs_rsa:
             print(f"sem_val: {sem_value:.2f}")
             print("")
 
-        return sem_value
+        if self.model_type == 'compositional':
+            return fixed_sem_value
+        elif self.model_type == 'non-compositional':
+            return empirical_sem_value
+        elif self.model_type == 'mixture':
+            return sem_value
+        else:
+            raise Exception
 
     def literal_listener(self, utterance):
         probabilities = {}
@@ -390,6 +402,7 @@ class cs_rsa:
 
 def singleton_overspecification_rate(
     word,
+    model_type='mixture',
     alpha=13.7,
     beta_fixed=0.69,
     state_semvalue_marked=0.9,
@@ -414,6 +427,7 @@ def singleton_overspecification_rate(
             marked_state,
             unmarked_state,
             noncomp_semvalue_dict,
+            model_type=model_type,
             alpha=alpha,
             beta_fixed=beta_fixed,
             costWeight=costWeight,
@@ -483,7 +497,7 @@ def pair_overspecification_rate(
     return overspecification_rates
 
 
-def compute_targets(source='middle'):
+def compute_targets(source='raw'):
     if source == 'raw':
         df = pd.read_csv('./overspec_rate_result.csv')
     elif source == 'middle':
@@ -511,72 +525,102 @@ def compute_targets(source='middle'):
 
     return targets
 
-def optimization_individually():
+
+MODEL_SPECS = {
+    "mixture": {
+        "param_names": ["alpha", "beta_fixed", "state_sem", "n_sem", "costWeight"],
+        "bounds": [(0, 50), (0, 1), (0.6, 1), (0.6, 1), (0, 10)],
+        "to_kwargs": lambda p: dict(
+            model_type='mixture',
+            alpha=float(p[0]),
+            beta_fixed=float(p[1]),
+            state_semvalue_marked=float(p[2]),
+            state_semvalue_unmarked=float(p[2]),
+            nominal_semvalue=float(p[3]),
+            costWeight=float(p[4]),
+        ),
+    },
+
+    "non-compositional": {
+        "param_names": ["alpha", "costWeight"],
+        "bounds": [(0, 50), (0, 10)],
+        "to_kwargs": lambda p: dict(
+            model_type='non-compositional',
+            alpha=float(p[0]),
+            costWeight=float(p[1]),
+        ),
+    },
+
+    "compositional": {
+        "param_names": ["alpha", "state_sem", "n_sem", "costWeight"],
+        "bounds": [(0, 50), (0.6, 1), (0.6, 1), (0, 10)],
+        "to_kwargs": lambda p: dict(
+            model_type='compositional',
+            alpha=float(p[0]),
+            state_semvalue_marked=float(p[1]),
+            state_semvalue_unmarked=float(p[1]),
+            nominal_semvalue=float(p[2]),
+            costWeight=float(p[3]),
+        ),
+    },
+
+}
+
+def optimization(model_type='compositional'):
+
+    if model_type not in MODEL_SPECS:
+        raise ValueError(f"Unknown model_type '{model_type}'. "
+                         f"Available: {list(MODEL_SPECS.keys())}")
+
+    spec = MODEL_SPECS[model_type]
+    param_names = spec["param_names"]
+    bounds = spec["bounds"]
+    to_kwargs = spec["to_kwargs"]
 
     targets = compute_targets(source='middle')
     words = list(targets.keys())
 
-    def objective(params):
-        a, b, state_sem, n_sem, costWeight = params
+    def predict_for_word(params, word):
+        """Shared prediction wrapper."""
+        kwargs = to_kwargs(params)
+        r_marked, r_unmarked = singleton_overspecification_rate(word=word, **kwargs)
+        return np.array([r_marked, r_unmarked], float)
 
+    def objective(params):
         losses = []
         for w in words:
-            # model prediction for this word
-            r_marked, r_unmarked = singleton_overspecification_rate(
-                word=w,
-                alpha=float(a),
-                beta_fixed=float(b),
-                state_semvalue_marked=float(state_sem),
-                state_semvalue_unmarked=float(state_sem),
-                nominal_semvalue=float(n_sem),
-                costWeight=float(costWeight),
-            )
-            r = np.array([r_marked, r_unmarked], float)
-
-            # word-specific target
+            r = predict_for_word(params, w)
             t = np.array(targets[w], float)
-
-            # squared error for this word
             losses.append(np.sum((r - t) ** 2))
 
         # average loss across words
         L = float(np.sum(losses))
         return L if np.isfinite(L) else 1e9
 
-    bounds = [(0, 50), (0, 1), (0, 1), (0, 1),(0, 10)]
 
-    res_da = dual_annealing(objective, bounds=bounds, maxiter=200)  # smaller
+    res_da = dual_annealing(objective, bounds=bounds, maxiter=500)  # smaller
     res_g  = minimize(objective, x0=res_da.x, method="L-BFGS-B", bounds=bounds)
-    a, b, state_sem, n_sem, costWeight = res_g.x
 
-    # --- compute average predicted + average target for reporting ---
+    # best params
+    best_params = res_g.x
+
+    # recompute predictions at optimum
     preds = []
     t_list = []
     for w in words:
-        r_marked, r_unmarked = singleton_overspecification_rate(
-            word=w,
-            alpha=float(a),
-            beta_fixed=float(b),
-            state_semvalue_marked=float(state_sem),
-            state_semvalue_unmarked=float(state_sem),
-            nominal_semvalue=float(n_sem),
-            costWeight=float(costWeight),
-        )
-        preds.append([r_marked, r_unmarked])
+        preds.append(predict_for_word(best_params, w))
         t_list.append(targets[w])
 
     preds = np.array(preds, float)
     t_arr = np.array(t_list, float)
 
-    avg_pred   = preds.mean(axis=0)
+    avg_pred = preds.mean(axis=0)
     avg_target = t_arr.mean(axis=0)
 
     print("=== Result ===")
-    print(f"  alpha                : {a:.4f}")
-    print(f"  beta_fixed           : {b:.4f}")
-    print(f"  state_semvalue       : {state_sem:.4f}")
-    print(f"  noun_semvalue        : {n_sem:.4f}")
-    print(f"  cost                 : {costWeight:.4f}")
+    print(f"  model_type           : {model_type}")
+    for name, val in zip(param_names, best_params):
+        print(f"  {name:20s} : {val:.4f}")
     print(f"  avg predicted rates  : [{avg_pred[0]:.4f}, {avg_pred[1]:.4f}]")
     print(f"  avg target rates     : [{avg_target[0]:.4f}, {avg_target[1]:.4f}]")
     print(f"  final avg loss       : {res_g.fun:.6e}")
@@ -585,7 +629,9 @@ def optimization_individually():
 
 if __name__ == "__main__":
     print(singleton_overspecification_rate('apple'))
-    optimized_params, predictions, targets, words = optimization_individually()
+    optimized_params, predictions, targets, words = optimization('compositional')
+    optimized_params, predictions, targets, words = optimization('non-compositional')
+    optimized_params, predictions, targets, words = optimization('mixture')
 
 
     # utterance, world, noncomp_semvalue_dict = create_word_world("apple")
@@ -594,3 +640,25 @@ if __name__ == "__main__":
     # words = df_words['noun'].unique()
     # optimization(words)
 
+# aggregate the norming values
+# choose different nouns: intuitive, dirty soccer ball
+# plot noncompositional values for 100 nouns, 
+
+# make the point that compositional modeling requires a different semantic values
+# marked - unmarked, plot for 100 nouns, group based on modifiers, arrow point to 5 examples
+
+# try compositional modeling first, doesn't work out because the relative markedness (lession from color doesn't generalize)
+
+# 1. pure composition with same values
+# 1.1 pure compositional with different sem for markedness, but fail for eye.
+
+# 2. non-compositional, 
+# degen works because they focus on modifers with contrasting typicality
+# this cannot be generalized
+# degen's framework suggests overspecification occurs for objects that are less typical exemplar of nouns. This is the not the correct overspecification. Hence we need a different generalization (which is not from language not typicality, not linguistic cost)
+
+#part3
+# Degen's goal was to arrive at a better fit for the empirical data. We believe however, Degen's mixture potentially provide insight about meaning. some meaning is know the meaning of the words (compositional), other meaning reflects the knowledge of the world (non-compositional). It could be a good idea but does not work.
+
+# ELM: what overspecification of state modifers tell us about compositionality
+# ask Harrison
