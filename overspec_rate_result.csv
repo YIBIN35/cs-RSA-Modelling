@@ -1,4 +1,4 @@
-,trial_id,State_1,$images_1,over_spec_n,overspec_n_singleton,overspec_n_pair,all_overspec,noun,total_n,singleton_total_n,pair_total_n
+,trial_id,State_1,$images_1,overspec_n,overspec_n_singleton,overspec_n_pair,all_overspec,noun,total_n,singleton_total_n,pair_total_n
 0,3,state_A,seatbelt_open.jpg,1,1,0,['unfastened'],seatbelt,15,7,8.0
 1,4,state_A,book_open.jpg,1,1,0,"['open', 'blue', ""that's face down""]",book,15,8,7.0
 2,5,state_A,milkcarton_open.jpg,1,1,0,['open'],milkcarton,15,8,7.0

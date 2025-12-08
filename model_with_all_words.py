@@ -4,37 +4,38 @@ import matplotlib.pyplot as plt
 from scipy.optimize import dual_annealing, minimize, brute
 import pandas as pd
 import dtale
+from pprint import pprint
 
 plt.ion()
 
 df_words = pd.read_csv("./norming_results.csv") # created in norming_exp repo
 
-parker_world = {
-    "singleton_marked": [
-        {"size": None, "state": "open", "nominal": "door"},
-        {"size": None, "state": None, "nominal": "other1"},
-        {"size": None, "state": None, "nominal": "other2"},
-        {"size": None, "state": None, "nominal": "other3"},
-    ],
-    "singleton_unmarked": [
-        {"size": None, "state": "closed", "nominal": "door"},
-        {"size": None, "state": None, "nominal": "other1"},
-        {"size": None, "state": None, "nominal": "other2"},
-        {"size": None, "state": None, "nominal": "other3"},
-    ],
-    "pair_marked": [
-        {"size": "big", "state": "open", "nominal": "door"},
-        {"size": "small", "state": "open", "nominal": "door"},
-        {"size": None, "state": None, "nominal": "other2"},
-        {"size": None, "state": None, "nominal": "other3"},
-    ],
-    "pair_unmarked": [
-        {"size": "big", "state": "closed", "nominal": "door"},
-        {"size": "small", "state": "closed", "nominal": "door"},
-        {"size": None, "state": None, "nominal": "other2"},
-        {"size": None, "state": None, "nominal": "other3"},
-    ],
-}
+# parker_world = {
+#     "singleton_marked": [
+#         {"size": None, "state": "open", "nominal": "door"},
+#         {"size": None, "state": None, "nominal": "other1"},
+#         {"size": None, "state": None, "nominal": "other2"},
+#         {"size": None, "state": None, "nominal": "other3"},
+#     ],
+#     "singleton_unmarked": [
+#         {"size": None, "state": "closed", "nominal": "door"},
+#         {"size": None, "state": None, "nominal": "other1"},
+#         {"size": None, "state": None, "nominal": "other2"},
+#         {"size": None, "state": None, "nominal": "other3"},
+#     ],
+#     "pair_marked": [
+#         {"size": "big", "state": "open", "nominal": "door"},
+#         {"size": "small", "state": "open", "nominal": "door"},
+#         {"size": None, "state": None, "nominal": "other2"},
+#         {"size": None, "state": None, "nominal": "other3"},
+#     ],
+#     "pair_unmarked": [
+#         {"size": "big", "state": "closed", "nominal": "door"},
+#         {"size": "small", "state": "closed", "nominal": "door"},
+#         {"size": None, "state": None, "nominal": "other2"},
+#         {"size": None, "state": None, "nominal": "other3"},
+#     ],
+# }
 
 
 def create_word_world(word, df=df_words):
@@ -430,7 +431,7 @@ def singleton_overspecification_rate(
 
 
 def pair_overspecification_rate(
-    parker_world=parker_world,
+    parker_world,
     alpha=13.7,
     beta_fixed=0.69,
     state_semvalue_marked=0.95,
@@ -480,88 +481,93 @@ def pair_overspecification_rate(
     return overspecification_rates
 
 
-def optimization(words):
-    target = np.array([0.24, 0.01])
-    max_iter = 2000
-    iter_count = {"i": 0}
+# def optimization(words):
+#     target = np.array([0.24, 0.01])
+#     max_iter = 2000
+#     iter_count = {"i": 0}
 
-    def objective(params):
-        a, b, sm, costWeight = params
+#     def objective(params):
+#         a, b, sm, costWeight = params
 
-        rates_all = [
-            singleton_overspecification_rate(
-                word=w,
-                alpha=float(a),
-                beta_fixed=float(b),
-                state_semvalue_marked=float(sm),
-                state_semvalue_unmarked=float(sm),
-                costWeight=float(costWeight),
-            )
-            for w in words
-        ]
+#         rates_all = [
+#             singleton_overspecification_rate(
+#                 word=w,
+#                 alpha=float(a),
+#                 beta_fixed=float(b),
+#                 state_semvalue_marked=float(sm),
+#                 state_semvalue_unmarked=float(sm),
+#                 costWeight=float(costWeight),
+#             )
+#             for w in words
+#         ]
 
-        # separate and average r_marked and r_unmarked
-        r_marked_vals   = [rm for (rm, ru) in rates_all]
-        r_unmarked_vals = [ru for (rm, ru) in rates_all]
+#         # separate and average r_marked and r_unmarked
+#         r_marked_vals   = [rm for (rm, ru) in rates_all]
+#         r_unmarked_vals = [ru for (rm, ru) in rates_all]
 
-        r = np.array(
-            [np.mean(r_marked_vals), np.mean(r_unmarked_vals)],
-            float,
-        )
-        L = float(np.sum((r - target) ** 2))
-        return L if np.isfinite(L) else 1e9
+#         r = np.array(
+#             [np.mean(r_marked_vals), np.mean(r_unmarked_vals)],
+#             float,
+#         )
+#         L = float(np.sum((r - target) ** 2))
+#         return L if np.isfinite(L) else 1e9
 
-    def cb(x, f, context):
-        iter_count["i"] += 1
-        p = iter_count["i"] / max_iter * 100
-        print(f"Progress: {iter_count['i']}/{max_iter}  ({p:5.1f}%)   best loss={f:.6f}")
-        return False  # keep going
+#     def cb(x, f, context):
+#         iter_count["i"] += 1
+#         p = iter_count["i"] / max_iter * 100
+#         print(f"Progress: {iter_count['i']}/{max_iter}  ({p:5.1f}%)   best loss={f:.6f}")
+#         return False  # keep going
 
-    bounds = [(0, 50), (0, 1), (0, 1), (0, 10)]
+#     bounds = [(0, 50), (0, 1), (0, 1), (0, 10)]
 
-    x0 = np.array([13.7, 0.69, 0.9, 0.0])
-    res_g = minimize(
-        objective,
-        x0=x0,
-        method="L-BFGS-B",
-        bounds=bounds,
-        options={"maxiter": max_iter},
-    )
-    a, b, sm, costWeight = res_g.x
+#     x0 = np.array([13.7, 0.69, 0.9, 0.0])
+#     res_g = minimize(
+#         objective,
+#         x0=x0,
+#         method="L-BFGS-B",
+#         bounds=bounds,
+#         options={"maxiter": max_iter},
+#     )
+#     a, b, sm, costWeight = res_g.x
 
-    # res_g = dual_annealing(objective, bounds=bounds, maxiter=max_iter, callback=cb)
-    # a, b, sm, costWeight = res_g.x
+#     # res_g = dual_annealing(objective, bounds=bounds, maxiter=max_iter, callback=cb)
+#     # a, b, sm, costWeight = res_g.x
 
-    # reporting
-    rates_all = [
-        singleton_overspecification_rate(
-            word=w,
-            alpha=float(a),
-            beta_fixed=float(b),
-            state_semvalue_marked=float(sm),
-            state_semvalue_unmarked=float(sm),
-            costWeight=float(costWeight),
-        )
-        for w in words
-    ]
-    r_marked_vals   = [rm for (rm, ru) in rates_all]
-    r_unmarked_vals = [ru for (rm, ru) in rates_all]
-    rates = (np.mean(r_marked_vals), np.mean(r_unmarked_vals))
+#     # reporting
+#     rates_all = [
+#         singleton_overspecification_rate(
+#             word=w,
+#             alpha=float(a),
+#             beta_fixed=float(b),
+#             state_semvalue_marked=float(sm),
+#             state_semvalue_unmarked=float(sm),
+#             costWeight=float(costWeight),
+#         )
+#         for w in words
+#     ]
+#     r_marked_vals   = [rm for (rm, ru) in rates_all]
+#     r_unmarked_vals = [ru for (rm, ru) in rates_all]
+#     rates = (np.mean(r_marked_vals), np.mean(r_unmarked_vals))
 
-    # === print results ===
-    print("=== Result ===")
-    print(f"  alpha                : {a:.4f}")
-    print(f"  beta_fixed           : {b:.4f}")
-    print(f"  state_semvalue_marked: {sm:.4f}")
-    print(f"  cost                 : {costWeight:.4f}")
-    print(f"  resulting rates      : [{rates[0]:.4f}, {rates[1]:.4f}]")
-    print(f"  target rates         : {target.tolist()}")
-    print(f"  final loss           : {res_g.fun:.6e}")
+#     # === print results ===
+#     print("=== Result ===")
+#     print(f"  alpha                : {a:.4f}")
+#     print(f"  beta_fixed           : {b:.4f}")
+#     print(f"  state_semvalue_marked: {sm:.4f}")
+#     print(f"  cost                 : {costWeight:.4f}")
+#     print(f"  resulting rates      : [{rates[0]:.4f}, {rates[1]:.4f}]")
+#     print(f"  target rates         : {target.tolist()}")
+#     print(f"  final loss           : {res_g.fun:.6e}")
 
-    return res_g, rates
+#     return res_g, rates
 
-def compute_targets():
-    df = pd.read_csv('./overspec_rate_result.csv')
+def compute_targets(source='middle'):
+    if source == 'raw':
+        df = pd.read_csv('./overspec_rate_result.csv')
+    elif source == 'middle':
+        df = pd.read_csv('./overspec_rate_result_middle.csv')
+    else:
+        raise Exception
     targets = {}
 
     for noun, sub in df.groupby("noun"):
@@ -575,8 +581,8 @@ def compute_targets():
             else:
                 num = sub_state["overspec_n_singleton"].sum()
                 # need to make sure of this
-                # den = sub_state["singleton_total_n"].sum()
-                den = 8
+                den = sub_state["singleton_total_n"].sum()
+                # den = 8
                 rates.append(num / den if den > 0 else 0.0)
 
         targets[noun] = np.array(rates, float)
@@ -585,7 +591,7 @@ def compute_targets():
 
 def optimization_individually():
 
-    targets = compute_targets()
+    targets = compute_targets(source='middle')
     words = list(targets.keys())
 
     def objective(params):
@@ -653,7 +659,11 @@ def optimization_individually():
     return res_g, preds, t_arr, words
 
 if __name__ == "__main__":
+    create_word_world('apple')
     optimization_individually()
+
+    rating_targets = compute_targets()
+    word = 'banana';  pprint(create_word_world(word)); pprint(rating_targets[word]); pprint(singleton_overspecification_rate(word, costWeight=1));
 
     # utterance, world, noncomp_semvalue_dict = create_word_world("apple")
     # model = cs_rsa(world, noncomp_semvalue_dict)
