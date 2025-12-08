@@ -392,8 +392,9 @@ def singleton_overspecification_rate(
     word,
     alpha=13.7,
     beta_fixed=0.69,
-    state_semvalue_marked=0.90,
+    state_semvalue_marked=0.9,
     state_semvalue_unmarked=0.9,
+    nominal_semvalue=0.99,
     costWeight=0,
     typicalityWeight=1.34,
 ):
@@ -419,6 +420,7 @@ def singleton_overspecification_rate(
             typicalityWeight=typicalityWeight,
             state_semvalue_marked=state_semvalue_marked,
             state_semvalue_unmarked=state_semvalue_unmarked,
+            nominal_semvalue=nominal_semvalue,
         )
         results = model.pragmatic_speaker(this_world[0], utterances)
         # print(results)
@@ -481,86 +483,6 @@ def pair_overspecification_rate(
     return overspecification_rates
 
 
-# def optimization(words):
-#     target = np.array([0.24, 0.01])
-#     max_iter = 2000
-#     iter_count = {"i": 0}
-
-#     def objective(params):
-#         a, b, sm, costWeight = params
-
-#         rates_all = [
-#             singleton_overspecification_rate(
-#                 word=w,
-#                 alpha=float(a),
-#                 beta_fixed=float(b),
-#                 state_semvalue_marked=float(sm),
-#                 state_semvalue_unmarked=float(sm),
-#                 costWeight=float(costWeight),
-#             )
-#             for w in words
-#         ]
-
-#         # separate and average r_marked and r_unmarked
-#         r_marked_vals   = [rm for (rm, ru) in rates_all]
-#         r_unmarked_vals = [ru for (rm, ru) in rates_all]
-
-#         r = np.array(
-#             [np.mean(r_marked_vals), np.mean(r_unmarked_vals)],
-#             float,
-#         )
-#         L = float(np.sum((r - target) ** 2))
-#         return L if np.isfinite(L) else 1e9
-
-#     def cb(x, f, context):
-#         iter_count["i"] += 1
-#         p = iter_count["i"] / max_iter * 100
-#         print(f"Progress: {iter_count['i']}/{max_iter}  ({p:5.1f}%)   best loss={f:.6f}")
-#         return False  # keep going
-
-#     bounds = [(0, 50), (0, 1), (0, 1), (0, 10)]
-
-#     x0 = np.array([13.7, 0.69, 0.9, 0.0])
-#     res_g = minimize(
-#         objective,
-#         x0=x0,
-#         method="L-BFGS-B",
-#         bounds=bounds,
-#         options={"maxiter": max_iter},
-#     )
-#     a, b, sm, costWeight = res_g.x
-
-#     # res_g = dual_annealing(objective, bounds=bounds, maxiter=max_iter, callback=cb)
-#     # a, b, sm, costWeight = res_g.x
-
-#     # reporting
-#     rates_all = [
-#         singleton_overspecification_rate(
-#             word=w,
-#             alpha=float(a),
-#             beta_fixed=float(b),
-#             state_semvalue_marked=float(sm),
-#             state_semvalue_unmarked=float(sm),
-#             costWeight=float(costWeight),
-#         )
-#         for w in words
-#     ]
-#     r_marked_vals   = [rm for (rm, ru) in rates_all]
-#     r_unmarked_vals = [ru for (rm, ru) in rates_all]
-#     rates = (np.mean(r_marked_vals), np.mean(r_unmarked_vals))
-
-#     # === print results ===
-#     print("=== Result ===")
-#     print(f"  alpha                : {a:.4f}")
-#     print(f"  beta_fixed           : {b:.4f}")
-#     print(f"  state_semvalue_marked: {sm:.4f}")
-#     print(f"  cost                 : {costWeight:.4f}")
-#     print(f"  resulting rates      : [{rates[0]:.4f}, {rates[1]:.4f}]")
-#     print(f"  target rates         : {target.tolist()}")
-#     print(f"  final loss           : {res_g.fun:.6e}")
-
-#     return res_g, rates
-
 def compute_targets(source='middle'):
     if source == 'raw':
         df = pd.read_csv('./overspec_rate_result.csv')
@@ -595,7 +517,7 @@ def optimization_individually():
     words = list(targets.keys())
 
     def objective(params):
-        a, b, sm, costWeight = params
+        a, b, state_sem, n_sem, costWeight = params
 
         losses = []
         for w in words:
@@ -604,8 +526,9 @@ def optimization_individually():
                 word=w,
                 alpha=float(a),
                 beta_fixed=float(b),
-                state_semvalue_marked=float(sm),
-                state_semvalue_unmarked=float(sm),
+                state_semvalue_marked=float(state_sem),
+                state_semvalue_unmarked=float(state_sem),
+                nominal_semvalue=float(n_sem),
                 costWeight=float(costWeight),
             )
             r = np.array([r_marked, r_unmarked], float)
@@ -620,11 +543,11 @@ def optimization_individually():
         L = float(np.sum(losses))
         return L if np.isfinite(L) else 1e9
 
-    bounds = [(0, 50), (0, 1), (0, 1), (0, 10)]
+    bounds = [(0, 50), (0, 1), (0, 1), (0, 1),(0, 10)]
 
     res_da = dual_annealing(objective, bounds=bounds, maxiter=200)  # smaller
     res_g  = minimize(objective, x0=res_da.x, method="L-BFGS-B", bounds=bounds)
-    a, b, sm, costWeight = res_g.x
+    a, b, state_sem, n_sem, costWeight = res_g.x
 
     # --- compute average predicted + average target for reporting ---
     preds = []
@@ -634,8 +557,9 @@ def optimization_individually():
             word=w,
             alpha=float(a),
             beta_fixed=float(b),
-            state_semvalue_marked=float(sm),
-            state_semvalue_unmarked=float(sm),
+            state_semvalue_marked=float(state_sem),
+            state_semvalue_unmarked=float(state_sem),
+            nominal_semvalue=float(n_sem),
             costWeight=float(costWeight),
         )
         preds.append([r_marked, r_unmarked])
@@ -650,7 +574,8 @@ def optimization_individually():
     print("=== Result ===")
     print(f"  alpha                : {a:.4f}")
     print(f"  beta_fixed           : {b:.4f}")
-    print(f"  state_semvalue_marked: {sm:.4f}")
+    print(f"  state_semvalue       : {state_sem:.4f}")
+    print(f"  noun_semvalue        : {n_sem:.4f}")
     print(f"  cost                 : {costWeight:.4f}")
     print(f"  avg predicted rates  : [{avg_pred[0]:.4f}, {avg_pred[1]:.4f}]")
     print(f"  avg target rates     : [{avg_target[0]:.4f}, {avg_target[1]:.4f}]")
@@ -659,11 +584,9 @@ def optimization_individually():
     return res_g, preds, t_arr, words
 
 if __name__ == "__main__":
-    create_word_world('apple')
-    optimization_individually()
+    print(singleton_overspecification_rate('apple'))
+    optimized_params, predictions, targets, words = optimization_individually()
 
-    rating_targets = compute_targets()
-    word = 'banana';  pprint(create_word_world(word)); pprint(rating_targets[word]); pprint(singleton_overspecification_rate(word, costWeight=1));
 
     # utterance, world, noncomp_semvalue_dict = create_word_world("apple")
     # model = cs_rsa(world, noncomp_semvalue_dict)
