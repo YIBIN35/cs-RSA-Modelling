@@ -7,37 +7,34 @@ import arviz as az
 
 WORDS = []
 
-
-# ---------- make an as_op for ONE fixed word ----------
-def make_forward_rates_op(word):
+@as_op(
+    itypes=[
+        pt.dscalar,  # alpha
+        pt.dscalar,  # beta_fixed
+        pt.dscalar,  # state_sem
+        pt.dscalar,  # nominal_sem
+        pt.dscalar,  # costWeight
+    ],
+    otypes=[pt.dmatrix],
+)
+def forward_all_words(alpha, beta_fixed, state_sem, n_sem, costWeight):
     """
-    Returns an as_op that, given (a, b, state_sem, n_sem, costWeight),
-    computes [p_marked, p_unmarked] for THIS specific word.
+    Given shared parameters, compute [p_marked, p_unmarked] for all WORDS.
+    Returns an array of shape (W, 2), where W = len(WORDS).
     """
-
-    @as_op(
-        itypes=[
-            pt.dscalar,  # alpha
-            pt.dscalar,  # beta_fixed
-            pt.dscalar,  # state_sem
-            pt.dscalar,  # nominal_sem
-            pt.dscalar,  # costWeight
-        ],
-        otypes=[pt.dvector],
-    )
-    def forward_rates(a, b, state_sem, n_sem, costWeight):
+    probs = []
+    for w in WORDS:
         r_marked, r_unmarked = singleton_overspecification_rate(
-            word=str(word),
-            alpha=float(a),
-            beta_fixed=float(b),
+            word=str(w),
+            alpha=float(alpha),
+            beta_fixed=float(beta_fixed),
             state_semvalue_marked=float(state_sem),
             state_semvalue_unmarked=float(state_sem),
             nominal_semvalue=float(n_sem),
             costWeight=float(costWeight),
         )
-        return np.array([r_marked, r_unmarked], dtype=float)
-
-    return forward_rates
+        probs.append([r_marked, r_unmarked])
+    return np.array(probs, dtype=float)  # shape (W, 2)
 
 
 # ---------- convert targets (probabilities) to counts ----------
@@ -59,9 +56,11 @@ def counts_from_targets(targets, n_per_word=8):
 def fit_multiword_model(targets, n_per_word=8, random_seed=42):
     """
     targets: dict[word] -> np.array([rate_state_A, rate_state_B])
-    n_per_word: Binomial n per word (you said: assume 8 Bernoulli trials)
+    n_per_word: Binomial n per word (assume 8 Bernoulli trials)
     """
-    words, y_marked, y_unmarked = counts_from_targets(targets, n_per_word=n_per_word)
+    global WORDS
+
+    WORDS, y_marked, y_unmarked = counts_from_targets(targets, n_per_word=n_per_word)
 
     with pm.Model() as model_counts_multi:
 
@@ -74,14 +73,15 @@ def fit_multiword_model(targets, n_per_word=8, random_seed=42):
         costWeight01 = pm.Beta("costWeight01", alpha=2.0, beta=2.0)
         costWeight = pm.Deterministic("costWeight", 3.0 * costWeight01)
 
-        # ----- forward model -----
-        ops = [make_forward_rates_op(w) for w in words] # preload the word for the forward_model function due to constraint in pytensor
-        rates_list = [
-            op(alpha, beta_fixed, state_semvalue, nominal_semvalue, costWeight)
-            for op in ops
-        ]  # list of (2,) vectors
+        # ----- forward model: one op for all words -----
+        rates = forward_all_words(
+            alpha,
+            beta_fixed,
+            state_semvalue,
+            nominal_semvalue,
+            costWeight,
+        )  # shape (W, 2)
 
-        rates = pt.stack(rates_list, axis=0)  # shape (W, 2)
         p_marked = pm.Deterministic("p_marked", rates[:, 0])
         p_unmarked = pm.Deterministic("p_unmarked", rates[:, 1])
 
@@ -101,17 +101,16 @@ def fit_multiword_model(targets, n_per_word=8, random_seed=42):
 
         # ----- sampling -----
         trace = pm.sample(
-            draws=10_000,
-            tune=3_000,
-            chains=4,
-            cores=4,
+            draws=2000,
+            tune=1000,
+            chains=8,
+            cores=8,
             step=pm.Slice(),
             random_seed=random_seed,
             return_inferencedata=True,
         )
 
-    return model_counts_multi, trace, words, y_marked, y_unmarked
-
+    return model_counts_multi, trace, WORDS, y_marked, y_unmarked
 
 
 
