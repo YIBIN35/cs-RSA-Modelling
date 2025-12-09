@@ -36,40 +36,38 @@ def middle_sheet_result():
 
 
 def get_all_overspec(group):
-    cols = [
-        "overspecification1",
-        "overspecification2",
-        "overspecification3",
-        "overspecification4",
-        "overspecification5",
-    ]
-    all_overspec = [v for v in group[cols].values.ravel().tolist() if pd.notna(v)]
+
+    overspec_rows = group[(group["state_expected"] == 1) & (group["state_strict"] == 1)]
+    other_rows = group[(group["state_expected"] != 1) | (group["state_strict"] != 1)]
+
     image_val = (
         group["$images_1"].iloc[0]
         if "$images_1" in group and not group["$images_1"].empty
         else None
     )
-    n_singleton = len(group[group["Context"] == "singleton"])
-    n_pair = len(group[group["Context"] == "pair"])
+    n_singleton = len(overspec_rows[overspec_rows["Context"] == "singleton"])
+    n_pair = len(overspec_rows[overspec_rows["Context"] == "pair"])
 
     return pd.Series(
         {
             "$images_1": image_val,
-            "overspec_n": len(group),
+            "overspec_n": len(overspec_rows),
             "overspec_n_singleton": n_singleton,
             "overspec_n_pair": n_pair,
-            "all_overspec": all_overspec,
         }
     )
 
 
 df = pd.read_excel("./experiments/Modifiers_Data_v3.xlsx", sheet_name="data")
 
-overspec_rows = df[
-    (df["noun_right"] == 1) & (df["state_expected"] == 1) & (df["state_strict"] == 1)
-]
-results = overspec_rows.groupby(["trial_id", "State_1"]).apply(get_all_overspec)
+# overspec_rows = df[
+#     (df["noun_right"] == 1) & (df["state_expected"] == 1) & (df["state_strict"] == 1)
+# ]
+# results = overspec_rows.groupby(["trial_id", "State_1"]).apply(get_all_overspec)
+results = df[df["noun_right"] == 1].groupby(["trial_id", "State_1"]).apply(get_all_overspec)
 results["noun"] = results["$images_1"].str.extract(r"^([a-zA-Z]+)")
+# remove nouns that have no overspec in both states
+results = results[~results.groupby("trial_id")["overspec_n"].transform(lambda x: (x == 0).all())]
 
 total_n = (
     df[df["noun_right"] == 1]
@@ -94,6 +92,9 @@ agg = total_n.merge(singleton_total_n, on=["trial_id", "State_1"], how="left").m
 )
 
 results_basedon_raw = results.merge(agg, on=["trial_id", "State_1"], how="left").copy()
+
+import ipdb; ipdb.set_trace()
+
 results_basedon_raw.to_csv("overspec_rate_result.csv")
 
 middle_sheet = middle_sheet_result()

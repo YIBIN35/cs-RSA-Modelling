@@ -496,7 +496,6 @@ def pair_overspecification_rate(
 
     return overspecification_rates
 
-
 def compute_targets(source='raw'):
     if source == 'raw':
         df = pd.read_csv('./overspec_rate_result.csv')
@@ -504,26 +503,36 @@ def compute_targets(source='raw'):
         df = pd.read_csv('./overspec_rate_result_middle.csv')
     else:
         raise Exception
+
     targets = {}
+    counts = {}
 
     for noun, sub in df.groupby("noun"):
         rates = []
+        nums = []
+        dens = []
 
         for state in ["state_A", "state_B"]:
             sub_state = sub[sub["State_1"] == state]
 
             if len(sub_state) == 0:
-                rates.append(0.0)
+                num = 0.0
+                den = 0.0
+                rate = 0.0
             else:
-                num = sub_state["overspec_n_singleton"].sum()
-                # need to make sure of this
-                den = sub_state["singleton_total_n"].sum()
-                # den = 8
-                rates.append(num / den if den > 0 else 0.0)
+                num = float(sub_state["overspec_n_singleton"].sum())
+                den = float(sub_state["singleton_total_n"].sum())
+                rate = num / den if den > 0 else 0.0
+
+            nums.append(num)
+            dens.append(den)
+            rates.append(rate)
 
         targets[noun] = np.array(rates, float)
+        counts[noun] = np.array([[nums[0], dens[0]],
+                                 [nums[1], dens[1]]], float)
 
-    return targets
+    return targets, counts
 
 
 MODEL_SPECS = {
@@ -577,7 +586,7 @@ def optimization(model_type='compositional'):
     bounds = spec["bounds"]
     to_kwargs = spec["to_kwargs"]
 
-    targets = compute_targets(source='middle')
+    targets, counts = compute_targets(source='middle')
     words = list(targets.keys())
 
     def predict_for_word(params, word):
