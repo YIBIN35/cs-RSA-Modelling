@@ -359,42 +359,36 @@ class cs_rsa:
             raise Exception
 
     def literal_listener(self, utterance):
-        probabilities = {}
-        total = 0
-        for obj in self.world:
-            sem_val = self.meaning(utterance, obj)
-            item = tuple(sorted(obj.items()))
-            # probabilities[item] = math.exp(sem_val)
-            probabilities[item] = math.exp(self.typicalityWeight * sem_val)
-            total += math.exp(self.typicalityWeight * sem_val)
+        obj_keys = [tuple(sorted(obj.items())) for obj in self.world]
+        sem_vals = np.array(
+            [self.meaning(utterance, obj) for obj in self.world],
+            dtype=float
+        )
+        exp_sem_vals = np.exp(self.typicalityWeight * sem_vals)
+        probs = exp_sem_vals / exp_sem_vals.sum()
 
-        # Normalize the semantic values
-        for item in probabilities:
-            probabilities[item] /= total
-        return probabilities
+        return {item: prob for item, prob in zip(obj_keys, probs)}
 
     def cost(self, utt):
         return len(utt.split(" "))
 
     def pragmatic_speaker(self, obj, utterances):
         obj_key = tuple(sorted(obj.items()))
-        utterance_probs = {}
-        total = 0.0
+        informativeness = []
+        costs = []
+
         for utt in utterances:
             literal_listener_prob = self.literal_listener(utt)
-            utterance_prob = literal_listener_prob.get(obj_key)
-            # Apply the pragmatic speaker function
-            utility = self.alpha * math.log(
-                utterance_prob
-            ) - self.costWeight * self.cost(utt)
-            utterance_probs[utt] = math.exp(utility)
-            total += math.exp(utility)
+            meaning_prob = literal_listener_prob.get(obj_key)
 
-        # Normalize the values
-        for item in utterance_probs:
-            utterance_probs[item] /= total
-        return utterance_probs
+            informativeness.append(self.alpha * math.log(meaning_prob))
+            costs.append(self.cost(utt))
 
+        utilities = np.array(informativeness) - self.costWeight * np.array(costs)
+        exp_utilities = np.exp(utilities)
+        probs = exp_utilities / exp_utilities.sum()
+
+        return {utt: prob for utt, prob in zip(utterances, probs)}
 
 ######################################################################
 # functions to run singleton and paired conditions, and function to get the best semantic values and other parameters
@@ -607,7 +601,7 @@ def optimization(model_type='compositional'):
         return L if np.isfinite(L) else 1e9
 
 
-    res_da = dual_annealing(objective, bounds=bounds, maxiter=500)  # smaller
+    res_da = dual_annealing(objective, bounds=bounds, maxiter=200)  # smaller
     res_g  = minimize(objective, x0=res_da.x, method="L-BFGS-B", bounds=bounds)
 
     # best params
@@ -638,9 +632,9 @@ def optimization(model_type='compositional'):
 
 if __name__ == "__main__":
     print(singleton_overspecification_rate('apple'))
-    optimized_params, predictions, targets, words = optimization('compositional')
-    optimized_params, predictions, targets, words = optimization('non-compositional')
-    optimized_params, predictions, targets, words = optimization('mixture')
+    # optimized_params, predictions, targets, words = optimization('compositional')
+    # optimized_params, predictions, targets, words = optimization('non-compositional')
+    # optimized_params, predictions, targets, words = optimization('mixture')
 
 
     # utterance, world, noncomp_semvalue_dict = create_word_world("apple")

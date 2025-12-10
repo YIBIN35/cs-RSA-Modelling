@@ -2,6 +2,7 @@ import arviz as az
 import numpy as np
 import pymc as pm
 from model_with_all_words import singleton_overspecification_rate, compute_targets, MODEL_SPECS
+import matplotlib.pyplot as plt
 
 def summarize_sample(sample):
     mean = sample.mean()
@@ -13,9 +14,9 @@ targets, counts = compute_targets()
 words = list(counts.keys())
 
 # load posterior sampling data
-model = 'mixture'
+model = 'compositional'
 idata = az.from_netcdf(f"trace_{model}.nc")
-print(az.summary(idata, var_names=MODEL_SPECS[model]['param_names']))
+print(az.summary(idata, var_names=MODEL_SPECS[model]['param_names'], hdi_prob=0.95))
 
 if model == 'mixture':
     beta_samples = idata.posterior["beta_fixed"].values.flatten()
