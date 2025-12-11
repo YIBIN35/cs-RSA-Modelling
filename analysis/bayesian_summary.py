@@ -14,7 +14,11 @@ targets, counts = compute_targets()
 words = list(counts.keys())
 
 # load posterior sampling data
-model = 'compositional'
+# model = 'mixture'
+model = 'non-compositional'
+# model = 'compositional'
+print(model)
+
 idata = az.from_netcdf(f"trace_{model}.nc")
 print(az.summary(idata, var_names=MODEL_SPECS[model]['param_names'], hdi_prob=0.95))
 
