@@ -70,8 +70,8 @@ def fit_multiword_model(targets, counts, model_type="mixture", random_seed=42):
         pm.Binomial("y_unmarked", n=n_unmarked, p=p_unmarked, observed=y_unmarked)
 
         trace = pm.sample(
-            draws=50,
-            tune=50,
+            draws=10000,
+            tune=10000,
             chains=4,
             cores=4,
             step=pm.Slice(),
