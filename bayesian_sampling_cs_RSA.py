@@ -19,7 +19,6 @@ def make_forward_all_words_op(model_type: str):
         probs = []
         kwargs = to_kwargs(p)
         for w in WORDS:
-            import ipdb; ipdb.set_trace()
             kwargs["word"] = str(w)
             r_marked, r_unmarked = singleton_overspecification_rate(**kwargs)
             probs.append([r_marked, r_unmarked])
@@ -27,7 +26,7 @@ def make_forward_all_words_op(model_type: str):
 
     return forward_all_words
 
-def fit_multiword_model(targets, counts, model_type="mixture", random_seed=42):
+def build_multiword_model(targets, counts, model_type="mixture"):
     global WORDS
     WORDS = list(targets.keys())
 
@@ -70,17 +69,27 @@ def fit_multiword_model(targets, counts, model_type="mixture", random_seed=42):
         pm.Binomial("y_marked",   n=n_marked,   p=p_marked,   observed=y_marked)
         pm.Binomial("y_unmarked", n=n_unmarked, p=p_unmarked, observed=y_unmarked)
 
+    return model_counts_multi, y_marked, n_marked, y_unmarked, n_unmarked
+
+
+def fit_multiword_model(targets, counts, model_type="mixture", random_seed=42):
+    model, y_marked, n_marked, y_unmarked, n_unmarked = build_multiword_model(
+        targets, counts, model_type=model_type
+    )
+
+    with model:
         trace = pm.sample(
-            draws=10000,
-            tune=10000,
+            draws=1000,
+            tune=1000,
             chains=4,
             cores=4,
-            step=pm.Slice(),
+            step=pm.DEMetropolisZ(),
             random_seed=random_seed,
             return_inferencedata=True,
+            idata_kwargs={"log_likelihood": True}
         )
 
-    return model_counts_multi, trace, WORDS, y_marked, y_unmarked
+    return model, trace, y_marked, y_unmarked
 
 
 if __name__ == "__main__":
@@ -96,7 +105,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     targets, counts = compute_targets()
-    model, trace, words, y_marked, y_unmarked = fit_multiword_model(
+    model, trace, y_marked, y_unmarked = fit_multiword_model(
         targets,
         counts,
         model_type=args.model_type,
@@ -106,9 +115,7 @@ if __name__ == "__main__":
     trace.to_netcdf(f"trace_{args.model_type}.nc")
     trace.to_netcdf("trace_multiword.nc")
 
-
-    print(az.summary(trace, var_names=MODEL_SPECS[args.model_type]['param_names']))
-
+    print(az.summary(trace, var_names=MODEL_SPECS[args.model_type]["param_names"]))
     p_marked_post = trace.posterior["p_marked"]      # (chain, draw, word)
     p_unmarked_post = trace.posterior["p_unmarked"]  # (chain, draw, word)
 
@@ -116,7 +123,7 @@ if __name__ == "__main__":
     p_marked_mean = p_marked_post.mean(dim=("chain", "draw")).values  # (word,)
     p_unmarked_mean = p_unmarked_post.mean(dim=("chain", "draw")).values
 
-    for w, pmu, uu in zip(words, p_marked_mean, p_unmarked_mean):
+    for w, pmu, uu in zip(WORDS, p_marked_mean, p_unmarked_mean):
         print(f"{w:15s}  p_marked={pmu:.3f}  p_unmarked={uu:.3f}")
 
 
@@ -133,8 +140,8 @@ if __name__ == "__main__":
     y_unmarked_pp_da = ppc.posterior_predictive["y_unmarked"]
 
     # total denominators from counts
-    total_den_marked   = np.sum([counts[w][0, 1] for w in words])
-    total_den_unmarked = np.sum([counts[w][1, 1] for w in words])
+    total_den_marked   = np.sum([counts[w][0, 1] for w in WORDS])
+    total_den_unmarked = np.sum([counts[w][1, 1] for w in WORDS])
 
     # sum predictive counts across words
     dim_word_marked   = y_marked_pp_da.dims[-1]

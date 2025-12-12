@@ -14,8 +14,8 @@ targets, counts = compute_targets()
 words = list(counts.keys())
 
 # load posterior sampling data
-model = 'mixture'
-# model = 'non-compositional'
+# model = 'mixture'
+model = 'non-compositional'
 # model = 'compositional'
 print(model)
 
@@ -75,6 +75,16 @@ print("Posterior Marked:   mean {:.2f}, 95% CrI [{:.2f}, {:.2f}]"
 print("Posterior Unmarked: mean {:.2f}, 95% CrI [{:.2f}, {:.2f}]"
       .format(ru_mean, ru_lo, ru_hi))
 
+print("\nRaw posterior means (per word):")
+for i, w in enumerate(words):  # or WORDS, but be consistent
+    raw_marked_mean   = p_marked[:, i].mean()
+    raw_unmarked_mean = p_unmarked[:, i].mean()
+
+    print(
+        f"{w:15s}  "
+        f"p_marked={raw_marked_mean:.3f}  "
+        f"p_unmarked={raw_unmarked_mean:.3f}"
+    )
 
 ######################################################################
 # posterior predictive
@@ -93,3 +103,24 @@ print("Posterior predictive — Marked:   mean {:.2f}, 95% CrI [{:.2f}, {:.2f}]"
       .format(rm_pp_mean, rm_pp_lo, rm_pp_hi))
 print("Posterior predictive — Unmarked: mean {:.2f}, 95% CrI [{:.2f}, {:.2f}]"
       .format(ru_pp_mean, ru_pp_lo, ru_pp_hi))
+
+
+# for each word
+# posterior predictive counts per (sample, word): (S, W)
+y_marked_pp_word   = rng.binomial(n=n_marked[None, :],   p=p_marked)
+y_unmarked_pp_word = rng.binomial(n=n_unmarked[None, :], p=p_unmarked)
+
+# posterior predictive rates per (sample, word): (S, W)
+rate_marked_pp_word   = y_marked_pp_word   / n_marked[None, :]
+rate_unmarked_pp_word = y_unmarked_pp_word / n_unmarked[None, :]
+
+print("\nPosterior predictive (per word):")
+for i, w in enumerate(words):  # or WORDS, but be consistent with how you built n_marked/n_unmarked
+    rm_mean, rm_lo, rm_hi = summarize_sample(rate_marked_pp_word[:, i])
+    ru_mean, ru_lo, ru_hi = summarize_sample(rate_unmarked_pp_word[:, i])
+
+    print(
+        f"{w:15s}  "
+        f"pp_marked={rm_mean:.3f} [{rm_lo:.3f}, {rm_hi:.3f}]   "
+        f"pp_unmarked={ru_mean:.3f} [{ru_lo:.3f}, {ru_hi:.3f}]"
+    )

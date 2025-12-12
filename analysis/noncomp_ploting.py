@@ -42,6 +42,7 @@ for state in states:
     plt.scatter(sub.index, sub['bare_diff'], label=state)
 
 words_to_annotate = ["eye", "dish", "glasses", "jar", "apple", "gate"]
+words_to_annotate_2 = ['wallet', 'book', 'scissors']
 for w in words_to_annotate:
     row = df[df['noun'] == w].iloc[0]
     x = row.name
@@ -51,6 +52,17 @@ for w in words_to_annotate:
         w,
         xy=(x, y),
         xytext=(x + 3, y + 0.03),
+        arrowprops=dict(arrowstyle="->", linewidth=1)
+    )
+for w in words_to_annotate_2:
+    row = df[df['noun'] == w].iloc[0]
+    x = row.name
+    y = row["bare_diff"]
+
+    plt.annotate(
+        w,
+        xy=(x, y),
+        xytext=(x -1.5 , y - 0.06),
         arrowprops=dict(arrowstyle="->", linewidth=1)
     )
 plt.axhline(0, color='grey', linewidth=1)
