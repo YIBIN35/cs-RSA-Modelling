@@ -183,6 +183,14 @@ class cs_rsa:
             "other3",
         ]
 
+        self.pos_map = {}
+        for s in self.sizes:
+            self.pos_map[s] = ("size", s)
+        for s in self.states:
+            self.pos_map[s] = ("state", s)
+        for n in self.nominals:
+            self.pos_map[n] = ("nominal", n)
+
         # cache
         self._parse_cache = {}
 
@@ -196,24 +204,16 @@ class cs_rsa:
         parts = utt.split(" ")
         out = {"size": None, "state": None, "nominal": None}
 
-        cat_map = {}
-        for s in self.sizes:
-            cat_map[s] = ("size", s)
-        for s in self.states:
-            cat_map[s] = ("state", s)
-        for n in self.nominals:
-            cat_map[n] = ("nominal", n)
-
         for w in parts:
-            if w not in cat_map:
+            if w not in self.pos_map:
                 raise ValueError(f"Unknown token in utterance: {w}")
-            cat, val = cat_map[w]
-            if out[cat] is not None:
+            pos, word = self.pos_map[w]
+            if out[pos] is not None:
                 # You can choose to allow multiple-of-a-kind; here we forbid to avoid silent overwrite
                 raise ValueError(
-                    f"Utterance has multiple {cat} tokens: {out[cat]} and {val}"
+                    f"Utterance has multiple {pos} tokens: {out[pos]} and {word}"
                 )
-            out[cat] = val
+            out[pos] = word
 
         self._parse_cache[utt] = out
         return out
