@@ -17,8 +17,9 @@ def make_forward_all_words_op(model_type: str):
     def forward_all_words(*params):
         p = [float(v) for v in params]
         probs = []
+        kwargs = to_kwargs(p)
         for w in WORDS:
-            kwargs = to_kwargs(p)
+            import ipdb; ipdb.set_trace()
             kwargs["word"] = str(w)
             r_marked, r_unmarked = singleton_overspecification_rate(**kwargs)
             probs.append([r_marked, r_unmarked])
