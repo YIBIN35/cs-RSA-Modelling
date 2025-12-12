@@ -14,12 +14,13 @@ targets, counts = compute_targets()
 words = list(counts.keys())
 
 # load posterior sampling data
-# model = 'mixture'
-model = 'non-compositional'
+model = 'mixture'
+# model = 'non-compositional'
 # model = 'compositional'
 print(model)
 
 idata = az.from_netcdf(f"trace_{model}.nc")
+# idata = az.from_netcdf(f"trace_multiword.nc")
 print(az.summary(idata, var_names=MODEL_SPECS[model]['param_names'], hdi_prob=0.95))
 
 if model == 'mixture':
@@ -69,9 +70,9 @@ rate_unmarked = y_unmarked_estimated / total_n_unmarked
 rm_mean, rm_lo, rm_hi = summarize_sample(rate_marked)
 ru_mean, ru_lo, ru_hi = summarize_sample(rate_unmarked)
 
-print("Posterior Marked:   mean {:.3f}, 95% CrI [{:.3f}, {:.3f}]"
+print("Posterior Marked:   mean {:.2f}, 95% CrI [{:.2f}, {:.2f}]"
       .format(rm_mean, rm_lo, rm_hi))
-print("Posterior Unmarked: mean {:.3f}, 95% CrI [{:.3f}, {:.3f}]"
+print("Posterior Unmarked: mean {:.2f}, 95% CrI [{:.2f}, {:.2f}]"
       .format(ru_mean, ru_lo, ru_hi))
 
 
@@ -88,7 +89,7 @@ rate_unmarked_pp = y_unmarked_pp.sum(axis=1) / total_n_unmarked
 rm_pp_mean, rm_pp_lo, rm_pp_hi = summarize_sample(rate_marked_pp)
 ru_pp_mean, ru_pp_lo, ru_pp_hi = summarize_sample(rate_unmarked_pp)
 
-print("Posterior predictive — Marked:   mean {:.3f}, 95% CrI [{:.3f}, {:.3f}]"
+print("Posterior predictive — Marked:   mean {:.2f}, 95% CrI [{:.2f}, {:.2f}]"
       .format(rm_pp_mean, rm_pp_lo, rm_pp_hi))
-print("Posterior predictive — Unmarked: mean {:.3f}, 95% CrI [{:.3f}, {:.3f}]"
+print("Posterior predictive — Unmarked: mean {:.2f}, 95% CrI [{:.2f}, {:.2f}]"
       .format(ru_pp_mean, ru_pp_lo, ru_pp_hi))

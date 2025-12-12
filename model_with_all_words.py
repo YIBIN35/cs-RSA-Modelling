@@ -167,6 +167,7 @@ class cs_rsa:
 
         # world
         self.world = world
+        self.obj_keys = [tuple(sorted(obj.items())) for obj in self.world]
 
         # states
         self.marked_state = marked_state
@@ -182,8 +183,16 @@ class cs_rsa:
             "other3",
         ]
 
+        # cache
+        self._parse_cache = {}
+
     def _parse_utterance(self, utt):
         """Return a parsed dict {'size': token|None, 'state': token|None, 'nominal': token|None}."""
+
+        # use cached values if exists
+        if utt in self._parse_cache:
+            return self._parse_cache[utt]
+
         parts = utt.split(" ")
         out = {"size": None, "state": None, "nominal": None}
 
@@ -205,6 +214,8 @@ class cs_rsa:
                     f"Utterance has multiple {cat} tokens: {out[cat]} and {val}"
                 )
             out[cat] = val
+
+        self._parse_cache[utt] = out
         return out
 
     def _comp_semvalue(self, parsed, obj, print_value=False):
@@ -359,7 +370,6 @@ class cs_rsa:
             raise Exception
 
     def literal_listener(self, utterance):
-        obj_keys = [tuple(sorted(obj.items())) for obj in self.world]
         sem_vals = np.array(
             [self.meaning(utterance, obj) for obj in self.world],
             dtype=float
@@ -367,7 +377,7 @@ class cs_rsa:
         exp_sem_vals = np.exp(self.typicalityWeight * sem_vals)
         probs = exp_sem_vals / exp_sem_vals.sum()
 
-        return {item: prob for item, prob in zip(obj_keys, probs)}
+        return {item: prob for item, prob in zip(self.obj_keys, probs)}
 
     def cost(self, utt):
         return len(utt.split(" "))
