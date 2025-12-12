@@ -182,7 +182,6 @@ class cs_rsa:
             "other2",
             "other3",
         ]
-
         self.pos_map = {}
         for s in self.sizes:
             self.pos_map[s] = ("size", s)
