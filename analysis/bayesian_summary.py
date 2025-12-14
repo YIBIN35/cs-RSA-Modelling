@@ -9,13 +9,47 @@ def summarize_sample(sample):
     lo, hi = np.percentile(sample, [2.5, 97.5])
     return mean, lo, hi
 
+def bayes_r2_model_based(p_draws, n_trials, ddof=1):
+    """
+    model-based Bayesian R^2 for Binomial counts:
+      y_i ~ Binomial(n_i, p_i)
+
+    p_draws: (S, W) posterior draws of p_i
+    n_trials:   (W,)  trials n_i
+    Returns: (S,)  posterior draws of R^2
+
+    Chose model based r2 because the n in each word trial is different.
+    """
+    p_draws = np.asarray(p_draws, dtype=float)     # (S, W)
+    n_trials   = np.asarray(n_trials, dtype=float)       # (W,)
+
+    mu = n_trials[None, :] * p_draws                  # (S, W)
+
+    # explained variance across observations i (words)
+    # ddof is the denom of n-1
+    var_mu = np.var(mu, axis=1, ddof=ddof)         # (S,)
+
+    # binomial based residual variance: E_i[ Var(y_i | theta) ] (np(1-p))
+    var_y_given_theta = n_trials[None, :] * p_draws * (1.0 - p_draws)  # (S, W)
+    var_res = np.mean(var_y_given_theta, axis=1)    # (S,)
+
+    return var_mu / (var_mu + var_res) # (S,)
+
+def r2_residual_based(y_true, y_pred, ddof=1):
+    y_true = np.asarray(y_true, dtype=float)    # (W,)
+    y_pred = np.asarray(y_pred, dtype=float)    # (S, W)
+
+    var_y_pred = np.var(y_pred, axis=1, ddof=ddof)                  # (S,)
+    var_resid  = np.var(y_true[None, :] - y_pred, axis=1, ddof=ddof) # (S,)
+    return var_y_pred / (var_y_pred + var_resid)
+
 # load observed data
 targets, counts = compute_targets()
 words = list(counts.keys())
 
 # load posterior sampling data
-# model = 'mixture'
-model = 'non-compositional'
+model = 'mixture'
+# model = 'non-compositional'
 # model = 'compositional'
 print(model)
 
@@ -75,15 +109,15 @@ print("Posterior Marked:   mean {:.2f}, 95% CrI [{:.2f}, {:.2f}]"
 print("Posterior Unmarked: mean {:.2f}, 95% CrI [{:.2f}, {:.2f}]"
       .format(ru_mean, ru_lo, ru_hi))
 
-print("\nRaw posterior means (per word):")
-for i, w in enumerate(words):  # or WORDS, but be consistent
-    raw_marked_mean   = p_marked[:, i].mean()
-    raw_unmarked_mean = p_unmarked[:, i].mean()
+print("\nPosterior means (per word):")
+for i, w in enumerate(words):
+    word_marked_mean   = p_marked[:, i].mean()
+    word_unmarked_mean = p_unmarked[:, i].mean()
 
     print(
         f"{w:15s}  "
-        f"p_marked={raw_marked_mean:.3f}  "
-        f"p_unmarked={raw_unmarked_mean:.3f}"
+        f"p_marked={word_marked_mean:.3f}  "
+        f"p_unmarked={word_unmarked_mean:.3f}"
     )
 
 ######################################################################
@@ -124,3 +158,18 @@ for i, w in enumerate(words):  # or WORDS, but be consistent with how you built 
         f"pp_marked={rm_mean:.3f} [{rm_lo:.3f}, {rm_hi:.3f}]   "
         f"pp_unmarked={ru_mean:.3f} [{ru_lo:.3f}, {ru_hi:.3f}]"
     )
+
+
+######################################################################
+# R2
+
+
+R2_marked   = bayes_r2_model_based(p_marked,   n_marked)
+R2_unmarked = bayes_r2_model_based(p_unmarked, n_unmarked)
+
+m, lo, hi = summarize_sample(R2_marked)
+print(f"Bayesian R2 (marked):   mean={m:.3f}, 95% CrI=[{lo:.3f}, {hi:.3f}]")
+
+m, lo, hi = summarize_sample(R2_unmarked)
+print(f"Bayesian R2 (unmarked): mean={m:.3f}, 95% CrI=[{lo:.3f}, {hi:.3f}]")
+
