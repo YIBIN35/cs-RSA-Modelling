@@ -72,15 +72,15 @@ def build_multiword_model(targets, counts, model_type="mixture"):
     return model_counts_multi, y_marked, n_marked, y_unmarked, n_unmarked
 
 
-def fit_multiword_model(targets, counts, model_type="mixture", random_seed=42):
+def fit_multiword_model(targets, counts, n_draws=15000, n_tune=5000, model_type="mixture", random_seed=42):
     model, y_marked, n_marked, y_unmarked, n_unmarked = build_multiword_model(
         targets, counts, model_type=model_type
     )
 
     with model:
         trace = pm.sample(
-            draws=1000,
-            tune=1000,
+            draws=n_draws,
+            tune=n_tune,
             chains=4,
             cores=4,
             step=pm.DEMetropolisZ(),
@@ -102,18 +102,28 @@ if __name__ == "__main__":
         default="mixture",
         help="model_type passed into singleton_overspecification_rate (default: mixture)",
     )
+    parser.add_argument(
+        "--n_draws",
+        type=int,
+        default="10000",
+    )
+    parser.add_argument(
+        "--n_tune",
+        type=int,
+        default="5000",
+    )
     args = parser.parse_args()
 
     targets, counts = compute_targets()
     model, trace, y_marked, y_unmarked = fit_multiword_model(
         targets,
         counts,
+        n_draws=args.n_draws,
+        n_tune=args.n_tune,
         model_type=args.model_type,
         random_seed=42,
     )
 
-    trace.to_netcdf(f"trace_{args.model_type}.nc")
-    trace.to_netcdf("trace_multiword.nc")
 
     print(az.summary(trace, var_names=MODEL_SPECS[args.model_type]["param_names"]))
     p_marked_post = trace.posterior["p_marked"]      # (chain, draw, word)
@@ -168,6 +178,8 @@ if __name__ == "__main__":
     print("Unmarked rate mean:", float(rate_unmarked_mean))
     print("Unmarked rate HDI:", rate_unmarked_hdi)
 
+    trace.to_netcdf(f"trace_{args.model_type}_draw{args.n_draws}_tune{args.n_tune}.nc")
+    trace.to_netcdf("trace_multiword.nc")
 
 
 
