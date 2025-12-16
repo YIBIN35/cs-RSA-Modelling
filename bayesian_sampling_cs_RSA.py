@@ -44,7 +44,7 @@ def build_multiword_model(targets, counts, model_type="mixture"):
 
         for name in param_names:
             if name == "alpha":
-                rv = pm.Uniform("alpha", lower=0.0, upper=50.0)
+                rv = pm.Uniform("alpha", lower=0.0, upper=40.0)
 
             elif name == "beta_fixed":
                 rv = pm.Beta("beta_fixed", alpha=1.0, beta=1.0)
@@ -53,8 +53,12 @@ def build_multiword_model(targets, counts, model_type="mixture"):
                 rv = pm.Beta(name, alpha=1.0, beta=1.0)
 
             elif name == "costWeight":
-                cw01 = pm.Beta("costWeight01", alpha=2.0, beta=2.0)
-                rv = pm.Deterministic("costWeight", 3.0 * cw01)
+                # cw01 = pm.Beta("costWeight01", alpha=2.0, beta=2.0)
+                # rv = pm.Deterministic("costWeight", 3.0 * cw01)
+                rv = pm.Uniform("costWeight", lower=0.0, upper=40.0)
+
+            elif name == "typicalityWeight":
+                rv = pm.Uniform("typicalityWeight", lower=0.0, upper=40.0)
 
             else:
                 raise ValueError(f"Unknown parameter name in MODEL_SPECS: {name}")

@@ -141,7 +141,7 @@ class cs_rsa:
         alpha=13.7,
         beta_fixed=0.69,
         costWeight=0,
-        typicalityWeight=1.34,
+        typicalityWeight=1,
         size_semvalue=0.8,
         state_semvalue_marked=0.9,
         state_semvalue_unmarked=0.9,
@@ -412,7 +412,7 @@ def singleton_overspecification_rate(
     state_semvalue_unmarked=0.9,
     nominal_semvalue=0.99,
     costWeight=0,
-    typicalityWeight=1.34,
+    typicalityWeight=1,
 ):
 
     utterances, marked_state, unmarked_state, world, noncomp_semvalue_dict = create_word_world(word)
@@ -457,7 +457,7 @@ def pair_overspecification_rate(
     state_semvalue_unmarked=0.9,
     costWeight=0,
     noncomp_semvalue_bare_unmarked=0.66,
-    typicalityWeight=1.34,
+    typicalityWeight=1,
 ):
 
     utterances = [
@@ -542,6 +542,8 @@ MODEL_SPECS = {
     "mixture": {
         "param_names": ["alpha", "beta_fixed", "state_sem", "n_sem", "costWeight"],
         "bounds": [(0, 50), (0, 1), (0.6, 1), (0.6, 1), (0, 10)],
+        # "param_names": ["alpha", "beta_fixed", "state_sem", "n_sem", "costWeight", 'typicalityWeight'],
+        # "bounds": [(0, 50), (0, 1), (0.6, 1), (0.6, 1), (0, 10), (0, 10)],
         "to_kwargs": lambda p: dict(
             model_type='mixture',
             alpha=float(p[0]),
@@ -556,6 +558,8 @@ MODEL_SPECS = {
     "non-compositional": {
         "param_names": ["alpha", "costWeight"],
         "bounds": [(0, 50), (0, 10)],
+        # "param_names": ["alpha", "costWeight", 'typicalityWeight'],
+        # "bounds": [(0, 50), (0, 10), (0, 10)],
         "to_kwargs": lambda p: dict(
             model_type='non-compositional',
             alpha=float(p[0]),
