@@ -53,8 +53,7 @@ model = 'mixture'
 # model = 'compositional'
 print(model)
 
-idata = az.from_netcdf(f"trace_{model}.nc")
-# idata = az.from_netcdf(f"trace_multiword.nc")
+idata = az.from_netcdf(f"trace_{model}_draw60000_tune40000.nc")
 print(az.summary(idata, var_names=MODEL_SPECS[model]['param_names'], hdi_prob=0.95))
 
 if model == 'mixture':
@@ -120,6 +119,9 @@ for i, w in enumerate(words):
         f"p_unmarked={word_unmarked_mean:.3f}"
     )
 
+# plot posterior distribution
+az.plot_posterior(idata, var_names=["alpha", "beta_fixed", "state_sem", "n_sem", "costWeight"], kind='hist')
+
 ######################################################################
 # posterior predictive
 rng = np.random.default_rng(42)
@@ -138,6 +140,26 @@ print("Posterior predictive — Marked:   mean {:.2f}, 95% CrI [{:.2f}, {:.2f}]"
 print("Posterior predictive — Unmarked: mean {:.2f}, 95% CrI [{:.2f}, {:.2f}]"
       .format(ru_pp_mean, ru_pp_lo, ru_pp_hi))
 
+
+# plot the posterior predictive for ensemble rate
+idata_pp = az.from_dict(
+    posterior={
+        "rate_marked_pp":   rate_marked_pp,
+        "rate_unmarked_pp": rate_unmarked_pp,
+    }
+)
+axes = az.plot_posterior(
+    idata_pp,
+    var_names=["rate_marked_pp", "rate_unmarked_pp"],
+    hdi_prob=0.95,
+    kind="hist",
+    point_estimate="mean",
+)
+
+for ax in np.ravel(axes):
+    ax.set_xlim(0, 0.5)
+
+plt.show()
 
 # for each word
 # posterior predictive counts per (sample, word): (S, W)
