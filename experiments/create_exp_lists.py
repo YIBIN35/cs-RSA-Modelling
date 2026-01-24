@@ -331,6 +331,7 @@ if __name__ == '__main__':
     # remove distractors
     df_naming = df_naming[~df_naming['state'].isna()]
     df_naming = df_naming.rename(columns={'noun': 'object'})
+    df_naming.to_csv('naming_master_list.csv')
     # df_naming_shuffled = shuffle_no_adjacent(df_naming, key='object', random_state=5)
 
     # df_naming_shuffled.to_csv("state_overspec_stimuli_naming.csv", index=False)
@@ -339,36 +340,36 @@ if __name__ == '__main__':
 
 
 
-    random.seed(2026)
-    random_numbers = random.sample(range(1, 1000), 10)
-    dfs_naming_shuffled = []
-    df_distance = None
-    col_id = 0
+    # random.seed(2026)
+    # random_numbers = random.sample(range(1, 1000), 10)
+    # dfs_naming_shuffled = []
+    # df_distance = None
+    # col_id = 0
 
 
-    for random_number in random_numbers:
-        df_shuffled = shuffle_no_adjacent(df_naming, key='object', random_state=random_number)
-        df_shuffled_reversed = df_shuffled.iloc[::-1].reset_index(drop=True)
+    # for random_number in random_numbers:
+    #     df_shuffled = shuffle_no_adjacent(df_naming, key='object', random_state=random_number)
+    #     df_shuffled_reversed = df_shuffled.iloc[::-1].reset_index(drop=True)
 
-        dfs_naming_shuffled.append(df_shuffled)
-        dfs_naming_shuffled.append(df_shuffled_reversed)
+    #     dfs_naming_shuffled.append(df_shuffled)
+    #     dfs_naming_shuffled.append(df_shuffled_reversed)
 
-        for tag, df_curr in [('orig', df_shuffled), ('rev', df_shuffled_reversed)]:
-            dist = item_order_distance_df(df_curr)
-            dist = dist.set_index('object')
-            dist.columns = [f'dist_{col_id}_{tag}']
+    #     for tag, df_curr in [('orig', df_shuffled), ('rev', df_shuffled_reversed)]:
+    #         dist = item_order_distance_df(df_curr)
+    #         dist = dist.set_index('object')
+    #         dist.columns = [f'dist_{col_id}_{tag}']
 
-            if df_distance is None:
-                df_distance = dist
-            else:
-                df_distance = df_distance.join(dist, how='outer')
+    #         if df_distance is None:
+    #             df_distance = dist
+    #         else:
+    #             df_distance = df_distance.join(dist, how='outer')
 
-            col_id += 1
+    #         col_id += 1
 
 
-    df_distance['mean_distance'] = df_distance.mean(axis=1)
-    print(df_distance['mean_distance'].std())
+    # df_distance['mean_distance'] = df_distance.mean(axis=1)
+    # print(df_distance['mean_distance'].std())
 
-    for index, df in enumerate(dfs_naming_shuffled):
-        df.to_csv(f'./naming_list/naming_list_{index}.csv')
+    # for index, df in enumerate(dfs_naming_shuffled):
+    #     df.to_csv(f'./naming_list/naming_list_{index}.csv')
 
