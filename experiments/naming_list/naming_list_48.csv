@@ -1,0 +1,203 @@
+,Unnamed: 0,object,image,state,adj,words_w2v
+0,23,lock,lock_open.jpg,a,open,lock
+1,156,can,can_closed.jpg,b,closed,can
+2,251,gloves,gloves_clean.jpg,b,clean,gloves
+3,166,filefolder,filefolder_closed.jpg,b,closed,file folder
+4,244,staircase,staircase_straight.jpg,b,straight,staircase
+5,205,bread,bread_unsliced.jpg,b,unsliced,bread
+6,3,book,book_open.jpg,a,open,book
+7,122,chocolatebar,chocolatebar_broken.jpg,a,broken,chocolate bar
+8,151,book,book_closed.jpg,b,closed,book
+9,216,sweater,sweater_unfolded.jpg,b,unfolded,sweater
+10,107,stovetop,stovetop_dirty.jpg,a,dirty,stovetop
+11,147,shoppingcart,shoppingcart_empty.jpg,a,empty,shopping cart
+12,222,shoelace,shoelace_untied.jpg,b,untied,shoelace
+13,202,watermelon,watermelon_unsliced.jpg,b,unsliced,watermelon
+14,277,cigarette,cigarette_whole.jpg,b,whole,cigarette
+15,62,carrot,carrot_peeled.jpg,a,peeled,carrot
+16,129,cigarette,cigarette_broken.jpg,a,broken,cigarette
+17,113,potato,potato_dirty.jpg,a,dirty,potato
+18,127,mirror,mirror_broken.jpg,a,broken,mirror
+19,19,fridge,fridge_open.jpg,a,open,fridge
+20,283,chain,chain_whole.jpg,b,whole,chain
+21,169,juicebottle,juicebottle_closed.jpg,b,closed,juice bottle
+22,276,tire,tire_whole.jpg,b,whole,tire
+23,27,cdplayer,cdplayer_open.jpg,a,open,cd player
+24,229,waterpipe,waterpipe_straight.jpg,b,straight,waterpipe
+25,199,kiwi,kiwi_unsliced.jpg,b,unsliced,kiwi
+26,142,jar,jar_empty.jpg,a,empty,jar
+27,213,blanket,blanket_unfolded.jpg,b,unfolded,blanket
+28,226,yogamat,yogamat_unrolled.jpg,b,unrolled,yoga mat
+29,260,soccerball,soccerball_clean.jpg,b,clean,soccerball
+30,203,salami,salami_unsliced.jpg,b,unsliced,salami
+31,30,suitcase,suitcase_open.jpg,a,open,suitcase
+32,224,bill,bill_unrolled.jpg,b,unrolled,bill
+33,293,eggcarton,eggcarton_full.jpg,b,full,egg carton
+34,97,boot,boot_dirty.jpg,a,dirty,boot
+35,139,sugarpacket,sugarpacket_ripped.jpg,a,ripped,sugar packet
+36,198,pizza,pizza_unsliced.jpg,b,unsliced,pizza
+37,141,chipbag,chipbag_ripped.jpg,a,ripped,chip bag
+38,175,cdplayer,cdplayer_closed.jpg,b,closed,cd player
+39,177,wallet,wallet_closed.jpg,b,closed,wallet
+40,13,dishwasher,dishwasher_open.jpg,a,open,dishwasher
+41,282,table,table_whole.jpg,b,whole,table
+42,268,cookie,cookie_whole.jpg,b,whole,cookie
+43,29,wallet,wallet_open.jpg,a,open,wallet
+44,128,tire,tire_broken.jpg,a,broken,tire
+45,292,hamper,hamper_full.jpg,b,full,hamper
+46,182,chapstick,chapstick_closed.jpg,b,closed,chapstick
+47,281,plate,plate_whole.jpg,b,whole,plate
+48,96,staircase,staircase_curved.jpg,a,curved,staircase
+49,195,treasurechest,treasurechest_closed.jpg,b,closed,treasure chest
+50,34,chapstick,chapstick_open.jpg,a,open,chapstick
+51,201,pickle,pickle_unsliced.jpg,b,unsliced,pickle
+52,11,cabinet,cabinet_open.jpg,a,open,cabinet
+53,52,lime,lime_sliced.jpg,a,sliced,lime
+54,223,rug,rug_unrolled.jpg,b,unrolled,rug
+55,270,chocolatebar,chocolatebar_whole.jpg,b,whole,chocolate bar
+56,165,chestofdrawers,chestofdrawers_closed.jpg,b,closed,chest of drawers
+57,79,straw,straw_bent.jpg,a,bent,straw
+58,16,door,door_open.jpg,a,open,door
+59,209,banana,banana_unpeeled.jpg,b,unpeeled,banana
+60,225,sleepingbag,sleepingbag_unrolled.jpg,b,unrolled,sleeping bag
+61,219,ladder,ladder_unfolded.jpg,b,unfolded,ladder
+62,271,vase,vase_whole.jpg,b,whole,vase
+63,115,pig,pig_dirty.jpg,a,dirty,pig
+64,137,envelope,envelope_ripped.jpg,a,ripped,envelope
+65,253,spoon,spoon_clean.jpg,b,clean,spoon
+66,259,hands,hands_clean.jpg,b,clean,hands
+67,67,paper,paper_folded.jpg,a,folded,paper
+68,63,orange,orange_peeled.jpg,a,peeled,orange
+69,215,paper,paper_unfolded.jpg,b,unfolded,paper
+70,51,kiwi,kiwi_sliced.jpg,a,sliced,kiwi
+71,17,chestofdrawers,chestofdrawers_open.jpg,a,open,chest of drawers
+72,43,eye,eye_open.jpg,a,open,eye
+73,241,road,road_straight.jpg,b,straight,road
+74,291,garbagecan,garbagecan_full.jpg,b,full,garbage can
+75,227,straw,straw_straight.jpg,b,straight,straw
+76,289,chipbag,chipbag_whole.jpg,b,whole,chip bag
+77,191,eye,eye_closed.jpg,b,closed,eye
+78,57,bread,bread_sliced.jpg,a,sliced,bread
+79,74,shoelace,shoelace_tied.jpg,a,tied,shoelace
+80,18,filefolder,filefolder_open.jpg,a,open,file folder
+81,170,gate,gate_closed.jpg,b,closed,gate
+82,50,pizza,pizza_sliced.jpg,a,sliced,pizza
+83,157,backpack,backpack_closed.jpg,b,closed,backpack
+84,49,pot,pot_open.jpg,a,open,pot
+85,257,shoe,shoe_clean.jpg,b,clean,shoe
+86,4,milkcarton,milkcarton_open.jpg,a,open,milk carton
+87,72,lawnchair,lawnchair_folded.jpg,a,folded,lawnchair
+88,171,lock,lock_closed.jpg,b,closed,lock
+89,108,bucket,bucket_dirty.jpg,a,dirty,bucket
+90,274,fence,fence_whole.jpg,b,whole,fence
+91,279,piggybank,piggybank_whole.jpg,b,whole,piggybank
+92,200,lime,lime_unsliced.jpg,b,unsliced,lime
+93,247,car,car_clean.jpg,b,clean,car
+94,21,juicebottle,juicebottle_open.jpg,a,open,juice bottle
+95,231,safetypin,safetypin_straight.jpg,b,straight,safety pin
+96,8,can,can_open.jpg,a,open,can
+97,135,chain,chain_broken.jpg,a,broken,chain
+98,93,road,road_curved.jpg,a,curved,road
+99,144,hamper,hamper_empty.jpg,a,empty,hamper
+100,76,bill,bill_rolled.jpg,a,rolled,bill
+101,161,dishwasher,dishwasher_closed.jpg,b,closed,dishwasher
+102,109,shoe,shoe_dirty.jpg,a,dirty,shoe
+103,262,couch,couch_clean.jpg,b,clean,couch
+104,10,waterbottle,waterbottle_open.jpg,a,open,waterbottle
+105,210,carrot,carrot_unpeeled.jpg,b,unpeeled,carrot
+106,111,hands,hands_dirty.jpg,a,dirty,hands
+107,83,safetypin,safetypin_bent.jpg,a,bent,safety pin
+108,269,cracker,cracker_whole.jpg,b,whole,cracker
+109,86,paperclip,paperclip_bent.jpg,a,bent,paperclip
+110,26,microwave,microwave_open.jpg,a,open,microwave
+111,295,shoppingcart,shoppingcart_full.jpg,b,full,shopping cart
+112,163,stapler,stapler_closed.jpg,b,closed,stapler
+113,138,naan,naan_ripped.jpg,a,ripped,naan
+114,232,nail,nail_straight.jpg,b,straight,nail
+115,206,apple,apple_unsliced.jpg,b,unsliced,apple
+116,167,fridge,fridge_closed.jpg,b,closed,fridge
+117,212,onion,onion_unpeeled.jpg,b,unpeeled,onion
+118,220,lawnchair,lawnchair_unfolded.jpg,b,unfolded,lawnchair
+119,110,cup,cup_dirty.jpg,a,dirty,cup
+120,140,notepad,notepad_ripped.jpg,a,ripped,notepad
+121,131,piggybank,piggybank_broken.jpg,a,broken,piggybank
+122,246,dish,dish_clean.jpg,b,clean,dish
+123,184,laptop,laptop_closed.jpg,b,closed,laptop
+124,98,dish,dish_dirty.jpg,a,dirty,dish
+125,130,pencil,pencil_broken.jpg,a,broken,pencil
+126,286,naan,naan_whole.jpg,b,whole,naan
+127,146,wineglass,wineglass_empty.jpg,a,empty,wineglass
+128,55,salami,salami_sliced.jpg,a,sliced,salami
+129,47,treasurechest,treasurechest_open.jpg,a,open,treasure chest
+130,112,soccerball,soccerball_dirty.jpg,a,dirty,soccerball
+131,68,sweater,sweater_folded.jpg,a,folded,sweater
+132,133,plate,plate_broken.jpg,a,broken,plate
+133,91,magnet,magnet_bent.jpg,a,bent,magnet
+134,9,backpack,backpack_open.jpg,a,open,backpack
+135,239,magnet,magnet_straight.jpg,b,straight,magnet
+136,217,napkin,napkin_unfolded.jpg,b,unfolded,napkin
+137,64,onion,onion_peeled.jpg,a,peeled,onion
+138,121,cracker,cracker_broken.jpg,a,broken,cracker
+139,158,waterbottle,waterbottle_closed.jpg,b,closed,waterbottle
+140,37,marker,marker_open.jpg,a,open,marker
+141,178,suitcase,suitcase_closed.jpg,b,closed,suitcase
+142,71,ladder,ladder_folded.jpg,a,folded,ladder
+143,124,glasses,glasses_broken.jpg,a,broken,glasses
+144,234,paperclip,paperclip_straight.jpg,b,straight,paperclip
+145,143,garbagecan,garbagecan_empty.jpg,a,empty,garbage can
+146,218,towel,towel_unfolded.jpg,b,unfolded,towel
+147,126,fence,fence_broken.jpg,a,broken,fence
+148,273,egg,egg_whole.jpg,b,whole,egg
+149,256,bucket,bucket_clean.jpg,b,clean,bucket
+150,2,seatbelt,seatbelt_open.jpg,a,open,seatbelt
+151,287,sugarpacket,sugarpacket_whole.jpg,b,whole,sugar packet
+152,123,vase,vase_broken.jpg,a,broken,vase
+153,272,glasses,glasses_whole.jpg,b,whole,glasses
+154,60,garlic,garlic_peeled.jpg,a,peeled,garlic
+155,15,stapler,stapler_open.jpg,a,open,stapler
+156,208,garlic,garlic_unpeeled.jpg,b,unpeeled,garlic
+157,78,yogamat,yogamat_rolled.jpg,a,rolled,yoga mat
+158,285,envelope,envelope_whole.jpg,b,whole,envelope
+159,103,gloves,gloves_dirty.jpg,a,dirty,gloves
+160,75,rug,rug_rolled.jpg,a,rolled,rug
+161,159,cabinet,cabinet_closed.jpg,b,closed,cabinet
+162,120,cookie,cookie_broken.jpg,a,broken,cookie
+163,99,car,car_dirty.jpg,a,dirty,car
+164,290,jar,jar_full.jpg,b,full,jar
+165,185,marker,marker_closed.jpg,b,closed,marker
+166,58,apple,apple_sliced.jpg,a,sliced,apple
+167,164,door,door_closed.jpg,b,closed,door
+168,105,spoon,spoon_dirty.jpg,a,dirty,spoon
+169,275,mirror,mirror_whole.jpg,b,whole,mirror
+170,187,scissors,scissors_closed.jpg,b,closed,scissors
+171,204,pineapple,pineapple_unsliced.jpg,b,unsliced,pineapple
+172,84,nail,nail_bent.jpg,a,bent,nail
+173,56,pineapple,pineapple_sliced.jpg,a,sliced,pineapple
+174,22,gate,gate_open.jpg,a,open,gate
+175,77,sleepingbag,sleepingbag_rolled.jpg,a,rolled,sleeping bag
+176,53,pickle,pickle_sliced.jpg,a,sliced,pickle
+177,258,cup,cup_clean.jpg,b,clean,cup
+178,54,watermelon,watermelon_sliced.jpg,a,sliced,watermelon
+179,70,towel,towel_folded.jpg,a,folded,towel
+180,263,pig,pig_clean.jpg,b,clean,pig
+181,294,wineglass,wineglass_full.jpg,b,full,wineglass
+182,245,boot,boot_clean.jpg,b,clean,boot
+183,152,milkcarton,milkcarton_closed.jpg,b,closed,milk carton
+184,197,pot,pot_closed.jpg,b,closed,pot
+185,278,pencil,pencil_whole.jpg,b,whole,pencil
+186,174,microwave,microwave_closed.jpg,b,closed,microwave
+187,211,orange,orange_unpeeled.jpg,b,unpeeled,orange
+188,36,laptop,laptop_open.jpg,a,open,laptop
+189,61,banana,banana_peeled.jpg,a,peeled,banana
+190,255,stovetop,stovetop_clean.jpg,b,clean,stovetop
+191,65,blanket,blanket_folded.jpg,a,folded,blanket
+192,81,waterpipe,waterpipe_bent.jpg,a,bent,waterpipe
+193,114,couch,couch_dirty.jpg,a,dirty,couch
+194,125,egg,egg_broken.jpg,a,broken,egg
+195,39,scissors,scissors_open.jpg,a,open,scissors
+196,134,table,table_broken.jpg,a,broken,table
+197,145,eggcarton,eggcarton_empty.jpg,a,empty,egg carton
+198,288,notepad,notepad_whole.jpg,b,whole,notepad
+199,150,seatbelt,seatbelt_closed.jpg,b,closed,seatbelt
+200,69,napkin,napkin_folded.jpg,a,folded,napkin
+201,261,potato,potato_clean.jpg,b,clean,potato

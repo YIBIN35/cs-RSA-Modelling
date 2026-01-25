@@ -98,7 +98,7 @@ def shuffle_no_adjacent(
 
 np.random.seed(123)
 dfs_shuffled = []
-while len(dfs_shuffled) < 20:
+while len(dfs_shuffled) < 50:
     df_shuffled = shuffle_no_adjacent(df_naming)
     if df_shuffled is not None:
         df_shuffled_reversed = df_shuffled.iloc[::-1].reset_index(drop=True)
