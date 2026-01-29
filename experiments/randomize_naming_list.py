@@ -13,7 +13,8 @@ def get_vec(w, wv):
     return np.mean(vecs, axis=0)
 
 wv = api.load("word2vec-google-news-300")
-df_naming = pd.read_csv('naming_master_list.csv')
+df_naming = pd.read_csv('naming_master_list.csv').drop(columns=['Unnamed: 0'], errors='ignore')
+
 
 
 format_words = {
@@ -98,7 +99,7 @@ def shuffle_no_adjacent(
 
 np.random.seed(123)
 dfs_shuffled = []
-while len(dfs_shuffled) < 50:
+while len(dfs_shuffled) < 100:
     df_shuffled = shuffle_no_adjacent(df_naming)
     if df_shuffled is not None:
         df_shuffled_reversed = df_shuffled.iloc[::-1].reset_index(drop=True)
@@ -107,4 +108,4 @@ while len(dfs_shuffled) < 50:
 
 
 for index, df in enumerate(dfs_shuffled):
-    df.to_csv(f'./naming_list/naming_list_{index}.csv')
+    df.to_csv(f'./naming_list/naming_list_{index}.csv', index=False)
