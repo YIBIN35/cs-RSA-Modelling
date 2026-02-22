@@ -1,3 +1,4 @@
+import json
 import math
 import numpy as np
 import matplotlib.pyplot as plt
@@ -9,6 +10,7 @@ from pprint import pprint
 plt.ion()
 
 df_words = pd.read_csv("./norming_results.csv") # created in norming_exp repo
+df_cost_data = pd.read_csv("./empirical_cost_data.csv")
 
 # parker_world = {
 #     "singleton_marked": [
@@ -37,6 +39,19 @@ df_words = pd.read_csv("./norming_results.csv") # created in norming_exp repo
 #     ],
 # }
 
+utt2natural = (
+    df_words[['utterance_x', 'natural_utterance']]
+    .dropna(subset=['utterance_x'])
+    .drop_duplicates(subset=['utterance_x'])
+    .set_index('utterance_x')['natural_utterance']
+    .to_dict()
+)
+utt2natural["other1"] = "other1"
+utt2natural["other2"] = "other2"
+utt2natural["other3"] = "other3"
+
+def naturalize(utterance):
+    return utt2natural.get(utterance) 
 
 def create_word_world(word, df_words=df_words):
 
@@ -138,9 +153,12 @@ class cs_rsa:
         unmarked_state,
         noncomp_semvalue_dict,
         model_type='mixture',
+        cost_mode='simple',
         alpha=13.7,
         beta_fixed=0.69,
-        costWeight=0,
+        costWeight=1.0,
+        lenCostWeight=1.0,
+        freqCostWeight=1.0,
         typicalityWeight=1,
         size_semvalue=0.8,
         state_semvalue_marked=0.9,
@@ -150,6 +168,7 @@ class cs_rsa:
 
         # model type
         self.model_type = model_type
+        self.cost_mode = cost_mode          # "simple" or "empirical"
 
 
         # parameters
@@ -157,6 +176,16 @@ class cs_rsa:
         self.beta_fixed = beta_fixed
         self.costWeight = costWeight
         self.typicalityWeight = typicalityWeight
+        self.lenCostWeight = lenCostWeight
+        self.freqCostWeight = freqCostWeight
+
+        # cost data
+        self._cost_lookup = (
+            df_cost_data
+              .set_index("phrase")[["len_norm", "freq_norm"]]
+              .to_dict("index")
+        )
+
 
         # semantic values
         self.size_semvalue = size_semvalue
@@ -379,7 +408,23 @@ class cs_rsa:
         return {item: prob for item, prob in zip(self.obj_keys, probs)}
 
     def cost(self, utt):
-        return len(utt.split(" "))
+        if self.cost_mode == "empirical":
+            return self.empirical_cost(utt)
+        else:
+            return len(utt.split(" "))
+
+    def empirical_cost(self, utt):
+        natural_utt = naturalize(utt)
+
+        if natural_utt in ['other1', 'other2', 'other3']:
+            return self.lenCostWeight * 0.5 + self.freqCostWeight * 0.5
+        else:
+            row = self._cost_lookup.get(natural_utt)
+            len_norm = row["len_norm"]
+            freq_norm = row["freq_norm"]
+
+            return self.lenCostWeight * len_norm + self.freqCostWeight * freq_norm
+
 
     def pragmatic_speaker(self, obj, utterances):
         obj_key = tuple(sorted(obj.items()))
@@ -406,12 +451,15 @@ class cs_rsa:
 def singleton_overspecification_rate(
     word,
     model_type='mixture',
+    cost_mode='simple',
     alpha=13.7,
     beta_fixed=0.69,
     state_semvalue_marked=0.9,
     state_semvalue_unmarked=0.9,
     nominal_semvalue=0.99,
-    costWeight=0,
+    costWeight=1.0,
+    lenCostWeight=1.0,
+    freqCostWeight=1.0,
     typicalityWeight=1,
 ):
 
@@ -431,9 +479,12 @@ def singleton_overspecification_rate(
             unmarked_state,
             noncomp_semvalue_dict,
             model_type=model_type,
+            cost_mode=cost_mode,
             alpha=alpha,
             beta_fixed=beta_fixed,
             costWeight=costWeight,
+            lenCostWeight=lenCostWeight,
+            freqCostWeight=freqCostWeight,
             typicalityWeight=typicalityWeight,
             state_semvalue_marked=state_semvalue_marked,
             state_semvalue_unmarked=state_semvalue_unmarked,
@@ -541,7 +592,7 @@ def compute_targets(source='raw'):
 MODEL_SPECS = {
     "mixture": {
         "param_names": ["alpha", "beta_fixed", "state_sem", "n_sem", "costWeight"],
-        "bounds": [(0, 50), (0, 1), (0.6, 1), (0.6, 1), (0, 10)],
+        "bounds": [(0, 50), (0, 1), (0, 1), (0, 1), (0, 10)],
         # "param_names": ["alpha", "beta_fixed", "state_sem", "n_sem", "costWeight", 'typicalityWeight'],
         # "bounds": [(0, 50), (0, 1), (0.6, 1), (0.6, 1), (0, 10), (0, 10)],
         "to_kwargs": lambda p: dict(
@@ -580,6 +631,36 @@ MODEL_SPECS = {
         ),
     },
 
+    "mixture_empiricalcost": {
+        "param_names": ["alpha", "beta_fixed", "state_sem", "n_sem", "lenCostWeight", "freqCostWeight"],
+        "bounds": [(0, 50), (0, 1), (0, 1), (0, 1), (0, 10), (0, 10)],
+        # "param_names": ["alpha", "beta_fixed", "state_sem", "n_sem", "costWeight", 'typicalityWeight'],
+        # "bounds": [(0, 50), (0, 1), (0.6, 1), (0.6, 1), (0, 10), (0, 10)],
+        "to_kwargs": lambda p: dict(
+            model_type='mixture',
+            alpha=float(p[0]),
+            beta_fixed=float(p[1]),
+            state_semvalue_marked=float(p[2]),
+            state_semvalue_unmarked=float(p[2]),
+            nominal_semvalue=float(p[3]),
+            lenCostWeight=float(p[4]),
+            freqCostWeight=float(p[5]),
+        ),
+    },
+
+    "non-compositional_empiricalcost": {
+        "param_names": ["alpha", "lenCostWeight", "freqCostWeight"],
+        "bounds": [(0, 50), (0, 10), (0, 10)],
+        # "param_names": ["alpha", "costWeight", 'typicalityWeight'],
+        # "bounds": [(0, 50), (0, 10), (0, 10)],
+        "to_kwargs": lambda p: dict(
+            model_type='non-compositional',
+            cost_mode='empirical',
+            alpha=float(p[0]),
+            lenCostWeight=float(p[1]),
+            freqCostWeight=float(p[2]),
+        ),
+    },
 }
 
 def optimization(model_type='compositional'):
@@ -644,10 +725,17 @@ def optimization(model_type='compositional'):
     return res_g, preds, t_arr, words
 
 if __name__ == "__main__":
+    targets = compute_targets()[0]
+    targets_json = {k: v.tolist() for k, v in targets.items()}
+
+    with open("targets.json", "w") as f:
+        json.dump(targets_json, f)
     print(singleton_overspecification_rate('apple'))
     # optimized_params, predictions, targets, words = optimization('compositional')
     # optimized_params, predictions, targets, words = optimization('non-compositional')
+    # optimized_params, predictions, targets, words = optimization('non-compositional_empiricalcost')
     # optimized_params, predictions, targets, words = optimization('mixture')
+    # optimized_params, predictions, targets, words = optimization('mixture_empiricalcost')
 
 
     # utterance, world, noncomp_semvalue_dict = create_word_world("apple")

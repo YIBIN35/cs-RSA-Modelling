@@ -52,10 +52,10 @@ def build_multiword_model(targets, counts, model_type="mixture"):
             elif name in ("state_sem", "n_sem"):
                 rv = pm.Beta(name, alpha=1.0, beta=1.0)
 
-            elif name == "costWeight":
+            elif name in ("costWeight", "lenCostWeight", "freqCostWeight"):
                 # cw01 = pm.Beta("costWeight01", alpha=2.0, beta=2.0)
                 # rv = pm.Deterministic("costWeight", 3.0 * cw01)
-                rv = pm.Uniform("costWeight", lower=0.0, upper=40.0)
+                rv = pm.Uniform(name, lower=0.0, upper=40.0)
 
             elif name == "typicalityWeight":
                 rv = pm.Uniform("typicalityWeight", lower=0.0, upper=40.0)
@@ -182,8 +182,8 @@ if __name__ == "__main__":
     print("Unmarked rate mean:", float(rate_unmarked_mean))
     print("Unmarked rate HDI:", rate_unmarked_hdi)
 
-    trace.to_netcdf(f"trace_{args.model_type}_draw{args.n_draws}_tune{args.n_tune}.nc")
-    trace.to_netcdf("trace_multiword.nc")
+    # trace.to_netcdf(f"trace_{args.model_type}_draw{args.n_draws}_tune{args.n_tune}.nc")
+    # trace.to_netcdf("trace_multiword.nc")
 
 
 
